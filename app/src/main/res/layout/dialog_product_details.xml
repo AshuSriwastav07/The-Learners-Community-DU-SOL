@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--/**
+ * App developed by:
+ * Ashu Sriwastav
+ *
+ * All rights reserved. This application is the property of Ashu Sriwastav.
+ * Unauthorized reproduction, distribution, or modification of this application
+ * without the explicit permission of Ashu Sriwastav is prohibited.
+ */
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dusol.thelearnerscommunity.ProductDetailsDialogFragment"
+    android:background="@color/background_color_night"
+    >
+
+    <!-- TODO: Update blank fragment layout -->
+    <!-- dialog_product_details.xml -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/buyButton"
+                style="@style/basic_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/get_now"
+                android:textSize="@dimen/dp_8" />
+
+            <TextView
+                android:id="@+id/productName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10sp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/product_name"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/productDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10sp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/details" />
+
+            <TextView
+                android:id="@+id/productPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10sp"
+                android:text="45"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:visibility="gone" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</FrameLayout>

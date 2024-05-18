@@ -1,0 +1,72 @@
+
+        webView = findViewById(R.id.webview2);
+
+        webView.setWebViewClient(new WebViewClient());
+        webView.getSettings().setJavaScriptEnabled(true);
+
+        String link = getIntent().getStringExtra("notify");
+
+        if (isNetworkAvailable()) {
+            // Internet is available, so load the webpage
+            webView.loadUrl(link);
+
+        } else {
+            // Internet is not available, show a message
+            Toast.makeText(this, "No internet connection available.", Toast.LENGTH_LONG).show();
+        }
+//
+//        // Set up a DownloadListener to handle PDF downloads
+//        webView.setDownloadListener(new DownloadListener() {
+//            @Override
+//            public void onDownloadStart(String url, String userAgent, String contentDisposition, String mimeType, long contentLength) {
+//                // Create a DownloadManager request to handle the download
+//                DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+////                String fileName = contentDisposition.replaceFirst("(?i)^.*filename=\"?([^\"]+)\"?.*$", "$1");
+//                request.setTitle("SOL NOTIFICATION");
+////                request.setDescription();
+//                request.setMimeType(mimeType);
+//                request.allowScanningByMediaScanner();
+//                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+//
+//                // Set the download location (e.g., Downloads folder)
+//                request.setDestinationInExternalPublicDir(
+//                        Environment.DIRECTORY_DOWNLOADS, "example.pdf");
+//
+//                // Get the system's DownloadManager and enqueue the request
+//                DownloadManager downloadManager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+//                downloadManager.enqueue(request);
+//            }
+//        });
+//
+//        // Register a BroadcastReceiver to listen for download completion
+//        downloadReceiver = new BroadcastReceiver() {
+//            @Override
+//            public void onReceive(Context context, Intent intent) {
+//                String action = intent.getAction();
+//                if (DownloadManager.ACTION_DOWNLOAD_COMPLETE.equals(action)) {
+//                    // Handle download completion (e.g., show a notification)
+//                    // You can add your own logic here
+//                }
+//            }
+//        };
+
+        // Register the BroadcastReceiver
+        IntentFilter filter = new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE);
+        registerReceiver(downloadReceiver, filter);
+    }
+//
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//        // Unregister the BroadcastReceiver to prevent leaks
+//        unregisterReceiver(downloadReceiver);
+//    }
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (connectivityManager != null) {
+            NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+            return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+        }
+        return false;
+    }

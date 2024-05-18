@@ -1,0 +1,41 @@
+{
+  "project_info": {
+    "project_number": "987030636575",
+    "firebase_url": "https://the-learners-community-cc742-default-rtdb.firebaseio.com",
+    "project_id": "the-learners-community-cc742",
+    "storage_bucket": "the-learners-community-cc742.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:987030636575:android:760ba9d94e0739b7cf2d2a",
+        "android_client_info": {
+          "package_name": "com.dusol.thelearnerscommunity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "987030636575-vjde6fbhrd2cgg0bod49ptmdcvu9iprl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDZGoEnI7lKIvoY9bYOAoOeYGQa2eNRho"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "987030636575-vjde6fbhrd2cgg0bod49ptmdcvu9iprl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-7092743628840352~4236898605"
+    }
+  ],
+  "configuration_version": "1"
+}

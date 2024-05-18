@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--/**
+ * App developed by:
+ * Ashu Sriwastav
+ *
+ * All rights reserved. This application is the property of Ashu Sriwastav.
+ * Unauthorized reproduction, distribution, or modification of this application
+ * without the explicit permission of Ashu Sriwastav is prohibited.
+ */
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color_night"
+    tools:context="com.dusol.thelearnerscommunity.studentsBoard">
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:alpha="1"
+        android:contentDescription="@string/portal"
+        android:cropToPadding="true"
+        android:fitsSystemWindows="true"
+        android:focusable="auto"
+        android:focusableInTouchMode="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/portal" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="65dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView13">
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button1_Student_Login"
+                style="@style/basic_button"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="40sp"
+                android:layout_marginRight="10sp"
+                android:drawableLeft="@mipmap/profile"
+                android:text="Student Login"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="@dimen/dp_8" />
+
+            <Button
+                android:id="@+id/Student_new_Result1"
+                style="@style/basic_button"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="10sp"
+                android:drawableLeft="@mipmap/result"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="@dimen/dp_8"
+                android:visibility="gone"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <Button
+                android:id="@+id/Student_new_Result2"
+                style="@style/basic_button"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="10sp"
+                android:drawableLeft="@mipmap/result"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="@dimen/dp_8"
+                android:visibility="gone"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <Button
+                android:id="@+id/Student_new_Result3"
+                style="@style/basic_button"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="10sp"
+                android:drawableLeft="@mipmap/result"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="@dimen/dp_8"
+                android:visibility="gone"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <Button
+                android:id="@+id/button2_Student_Result"
+                style="@style/basic_button"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="10sp"
+                android:drawableLeft="@mipmap/result"
+                android:text="SOL All Result"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="@dimen/dp_8" />
+
+
+            <Button
+            android:id="@+id/button7_Admit_Card"
+            style="@style/basic_button"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10sp"
+            android:layout_marginTop="20sp"
+            android:layout_marginRight="10sp"
+            android:drawableLeft="@mipmap/admitcard"
+            android:text="Check Admit Card"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="@dimen/dp_8" />
+
+            <Button
+                android:id="@+id/button8_Sol_Degree"
+                style="@style/basic_button"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="10sp"
+                android:drawableLeft="@mipmap/degree"
+                android:text="Collage Marksheet"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="@dimen/dp_8" />
+
+            <Button
+                android:id="@+id/button6_Date_sheet"
+                style="@style/basic_button"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="10sp"
+                android:drawableLeft="@mipmap/datesheet"
+                android:text="Exam Date Sheet"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="@dimen/dp_8" />
+
+            <Button
+                android:id="@+id/button3_Academic_Calendar"
+                style="@style/basic_button"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="10sp"
+                android:drawableLeft="@mipmap/img_2"
+                android:text="Academic Calendar"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="@dimen/dp_8" />
+
+            <Button
+                android:id="@+id/button5_All_semester_subject"
+                style="@style/basic_button"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="10sp"
+                android:drawableLeft="@mipmap/subject"
+                android:text="Check Next Semester Subject"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="@dimen/dp_8" />
+
+            <Button
+                android:id="@+id/button4_Admission_Link"
+                style="@style/basic_button"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="10sp"
+                android:layout_marginBottom="30sp"
+                android:drawableLeft="@mipmap/admission"
+                android:text="New Admission"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="@dimen/dp_8" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!--  Navigation Button-->
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/navbarHome"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginStart="15sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/background_color_night"
+            android:contentDescription="@string/NavBTN"
+            app:srcCompat="@mipmap/navhome" />
+
+        <ImageButton
+            android:id="@+id/navbarVideos"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/background_color_night"
+            android:contentDescription="@string/NavBTN"
+            app:srcCompat="@mipmap/navvideo" />
+
+        <ImageButton
+            android:id="@+id/navbarBooks"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/background_color_night"
+            android:contentDescription="@string/NavBTN"
+            app:srcCompat="@mipmap/navnotes" />
+
+        <ImageButton
+            android:id="@+id/navbarStudent"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginEnd="15sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/background_color_night"
+            android:contentDescription="@string/NavBTN"
+            app:srcCompat="@mipmap/navstudent" />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

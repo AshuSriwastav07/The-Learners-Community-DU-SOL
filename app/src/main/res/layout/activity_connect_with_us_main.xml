@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--/**
+ * App developed by:
+ * Ashu Sriwastav
+ *
+ * All rights reserved. This application is the property of Ashu Sriwastav.
+ * Unauthorized reproduction, distribution, or modification of this application
+ * without the explicit permission of Ashu Sriwastav is prohibited.
+ */
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color_night"
+    tools:context="com.dusol.thelearnerscommunity.connect_with_us_MainActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.256">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:padding="20dp">
+
+            <ImageButton
+                android:id="@+id/BloggerLink"
+                style="@style/custome_SocialMedia_button"
+                android:layout_width="@dimen/dp_120"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/blogger"
+                android:src="@mipmap/blogger"
+                android:text="@string/blogger" />
+
+            <ImageButton
+                android:id="@+id/instaLink"
+                style="@style/custome_SocialMedia_button"
+                android:layout_width="@dimen/dp_120"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/instagram"
+                android:src="@mipmap/insta"
+                android:text="@string/instagram" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:padding="20dp">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/YTLink"
+                style="@style/custome_SocialMedia_button"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/yt"
+                android:src="@mipmap/yt" />
+
+            <ImageButton
+                android:id="@+id/TelegramLink"
+                style="@style/custome_SocialMedia_button"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/telegram"
+                android:src="@mipmap/telegram"
+                android:text="@string/telegramText" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/custome_SocialMedia_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="@string/join_us"
+        android:textSize="@dimen/dp_18"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="70dp"
+        android:visibility="visible"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-7092743628840352/8661598469"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </com.google.android.gms.ads.AdView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/navbarHome"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginStart="15sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/background_color_night"
+            android:contentDescription="@string/NavBTN"
+            app:srcCompat="@mipmap/navhome" />
+
+        <ImageButton
+            android:id="@+id/navbarVideos"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/background_color_night"
+            android:contentDescription="@string/NavBTN"
+            app:srcCompat="@mipmap/navvideo" />
+
+        <ImageButton
+            android:id="@+id/navbarBooks"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/background_color_night"
+            android:contentDescription="@string/NavBTN"
+            app:srcCompat="@mipmap/navnotes" />
+
+        <ImageButton
+            android:id="@+id/navbarStudent"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginEnd="15sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/background_color_night"
+            android:contentDescription="@string/NavBTN"
+            app:srcCompat="@mipmap/navstudent" />
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

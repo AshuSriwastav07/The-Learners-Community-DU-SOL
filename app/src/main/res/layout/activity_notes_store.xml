@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--/**
+ * App developed by:
+ * Ashu Sriwastav
+ *
+ * All rights reserved. This application is the property of Ashu Sriwastav.
+ * Unauthorized reproduction, distribution, or modification of this application
+ * without the explicit permission of Ashu Sriwastav is prohibited.
+ */
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color_night"
+    tools:context="com.dusol.thelearnerscommunity.Notes_Store">
+
+    <TextView
+        android:id="@+id/StoreTitle"
+        style="@style/banner_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/andika"
+        android:gravity="center"
+        android:paddingStart="@dimen/dp_10"
+        android:paddingEnd="@dimen/dp_10"
+        android:text="@string/the_learners_community_notes_store"
+        android:textSize="@dimen/dp_10"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:contentDescription="@string/DU_SOL_NOTES"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/StoreTitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!--Every Product has Card View and Check Details Button-->
+
+            <!--Start Here-->
+            <androidx.cardview.widget.CardView
+                style="@style/night_CardView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15sp"
+                app:cardElevation="8dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp">
+
+                <ImageView
+                    android:id="@+id/imageView15"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    android:padding="8dp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/notesbtn15"
+                style="@style/sell_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15sp"
+                android:gravity="center"
+                android:text="@string/check_details"
+                android:textSize="@dimen/dp_8" />
+
+
+            <!--Start Here-->
+            <androidx.cardview.widget.CardView
+                style="@style/night_CardView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15sp"
+                app:cardElevation="8dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp">
+
+                <ImageView
+                    android:id="@+id/imageView16"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    android:padding="8dp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/notesbtn16"
+                style="@style/sell_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15sp"
+                android:gravity="center"
+                android:text="@string/check_details"
+                android:textSize="@dimen/dp_8" />
+
+
+            <!--Start Here-->
+            <androidx.cardview.widget.CardView
+                style="@style/night_CardView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15sp"
+                app:cardElevation="8dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp">
+
+                <ImageView
+                    android:id="@+id/imageView13"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    android:padding="8dp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/notesbtn13"
+                style="@style/sell_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15sp"
+                android:gravity="center"
+                android:text="@string/check_details"
+                android:textSize="@dimen/dp_8" />
+
+<!--            Start Here-->
+            <androidx.cardview.widget.CardView
+                style="@style/night_CardView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15sp"
+                app:cardElevation="8dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp">
+
+                <ImageView
+                    android:id="@+id/imageView14"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    android:padding="8dp"
+                    android:contentDescription="Notes 14"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/notesbtn14"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15sp"
+                style="@style/sell_button"
+                android:gravity="center"
+                android:text="@string/check_details"
+                android:textSize="@dimen/dp_8" />
+
+            <!--Ends Here-->
+<!--            Edns Here-->
+            <androidx.cardview.widget.CardView
+                style="@style/night_CardView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15sp"
+                app:cardElevation="8dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp">
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    android:padding="8dp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/notesbtn1"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15sp"
+                style="@style/sell_button"
+                android:gravity="center"
+                android:text="@string/check_details"
+                android:textSize="@dimen/dp_8" />
+
+            <!--Ends Here-->
+
+            <!--Start Here-->
+            <androidx.cardview.widget.CardView
+                style="@style/night_CardView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15sp"
+                app:cardElevation="8dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/notesbtn2"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15sp"
+                style="@style/sell_button"
+                android:gravity="center"
+                android:text="@string/check_details"
+                android:textSize="@dimen/dp_8" />
+            <!--Ends Here-->
+
+            <!--Start Here-->
+            <androidx.cardview.widget.CardView
+                style="@style/night_CardView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15sp"
+                app:cardElevation="8dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/notesbtn3"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15sp"
+                style="@style/sell_button"
+                android:gravity="center"
+                android:text="@string/check_details"
+                android:textSize="@dimen/dp_8" />
+            <!--Ends Here-->
+
+            <!--Start Here-->
+            <androidx.cardview.widget.CardView
+                style="@style/night_CardView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15sp"
+                app:cardElevation="8dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/notesbtn4"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15sp"
+                style="@style/sell_button"
+                android:gravity="center"
+                android:text="@string/check_details"
+                android:textSize="@dimen/dp_8" />
+            <!--Ends Here-->
+
+
+            <!--Start Here-->
+            <androidx.cardview.widget.CardView
+                style="@style/night_CardView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15sp"
+                app:cardElevation="8dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/notesbtn5"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15sp"
+                style="@style/sell_button"
+                android:gravity="center"
+                android:text="@string/check_details"
+                android:textSize="@dimen/dp_8" />
+            <!--Ends Here-->
+
+
+            <!--Start Here-->
+            <androidx.cardview.widget.CardView
+                style="@style/night_CardView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15sp"
+                app:cardElevation="8dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp">
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/notesbtn6"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15sp"
+                style="@style/sell_button"
+                android:gravity="center"
+                android:text="@string/check_details"
+                android:textSize="@dimen/dp_8" />
+            <!--Ends Here-->
+
+
+            <!--Start Here-->
+            <androidx.cardview.widget.CardView
+                style="@style/night_CardView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15sp"
+                app:cardElevation="8dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp">
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/notesbtn7"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15sp"
+                style="@style/sell_button"
+                android:gravity="center"
+                android:text="@string/check_details"
+                android:textSize="@dimen/dp_8" />
+            <!--Ends Here-->
+
+
+            <!--Start Here-->
+            <androidx.cardview.widget.CardView
+                style="@style/night_CardView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15sp"
+                app:cardElevation="8dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp">
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/notesbtn8"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15sp"
+                style="@style/sell_button"
+                android:gravity="center"
+                android:text="@string/check_details"
+                android:textSize="@dimen/dp_8" />
+
+            <!--Ends Here-->
+            <!--Start Here-->
+            <androidx.cardview.widget.CardView
+                style="@style/night_CardView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15sp"
+                app:cardElevation="8dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp">
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/notesbtn9"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15sp"
+                style="@style/sell_button"
+                android:gravity="center"
+                android:text="@string/check_details"
+                android:textSize="@dimen/dp_8" />
+
+            <!--Ends Here-->
+            <!--Start Here-->
+            <androidx.cardview.widget.CardView
+                style="@style/night_CardView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15sp"
+                app:cardElevation="8dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp">
+
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/notesbtn10"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15sp"
+                style="@style/sell_button"
+                android:gravity="center"
+                android:text="@string/check_details"
+                android:textSize="@dimen/dp_8" />
+
+            <!--Ends Here-->
+
+            <!--Start Here-->
+            <androidx.cardview.widget.CardView
+                style="@style/night_CardView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15sp"
+                app:cardElevation="8dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp">
+
+                <ImageView
+                    android:id="@+id/imageView11"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/notesbtn11"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15sp"
+                style="@style/sell_button"
+                android:gravity="center"
+                android:text="@string/check_details"
+                android:textSize="@dimen/dp_8" />
+
+            <!--Ends Here-->
+            <!--Start Here-->
+            <androidx.cardview.widget.CardView
+                style="@style/night_CardView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15sp"
+                app:cardElevation="8dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp">
+
+                <ImageView
+                    android:id="@+id/imageView12"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/notesbtn12"
+                style="@style/sell_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15sp"
+                android:gravity="center"
+                android:text="@string/check_details"
+                android:textSize="@dimen/dp_8" />
+
+            <!--Ends Here-->
+
+       <!--Start Here-->
+            <androidx.cardview.widget.CardView
+                style="@style/night_CardView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15sp"
+                app:cardElevation="8dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp">
+
+                <ImageView
+                    android:id="@+id/imageView17"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/notesbtn17"
+                style="@style/sell_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15sp"
+                android:gravity="center"
+                android:text="@string/check_details"
+                android:textSize="@dimen/dp_8" />
+
+            <!--Ends Here-->
+
+<!--Start Here-->
+            <androidx.cardview.widget.CardView
+                style="@style/night_CardView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15sp"
+                app:cardElevation="8dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp">
+
+                <ImageView
+                    android:id="@+id/imageView18"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/notesbtn18"
+                style="@style/sell_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="80sp"
+                android:gravity="center"
+                android:text="@string/check_details"
+                android:textSize="@dimen/dp_8" />
+
+            <!--Ends Here-->
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <!--  Navigation Button-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/navbarHome"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginStart="15sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/background_color_night"
+            android:contentDescription="@string/NavBTN"
+            app:srcCompat="@mipmap/navhome" />
+
+        <ImageButton
+            android:id="@+id/navbarVideos"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/background_color_night"
+            android:contentDescription="@string/NavBTN"
+            app:srcCompat="@mipmap/navvideo" />
+
+        <ImageButton
+            android:id="@+id/navbarBooks"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/background_color_night"
+            android:contentDescription="@string/NavBTN"
+            app:srcCompat="@mipmap/navnotes" />
+
+        <ImageButton
+            android:id="@+id/navbarStudent"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginEnd="15sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/background_color_night"
+            android:contentDescription="@string/NavBTN"
+            app:srcCompat="@mipmap/navstudent" />
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

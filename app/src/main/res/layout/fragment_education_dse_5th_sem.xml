@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".EducationDSE5thSemNotes">
+
+    <!--<ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/scroll">
+-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="बहुल समाज में शिक्षा (Education in a Plural Society)"
+                android:textColor="#B72BF3"
+                android:textSize="@dimen/dp_10"
+                android:textStyle="bold" />
+
+            <!--<Button
+                style="@style/basic_button"
+                android:id="@+id/unit1"
+                android:layout_width="320dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10sp"
+                android:text="Chapter 1"
+                android:textSize="@dimen/dp_8" />
+
+            <Button
+                style="@style/basic_button"
+                android:id="@+id/unit2"
+                android:layout_width="320dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10sp"
+                android:text="Chapter 2"
+                android:textSize="@dimen/dp_8" />
+
+
+            <Button
+                style="@style/basic_button"
+                android:id="@+id/unit3"
+                android:layout_width="320dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10sp"
+                android:text="Chapter 3"
+                android:textSize="@dimen/dp_8" />
+            <Button
+                style="@style/basic_button"
+                android:id="@+id/unit4"
+                android:layout_width="320dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10sp"
+                android:text="Chapter 4"
+                android:textSize="@dimen/dp_8" />
+
+            <Button
+                android:id="@+id/PaidNotesPDF"
+                style="@style/basic_button"
+                android:layout_width="320dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10sp"
+                android:text="Chapter 1-9 Complete Notes PDF"
+                android:textSize="@dimen/dp_7" />
+
+            <Button
+                style="@style/basic_button"
+                android:id="@+id/Watch_Videos"
+                android:layout_width="320dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="15sp"
+                android:layout_marginBottom="15sp"
+                android:text="@string/complete_book_explain"
+                android:textSize="@dimen/dp_8" />-->
+
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10sp"
+                android:layout_marginBottom="15dp"
+                android:visibility="visible"
+                app:adSize="BANNER"
+                app:adUnitId="ca-app-pub-7092743628840352/8661598469"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+            </com.google.android.gms.ads.AdView>
+
+
+            <ListView
+                android:id="@+id/sem5EducationDSENotesList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/borderset"
+                android:divider="@color/black"
+                android:dividerHeight="2dp" />
+        </LinearLayout>
+<!--
+    </ScrollView>
+-->
+
+
+</FrameLayout>

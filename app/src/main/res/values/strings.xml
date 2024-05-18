@@ -1,0 +1,157 @@
+<resources>
+    <string name="app_name">The Learners Community</string>
+    <string name="welcome">Welcome</string>
+    <string name="rights">© 2023 The Learners Community All Rights Reserved.</string>
+    <string name="du_notes">DU NOTES</string>
+    <string name="todo">DU Image\n</string>
+    <string name="sol_notice">SOL Updates</string>
+    <string name="sol_materials">Study Material</string>
+    <string name="sol_notes">SOL NOTES</string>
+    <string name="DU_SOL_NOTES">DU SOL Notes</string>
+    <string name="previous_question_papers">Question Paper</string>
+    <string name="your_semester">Select Your Semester</string>
+    <string name="your_subject">Select Your Subject</string>
+    <string name="sub">subject scroll\n</string>
+    <string name="_1st_semester">1st Semester</string>
+    <string name="_2nd_semester">2nd Semester</string>
+    <string name="_3rd_semester">3rd Semester</string>
+    <string name="_4th_semester">4th Semester</string>
+    <string name="_5th_semester">5th Semester</string>
+    <string name="_6th_semester">6th Semester</string>
+    <string name="translation_studies">Translation Studies</string>
+    <string name="unit_1_notes">Unit 1 Notes</string>
+    <string name="unit_2_notes">Unit 2 Notes</string>
+    <string name="unit_3_notes">Unit 3 Notes</string>
+    <string name="unit_4_notes">Unit 4 Notes</string>
+    <string name="unit_5_notes">Unit 5 Notes</string>
+    <string name="unit_6_notes">Unit 6 Notes</string>
+    <string name="unit_7_notes">Unit 7 Notes</string>
+    <string name="unit_8_notes">Unit 8 Notes</string>
+    <string name="ba_prog">BA Program</string>
+    <string name="nep_pdf">NEP Prospectus PDF</string>
+    <string name="bcom">B.Com</string>
+    <string name="b.com_hons">B.Com Hons</string>
+    <string name="important_notes_and_questions">Important Notes and Questions</string>
+    <string name="studentPortal">Student\nPortal</string>
+    <string name="connect">Connect With US</string>
+    <string name="photo_gallery">Photo Gallery</string>
+    <string name="the_learners_community_logo">The Learners Community Logo</string>
+    <string name="_1st_semester_syllabusNEP">1st Semester Syllabus NEP</string>
+    <string name="_2nd_semester_syllabus">2nd Semester Syllabus</string>
+    <string name="_3rd_semester_syllabus">3rd Semester Syllabus</string>
+    <string name="_4th_semester_syllabus">4th Semester Syllabus</string>
+    <string name="_5th_semester_syllabus">5th Semester Syllabus</string>
+    <string name="_6th_semester_syllabus">6th Semester Syllabus</string>
+    <string name="nep_prospectus">NEP Prospectus 2023–24</string>
+    <string name="syllabus">semester syllabus\n</string>
+    <string name="ba_prog_nep">BA Prog NEP</string>
+    <string name="b_com_nep">B.Com NEP</string>
+    <string name="b_com_hons_nep">B.Com Hons NEP</string>
+    <string name="b_com_nep_sem2">B.Com NEP</string>
+    <string name="ba_prog_nep_sem2">BA Prog NEP</string>
+    <string name="b_com_hons_nep_Sem2">B.Com Hons NEP</string>
+    <string name="sol_syllabus">SOL Syllabus</string>
+    <string name="yt">Youtube\n</string>
+    <string name="telegram">"telegram "</string>
+    <string name="join_us">Join US</string>
+    <string name="blogger">Blogger</string>
+    <string name="youtube">YouTube</string>
+    <string name="telegramText">Telegram</string>
+    <string name="select_QP" />
+    <string name="select_semester_and_question_paper">Select Semester and Question Paper</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="study">study</string>
+    <string name="_6th_semester_papers">6th Semester Papers</string>
+    <string name="study_matrial">Study Matrial</string>
+    <string name="hindi">Hindi: हिंदी गद्य उद्भव और विकास</string>
+    <string name="notes_coming_soon">Notes Coming Soon</string>
+    <string name="english_language_through_literature_2_language_course">English Language Through Literature-2 (Language Course)</string>
+    <string name="go_to_semester">Go to Semester</string>
+    <string name="hindi_ge">Hindi GE</string>
+    <string name="history_dse">History DSE</string>
+    <string name="political_science_dse">Political Science DSE</string>
+    <string name="scroll">scroll view\n</string>
+    <string name="button">Button</string>
+    <string name="history_issues_in_twentieth_century_world_history_i">History - Issues in Twentieth Century World History I</string>
+    <string name="the_learners_community_notes_store">Study Notes Store</string>
+    <string name="portal">portal</string>
+    <string name="insta">Instagram</string>
+    <string name="study_notes_store">Notes Store</string>
+    <string name="instagram">Instagram</string>
+    <string name="check_details">Check Details</string>
+    <string name="political_science_international_relations">Political Science (International Relations)</string>
+    <string name="international_relations_unit_1_3_pdf_notes_and_important_questions">International Relations Unit 1 to 3 PDF NOTES and Important Questions</string>
+    <string name="british_literature_poetry_and_play">British Literature: Poetry and Play</string>
+    <string name="understanding_economic_survey_and_union_budget_sec">Understanding Economic Survey and Union Budget SEC</string>
+    <string name="history_1200_1700">History 1200 to 1700</string>
+    <string name="political_science">Political Science</string>
+    <string name="hindi_katha_sahitye">Hindi Katha Sahitye</string>
+    <string name="_3rd_semester_papers">3rd Semester Papers</string>
+    <string name="chapter1">Chapter 1 Notes</string>
+    <string name="chapter2">Chapter 2 Notes\n</string>
+    <string name="chapter_3_notes">Chapter 3 Notes</string>
+    <string name="sol_dates">Academic Dates</string>
+    <string name="NavBTN">Navigation Button\n</string>
+    <string name="sol_study_materials">SOL Study Materials</string>
+    <string name="semester_1">Semester 1</string>
+    <string name="semester_4">Semester 4</string>
+    <string name="semester_5">Semester 5</string>
+    <string name="semester_6">Semester 6</string>
+    <string name="semester_2">Semester 2</string>
+    <string name="semester_3">Semester 3</string>
+    <string name="cbcs_ba_program">CBCS BA Program</string>
+    <string name="nep_ba_program">NEP BA Program</string>
+    <string name="cbcs_ba_EngHons">CBCS BA English Hons</string>
+    <string name="nep_ba_EngHons">NEP BA English Hons</string>
+
+    <string name="cbcs_bcom">CBCS B.Com</string>
+    <string name="nep_bcom">NEP B.Com</string>
+
+    <string name="cbcs_bcom_Hons">CBCS B.Com Hons</string>
+    <string name="nep_bcom_Hons">NEP B.Com Hons</string>
+
+    <string name="cbcs_ba_polHons">CBCS BA Pol Hons</string>
+    <string name="nep_ba_polHons">NEP BA Pol Hons</string>
+    <string name="b_com">B.COM</string>
+    <string name="ba">BA</string>
+    <string name="ba_pol_hons">BA Pol Hons</string>
+    <string name="ba_eng_hons">BA Eng Hons</string>
+
+    <string name="ba_Eco">BA Eco Hons</string>
+    <string name="ba_Economics">NEP BA Economics Hons</string>
+
+    <string name="ba_PSY">BA PSY Hons</string>
+    <string name="ba_Psychology">NEP BA Psychology Hons</string>
+    <string name="get_now">Get Now 📝</string>
+    <string name="details">Details</string>
+    <string name="product_name">Product Name:</string>
+    <string name="complete_book_explain">Complete Book Explain</string>
+    <string name="title_activity_notes_sell">NotesSell</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="video_notes">Video Notes</string>
+    <string name="n_ancient_society">प्राचीन समाज\n(Ancient Society)</string>
+    <string name="education_sec_reflective_learning">Education SEC (Reflective Learning)</string>
+    <string name="conflict_and_peace_building">संघर्ष और शांति निर्माण Conflict and Peace Building</string>
+    <string name="media_in_education_in_hindi">Media in Education in Hindi</string>
+    <string name="Syllabus">DU SOL Syllabus</string>
+
+    <string name="lorem_ipsum">
+        hello
+    </string>
+    <string name="making_the_workplace_inclusive">कार्यस्थल को समावेशी बनाना (Making the Workplace Inclusive)</string>
+    <string name="_2nd_sem_exam_notes">2nd Sem Exam Notes</string>
+    <string name="_2nd_semester_exam_notes_nall_subjects">2nd Semester Exam Notes\nAll Subjects</string>
+    <string name="cbcs_datesheet">CBCS DateSheet</string>
+    <string name="check">Check</string>
+    <string name="ba_hons">BA Hons</string>
+    <string name="_6th_semester_exam_all_notes">6th Semester Exam All Notes</string>
+    <string name="_5th_semester_exam_all_notes">5th Semester Exam All Notes</string>
+    <string name="sem_4_all_exam_notes">Sem 4 All Exam Notes</string>
+
+</resources>

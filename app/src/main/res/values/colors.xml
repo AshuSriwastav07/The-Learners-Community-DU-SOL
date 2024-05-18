@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="button_background_color">#FF4081</color>
+    <color name="blogger_orange">#FF6F00</color>
+    <color name="insta">#FE5640</color>
+    <color name="telegram_blue">#29B6F6</color>
+    <color name="yt_red">#FF3D00</color>
+    <color name="background_color_night">#FFFFFF</color>
+    <color name="btn_background_color_night">#FFFFFF</color>
+    <color name="night_textColor">#FFFFFF</color>
+    <color name="yellow">#FFFF00</color>
+
+
+
+
+</resources>

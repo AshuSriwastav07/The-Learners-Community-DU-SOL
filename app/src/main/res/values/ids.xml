@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="sem1_BA" type="id" />
+    <item name="sem1_bcom" type="id" />
+    <item name="sem1_bcom_hons" type="id" />
+    <item name="sem2_BA" type="id" />
+    <item name="sem2_bcom" type="id" />
+    <item name="sem2_bcom_hons" type="id" />
+    <item name="sem3_BA" type="id" />
+    <item name="sem3_bcom" type="id" />
+    <item name="sem3_bcom_hons" type="id" />
+    <item name="sem4_BA" type="id" />
+    <item name="sem4_bcom" type="id" />
+    <item name="sem4_bcom_hons" type="id" />
+    <item name="sem5_BA" type="id" />
+    <item name="sem5_bcom" type="id" />
+    <item name="sem5_bcom_hons" type="id" />
+    <item name="sem6_BA" type="id" />
+    <item name="sem6_bcom" type="id" />
+    <item name="sem6_bcom_hons" type="id" />
+    <item name="text1" type="id" />
+    <item name="textView1" type="id" />
+    <item name="textView6" type="id" />
+</resources>
+
+
+<!--<item name="sem1_BA" type="id" />-->
+<!--<item name="sem1_bcom" type="id" />-->
+<!--<item name="sem1_bcom_hons" type="id" />-->
+<!--<item name="sem2_BA" type="id" />-->
+<!--<item name="sem2_bcom" type="id" />-->
+<!--<item name="sem2_bcom_hons" type="id" />-->
+<!--<item name="sem3_BA" type="id" />-->
+<!--<item name="sem3_bcom" type="id" />-->
+<!--<item name="sem3_bcom_hons" type="id" />-->
+<!--<item name="sem4_BA" type="id" />-->
+<!--<item name="sem4_bcom" type="id" />-->
+<!--<item name="sem4_bcom_hons" type="id" />-->
+<!--<item name="sem5_BA" type="id" />-->
+<!--<item name="sem5_bcom" type="id" />-->
+<!--<item name="sem5_bcom_hons" type="id" />-->
+<!--<item name="sem6_BA" type="id" />-->
+<!--<item name="sem6_bcom" type="id" />-->
+<!--<item name="sem6_bcom_hons" type="id" />-->

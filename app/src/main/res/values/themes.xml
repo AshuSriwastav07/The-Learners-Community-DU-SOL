@@ -1,0 +1,35 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.TheLearnersCommunity" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.TheLearnersCommunity" parent="Base.Theme.TheLearnersCommunity" />
+
+    <style name="custome_SocialMedia_button">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/dp_13</item>
+        <item name="android:layout_width">@dimen/dp_120</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:layout_marginTop">20sp</item>
+        <item name="android:layout_marginEnd">20sp</item>
+        <item name="android:layout_marginStart">20sp</item>
+    </style>
+
+    <style name="custome_SocialMedia_text">
+        <item name="android:textColor">@color/yt_red</item>
+    </style>
+
+    <style name="basic_button">
+        <item name="android:backgroundTint">#054bb4</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">@dimen/dp_127</item>
+    </style>
+
+    <style name="sell_button">
+        <item name="android:backgroundTint">#FF0000</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+</resources>

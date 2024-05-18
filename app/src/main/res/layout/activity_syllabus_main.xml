@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--/**
+ * App developed by:
+ * Ashu Sriwastav
+ *
+ * All rights reserved. This application is the property of Ashu Sriwastav.
+ * Unauthorized reproduction, distribution, or modification of this application
+ * without the explicit permission of Ashu Sriwastav is prohibited.
+ */
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textDirection="firstStrong"
+    tools:context="com.dusol.thelearnerscommunity.Syllabus_MainActivity"
+    android:background="@color/background_color_night"
+    >
+
+    <ScrollView
+        android:id="@+id/scrollview_syllabus"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="30sp">
+
+
+
+            <TextView
+                android:id="@+id/textView0"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20sp"
+                android:gravity="center"
+                android:shadowColor="#E30B0B"
+                android:text="@string/nep_prospectus"
+                android:textAlignment="center"
+                android:textColor="#FF00DC"
+                android:textColorLink="#FF1010"
+                android:textSize="@dimen/dp_9"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/nep_prospectus"
+                style="@style/basic_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="20sp"
+                android:gravity="center"
+                android:text="@string/nep_pdf"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold|italic"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20sp"
+                android:gravity="center"
+                android:shadowColor="#E30B0B"
+                android:text="@string/_1st_semester_syllabusNEP"
+                android:textAlignment="center"
+                android:textColor="#FF00DC"
+                android:textColorLink="#FF1010"
+                android:textSize="@dimen/dp_9"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/nepsem1_BA"
+                style="@style/basic_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="20sp"
+                android:gravity="center"
+                android:text="@string/ba_prog_nep"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold|italic"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <Button
+                android:id="@+id/nepsem1_Bcom"
+                style="@style/basic_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="20sp"
+                android:gravity="center"
+                android:text="@string/b_com_nep"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold|italic"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <Button
+                android:id="@+id/nepsem1_BcomH"
+                style="@style/basic_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="20sp"
+                android:gravity="center"
+                android:text="@string/b_com_hons_nep"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold|italic"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <Button
+                android:id="@+id/sem1_BA"
+                style="@style/basic_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="20sp"
+                android:gravity="center"
+                android:text="@string/ba_prog"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold|italic"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <Button
+                android:id="@+id/sem1_bcom"
+                style="@style/basic_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="20sp"
+                android:gravity="center"
+                android:text="@string/bcom"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold|italic"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <Button
+
+                android:id="@+id/sem1_bcom_hons"
+                style="@style/basic_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="20sp"
+                android:gravity="center"
+                android:text="@string/b.com_hons"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold|italic"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:visibility="visible"
+                app:adSize="BANNER"
+                app:adUnitId="ca-app-pub-7092743628840352/1241810429"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+            </com.google.android.gms.ads.AdView>
+
+            <!--            2nd Sem Syllabus -->
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20sp"
+                android:gravity="center"
+                android:shadowColor="#E30B0B"
+                android:text="@string/_2nd_semester_syllabus"
+                android:textAlignment="center"
+                android:textColor="#FF00DC"
+                android:textColorLink="#FF1010"
+                android:textSize="@dimen/dp_9"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/nepsem2_BA"
+                style="@style/basic_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="20sp"
+                android:gravity="center"
+                android:text="@string/ba_prog_nep_sem2"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/nepsem2_bcom"
+                style="@style/basic_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="20sp"
+                android:gravity="center"
+                android:text="@string/b_com_nep_sem2"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/nepsem2_bcom_hons"
+                style="@style/basic_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="20sp"
+                android:gravity="center"
+                android:text="@string/b_com_hons_nep_Sem2"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/sem2_BA"
+                style="@style/basic_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="20sp"
+                android:gravity="center"
+                android:text="@string/ba_prog"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/sem2_bcom"
+                style="@style/basic_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="20sp"
+                android:gravity="center"
+                android:text="@string/bcom"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/sem2_bcom_hons"
+                style="@style/basic_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="20sp"
+                android:gravity="center"
+                android:text="@string/b.com_hons"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold|italic" />
+
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:visibility="visible"
+                app:adSize="BANNER"
+                app:adUnitId="ca-app-pub-7092743628840352/2554892090"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+            </com.google.android.gms.ads.AdView>
+
+            <!--            3rd Sem Syllabus-->
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20sp"
+                android:gravity="center"
+                android:shadowColor="#E30B0B"
+                android:text="@string/_3rd_semester_syllabus"
+                android:textAlignment="center"
+                android:textColor="#FF00DC"
+                android:textColorLink="#FF1010"
+                android:textSize="@dimen/dp_9"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/nepsem3_BA"
+                style="@style/basic_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="20sp"
+                android:gravity="center"
+                android:text="@string/ba_prog_nep"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold|italic"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <Button
+                android:id="@+id/nepsem3_Bcom"
+                style="@style/basic_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="20sp"
+                android:gravity="center"
+                android:text="@string/b_com_nep"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold|italic"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <Button
+                android:id="@+id/nepsem3_BcomH"
+                style="@style/basic_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="20sp"
+                android:gravity="center"
+                android:text="@string/b_com_hons_nep"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold|italic"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <Button
+                android:id="@+id/sem3_BA"
+                style="@style/basic_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="20sp"
+                android:gravity="center"
+                android:text="@string/ba_prog"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/sem3_bcom"
+                style="@style/basic_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="20sp"
+                android:gravity="center"
+                android:text="@string/bcom"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold|italic"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <Button
+                android:id="@+id/sem3_bcom_hons"
+                style="@style/basic_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="20sp"
+                android:gravity="center"
+                android:text="@string/b.com_hons"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold|italic"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:visibility="visible"
+                app:adSize="BANNER"
+                app:adUnitId="ca-app-pub-7092743628840352/1241810429"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+            </com.google.android.gms.ads.AdView>
+
+            <!--            4th Sem Syllabus-->
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20sp"
+                android:gravity="center"
+                android:shadowColor="#E30B0B"
+                android:text="@string/_4th_semester_syllabus"
+                android:textAlignment="center"
+                android:textColor="#FF00DC"
+                android:textColorLink="#FF1010"
+                android:textSize="@dimen/dp_9"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/sem4_BA"
+                style="@style/basic_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="20sp"
+                android:gravity="center"
+                android:text="@string/ba_prog"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold|italic"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <Button
+                android:id="@+id/sem4_bcom"
+                style="@style/basic_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="20sp"
+                android:gravity="center"
+                android:text="@string/bcom"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/sem4_bcom_hons"
+                style="@style/basic_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="20sp"
+                android:gravity="center"
+                android:text="@string/b.com_hons"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold|italic"
+                tools:ignore="VisualLintButtonSize" />
+
+            <!--            5th Sem Syllabus-->
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20sp"
+                android:gravity="center"
+                android:shadowColor="#E30B0B"
+                android:text="@string/_5th_semester_syllabus"
+                android:textAlignment="center"
+                android:textColor="#FF00DC"
+                android:textColorLink="#FF1010"
+                android:textSize="@dimen/dp_9"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/sem5_BA"
+                style="@style/basic_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="20sp"
+                android:gravity="center"
+                android:text="@string/ba_prog"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/sem5_bcom"
+                style="@style/basic_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="20sp"
+                android:gravity="center"
+                android:text="@string/bcom"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/sem5_bcom_hons"
+                style="@style/basic_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="20sp"
+                android:gravity="center"
+                android:text="@string/b.com_hons"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold|italic" />
+
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:visibility="visible"
+                app:adSize="BANNER"
+                app:adUnitId="ca-app-pub-7092743628840352/4552130355"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+            </com.google.android.gms.ads.AdView>
+
+            <!--            6th Sem Syllabus-->
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20sp"
+                android:gravity="center"
+                android:shadowColor="#E30B0B"
+                android:text="@string/_6th_semester_syllabus"
+                android:textAlignment="center"
+                android:textColor="#FF00DC"
+                android:textColorLink="#FF1010"
+                android:textSize="@dimen/dp_9"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/sem6_BA"
+                style="@style/basic_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="20sp"
+                android:gravity="center"
+                android:text="@string/ba_prog"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/sem6_bcom"
+                style="@style/basic_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="20sp"
+                android:gravity="center"
+                android:text="@string/bcom"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold|italic" />
+
+            <Button
+                android:id="@+id/sem6_bcom_hons"
+                style="@style/basic_button"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="20sp"
+                android:gravity="center"
+                android:text="@string/b.com_hons"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold|italic" />
+
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:visibility="visible"
+                app:adSize="BANNER"
+                app:adUnitId="ca-app-pub-7092743628840352/2554892090"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+            </com.google.android.gms.ads.AdView>
+
+        </LinearLayout>
+    </ScrollView>
+    <!--  Navigation Button-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/navbarHome"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginStart="15sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/background_color_night"
+            android:contentDescription="@string/NavBTN"
+            app:srcCompat="@mipmap/navhome" />
+
+        <ImageButton
+            android:id="@+id/navbarVideos"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/background_color_night"
+            android:contentDescription="@string/NavBTN"
+            app:srcCompat="@mipmap/navvideo" />
+
+        <ImageButton
+            android:id="@+id/navbarBooks"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/background_color_night"
+            android:contentDescription="@string/NavBTN"
+            app:srcCompat="@mipmap/navnotes" />
+
+        <ImageButton
+            android:id="@+id/navbarStudent"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginEnd="15sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/background_color_night"
+            android:contentDescription="@string/NavBTN"
+            app:srcCompat="@mipmap/navstudent" />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

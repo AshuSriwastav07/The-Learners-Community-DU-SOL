@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".videosectionActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/videosectionRecycleView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="60dp">
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/videosectionRecycleView"
+        app:layout_constraintEnd_toEndOf="@id/videosectionRecycleView"
+        app:layout_constraintStart_toStartOf="@id/videosectionRecycleView">
+
+        <ImageButton
+            android:id="@+id/navbarHome"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginStart="15sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/background_color_night"
+            android:contentDescription="@string/NavBTN"
+            app:srcCompat="@mipmap/navhome" />
+
+        <ImageButton
+            android:id="@+id/navbarVideos"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/background_color_night"
+            android:contentDescription="@string/NavBTN"
+            app:srcCompat="@mipmap/navvideo" />
+
+        <ImageButton
+            android:id="@+id/navbarBooks"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/background_color_night"
+            android:contentDescription="@string/NavBTN"
+            app:srcCompat="@mipmap/navnotes" />
+
+        <ImageButton
+            android:id="@+id/navbarStudent"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginEnd="15sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/background_color_night"
+            android:contentDescription="@string/NavBTN"
+            app:srcCompat="@mipmap/navstudent" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

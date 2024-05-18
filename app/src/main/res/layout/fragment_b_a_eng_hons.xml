@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BA_EngHonsSM">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="50dp"
+            android:gravity="center|center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="center_horizontal"
+                android:text="@string/cbcs_ba_EngHons"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn1"
+                style="@style/basic_button"
+                android:layout_width="@dimen/dp_70"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/semester_1" />
+
+            <Button
+                android:id="@+id/btn2"
+                style="@style/basic_button"
+                android:layout_width="@dimen/dp_70"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/semester_2" />
+
+            <Button
+                android:id="@+id/btn3"
+                style="@style/basic_button"
+                android:layout_width="@dimen/dp_70"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/semester_3" />
+
+            <Button
+                android:id="@+id/btn4"
+                style="@style/basic_button"
+                android:layout_width="@dimen/dp_70"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/semester_4" />
+
+            <Button
+                android:id="@+id/btn5"
+                style="@style/basic_button"
+                android:layout_width="@dimen/dp_70"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/semester_5" />
+
+            <Button
+                android:id="@+id/btn6"
+                style="@style/basic_button"
+                android:layout_width="@dimen/dp_70"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/semester_6" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="center_horizontal"
+                android:text="@string/nep_ba_EngHons"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn7"
+                style="@style/basic_button"
+                android:layout_width="@dimen/dp_70"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/semester_1" />
+
+            <Button
+                android:id="@+id/btn8"
+                style="@style/basic_button"
+                android:layout_width="@dimen/dp_70"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/semester_2" />
+
+            <Button
+                android:id="@+id/btn9"
+                style="@style/basic_button"
+                android:layout_width="@dimen/dp_70"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/semester_3" />
+
+            <Button
+                android:id="@+id/btn10"
+                style="@style/basic_button"
+                android:layout_width="@dimen/dp_70"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/semester_4" />
+
+            <Button
+                android:id="@+id/btn11"
+                style="@style/basic_button"
+                android:layout_width="@dimen/dp_70"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/semester_5" />
+
+            <Button
+                android:id="@+id/btn12"
+                style="@style/basic_button"
+                android:layout_width="@dimen/dp_70"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                android:text="@string/semester_6" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

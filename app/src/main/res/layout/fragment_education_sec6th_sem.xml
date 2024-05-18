@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--/**
+ * App developed by:
+ * Ashu Sriwastav
+ *
+ * All rights reserved. This application is the property of Ashu Sriwastav.
+ * Unauthorized reproduction, distribution, or modification of this application
+ * without the explicit permission of Ashu Sriwastav is prohibited.
+ */
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.dusol.thelearnerscommunity.EducationSec6thSemNotes"
+    android:background="@color/background_color_night"
+    >
+
+    <!--<ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/scroll">-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15sp"
+                android:layout_marginBottom="15sp"
+                android:gravity="center"
+                android:text="@string/media_in_education_in_hindi"
+                android:textColor="#B72BF3"
+                android:textSize="@dimen/dp_10"
+                android:textStyle="bold" />
+
+           <!-- <Button
+                style="@style/basic_button"
+                android:id="@+id/chapter1"
+                android:layout_width="320dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="15sp"
+                android:layout_marginBottom="15sp"
+                android:text="Chapter 1"
+                android:textSize="@dimen/dp_8" />
+
+            <Button
+                style="@style/basic_button"
+                android:id="@+id/chapter2"
+                android:layout_width="320dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="15sp"
+                android:layout_marginBottom="15sp"
+                android:text="Chapter 2"
+                android:textSize="@dimen/dp_8" />
+
+            <Button
+                style="@style/basic_button"
+                android:id="@+id/chapter3"
+                android:layout_width="320dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="15sp"
+                android:layout_marginBottom="15sp"
+                android:text="Chapter 3"
+                android:textSize="@dimen/dp_8" />
+
+            <Button
+                style="@style/basic_button"
+                android:id="@+id/chapter4"
+                android:layout_width="320dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="15sp"
+                android:layout_marginBottom="15sp"
+                android:text="Chapter 4"
+                android:textSize="@dimen/dp_8" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15sp"
+                android:gravity="center"
+                android:text="Media in Education"
+                android:textColor="#B72BF3"
+                android:textSize="@dimen/dp_12"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15sp"
+                android:gravity="center"
+                android:text="Chapter 1-10 Complete Notes PDF"
+                android:textColor="#B72BF3"
+                android:textSize="@dimen/dp_10"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/PaidNotesPDF"
+                style="@style/basic_button"
+                android:layout_width="320dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:text="Download Notes PDF"
+                android:textSize="@dimen/dp_8" />
+            <Button
+                style="@style/basic_button"
+                android:id="@+id/Watch_Videos"
+                android:layout_width="320dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="15sp"
+                android:layout_marginBottom="15sp"
+                android:text="@string/complete_book_explain"
+                android:textSize="@dimen/dp_8" />-->
+
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:visibility="visible"
+                app:adSize="BANNER"
+                app:adUnitId="ca-app-pub-7092743628840352/4552130355"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+            </com.google.android.gms.ads.AdView>
+
+            <ListView
+                android:id="@+id/sem6EducationSECNotesList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/borderset"
+                android:divider="@color/black"
+                android:dividerHeight="2dp" />
+
+        </LinearLayout>
+    <!--</ScrollView>-->
+
+</FrameLayout>

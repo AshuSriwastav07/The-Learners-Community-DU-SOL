@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- /** -->
+    <!-- * App developed by: -->
+    <!-- * Ashu Sriwastav -->
+    <!-- * -->
+    <!-- * All rights reserved. This application is the property of Ashu Sriwastav. -->
+    <!-- * Unauthorized reproduction, distribution, or modification of this application -->
+    <!-- * without the explicit permission of Ashu Sriwastav is prohibited. -->
+    <!-- */ -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:noHistory="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TheLearnersCommunity"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="33">
+        <activity
+            android:name=".SubjectSelect_2ndSem_MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SyllabusMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".study_materials"
+            android:exported="false" />
+        <activity
+            android:name=".open_site_webpage"
+            android:exported="false" />
+        <activity
+            android:name=".SubjectSelect_1stSem_MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Academic_Calendar_MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DU_NOTES_Semester_Select"
+            android:exported="false" />
+        <activity
+            android:name=".studentsBoard"
+            android:exported="false" />
+        <activity
+            android:name=".Notes_Store"
+            android:exported="false" />
+        <activity
+            android:name=".SubjectSelect_6thSem_MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SubjectSelect_5thSem_MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".QP_Web_Page_MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".QuestionPapers_MainActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-7092743628840352~4236898605" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity
+            android:name=".connect_with_us_MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DU_SOL_NOTES__MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Syllabus_Web_MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Syllabus_MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Notes_HomeWeb_MainActivity"
+            android:exported="false"
+            android:parentActivityName=".SubjectSelect_4thSem_MainActivity" />
+        <activity
+            android:name=".SubjectSelect_4thSem_MainActivity"
+            android:exported="false"
+            android:parentActivityName=".Semester_Select_MainActivity" />
+        <activity
+            android:name=".Semester_Select_MainActivity"
+            android:exported="false"
+            android:parentActivityName=".LinkPage_MainActivity" />
+        <activity
+            android:name=".LinkPage_MainActivity"
+            android:exported="false"
+            android:label="NotesLinkPage"
+            android:parentActivityName=".HomePage_MainActivity" />
+        <activity
+            android:name=".HomePage_MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

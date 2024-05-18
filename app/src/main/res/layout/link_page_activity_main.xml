@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--/**
+ * App developed by:
+ * Ashu Sriwastav
+ *
+ * All rights reserved. This application is the property of Ashu Sriwastav.
+ * Unauthorized reproduction, distribution, or modification of this application
+ * without the explicit permission of Ashu Sriwastav is prohibited.
+ */
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color_night"
+    tools:context="com.dusol.thelearnerscommunity.LinkPage_MainActivity"
+    tools:ignore="UsingOnClickInXml">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout8"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:contentDescription="@string/todo"
+            android:scaleType="fitCenter"
+            app:srcCompat="@mipmap/du" />
+
+        <TextView
+            android:id="@+id/LinkPageMarquee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text=""
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ScrollView
+            android:id="@+id/scrollView3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="60dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/button1_du_sol_notes_page"
+                        style="@style/basic_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_42"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#054bb4"
+                        android:drawableTop="@mipmap/img"
+                        android:gravity="center"
+                        android:text="@string/DU_SOL_NOTES"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textSize="@dimen/dp_6"
+                        app:cornerRadius="30dp"
+                        tools:ignore="TextSizeCheck" />
+
+                    <Button
+                        android:id="@+id/button10_SOL_Study_Material"
+                        style="@style/basic_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_42"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#054bb4"
+                        android:drawableTop="@mipmap/materials"
+                        android:gravity="center"
+                        android:text="@string/sol_materials"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textSize="@dimen/dp_6"
+                        app:cornerRadius="30dp"
+                        tools:ignore="TextSizeCheck" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/button2_SOL_Updates"
+                        style="@style/basic_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_42"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#054bb4"
+                        android:drawableTop="@mipmap/notice"
+                        android:gravity="center"
+                        android:text="@string/sol_notice"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textSize="@dimen/dp_6"
+                        app:cornerRadius="30dp"
+                        tools:ignore="TextSizeCheck" />
+
+                    <Button
+                        android:id="@+id/button3_QP"
+                        style="@style/basic_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_42"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#054bb4"
+                        android:drawableTop="@mipmap/exam"
+                        android:gravity="center"
+                        android:text="@string/previous_question_papers"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textSize="@dimen/dp_6"
+                        app:cornerRadius="30dp"
+                        tools:ignore="TextSizeCheck" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/button4_SOL_Syllabus"
+                        style="@style/basic_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_42"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#054bb4"
+                        android:drawableTop="@mipmap/list"
+                        android:gravity="center"
+                        android:text="@string/sol_syllabus"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textSize="@dimen/dp_6"
+                        app:cornerRadius="30dp"
+                        tools:ignore="TextSizeCheck" />
+
+                    <Button
+                        android:id="@+id/button5_Portal"
+                        style="@style/basic_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_42"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#054bb4"
+                        android:drawableTop="@mipmap/student"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/studentPortal"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textSize="@dimen/dp_6"
+                        app:cornerRadius="30dp"
+                        tools:ignore="TextSizeCheck" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/button6_notes_store"
+                        style="@style/basic_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_42"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#054bb4"
+                        android:drawableTop="@mipmap/shop"
+                        android:gravity="center"
+                        android:text="@string/study_notes_store"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textSize="@dimen/dp_6"
+                        app:cornerRadius="30dp"
+                        tools:ignore="TextSizeCheck" />
+
+                    <Button
+                        android:id="@+id/button7_Videos"
+                        style="@style/basic_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_42"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#054bb4"
+                        android:drawableTop="@mipmap/play"
+                        android:gravity="center"
+                        android:text="@string/video_notes"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textSize="@dimen/dp_6"
+                        app:cornerRadius="30dp"
+                        tools:ignore="TextSizeCheck" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/button9_connect_us"
+                        style="@style/basic_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#054bb4"
+                        android:drawableLeft="@mipmap/links"
+                        android:gravity="center"
+                        android:text="@string/connect"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textSize="@dimen/dp_6"
+                        app:cornerRadius="15dp"
+                        tools:ignore="TextSizeCheck" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomNavBar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/navbarHome"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginStart="15sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/background_color_night"
+            android:contentDescription="@string/NavBTN"
+            app:srcCompat="@mipmap/navhome" />
+
+        <ImageButton
+            android:id="@+id/navbarVideos"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/background_color_night"
+            android:contentDescription="@string/NavBTN"
+            app:srcCompat="@mipmap/navvideo" />
+
+        <ImageButton
+            android:id="@+id/navbarBooks"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/background_color_night"
+            android:contentDescription="@string/NavBTN"
+            app:srcCompat="@mipmap/navnotes" />
+
+        <ImageButton
+            android:id="@+id/navbarStudent"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginEnd="15sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/background_color_night"
+            android:contentDescription="@string/NavBTN"
+            app:srcCompat="@mipmap/navstudent" />
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

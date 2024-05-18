@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".study_materials">
+
+
+    <TextView
+        android:id="@+id/textView_Cbcs"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_20"
+        android:fontFamily="serif"
+        android:gravity="center"
+        android:text="@string/sol_study_materials"
+        android:textColor="#0004FF"
+        android:textSize="26sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_Cbcs">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/BA_btn1"
+                style="@style/basic_button"
+                android:layout_width="@dimen/dp_65"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_weight="0"
+                android:text="@string/ba"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/BA_PolHons_btn2"
+                style="@style/basic_button"
+                android:layout_width="@dimen/dp_65"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_weight="0"
+                android:text="@string/ba_pol_hons"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/BA_EngHons_btm3"
+                style="@style/basic_button"
+                android:layout_width="@dimen/dp_65"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_weight="0"
+                android:text="@string/ba_eng_hons"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/BCom_btn4"
+                style="@style/basic_button"
+                android:layout_width="@dimen/dp_65"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_weight="0"
+                android:text="@string/b_com"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/BComHons_btn5"
+                style="@style/basic_button"
+                android:layout_width="@dimen/dp_65"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="0"
+                android:text="@string/b.com_hons"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/BAEconomics_btn6"
+                style="@style/basic_button"
+                android:layout_width="@dimen/dp_65"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="0"
+                android:text="@string/ba_Eco"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/BA_PSY_btn7"
+                style="@style/basic_button"
+                android:layout_width="@dimen/dp_65"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="0"
+                android:text="@string/ba_PSY"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <ScrollView
+        android:id="@+id/scrollView6"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="110dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/Materials_fragmentContainerView"
+            android:name="com.dusol.thelearnerscommunity.BA_ProgSM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/fragment_ba__materials" />
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

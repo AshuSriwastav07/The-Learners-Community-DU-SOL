@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--/**
+ * App developed by:
+ * Ashu Sriwastav
+ *
+ * All rights reserved. This application is the property of Ashu Sriwastav.
+ * Unauthorized reproduction, distribution, or modification of this application
+ * without the explicit permission of Ashu Sriwastav is prohibited.
+ */
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.dusol.thelearnerscommunity.Political5thSemNotes"
+    android:background="@color/background_color_night"
+    >
+
+    <!--<ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/scroll">-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15sp"
+            android:layout_marginBottom="15sp"
+            android:gravity="center"
+            android:text="Administration and Public Policy Concept and Theories"
+            android:textColor="#B72BF3"
+            android:textSize="@dimen/dp_10"
+            android:textStyle="bold" />
+
+        <!--<Button
+            style="@style/basic_button"
+            android:id="@+id/unit1"
+            android:layout_width="320dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15sp"
+            android:layout_marginBottom="15sp"
+            android:text="@string/unit_1_notes"
+            android:textSize="@dimen/dp_8" />
+
+        <Button
+            style="@style/basic_button"
+            android:id="@+id/unit2"
+            android:layout_width="320dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15sp"
+            android:layout_marginBottom="15sp"
+            android:text="@string/unit_2_notes"
+            android:textSize="@dimen/dp_8" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15sp"
+            android:layout_marginBottom="15sp"
+            android:gravity="center"
+            android:text="Get Unit 1-4 Complete Notes PDF"
+            android:textColor="#B72BF3"
+            android:textSize="@dimen/dp_10"
+            android:textStyle="bold" />
+
+        <Button
+            style="@style/basic_button"
+            android:id="@+id/PaidNotesPDF"
+            android:layout_width="320dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15sp"
+            android:layout_marginBottom="15sp"
+            android:text="Download Notes PDF"
+            android:textSize="@dimen/dp_8" />-->
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15sp"
+            android:layout_marginBottom="10dp"
+            android:visibility="visible"
+            app:adSize="BANNER"
+            app:adUnitId="ca-app-pub-7092743628840352/1241810429"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+        </com.google.android.gms.ads.AdView>
+
+
+        <ListView
+            android:id="@+id/sem5PoliticalScienceDSENotesList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/borderset"
+            android:divider="@color/black"
+            android:dividerHeight="2dp" />
+    </LinearLayout>
+   <!-- </ScrollView>-->
+
+</FrameLayout>
