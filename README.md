@@ -43,14 +43,11 @@ Check the app regularly for the latest information and resources relevant to you
 **Feedback and Support:**
 We value your feedback and strive to continuously improve your learning experience. If you encounter any issues, have suggestions for new features, or require assistance, please don't hesitate to reach out to our support team.
 
-!![Untitled (9)](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/98f1c4ac-0ead-4c43-9ed8-70a05d9cd03c)
-
-[Uploading Untitled (10).png…]()
-
-
 For support inquiries or feedback, contact us at ashusriwastav58@gmail.com.
 
 Thank you for choosing The Learners' Community DU SOL App. Let's embark on a journey of knowledge and success together!
+
+!![Untitled (9)](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/98f1c4ac-0ead-4c43-9ed8-70a05d9cd03c)
 ![Untitled (10)](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/56c4db46-9b04-44ab-a908-c5fdec9a1e13)
 ![1](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/43ab9cc0-ab65-40cc-a332-aa059093cb73)
 ![2 (3)](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/d94da628-a3f4-485c-b6c7-80fdf24324cf)
