@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".NEP_Files.NEP_HomePage">
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30"
+        android:fontFamily="serif"
+        android:gravity="center"
+        android:text="@string/your_semester"
+        android:textColor="#0037FF"
+        android:textSize="@dimen/dp_12"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:id="@+id/Year1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/NEP_Sem1"
+            style="@style/basic_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_42"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="#054bb4"
+            android:drawableTop="@mipmap/img"
+            android:gravity="center"
+            android:text="@string/semester_1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="@dimen/dp_6"
+            app:cornerRadius="30dp"
+            tools:ignore="TextSizeCheck" />
+
+        <Button
+            android:id="@+id/NEP_Sem2"
+            style="@style/basic_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_42"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="#054bb4"
+            android:drawableTop="@mipmap/img"
+            android:gravity="center"
+            android:text="@string/semester_2"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="@dimen/dp_6"
+            app:cornerRadius="30dp"
+            tools:ignore="TextSizeCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Year2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/NEP_Sem3"
+            style="@style/basic_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_42"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="#054bb4"
+            android:drawableTop="@mipmap/img"
+            android:gravity="center"
+            android:text="@string/semester_3"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="@dimen/dp_6"
+            app:cornerRadius="30dp"
+            tools:ignore="TextSizeCheck" />
+
+        <Button
+            android:id="@+id/NEP_Sem4"
+            style="@style/basic_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_42"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="#054bb4"
+            android:drawableTop="@mipmap/img"
+            android:gravity="center"
+            android:text="@string/semester_4"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="@dimen/dp_6"
+            app:cornerRadius="30dp"
+            tools:ignore="TextSizeCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Year3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/NEP_Sem5"
+            style="@style/basic_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_42"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="#054bb4"
+            android:drawableTop="@mipmap/img"
+            android:gravity="center"
+            android:text="@string/semester_5"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="@dimen/dp_6"
+            app:cornerRadius="30dp"
+            tools:ignore="TextSizeCheck" />
+
+        <Button
+            android:id="@+id/NEP_Sem6"
+            style="@style/basic_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_42"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="#054bb4"
+            android:drawableTop="@mipmap/img"
+            android:gravity="center"
+            android:text="@string/semester_6"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="@dimen/dp_6"
+            app:cornerRadius="30dp"
+            tools:ignore="TextSizeCheck" />
+    </LinearLayout>
+
+</LinearLayout>
