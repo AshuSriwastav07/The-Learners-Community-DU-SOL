@@ -8,50 +8,20 @@
  */
 package com.dusol.thelearnerscommunity;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.google.android.gms.ads.AdError;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.FullScreenContentCallback;
-import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+import com.dusol.thelearnerscommunity.PDFDataCollerction.PDFDataManage;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 
 
 
 public class HistorySec6thSemNotes extends Fragment {
-
-    private InterstitialAd mInterstitialAd;
-    int click=0;
-    int NumberOfClickToShowAsd=2;
-    private AdView adView;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -65,20 +35,6 @@ public class HistorySec6thSemNotes extends Fragment {
         bundle.putString("Sem6_Notes", "Sem6_Notes_Open");
         FirebaseAnalytics.getInstance(requireContext()).logEvent("Sem6_Notes_Open", bundle);
 
-        loadads();
-        MobileAds.initialize(getActivity(), new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
-
-        AdView adView = view.findViewById(R.id.adView);
-//        AdView mAdView1 = view.findViewById(R.id.adView2);
-
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
-//        mAdView1.loadAd(adRequest);
-        //Ends Here
 
       /*  Button unit1a=view.findViewById(R.id.unit1a);
         Button unit1b=view.findViewById(R.id.unit1b);
@@ -252,7 +208,9 @@ public class HistorySec6thSemNotes extends Fragment {
 */
 
 
+        PDFDataManage.NotesManage(getActivity(),getContext(),"StudyNotes/BASem6/RadioandCinema",listView);
 
+/*
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference("StudyNotes/BASem6/RadioandCinema");
         List<String> sem6NotesSECHistoryName = new ArrayList<>();
@@ -344,10 +302,12 @@ public class HistorySec6thSemNotes extends Fragment {
             }
         });
 
+
+ */
         return view;
 
     }
-
+/*
     public void loadads(){
         MobileAds.initialize(getActivity(), new OnInitializationCompleteListener() {
             @Override
@@ -391,5 +351,6 @@ public class HistorySec6thSemNotes extends Fragment {
         } else {
             Toast.makeText(requireContext(), "No web browser found to open the URL.", Toast.LENGTH_SHORT).show();
         }
-    }
+    }*/
+
 }

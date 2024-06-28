@@ -18,6 +18,7 @@
             android:layout_marginTop="15sp"
             android:layout_marginBottom="5sp"
             android:gravity="center"
+            android:fontFamily="@font/abeezee"
             android:text="@string/conflict_and_peace_building"
             android:textColor="#B72BF3"
             android:textSize="@dimen/dp_10"
@@ -89,23 +90,15 @@
              android:text="@string/complete_book_explain"
              android:textSize="@dimen/dp_8" />-->
 
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/adView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:visibility="visible"
-            app:adSize="BANNER"
-            app:adUnitId="ca-app-pub-7092743628840352/7891527992"/>
-
         <ListView
             android:id="@+id/sem6PolSciSECNotesList"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/borderset"
             android:divider="@color/black"
             android:dividerHeight="2dp"
-            android:paddingTop="10dp" />
+            android:footerDividersEnabled="true"
+            android:headerDividersEnabled="true"
+            android:padding="15dp"  />
 
     </LinearLayout>
 

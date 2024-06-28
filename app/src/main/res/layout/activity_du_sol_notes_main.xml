@@ -38,12 +38,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/adView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.071">
+        app:layout_constraintTop_toBottomOf="@+id/imageView3">
 
         <!--<Button
             android:id="@+id/button1_DU_Notes"
@@ -69,7 +67,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button1_DU_SOL_NOTES"
+                android:id="@+id/button1_SOL_CBCS_NOTES"
                 style="@style/basic_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -77,13 +75,34 @@
                 android:layout_margin="12dp"
                 android:layout_weight="1"
                 android:drawableTop="@mipmap/img"
-                android:text="@string/sol_notes"
+                android:text="@string/cbcs_notes"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="@dimen/dp_7"
                 app:cornerRadius="30dp" />
 
             <Button
-                android:id="@+id/button2_SOL_Material"
+                android:id="@+id/button2_NEP_Notes"
+                style="@style/basic_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="12dp"
+                android:layout_weight="1"
+                android:drawableTop="@mipmap/img"
+                android:text="@string/nep_notes"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="@dimen/dp_7"
+                app:cornerRadius="30dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button3_SOL_Material"
                 style="@style/basic_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -95,29 +114,26 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="@dimen/dp_7"
                 app:cornerRadius="30dp" />
+
+            <Button
+                android:id="@+id/button4_SOL_Syllabus"
+                style="@style/basic_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="12dp"
+                android:layout_weight="1"
+                android:drawableTop="@mipmap/img"
+                android:text="@string/sol_syllabus"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="@dimen/dp_7"
+                app:cornerRadius="30dp" />
         </LinearLayout>
-
-
     </LinearLayout>
-
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="70dp"
-        android:visibility="visible"
-        app:adSize="BANNER"
-        app:adUnitId="ca-app-pub-7092743628840352/7891527992"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-    </com.google.android.gms.ads.AdView>
 
     <!--  Navigation Button-->
     <LinearLayout
+        android:id="@+id/linearLayout11"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="#FFFFFF"

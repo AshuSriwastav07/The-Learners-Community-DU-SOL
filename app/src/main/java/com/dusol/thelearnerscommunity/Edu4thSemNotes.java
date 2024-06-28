@@ -8,62 +8,35 @@
  */
 package com.dusol.thelearnerscommunity;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.google.android.gms.ads.AdError;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.FullScreenContentCallback;
-import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+import com.dusol.thelearnerscommunity.PDFDataCollerction.PDFDataManage;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Edu4thSemNotes extends Fragment {
-    private InterstitialAd mInterstitialAd;
-    int click=0;
-    int NumberOfClickToShowAsd=2;
-    private AdView adView;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_edu4thsem, container, false);
+        View view = inflater.inflate(R.layout.fragment_edu4thsem, container, false);
 
         ListView listView = view.findViewById(R.id.sem4SECEducationyNotesList);
 
-        loadads();
 
         Bundle bundle = new Bundle();
         bundle.putString("Sem4_Notes", "Sem4_Notes_Open");
         FirebaseAnalytics.getInstance(requireContext()).logEvent("Sem4_Notes_Open", bundle);
 
+        PDFDataManage.NotesManage(getActivity(), getContext(), "StudyNotes/BASem4/EducationSEC", listView);
 
 /*
         Button unit1=view.findViewById(R.id.unit1);
@@ -209,22 +182,7 @@ public class Edu4thSemNotes extends Fragment {
         });
 */
 
-
-        //ads Start
-        MobileAds.initialize(getActivity(), new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
-
-        AdView adView = view.findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
-        //ads Ends
-
-
-
-        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+/*        final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference("StudyNotes/BASem4/EducationSEC");
         List<String> sem4NotesEducationName = new ArrayList<>();
         List<String> sem4NotesEducationLinks = new ArrayList<>();
@@ -272,81 +230,11 @@ public class Edu4thSemNotes extends Fragment {
 
                 PaidNotesLinkOpen(sem4NotesEducationLinks.get(position));
             } else {
-
-                click++;
-                Log.d("AdsLoad", String.valueOf(click % NumberOfClickToShowAsd == 0));
-                Log.d("AdsLoad", String.valueOf(mInterstitialAd != null));
-
-
-                if (mInterstitialAd != null && click % NumberOfClickToShowAsd == 0) {
-                    mInterstitialAd.show(requireActivity());
-
-                    mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
-                        @Override
-                        public void onAdShowedFullScreenContent() {
-                            // Called when ad is shown.
-                            Log.d("AdsLoad3", "Ad showed fullscreen content.");
-                        }
-
-                        @Override
-                        public void onAdDismissedFullScreenContent() {
-                            Log.e("AdsLoad1", "Ad failed to show fullscreen content.");
-                            openIntend(sem4NotesEducationLinks.get(position));
-                        }
-                        @Override
-                        public void onAdFailedToShowFullScreenContent(AdError adError) {
-                            // Called when ad fails to show.
-                            Log.e("AdsLoad2", "Ad failed to show fullscreen content.");
-                            openIntend(sem4NotesEducationLinks.get(position));
-                        }
-
-
-                    });
-
-                }else{
-                    Log.e("AdsLoad4", "Last Else.");
-                    openIntend(sem4NotesEducationLinks.get(position));
-                }
+                openIntend(sem4NotesEducationLinks.get(position));
             }
         });
 
 
-        //Ads Start Here
-        MobileAds.initialize(requireActivity(), new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
-            }
-        });
-
-
-
-        return view;
-    }
-
-    public void loadads(){
-        MobileAds.initialize(getActivity(), new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {}
-        });
-        AdRequest adRequest = new AdRequest.Builder().build();
-
-        InterstitialAd.load(getActivity(),"ca-app-pub-7092743628840352/8393735655", adRequest,
-                new InterstitialAdLoadCallback() {
-                    @Override
-                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
-                        // The mInterstitialAd reference will be null until
-                        // an ad is loaded.
-                        mInterstitialAd = interstitialAd;
-//                        Log.i(TAG, "onAdLoaded");
-                    }
-
-                    @Override
-                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                        // Handle the error
-//                        Log.d(TAG, loadAdError.toString());
-                        mInterstitialAd = null;
-                    }
-                });
     }
 
     public void openIntend(String link){
@@ -366,5 +254,7 @@ public class Edu4thSemNotes extends Fragment {
         } else {
             Toast.makeText(requireContext(), "No web browser found to open the URL.", Toast.LENGTH_SHORT).show();
         }
+    }*/
+        return view;
     }
 }

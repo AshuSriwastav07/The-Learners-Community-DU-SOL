@@ -12,8 +12,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import com.dusol.thelearnerscommunity.Notes_HomeWeb_MainActivity;
-import com.google.android.gms.ads.AdError;
-import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,7 +21,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class PDFDataManage {
 
@@ -31,6 +28,7 @@ public class PDFDataManage {
     public static int click=0;
     public static int NumberOfClickToShowAsd=2;
     public static void NotesManage(Activity activity,Context context, String path, ListView listView) {
+
         List<String> NotesNameArray = new ArrayList<>();
         List<String> NotesLinksArray = new ArrayList<>();
 
@@ -48,12 +46,20 @@ public class PDFDataManage {
                     assert key != null;
                     Log.d("DataBaseLinks", key);
 
-                    NotesNameArray.add(key);
+
+                    if(!value.equals("N/A")){
+                        NotesNameArray.add(key+" ✔");
+                    }else {
+                        NotesNameArray.add(key);
+
+                    }
+
+
                     NotesLinksArray.add(value);
                 }
 
-                if(NotesNameArray.isEmpty()){
-                }else{
+                if (NotesNameArray.isEmpty()) {
+                } else {
 
                     ArrayAdapter<String> itemsAdapter = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1, NotesNameArray);
                     listView.setAdapter(itemsAdapter);
@@ -66,7 +72,6 @@ public class PDFDataManage {
                 System.out.println("The read failed: " + databaseError.getCode());
             }
         });
-
 
 
         listView.setOnItemClickListener((parent, view1, position, id) -> {
@@ -82,52 +87,17 @@ public class PDFDataManage {
 
             } else if (NotesLinksArray.get(position).contains("myinstamojo")) {
 
-                PaidNotesLinkOpen(context,NotesLinksArray.get(position));
+                PaidNotesLinkOpen(context, NotesLinksArray.get(position));
+            } else if (NotesLinksArray.get(position).contains("N/A")) {
+                Toast.makeText(activity, "Notes Will Available Soon!", Toast.LENGTH_SHORT).show();
             } else {
-
-                if(!Objects.equals(NotesLinksArray.get(position), "N/A")){
-
-                    click++;
-                    Log.d("AdsLoad", String.valueOf(click % NumberOfClickToShowAsd == 0));
-                    Log.d("AdsLoad", String.valueOf(mInterstitialAd != null));
-
-
-                    if (mInterstitialAd != null && click % NumberOfClickToShowAsd == 0) {
-                        mInterstitialAd.show(activity);
-
-                        mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
-                            @Override
-                            public void onAdShowedFullScreenContent() {
-                                // Called when ad is shown.
-                                Log.d("AdsLoad3", "Ad showed fullscreen content.");
-                            }
-
-                            @Override
-                            public void onAdDismissedFullScreenContent() {
-                                Log.e("AdsLoad1", "Ad failed to show fullscreen content.");
-                                openIntend(context,NotesLinksArray.get(position));
-                            }
-                            @Override
-                            public void onAdFailedToShowFullScreenContent(AdError adError) {
-                                // Called when ad fails to show.
-                                Log.e("AdsLoad2", "Ad failed to show fullscreen content.");
-                                openIntend(context,NotesLinksArray.get(position));
-                            }
-
-
-                        });
-
-                    }else{
-                        Log.e("AdsLoad4", "Last Else.");
-                        openIntend(context, NotesLinksArray.get(position));
-                    }
-                }else{
-                    Toast.makeText(context, "Notes Not Available Now!", Toast.LENGTH_SHORT).show();
-                }
+                openIntend(context, NotesLinksArray.get(position));
             }
-        });
 
+
+        });
     }
+
 
     public static void openIntend(Context context,String link){
         Intent intent = new Intent(context, Notes_HomeWeb_MainActivity.class);

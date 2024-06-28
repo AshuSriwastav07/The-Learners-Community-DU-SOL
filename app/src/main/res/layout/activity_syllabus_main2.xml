@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SyllabusMainActivity">
+    tools:context=".SyllabusFiles.SyllabusMainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,28 +21,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:paddingTop="12dp"
             android:text="@string/Syllabus"
             android:textColor="#05419C"
             android:textSize="@dimen/dp_12"
             android:textStyle="bold" />
 
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/SyllabusAdView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="5dp"
-            android:visibility="visible"
-            app:adSize="BANNER"
-            app:adUnitId="ca-app-pub-7092743628840352/2554892090"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-        </com.google.android.gms.ads.AdView>
         <HorizontalScrollView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingTop="12dp"
+            android:scrollbars="none">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -54,6 +43,8 @@
                     style="@style/basic_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:text="@string/_1st_semester" />
 
@@ -62,6 +53,8 @@
                     style="@style/basic_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:text="@string/_2nd_semester" />
 
@@ -70,6 +63,8 @@
                     style="@style/basic_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:text="@string/_3rd_semester" />
 
@@ -78,6 +73,8 @@
                     style="@style/basic_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:text="@string/_4th_semester" />
 
@@ -86,6 +83,8 @@
                     style="@style/basic_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:text="@string/_5th_semester" />
 
@@ -94,6 +93,8 @@
                     style="@style/basic_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:text="@string/_6th_semester" />
             </LinearLayout>
@@ -101,7 +102,7 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/SyllabusfragmentContainerView"
-            android:name="com.dusol.thelearnerscommunity.Sem1SyllabusFragment"
+            android:name="com.dusol.thelearnerscommunity.SyllabusFiles.Sem1SyllabusFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

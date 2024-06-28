@@ -1,24 +1,14 @@
-package com.dusol.thelearnerscommunity;
+package com.dusol.thelearnerscommunity.SyllabusFiles;
 
 import android.os.Bundle;
 import android.widget.Button;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.dusol.thelearnerscommunity.R;
 
 public class SyllabusMainActivity extends AppCompatActivity {
-
-    private InterstitialAd mInterstitialAd;
-    int click1=0;
-    int NumberOfClickToShowAsd=2;
 
     @Override
     public void onBackPressed() {
@@ -38,7 +28,6 @@ public class SyllabusMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_syllabus_main2);
 
-        load_banner_ads();
 //        get all Buttons
 
         Button sem1Syllabus=findViewById(R.id.sem1Syllabus);
@@ -52,7 +41,7 @@ public class SyllabusMainActivity extends AppCompatActivity {
        sem1Syllabus.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
-                    .replace(R.id.SyllabusfragmentContainerView,Sem1SyllabusFragment.class, null)
+                    .replace(R.id.SyllabusfragmentContainerView, Sem1SyllabusFragment.class, null)
                     .setReorderingAllowed(true)
                     .addToBackStack("Sem1Syllabus") // Name can be null
                     .commit();
@@ -61,7 +50,7 @@ public class SyllabusMainActivity extends AppCompatActivity {
        sem2Syllabus.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
-                    .replace(R.id.SyllabusfragmentContainerView,Sem2SyllabusFragment.class, null)
+                    .replace(R.id.SyllabusfragmentContainerView, Sem2SyllabusFragment.class, null)
                     .setReorderingAllowed(true)
                     .addToBackStack("Sem2Syllabus") // Name can be null
                     .commit();
@@ -70,7 +59,7 @@ public class SyllabusMainActivity extends AppCompatActivity {
        sem3Syllabus.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
-                    .replace(R.id.SyllabusfragmentContainerView,Sem3SyllabusFragment.class, null)
+                    .replace(R.id.SyllabusfragmentContainerView, Sem3SyllabusFragment.class, null)
                     .setReorderingAllowed(true)
                     .addToBackStack("Sem3Syllabus") // Name can be null
                     .commit();
@@ -79,7 +68,7 @@ public class SyllabusMainActivity extends AppCompatActivity {
        sem4Syllabus.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
-                    .replace(R.id.SyllabusfragmentContainerView,Sem4SyllabusFragment.class, null)
+                    .replace(R.id.SyllabusfragmentContainerView, Sem4SyllabusFragment.class, null)
                     .setReorderingAllowed(true)
                     .addToBackStack("Sem4Syllabus") // Name can be null
                     .commit();
@@ -88,7 +77,7 @@ public class SyllabusMainActivity extends AppCompatActivity {
        sem5Syllabus.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
-                    .replace(R.id.SyllabusfragmentContainerView,Sem5SyllabusFragmnt.class, null)
+                    .replace(R.id.SyllabusfragmentContainerView, Sem5SyllabusFragment.class, null)
                     .setReorderingAllowed(true)
                     .addToBackStack("Sem5Syllabus") // Name can be null
                     .commit();
@@ -97,29 +86,12 @@ public class SyllabusMainActivity extends AppCompatActivity {
        sem6Syllabus.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
-                    .replace(R.id.SyllabusfragmentContainerView,Sem6SyllabusFragment.class, null)
+                    .replace(R.id.SyllabusfragmentContainerView, Sem6SyllabusFragment.class, null)
                     .setReorderingAllowed(true)
                     .addToBackStack("Sem6Syllabus") // Name can be null
                     .commit();
         });
 
-
-    }
-
-    private void  load_banner_ads(){
-
-        //add start
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
-            }
-        });
-        AdView mAdView = findViewById(R.id.SyllabusAdView1);
-
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-
-        //add ends
 
     }
 

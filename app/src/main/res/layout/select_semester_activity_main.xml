@@ -54,7 +54,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/button29"
+                    android:id="@+id/CBCS_sem1_notes"
                     style="@style/basic_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -63,13 +63,13 @@
                     android:layout_weight="1"
                     android:drawableTop="@mipmap/img"
                     android:onClick="openSem1Notes"
-                    android:text="@string/_1st_semester"
+                    android:text="@string/semester_1"
                     android:textSize="@dimen/dp_7"
                     app:cornerRadius="25dp" />
 
 
                 <Button
-                    android:id="@+id/button30"
+                    android:id="@+id/CBCS_sem2_notes"
                     style="@style/basic_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -78,7 +78,7 @@
                     android:layout_weight="1"
                     android:drawableTop="@mipmap/img"
                     android:onClick="openSem2Notes"
-                    android:text="@string/_2nd_semester"
+                    android:text="@string/semester_2"
                     android:textSize="@dimen/dp_7"
                     app:cornerRadius="25dp" />
             </LinearLayout>
@@ -89,7 +89,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/button31"
+                    android:id="@+id/CBCS_sem3_notes"
                     style="@style/basic_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -98,12 +98,12 @@
                     android:layout_weight="1"
                     android:drawableTop="@mipmap/img"
                     android:onClick="openSem3Notes"
-                    android:text="@string/_3rd_semester"
+                    android:text="@string/semester_3"
                     android:textSize="@dimen/dp_7"
                     app:cornerRadius="25dp" />
 
                 <Button
-                    android:id="@+id/sem4Notes"
+                    android:id="@+id/CBCS_sem4_notes"
                     style="@style/basic_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -112,7 +112,7 @@
                     android:layout_weight="1"
                     android:drawableTop="@mipmap/img"
                     android:onClick="openSem4Notes"
-                    android:text="@string/_4th_semester"
+                    android:text="@string/semester_4"
                     android:textSize="@dimen/dp_7"
                     app:cornerRadius="25dp" />
             </LinearLayout>
@@ -123,7 +123,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/button33"
+                    android:id="@+id/CBCS_sem5_notes"
                     style="@style/basic_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -132,12 +132,12 @@
                     android:layout_weight="1"
                     android:drawableTop="@mipmap/img"
                     android:onClick="openSem5Notes"
-                    android:text="@string/_5th_semester"
+                    android:text="@string/semester_5"
                     android:textSize="@dimen/dp_7"
                     app:cornerRadius="25dp" />
 
                 <Button
-                    android:id="@+id/button34"
+                    android:id="@+id/CBCS_sem6_notes"
                     style="@style/basic_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -146,7 +146,7 @@
                     android:layout_weight="1"
                     android:drawableTop="@mipmap/img"
                     android:onClick="openSem6Notes"
-                    android:text="@string/_6th_semester"
+                    android:text="@string/semester_6"
                     android:textSize="@dimen/dp_7"
                     app:cornerRadius="25dp" />
             </LinearLayout>
@@ -164,21 +164,6 @@
                 android:onClick="openStore"
                 android:text="Get Premium Notes"
                 android:textSize="@dimen/dp_8" />
-
-            <com.google.android.gms.ads.AdView
-                android:id="@+id/adView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/dp_20"
-                android:visibility="visible"
-                app:adSize="BANNER"
-                app:adUnitId="ca-app-pub-7092743628840352/2554892090"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"></com.google.android.gms.ads.AdView>
 
         </LinearLayout>
 

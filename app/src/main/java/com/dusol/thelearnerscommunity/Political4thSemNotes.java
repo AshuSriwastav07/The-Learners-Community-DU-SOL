@@ -8,44 +8,18 @@
  */
 package com.dusol.thelearnerscommunity;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.google.android.gms.ads.AdError;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.FullScreenContentCallback;
-import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+import com.dusol.thelearnerscommunity.PDFDataCollerction.PDFDataManage;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Political4thSemNotes extends Fragment {
-    private InterstitialAd mInterstitialAd;
-    int click=0;
-    int NumberOfClickToShowAsd=2;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -60,163 +34,9 @@ public class Political4thSemNotes extends Fragment {
         FirebaseAnalytics.getInstance(requireContext()).logEvent("Sem4_Notes_Open", bundle);
 
 
-        loadads();
+        PDFDataManage.NotesManage(getActivity(),getContext(),"StudyNotes/BASem4/PoliticalScience",listView);
 
-        /*Button Unit1=view.findViewById(R.id.unit1);
-        Button Unit2=view.findViewById(R.id.unit2);
-        Button PaidNotes=view.findViewById(R.id.Sem4Political_PaidNotes);
-
-
-        Unit1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                click++;
-                if (mInterstitialAd != null && click % NumberOfClickToShowAsd==0) {
-                    mInterstitialAd.show(getActivity());
-
-                    mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback(){
-                        @Override
-                        public void onAdDismissedFullScreenContent() {
-
-                            // Create an Intent to open the new activity
-                            String link="https://drive.google.com/file/d/1zC1FrvfjweY25kjvTwprPd1TmV6YfxOh/view?usp=sharing";//Unit 1
-                            openIntend(link);
-                            loadads();
-                        }
-
-                        @Override
-                        public void onAdFailedToShowFullScreenContent(AdError adError) {
-                            loadads();
-                        }
-
-
-                    });
-
-                } else {
-
-                    // Create an Intent to open the new activity
-                    String link="https://drive.google.com/file/d/1zC1FrvfjweY25kjvTwprPd1TmV6YfxOh/view?usp=sharing";//Unit 1
-                    openIntend(link);
-                }
-
-
-                // Create an Intent to open the new activity
-
-            }
-        });
-
-        Unit2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                click++;
-                if (mInterstitialAd != null && click % NumberOfClickToShowAsd==0) {
-                    mInterstitialAd.show(getActivity());
-
-                    mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback(){
-                        @Override
-                        public void onAdDismissedFullScreenContent() {
-
-                            /// Create an Intent to open the new activity
-                            String link="https://drive.google.com/file/d/1qUFrrx1q3DDEt1qWVDmBqFs0BRMOdXSK/view?usp=sharing";
-                            openIntend(link);
-                            loadads();
-                        }
-
-                        @Override
-                        public void onAdFailedToShowFullScreenContent(AdError adError) {
-
-                            loadads();
-                        }
-
-
-                    });
-
-                } else {
-
-                    // Create an Intent to open the new activity
-                    String link="https://drive.google.com/file/d/1qUFrrx1q3DDEt1qWVDmBqFs0BRMOdXSK/view?usp=sharing";
-                    openIntend(link);
-                }
-
-
-            }
-        });
-
-        PaidNotes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                click++;
-                if (mInterstitialAd != null && click % NumberOfClickToShowAsd==0) {
-                    mInterstitialAd.show(getActivity());
-
-                    mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback(){
-                        @Override
-                        public void onAdDismissedFullScreenContent() {
-
-                            // Create an Intent to open the new activity
-                            String url = "https://thelearnerscommunitynotes.myinstamojo.com/product/3808616/du-sol-ncweb-4th-semester-dse-political-scie?referred_from=category";
-                            PaidNotesLinkOpen(url);
-                            loadads();
-                        }
-
-                        @Override
-                        public void onAdFailedToShowFullScreenContent(AdError adError) {
-                            loadads();
-                        }
-
-
-                    });
-
-                } else {
-
-                    // Create an Intent to open the new activity
-                    String url = "https://thelearnerscommunitynotes.myinstamojo.com/product/3808616/du-sol-ncweb-4th-semester-dse-political-scie?referred_from=category";
-
-                    PaidNotesLinkOpen(url);
-                }
-
-                // Replace "https://www.example.com" with the URL you want to open in Chrome
-
-            }
-        });
-
-        Button WatchVideos=view.findViewById(R.id.Watch_Videos);
-        WatchVideos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Define the YouTube channel URL
-                String playlistUrl = "https://youtube.com/playlist?list=PL6Rby-wV4zjxEbibcOOm5MzAUebIX8rkG&si=ItFYBw7QKWENVWTt";
-
-                // Create an Intent with the ACTION_VIEW action and the YouTube channel URL
-                Uri youtubeUri = Uri.parse(playlistUrl);
-                Intent intent = new Intent(Intent.ACTION_VIEW, youtubeUri);
-
-                // Set the package name of the YouTube app
-                intent.setPackage("com.google.android.youtube");
-
-                startActivity(intent);}
-        });
-
-*/
-
-        //Ads Start Here
-        MobileAds.initialize(getActivity(), new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
-
-        AdView adView = view.findViewById(R.id.adView);
-
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
-
-        //Ads Ends Here
-
-
+        /*
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference("StudyNotes/BASem4/PoliticalScience");
         List<String> sem4PolSciNotesName = new ArrayList<>();
@@ -312,12 +132,14 @@ public class Political4thSemNotes extends Fragment {
         });
 
 
+         */
 
 
         return view;
 
     }
 
+    /*
 
     public void loadads(){
         MobileAds.initialize(getActivity(), new OnInitializationCompleteListener() {
@@ -364,5 +186,5 @@ public class Political4thSemNotes extends Fragment {
         } else {
             Toast.makeText(requireContext(), "No web browser found to open the URL.", Toast.LENGTH_SHORT).show();
         }
-    }
+    }*/
 }

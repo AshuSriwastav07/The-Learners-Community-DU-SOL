@@ -13,6 +13,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 
+import com.dusol.thelearnerscommunity.SyllabusFiles.Syllabus_Web_MainActivity;
+
 public class Datesheet_DailogBox extends DialogFragment {
 
     // Variables to store links and title

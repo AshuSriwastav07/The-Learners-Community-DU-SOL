@@ -139,7 +139,7 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerView"
-            android:name="com.dusol.thelearnerscommunity.semester1QuestionPapers"
+            android:name="com.dusol.thelearnerscommunity.QuestionPapers.semester1QuestionPapers"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:layout="@layout/fragment_semester1_question_papers" />

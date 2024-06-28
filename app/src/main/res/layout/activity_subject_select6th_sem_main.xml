@@ -16,7 +16,7 @@
     android:layout_height="match_parent"
     android:background="@color/background_color_night"
     tools:context="com.dusol.thelearnerscommunity.SubjectSelect_6thSem_MainActivity">
-
+    <!--Sem 6 CBCS Notes File-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -142,7 +142,7 @@
         </HorizontalScrollView>
 
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragmentContainerView2"
+            android:id="@+id/CBCS_Semester6_Notes_Fragment_Container"
             android:name="com.dusol.thelearnerscommunity.Political6thSemNotes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

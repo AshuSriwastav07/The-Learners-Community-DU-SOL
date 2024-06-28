@@ -8,41 +8,18 @@
  */
 package com.dusol.thelearnerscommunity;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.google.android.gms.ads.AdError;
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
+import com.dusol.thelearnerscommunity.PDFDataCollerction.PDFDataManage;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.FullScreenContentCallback;
-import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 
 
 
@@ -72,51 +49,14 @@ public class EducationSec6thSemNotes extends Fragment {
         bundle.putString("Sem6_Notes", "Sem6_Notes_Open");
         FirebaseAnalytics.getInstance(requireContext()).logEvent("Sem6_Notes_Open", bundle);
 
+        PDFDataManage.NotesManage(getActivity(),getContext(),"StudyNotes/BASem6/EducationSEC",listView);
 
-        loadads();
-        MobileAds.initialize(getActivity(), new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-
-        });
-
-        AdView adView = view.findViewById(R.id.adView);
-//        AdView mAdView1 = view.findViewById(R.id.adView2);
-
-        adView.setAdListener(new AdListener() {
-            @Override
-            public void onAdLoaded() {
-                // Ad has been successfully loaded, perform other work here
-                // For example, you can start an activity or update UI elements
-            }
-
-            @Override
-            public void onAdFailedToLoad(LoadAdError adError) {
-                // Ad failed to load, handle the error if needed
-            }
-        });
-
-        //Start banner ads
-
-        AdView mAdView = view.findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-
-        //ends banner ads
-        //Ends Here
-
-
-       /* Button chapter1=view.findViewById(R.id.chapter1);
+        /* Button chapter1=view.findViewById(R.id.chapter1);
         Button chapter2=view.findViewById(R.id.chapter2);
         Button chapter3=view.findViewById(R.id.chapter3);
         Button chapter4=view.findViewById(R.id.chapter4);
         Button PaidNotes=view.findViewById(R.id.PaidNotesPDF);*/
-
-
-
-
- /*       chapter1.setOnClickListener(new View.OnClickListener() {
+        /*       chapter1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 click++;
@@ -274,9 +214,7 @@ public class EducationSec6thSemNotes extends Fragment {
         });
 */
 
-
-
-        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        /*        final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference("StudyNotes/BASem6/EducationSEC");
         List<String> sem6EducationSCENotesName = new ArrayList<>();
         List<String> sem6EducationSECNotesLinks = new ArrayList<>();
@@ -365,38 +303,12 @@ public class EducationSec6thSemNotes extends Fragment {
                     Toast.makeText(requireContext(), "Notes Not Available Now!", Toast.LENGTH_SHORT).show();
                 }
             }
-        });
+        });*/
 
         return view;
     }
 
-    public void loadads(){
-        MobileAds.initialize(getActivity(), new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {}
-        });
-        AdRequest adRequest = new AdRequest.Builder().build();
-
-        InterstitialAd.load(getActivity(),"ca-app-pub-7092743628840352/2084823075", adRequest,
-                new InterstitialAdLoadCallback() {
-                    @Override
-                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
-                        // The mInterstitialAd reference will be null until
-                        // an ad is loaded.
-                        mInterstitialAd = interstitialAd;
-//                        Log.i(TAG, "onAdLoaded");
-                    }
-
-                    @Override
-                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                        // Handle the error
-//                        Log.d(TAG, loadAdError.toString());
-                        mInterstitialAd = null;
-                    }
-                });
-    }
-
-    public void openIntend(String link){
+    /*    public void openIntend(String link){
         Intent intent = new Intent(getActivity(), Notes_HomeWeb_MainActivity.class);
         intent.putExtra("link", link);
         startActivity(intent);
@@ -413,5 +325,5 @@ public class EducationSec6thSemNotes extends Fragment {
         } else {
             Toast.makeText(requireContext(), "No web browser found to open the URL.", Toast.LENGTH_SHORT).show();
         }
-    }
+    }*/
 }

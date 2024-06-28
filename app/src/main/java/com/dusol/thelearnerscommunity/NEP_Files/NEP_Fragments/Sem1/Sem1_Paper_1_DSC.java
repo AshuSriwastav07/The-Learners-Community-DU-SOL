@@ -1,87 +1,50 @@
-package com.dusol.thelearnerscommunity;
+package com.dusol.thelearnerscommunity.NEP_Files.NEP_Fragments.Sem1;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+import com.dusol.thelearnerscommunity.PDFDataCollerction.PDFDataManage;
+import com.dusol.thelearnerscommunity.R;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
-import java.util.List;
+public class Sem1_Paper_1_DSC extends Fragment {
 
-public class ancient1stSemNotes extends Fragment {
-
-
-    private InterstitialAd mInterstitialAd;
-    int click=0;
-    int NumberOfClickToShowAsd=1;
-    private AdView adView;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view=inflater.inflate(R.layout.fragment_ancient1st_sem, container, false);
+        View view=inflater.inflate(R.layout.sem1_nep_paper1_dsc_fragment, container, false);
 
         Bundle bundle = new Bundle();
-        bundle.putString("Sem1_Notes", "Sem1_Notes_Open");
-        FirebaseAnalytics.getInstance(requireContext()).logEvent("Sem1_Notes_Open", bundle);
+        bundle.putString("Sem1_NEP_Notes", "Sem1_NEP_Notes_Open");
+        FirebaseAnalytics.getInstance(requireContext()).logEvent("Sem1_NEPNotes_Open", bundle);
+
+        ListView listView = view.findViewById(R.id.sem1Paper1ListView);
+        PDFDataManage.NotesManage(getActivity(),getContext(),"NEP_Notes/sem1/paper1",listView);
+        return view;
 
 
-        loadads();
-        MobileAds.initialize(getActivity(), new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-
-        });
-        ListView listView = view.findViewById(R.id.sem1HistoryAncientSocietyNotesList);
-
-        AdView adView = view.findViewById(R.id.adView);
-
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
-
-
-
-        final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference ref = database.getReference("StudyNotes/BASem1/Ancient Society");
-        List<String> sem1NotesAncientHisName = new ArrayList<>();
+       /* List<String> sem1NotesAncientHisName = new ArrayList<>();
         List<String> sem1NotesAncientHisLinks = new ArrayList<>();
+*/
 
-        ref.addValueEventListener(new ValueEventListener() {
+
+
+       /* ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
                     String key = childSnapshot.getKey();
                     String value = childSnapshot.getValue(String.class);
-                    Log.d("DataBaseLinks", value);
-                    Log.d("DataBaseLinks", key);
+                   *//* Log.d("DataBaseLinks", value);
+                    Log.d("DataBaseLinks", key);*//*
 
                     sem1NotesAncientHisName.add(key);
                     sem1NotesAncientHisLinks.add(value);
@@ -116,17 +79,19 @@ public class ancient1stSemNotes extends Fragment {
                 startActivity(intent);
 
                 } else if (sem1NotesAncientHisLinks.get(position).contains("myinstamojo")) {
-                    Uri youtubeUri = Uri.parse(sem1NotesAncientHisLinks.get(position));
-                    Intent intent = new Intent(Intent.ACTION_VIEW, youtubeUri);
+                    Uri paidNotesLink = Uri.parse(sem1NotesAncientHisLinks.get(position));
+                    Intent intent = new Intent(Intent.ACTION_VIEW, paidNotesLink);
                     startActivity(intent);
 
-                }else {
+                }else if(sem1NotesAncientHisLinks.get(position).contains("N/A")){
+                    Toast.makeText(requireContext(), "Notes Will Available Soon!", Toast.LENGTH_SHORT).show();
 
-
+                }
+                else {
                     openIntend(sem1NotesAncientHisLinks.get(position));
                 }
             }
-        });
+        });*/
 
 
         //Ends Here
@@ -253,15 +218,12 @@ public class ancient1stSemNotes extends Fragment {
                 // Create an Intent with the ACTION_VIEW action and the YouTube channel URL
         });*/
 
-        return view;
+
     }
 
 
-    public void loadads(){
-        MobileAds.initialize(getActivity(), new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {}
-        });
+    /*public void loadads(){
+        MobileAds.initialize(getActivity(), initializationStatus -> {});
         AdRequest adRequest = new AdRequest.Builder().build();
 
         InterstitialAd.load(getActivity(),"ca-app-pub-7092743628840352/8393735655", adRequest,
@@ -301,5 +263,5 @@ public class ancient1stSemNotes extends Fragment {
         } else {
             Toast.makeText(requireContext(), "No web browser found to open the URL.", Toast.LENGTH_SHORT).show();
         }
-    }
+    }*/
 }

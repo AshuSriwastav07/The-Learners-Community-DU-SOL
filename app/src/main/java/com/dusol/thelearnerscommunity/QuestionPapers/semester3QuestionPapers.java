@@ -7,6 +7,7 @@
  * without the explicit permission of Ashu Sriwastav is prohibited.
  */
 
+
 /*
 
 package com.dusol.thelearnerscommunity;
@@ -33,27 +34,23 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
-public class semester2QuestionPapers extends Fragment {
+public class semester3QuestionPapers extends Fragment {
     private InterstitialAd mInterstitialAd;
     int click1=1;
     int NumberOfClickToShowAsd=2;
+    private final String[] links={
+            "https://drive.google.com/file/d/14WbxIy0S9m0FVcUoiNOV3jL5vIVKporN/view?usp=sharing",
+            "https://drive.google.com/file/d/160y1x_IhZmIDcarLiWNYcSIUGcIpUFZZ/view?usp=sharing",
+            "https://drive.google.com/file/d/18XFPwOkDfRn9CiIXt32f-GWRhK3YyW8r/view?usp=sharing",
+            "https://drive.google.com/file/d/198-xPjoSidBNyOlCVKOHRtvCNgMe3Qzi/view?usp=sharing",
+            "https://drive.google.com/file/d/1VTerXC4728j837Ih7CH-Tu0b7ERVd-Vt/view?usp=sharing",
 
- private final String[] links={
-         "https://drive.google.com/file/d/1Gad7KqVNmf49oD-0WvvQ_a2wmNCIrxgc/view?usp=sharing",
-         "https://drive.google.com/file/d/1WN7pvpK_2Se01Q-zRlLg2eKNOD_iFzYO/view?usp=sharing",
-         "https://drive.google.com/file/d/18o6QcmBvG6wpyVeLcXGVA4GOlaqN3S4I/view?usp=sharing",
-         "https://drive.google.com/file/d/1-8wU-DLc-AI_OTmRyJMDCTCQnc3xFzA8/view?usp=sharing",
-         "https://drive.google.com/file/d/1wMJKS5tP2RvjkhQDp1Dsu-3nUesHpuET/view?usp=sharing",
-         "https://drive.google.com/file/d/1n92kfWoelHEZvwyh05B5P_O1_ccqbcBn/view?usp=sharing",
-         "https://drive.google.com/file/d/15E_rQDQBkrsgd4E5kwJ4S6e3F-uMwFUv/view?usp=sharing",
-
-
- };
+    }; //Add Links Here
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view=inflater.inflate(R.layout.fragment_semester2_question_papers, container, false);
+        View view =  inflater.inflate(R.layout.fragment_semester3_question_papers, container, false);
 
         //Add start
         MobileAds.initialize(getActivity(), new OnInitializationCompleteListener() {
@@ -66,62 +63,49 @@ public class semester2QuestionPapers extends Fragment {
         mAdView.loadAd(adRequest);
 
         //add ends
-        Button qp1 = view.findViewById(R.id.qp1);
+
+        Button qp1 = view.findViewById(R.id.qp1); //Make Button Here
         Button qp2 = view.findViewById(R.id.qp2);
         Button qp3 = view.findViewById(R.id.qp3);
         Button qp4 = view.findViewById(R.id.qp4);
         Button qp5 = view.findViewById(R.id.qp5);
-        Button qp6 = view.findViewById(R.id.qp6);
-        Button qp7 = view.findViewById(R.id.qp7);
 
-        qp1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startads(links,0);
-            }
-        });
-        qp2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startads(links,1);
+        //Define This function for every button and use button name
+        qp1.setOnClickListener(v -> {
+            // Create an Intent to open the new activity
+            String link=links[0];
+            openIntend(link);
 
-            }
         });
-        qp3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startads(links,2);
+        //Define This function for every button and use button name
+        qp2.setOnClickListener(v -> {
+            // Create an Intent to open the new activity
+            String link=links[1];
+            openIntend(link);
 
-            }
         });
-        qp4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startads(links,3);
+        //Define This function for every button and use button name
+        qp3.setOnClickListener(v -> {
+            // Create an Intent to open the new activity
+            String link=links[2];
+            openIntend(link);
 
-            }
         });
-        qp5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startads(links,4);
+        //Define This function for every button and use button name
+        qp4.setOnClickListener(v -> {
+            // Create an Intent to open the new activity
+            String link=links[3];
+            openIntend(link);
 
-            }
         });
-        qp6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startads(links,5);
+        //Define This function for every button and use button name
+        qp5.setOnClickListener(v -> {
+            // Create an Intent to open the new activity
+            String link=links[4];
+            openIntend(link);
+        });
 
-            }
-        });
-        qp7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startads(links,6);
 
-            }
-        });
         return view;
     }
     public void loadads(){
@@ -206,68 +190,38 @@ public class semester2QuestionPapers extends Fragment {
 }*/
 
 
-package com.dusol.thelearnerscommunity;
+package com.dusol.thelearnerscommunity.QuestionPapers;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.google.android.gms.ads.AdError;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.FullScreenContentCallback;
-import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.dusol.thelearnerscommunity.PDFDataCollerction.PDFDataManage;
+import com.dusol.thelearnerscommunity.R;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-
-public class semester2QuestionPapers extends Fragment {
+public class semester3QuestionPapers extends Fragment {
 
     private InterstitialAd mInterstitialAd;
     int click1=2;
     int NumberOfClickToShowAsd=1;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_semester2_question_papers, container, false);
-        ListView listView = view.findViewById(R.id.sem2QPListView);
+        View view = inflater.inflate(R.layout.fragment_semester3_question_papers, container, false);
+        ListView listView = view.findViewById(R.id.sem3QPListView);
 
-        //Add start
-        com.google.android.gms.ads.MobileAds.initialize(getActivity(), new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
-        AdView mAdView = view.findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-//Ads Ends
-
+        PDFDataManage.NotesManage(getActivity(),getContext(),"QP_Links/sem3",listView);
+        /*
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference ref = database.getReference("QP_Links/sem2");
-        List<String> sem2QpName = new ArrayList<>();
-        List<String> sem2QpLinks = new ArrayList<>();
+        DatabaseReference ref = database.getReference("QP_Links/sem3");
+        List<String> sem3QpName = new ArrayList<>();
+        List<String> sem3QpLinks = new ArrayList<>();
 
         ref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -278,13 +232,13 @@ public class semester2QuestionPapers extends Fragment {
                     Log.d("DataBaseLinks", value);
                     Log.d("DataBaseLinks", key);
 
-                    sem2QpName.add(key);
-                    sem2QpLinks.add(value);
+                    sem3QpName.add(key);
+                    sem3QpLinks.add(value);
                 }
 
-                if(sem2QpName.isEmpty()){
+                if(sem3QpName.isEmpty()){
                 }else{
-                    ArrayAdapter<String> itemsAdapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_list_item_1, sem2QpName);
+                    ArrayAdapter<String> itemsAdapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_list_item_1, sem3QpName);
                     listView.setAdapter(itemsAdapter);
                 }
 
@@ -299,14 +253,14 @@ public class semester2QuestionPapers extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                start_Ads(sem2QpLinks.get(position),click1);
+                start_Ads(sem3QpLinks.get(position),click1);
             }
         });
-
+*/
         return view;
     }
 
-
+/*
     public void openIntend(String link){
         if(!Objects.equals(link, "N/A")) {
             Intent intent = new Intent(getActivity(), QP_Web_Page_MainActivity.class);
@@ -322,7 +276,7 @@ public class semester2QuestionPapers extends Fragment {
         MobileAds.initialize(requireActivity(), initializationStatus -> {});
         AdRequest adRequest = new AdRequest.Builder().build();
 
-        InterstitialAd.load(requireActivity(),"ca-app-pub-7092743628840352/2084823075", adRequest,
+        InterstitialAd.load(requireActivity(),"ca-app-pub-7092743628840352/8393735655", adRequest,
                 new InterstitialAdLoadCallback() {
                     @Override
                     public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
@@ -357,7 +311,7 @@ public class semester2QuestionPapers extends Fragment {
 
                 @Override
                 public void onAdDismissedFullScreenContent() {
-//                        startActivity(new Intent(getApplicationContext(),Syllabus_MainActivity.class));
+//                        startActivity(new Intent(getApplicationContext(),Syllabus_MainActivity_NotInUse.class));
                     loadads();
                     openIntend(link);
 
@@ -390,6 +344,6 @@ public class semester2QuestionPapers extends Fragment {
         }
 
 
-    }
+    }*/
 
 }

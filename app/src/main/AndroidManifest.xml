@@ -26,10 +26,19 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="33">
         <activity
+            android:name=".NEP_Files.NEP_Sem2_MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NEP_Files.NEP_Sem1_MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NEP_Files.NEP_HomePage"
+            android:exported="false" />
+        <activity
             android:name=".SubjectSelect_2ndSem_MainActivity"
             android:exported="false" />
         <activity
-            android:name=".SyllabusMainActivity"
+            android:name=".SyllabusFiles.SyllabusMainActivity"
             android:exported="false" />
         <activity
             android:name=".study_materials"
@@ -79,10 +88,10 @@
             android:name=".DU_SOL_NOTES__MainActivity"
             android:exported="false" />
         <activity
-            android:name=".Syllabus_Web_MainActivity"
+            android:name=".SyllabusFiles.Syllabus_Web_MainActivity"
             android:exported="false" />
         <activity
-            android:name=".Syllabus_MainActivity"
+            android:name=".SyllabusFiles.Syllabus_MainActivity_NotInUse"
             android:exported="false" />
         <activity
             android:name=".Notes_HomeWeb_MainActivity"

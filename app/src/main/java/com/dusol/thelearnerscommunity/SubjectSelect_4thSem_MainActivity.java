@@ -48,10 +48,10 @@ public class SubjectSelect_4thSem_MainActivity extends AppCompatActivity {
         Button btnEduFragement=findViewById(R.id.Edu4thSem);
         Button btnEngFragement=findViewById(R.id.Eng4thSem);
         Button sem4ExamNotes=findViewById(R.id.Sem4ExamNotes);
-        ImageButton NavHome = (ImageButton)findViewById(R.id.navbarHome);
-        ImageButton NavBooks = (ImageButton)findViewById(R.id.navbarBooks);
-        ImageButton NavStudents = (ImageButton)findViewById(R.id.navbarStudent);
-        ImageButton NavVideos = (ImageButton)findViewById(R.id.navbarVideos);
+        ImageButton NavHome = findViewById(R.id.navbarHome);
+        ImageButton NavBooks = findViewById(R.id.navbarBooks);
+        ImageButton NavStudents = findViewById(R.id.navbarStudent);
+        ImageButton NavVideos = findViewById(R.id.navbarVideos);
 
 
 
@@ -111,7 +111,7 @@ public class SubjectSelect_4thSem_MainActivity extends AppCompatActivity {
         btnTransFragement.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView2, TranslationStudiesNotes.class, null)
+                    .replace(R.id.CBCS_Semester4_Notes_Fragment_Container, TranslationStudiesNotes.class, null)
                     .setReorderingAllowed(true)
                     .addToBackStack("name") // Name can be null
                     .commit();
@@ -123,7 +123,7 @@ public class SubjectSelect_4thSem_MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 fragmentManager.beginTransaction()
-                        .replace(R.id.fragmentContainerView2, History4thSemNotes.class, null)
+                        .replace(R.id.CBCS_Semester4_Notes_Fragment_Container, History4thSemNotes.class, null)
                         .setReorderingAllowed(true)
                         .addToBackStack("name") // Name can be null
                         .commit();
@@ -135,7 +135,7 @@ public class SubjectSelect_4thSem_MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 fragmentManager.beginTransaction()
-                        .replace(R.id.fragmentContainerView2, Political4thSemNotes.class, null)
+                        .replace(R.id.CBCS_Semester4_Notes_Fragment_Container, Political4thSemNotes.class, null)
                         .setReorderingAllowed(true)
                         .addToBackStack("name") // Name can be null
                         .commit();
@@ -147,7 +147,7 @@ public class SubjectSelect_4thSem_MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 fragmentManager.beginTransaction()
-                        .replace(R.id.fragmentContainerView2, Hindi4thSemNotes.class, null)
+                        .replace(R.id.CBCS_Semester4_Notes_Fragment_Container, Hindi4thSemNotes.class, null)
                         .setReorderingAllowed(true)
                         .addToBackStack("name") // Name can be null
                         .commit();
@@ -159,7 +159,7 @@ public class SubjectSelect_4thSem_MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 fragmentManager.beginTransaction()
-                        .replace(R.id.fragmentContainerView2, Edu4thSemNotes.class, null)
+                        .replace(R.id.CBCS_Semester4_Notes_Fragment_Container, Edu4thSemNotes.class, null)
                         .setReorderingAllowed(true)
                         .addToBackStack("name") // Name can be null
                         .commit();
@@ -171,7 +171,7 @@ public class SubjectSelect_4thSem_MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 fragmentManager.beginTransaction()
-                        .replace(R.id.fragmentContainerView2, Eng4thSemNotes.class, null)
+                        .replace(R.id.CBCS_Semester4_Notes_Fragment_Container, Eng4thSemNotes.class, null)
                         .setReorderingAllowed(true)
                         .addToBackStack("name") // Name can be null
                         .commit();
@@ -183,7 +183,7 @@ public class SubjectSelect_4thSem_MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 fragmentManager.beginTransaction()
-                        .replace(R.id.fragmentContainerView2, Sem4ExamNotes.class, null)
+                        .replace(R.id.CBCS_Semester4_Notes_Fragment_Container, Sem4ExamNotes.class, null)
                         .setReorderingAllowed(true)
                         .addToBackStack("name") // Name can be null
                         .commit();

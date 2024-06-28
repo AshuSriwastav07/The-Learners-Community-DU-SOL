@@ -15,10 +15,6 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
 public class connect_with_us_MainActivity extends AppCompatActivity {
 
 
@@ -26,7 +22,6 @@ public class connect_with_us_MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connect_with_us_main);
-        loadads();
 
         ImageButton NavHome = findViewById(R.id.navbarHome);
         ImageButton NavBooks = findViewById(R.id.navbarBooks);
@@ -190,16 +185,5 @@ public class connect_with_us_MainActivity extends AppCompatActivity {
 
 }
 
-    public void  loadads(){
 
-        //add start
-        MobileAds.initialize(this, initializationStatus -> {
-        });
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-
-        //add ends
-
-    }
 }

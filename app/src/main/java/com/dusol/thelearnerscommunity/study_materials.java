@@ -10,6 +10,7 @@ public class study_materials extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        super.onBackPressed();
         if (getFragmentManager().getBackStackEntryCount() > 0) {
             // If there are fragments in the back stack, clear it
             getFragmentManager().popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);

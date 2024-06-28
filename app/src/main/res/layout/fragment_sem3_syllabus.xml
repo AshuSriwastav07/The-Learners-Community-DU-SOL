@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Sem3SyllabusFragment">
+    tools:context=".SyllabusFiles.Sem3SyllabusFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,6 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:fontFamily="@font/abeezee"
             android:text="@string/semester_3"
             android:textSize="@dimen/dp_10" />
 
@@ -22,9 +23,11 @@
             android:id="@+id/sem3SyllabusList"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/borderset"
             android:divider="@color/black"
-            android:dividerHeight="2dp" />
+            android:dividerHeight="2dp"
+            android:footerDividersEnabled="true"
+            android:headerDividersEnabled="true"
+            android:padding="15dp" />
 
 
     </LinearLayout>

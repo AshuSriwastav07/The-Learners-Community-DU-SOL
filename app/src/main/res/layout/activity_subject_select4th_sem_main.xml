@@ -18,7 +18,7 @@
     android:scrollbarStyle="outsideInset"
     app:layout_scrollEffect="none"
     tools:context="com.dusol.thelearnerscommunity.SubjectSelect_4thSem_MainActivity">
-
+    <!--Sem 4 CBCS Notes File-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -141,7 +141,7 @@
         </HorizontalScrollView>
 
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragmentContainerView2"
+            android:id="@+id/CBCS_Semester4_Notes_Fragment_Container"
             android:name="com.dusol.thelearnerscommunity.TranslationStudiesNotes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -8,46 +8,18 @@
  */
 package com.dusol.thelearnerscommunity;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.google.android.gms.ads.AdError;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.FullScreenContentCallback;
-import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+import com.dusol.thelearnerscommunity.PDFDataCollerction.PDFDataManage;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class History4thSemNotes extends Fragment {
-
-    private  InterstitialAd mInterstitialAd;
-    int click=0;
-    int NumberOfClickToShowAsd=2;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -61,7 +33,9 @@ public class History4thSemNotes extends Fragment {
         bundle.putString("Sem4_Notes", "Sem4_Notes_Open");
         FirebaseAnalytics.getInstance(requireContext()).logEvent("Sem4_Notes_Open", bundle);
 
-        loadads();
+
+        PDFDataManage.NotesManage(getActivity(),getContext(),"StudyNotes/BASem4/IndanHistory",listView);
+
         /*Button Sem4His1 = view.findViewById(R.id.Sem4_History_Unit1);
         Button Sem4His2 = view.findViewById(R.id.Sem4_History_Unit2);
         Button Sem4His3 = view.findViewById(R.id.Sem4_History_Unit3);
@@ -71,8 +45,6 @@ public class History4thSemNotes extends Fragment {
 //        Button Sem4His6 = view.findViewById(R.id.Sem4_History_Unit6);
 //        Button Sem4His7 = view.findViewById(R.id.Sem4_History_Unit7);
 //        Button Sem4His8 = view.findViewById(R.id.Sem4_History_Unit8);*/
-
-
 
         /*
         Sem4His1.setOnClickListener(new View.OnClickListener() {
@@ -442,19 +414,7 @@ public class History4thSemNotes extends Fragment {
         }); //Function Ends
 */
 
-
-//Ads Start Here
-        MobileAds.initialize(getActivity(), new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
-
-        AdView adView = view.findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
-
-
+        /*
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference("StudyNotes/BASem4/IndanHistory");
         List<String> sem4NotesHistoryName = new ArrayList<>();
@@ -551,56 +511,8 @@ public class History4thSemNotes extends Fragment {
 
         adView.loadAd(adRequest);
 
-
-
-
+         */
 
         return view;
-    }
-    public void loadads(){
-        MobileAds.initialize(getActivity(), new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {}
-        });
-        AdRequest adRequest = new AdRequest.Builder().build();
-
-        InterstitialAd.load(getActivity(),"ca-app-pub-7092743628840352/8393735655", adRequest,
-                new InterstitialAdLoadCallback() {
-                    @Override
-                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
-                        // The mInterstitialAd reference will be null until
-                        // an ad is loaded.
-                        mInterstitialAd = interstitialAd;
-//                        Log.i(TAG, "onAdLoaded");
-                    }
-
-                    @Override
-                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                        // Handle the error
-//                        Log.d(TAG, loadAdError.toString());
-                        mInterstitialAd = null;
-                    }
-                });
-    }
-
-    public void openIntend(String link){
-        Intent intent = new Intent(getActivity(), Notes_HomeWeb_MainActivity.class);
-        intent.putExtra("link", link);
-        startActivity(intent);
-        loadads();
-    }
-
-    public void PaidNotesLinkOpen(String url){
-        // Create an intent with ACTION_VIEW and the URL as the data
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-
-        // Check if there is a web browser (e.g., Chrome) available to handle the intent
-        if (intent.resolveActivity(requireActivity().getPackageManager()) != null) {
-            // Start the activity to open the URL in the browser
-            startActivity(intent);
-        } else {
-            Toast.makeText(requireContext(), "No web browser found to open the URL.", Toast.LENGTH_SHORT).show();
-        }
-        loadads();
     }
 }

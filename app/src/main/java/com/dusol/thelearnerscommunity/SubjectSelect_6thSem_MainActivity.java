@@ -44,10 +44,10 @@ public class SubjectSelect_6thSem_MainActivity extends AppCompatActivity {
         Button sem6EducationSec=findViewById(R.id.sem6EducationSEC);
         Button sem6PoliticalSEC=findViewById(R.id.sem6PoliticalSEC);
         Button sem6ExamNotes=findViewById(R.id.sem6ExamNotes);
-        ImageButton NavHome = (ImageButton)findViewById(R.id.navbarHome);
-        ImageButton NavBooks = (ImageButton)findViewById(R.id.navbarBooks);
-        ImageButton NavStudents = (ImageButton)findViewById(R.id.navbarStudent);
-        ImageButton NavVideos = (ImageButton)findViewById(R.id.navbarVideos);
+        ImageButton NavHome = findViewById(R.id.navbarHome);
+        ImageButton NavBooks = findViewById(R.id.navbarBooks);
+        ImageButton NavStudents =findViewById(R.id.navbarStudent);
+        ImageButton NavVideos = findViewById(R.id.navbarVideos);
 
 
 
@@ -104,7 +104,7 @@ public class SubjectSelect_6thSem_MainActivity extends AppCompatActivity {
         sem6PolSci.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView2, Political6thSemNotes.class, null)
+                    .replace(R.id.CBCS_Semester6_Notes_Fragment_Container, Political6thSemNotes.class, null)
                     .setReorderingAllowed(true)
                     .addToBackStack("name") // Name can be null
                     .commit();
@@ -113,7 +113,7 @@ public class SubjectSelect_6thSem_MainActivity extends AppCompatActivity {
         sem6History.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView2, History6thSemNotes.class, null)
+                    .replace(R.id.CBCS_Semester6_Notes_Fragment_Container, History6thSemNotes.class, null)
                     .setReorderingAllowed(true)
                     .addToBackStack("name") // Name can be null
                     .commit();
@@ -121,7 +121,7 @@ public class SubjectSelect_6thSem_MainActivity extends AppCompatActivity {
         sem6EnglishGE.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView2, EnglishGE6thSemNotes.class, null)
+                    .replace(R.id.CBCS_Semester6_Notes_Fragment_Container, EnglishGE6thSemNotes.class, null)
                     .setReorderingAllowed(true)
                     .addToBackStack("name") // Name can be null
                     .commit();
@@ -129,7 +129,7 @@ public class SubjectSelect_6thSem_MainActivity extends AppCompatActivity {
         sem6HistorySec.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView2, HistorySec6thSemNotes.class, null)
+                    .replace(R.id.CBCS_Semester6_Notes_Fragment_Container, HistorySec6thSemNotes.class, null)
                     .setReorderingAllowed(true)
                     .addToBackStack("name") // Name can be null
                     .commit();
@@ -137,7 +137,7 @@ public class SubjectSelect_6thSem_MainActivity extends AppCompatActivity {
         sem6EducationSec.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView2, EducationSec6thSemNotes.class, null)
+                    .replace(R.id.CBCS_Semester6_Notes_Fragment_Container, EducationSec6thSemNotes.class, null)
                     .setReorderingAllowed(true)
                     .addToBackStack("name") // Name can be null
                     .commit();
@@ -146,7 +146,7 @@ public class SubjectSelect_6thSem_MainActivity extends AppCompatActivity {
         sem6PoliticalSEC.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView2, PoliticalSciSEC_6thSemNotes.class, null)
+                    .replace(R.id.CBCS_Semester6_Notes_Fragment_Container, PoliticalSciSEC_6thSemNotes.class, null)
                     .setReorderingAllowed(true)
                     .addToBackStack("name") // Name can be null
                     .commit();
@@ -154,7 +154,7 @@ public class SubjectSelect_6thSem_MainActivity extends AppCompatActivity {
         sem6ExamNotes.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView2, Sem6ExamAllNotes.class, null)
+                    .replace(R.id.CBCS_Semester6_Notes_Fragment_Container, Sem6ExamAllNotes.class, null)
                     .setReorderingAllowed(true)
                     .addToBackStack("name") // Name can be null
                     .commit();

@@ -51,6 +51,7 @@ public class Notes_HomeWeb_MainActivity extends AppCompatActivity {
 
         webView.setWebViewClient(new WebViewClient());
 
+        webView.getSettings().getBuiltInZoomControls();
         // Enable JavaScript and other settings as needed
         webView.getSettings().setJavaScriptEnabled(true);
 

@@ -15,7 +15,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:textDirection="firstStrong"
-    tools:context="com.dusol.thelearnerscommunity.Syllabus_MainActivity"
+    tools:context="com.dusol.thelearnerscommunity.SyllabusFiles.Syllabus_MainActivity_NotInUse"
     android:background="@color/background_color_night"
     >
 
@@ -177,21 +177,6 @@
                 android:textStyle="bold|italic"
                 tools:ignore="DuplicateSpeakableTextCheck" />
 
-            <com.google.android.gms.ads.AdView
-                android:id="@+id/adView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="5dp"
-                android:visibility="visible"
-                app:adSize="BANNER"
-                app:adUnitId="ca-app-pub-7092743628840352/1241810429"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-            </com.google.android.gms.ads.AdView>
-
             <!--            2nd Sem Syllabus -->
 
             <TextView
@@ -292,21 +277,6 @@
                 android:text="@string/b.com_hons"
                 android:textSize="@dimen/dp_8"
                 android:textStyle="bold|italic" />
-
-            <com.google.android.gms.ads.AdView
-                android:id="@+id/adView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="5dp"
-                android:visibility="visible"
-                app:adSize="BANNER"
-                app:adUnitId="ca-app-pub-7092743628840352/2554892090"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-            </com.google.android.gms.ads.AdView>
 
             <!--            3rd Sem Syllabus-->
 
@@ -413,21 +383,6 @@
                 android:textSize="@dimen/dp_8"
                 android:textStyle="bold|italic"
                 tools:ignore="DuplicateSpeakableTextCheck" />
-
-            <com.google.android.gms.ads.AdView
-                android:id="@+id/adView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="5dp"
-                android:visibility="visible"
-                app:adSize="BANNER"
-                app:adUnitId="ca-app-pub-7092743628840352/1241810429"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-            </com.google.android.gms.ads.AdView>
 
             <!--            4th Sem Syllabus-->
             <TextView
@@ -548,21 +503,6 @@
                 android:textSize="@dimen/dp_8"
                 android:textStyle="bold|italic" />
 
-            <com.google.android.gms.ads.AdView
-                android:id="@+id/adView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="5dp"
-                android:visibility="visible"
-                app:adSize="BANNER"
-                app:adUnitId="ca-app-pub-7092743628840352/4552130355"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-            </com.google.android.gms.ads.AdView>
-
             <!--            6th Sem Syllabus-->
 
             <TextView
@@ -621,21 +561,6 @@
                 android:text="@string/b.com_hons"
                 android:textSize="@dimen/dp_8"
                 android:textStyle="bold|italic" />
-
-            <com.google.android.gms.ads.AdView
-                android:id="@+id/adView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="5dp"
-                android:visibility="visible"
-                app:adSize="BANNER"
-                app:adUnitId="ca-app-pub-7092743628840352/2554892090"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-            </com.google.android.gms.ads.AdView>
 
         </LinearLayout>
     </ScrollView>

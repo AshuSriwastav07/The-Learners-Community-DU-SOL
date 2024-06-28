@@ -106,7 +106,7 @@ public class SubjectSelect_5thSem_MainActivity extends AppCompatActivity {
         sem5HistoryNotes.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView2, History5thSemNotes.class, null)
+                    .replace(R.id.CBCS_Semester5_Notes_Fragment_Container, History5thSemNotes.class, null)
                     .setReorderingAllowed(true)
                     .addToBackStack("name") // Name can be null
                     .commit();
@@ -115,7 +115,7 @@ public class SubjectSelect_5thSem_MainActivity extends AppCompatActivity {
         sem5HindiNotes.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView2, Hindi5thSemNotes.class, null)
+                    .replace(R.id.CBCS_Semester5_Notes_Fragment_Container, Hindi5thSemNotes.class, null)
                     .setReorderingAllowed(true)
                     .addToBackStack("name") // Name can be null
                     .commit();
@@ -124,7 +124,7 @@ public class SubjectSelect_5thSem_MainActivity extends AppCompatActivity {
         sem5PoliticalNotes.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView2, Political5thSemNotes.class, null)
+                    .replace(R.id.CBCS_Semester5_Notes_Fragment_Container, Political5thSemNotes.class, null)
                     .setReorderingAllowed(true)
                     .addToBackStack("name") // Name can be null
                     .commit();
@@ -133,7 +133,7 @@ public class SubjectSelect_5thSem_MainActivity extends AppCompatActivity {
         sem5EduSecNotes.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView2, EducationSem5SecWorkplaceNotes.class, null)
+                    .replace(R.id.CBCS_Semester5_Notes_Fragment_Container, EducationSem5SecWorkplaceNotes.class, null)
                     .setReorderingAllowed(true)
                     .addToBackStack("name") // Name can be null
                     .commit();
@@ -142,7 +142,7 @@ public class SubjectSelect_5thSem_MainActivity extends AppCompatActivity {
     sem5GEHisNotes.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView2, HistoryGE5thSemNotes.class, null)
+                    .replace(R.id.CBCS_Semester5_Notes_Fragment_Container, HistoryGE5thSemNotes.class, null)
                     .setReorderingAllowed(true)
                     .addToBackStack("name") // Name can be null
                     .commit();
@@ -151,7 +151,7 @@ public class SubjectSelect_5thSem_MainActivity extends AppCompatActivity {
         sem5DSE_EduNotes.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView2, EducationDSE5thSemNotes.class, null)
+                    .replace(R.id.CBCS_Semester5_Notes_Fragment_Container, EducationDSE5thSemNotes.class, null)
                     .setReorderingAllowed(true)
                     .addToBackStack("name") // Name can be null
                     .commit();
@@ -160,7 +160,7 @@ public class SubjectSelect_5thSem_MainActivity extends AppCompatActivity {
 sem5ExamNotes.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView2, Sem5ExamAllNotes.class, null)
+                    .replace(R.id.CBCS_Semester5_Notes_Fragment_Container, Sem5ExamAllNotes.class, null)
                     .setReorderingAllowed(true)
                     .addToBackStack("name") // Name can be null
                     .commit();

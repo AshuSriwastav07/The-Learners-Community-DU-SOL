@@ -58,41 +58,19 @@ public class semester4QuestionPapers extends Fragment {
 }*/
 
 
-package com.dusol.thelearnerscommunity;
+package com.dusol.thelearnerscommunity.QuestionPapers;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.google.android.gms.ads.AdError;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.FullScreenContentCallback;
-import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.dusol.thelearnerscommunity.PDFDataCollerction.PDFDataManage;
+import com.dusol.thelearnerscommunity.R;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 
 public class semester4QuestionPapers extends Fragment {
 
@@ -105,17 +83,10 @@ public class semester4QuestionPapers extends Fragment {
         View view = inflater.inflate(R.layout.fragment_semester4_question_papers, container, false);
         ListView listView = view.findViewById(R.id.sem4QPListView);
 
-        //Add start
-        com.google.android.gms.ads.MobileAds.initialize(getActivity(), new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
-        AdView mAdView = view.findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-//Ads Ends
 
+        PDFDataManage.NotesManage(getActivity(),getContext(),"QP_Links/sem4",listView);
+
+        /*
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference("QP_Links/sem4");
         List<String> sem4QpName = new ArrayList<>();
@@ -153,11 +124,11 @@ public class semester4QuestionPapers extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 start_Ads(sem4QpLinks.get(position),click1);
             }
-        });
+        });*/
 
         return view;
     }
-
+/*
 
     public void openIntend(String link){
         if(!Objects.equals(link, "N/A")) {
@@ -209,7 +180,7 @@ public class semester4QuestionPapers extends Fragment {
 
                 @Override
                 public void onAdDismissedFullScreenContent() {
-//                        startActivity(new Intent(getApplicationContext(),Syllabus_MainActivity.class));
+//                        startActivity(new Intent(getApplicationContext(),Syllabus_MainActivity_NotInUse.class));
                     loadads();
                     openIntend(link);
 
@@ -242,6 +213,6 @@ public class semester4QuestionPapers extends Fragment {
         }
 
 
-    }
+    }*/
 
 }

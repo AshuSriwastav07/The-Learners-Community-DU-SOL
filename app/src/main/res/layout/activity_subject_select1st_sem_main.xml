@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".SubjectSelect_1stSem_MainActivity">
 
-
+<!--Sem 1 CBCS Notes File-->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -82,10 +82,10 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerView2"
-            android:name="com.dusol.thelearnerscommunity.ancient1stSemNotes"
+            android:name="com.dusol.thelearnerscommunity.NEP_Files.NEP_Fragments.Sem1.Sem1_Paper_1_DSC"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:layout="@layout/fragment_ancient1st_sem" />
+            tools:layout="@layout/sem1_nep_paper1_dsc_fragment" />
 
     </LinearLayout>
 

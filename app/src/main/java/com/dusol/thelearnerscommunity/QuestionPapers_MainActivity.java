@@ -22,6 +22,13 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
+import com.dusol.thelearnerscommunity.QuestionPapers.semester1QuestionPapers;
+import com.dusol.thelearnerscommunity.QuestionPapers.semester2QuestionPapers;
+import com.dusol.thelearnerscommunity.QuestionPapers.semester3QuestionPapers;
+import com.dusol.thelearnerscommunity.QuestionPapers.semester4QuestionPapers;
+import com.dusol.thelearnerscommunity.QuestionPapers.semester5QuestionPapers;
+import com.dusol.thelearnerscommunity.QuestionPapers.semester6QuestionPapers;
+
 public class QuestionPapers_MainActivity extends AppCompatActivity {
 
     @Override
@@ -49,10 +56,10 @@ public class QuestionPapers_MainActivity extends AppCompatActivity {
         Button sem6=findViewById(R.id.sem6QP);
 
 
-        ImageButton NavHome = (ImageButton)findViewById(R.id.navbarHome);
-        ImageButton NavBooks = (ImageButton)findViewById(R.id.navbarBooks);
-        ImageButton NavStudents = (ImageButton)findViewById(R.id.navbarStudent);
-        ImageButton NavVideos = (ImageButton)findViewById(R.id.navbarVideos);
+        ImageButton NavHome = findViewById(R.id.navbarHome);
+        ImageButton NavBooks = findViewById(R.id.navbarBooks);
+        ImageButton NavStudents = findViewById(R.id.navbarStudent);
+        ImageButton NavVideos = findViewById(R.id.navbarVideos);
 
 
 
@@ -113,7 +120,7 @@ public class QuestionPapers_MainActivity extends AppCompatActivity {
         sem1.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView,semester1QuestionPapers.class, null)
+                    .replace(R.id.fragmentContainerView, semester1QuestionPapers.class, null)
                     .setReorderingAllowed(true)
                     .addToBackStack("name") // Name can be null
                     .commit();
@@ -122,7 +129,7 @@ public class QuestionPapers_MainActivity extends AppCompatActivity {
         sem2.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView,semester2QuestionPapers.class, null)
+                    .replace(R.id.fragmentContainerView, semester2QuestionPapers.class, null)
                     .setReorderingAllowed(true)
                     .addToBackStack("name") // Name can be null
                     .commit();
@@ -131,7 +138,7 @@ public class QuestionPapers_MainActivity extends AppCompatActivity {
         sem3.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView,semester3QuestionPapers.class, null)
+                    .replace(R.id.fragmentContainerView, semester3QuestionPapers.class, null)
                     .setReorderingAllowed(true)
                     .addToBackStack("name") // Name can be null
                     .commit();
@@ -139,7 +146,7 @@ public class QuestionPapers_MainActivity extends AppCompatActivity {
         sem4.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView,semester4QuestionPapers.class, null)
+                    .replace(R.id.fragmentContainerView, semester4QuestionPapers.class, null)
                     .setReorderingAllowed(true)
                     .addToBackStack("name") // Name can be null
                     .commit();
@@ -148,7 +155,7 @@ public class QuestionPapers_MainActivity extends AppCompatActivity {
         sem5.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView,semester5QuestionPapers.class, null)
+                    .replace(R.id.fragmentContainerView, semester5QuestionPapers.class, null)
                     .setReorderingAllowed(true)
                     .addToBackStack("name") // Name can be null
                     .commit();
@@ -157,7 +164,7 @@ public class QuestionPapers_MainActivity extends AppCompatActivity {
         sem6.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView,semester6QuestionPapers.class, null)
+                    .replace(R.id.fragmentContainerView, semester6QuestionPapers.class, null)
                     .setReorderingAllowed(true)
                     .addToBackStack("name") // Name can be null
                     .commit();

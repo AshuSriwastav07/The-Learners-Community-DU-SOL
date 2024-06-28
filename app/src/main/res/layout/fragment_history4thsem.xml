@@ -142,30 +142,16 @@
                 android:text="Download PDF Notes"
                 android:textSize="@dimen/dp_9" />-->
 
-            <com.google.android.gms.ads.AdView
-                android:id="@+id/adView"
-                android:layout_width="320dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="5sp"
-                android:layout_marginBottom="15dp"
-                android:visibility="visible"
-                app:adSize="BANNER"
-                app:adUnitId="ca-app-pub-7092743628840352/2554892090"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-            </com.google.android.gms.ads.AdView>
-
 
             <ListView
                 android:id="@+id/sem4IndianHistoryNotesList"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/borderset"
                 android:divider="@color/black"
-                android:dividerHeight="2dp" />
+                android:dividerHeight="2dp"
+                android:footerDividersEnabled="true"
+                android:headerDividersEnabled="true"
+                android:padding="15dp"  />
 
 
         </LinearLayout>

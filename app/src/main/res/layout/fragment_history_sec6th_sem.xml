@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10sp"
                 android:gravity="center"
-                android:text="History SEC - भारत में रेडियो और सिनेमा"
+                android:text="@string/history_sec"
                 android:textColor="#B72BF3"
                 android:textSize="@dimen/dp_10"
                 android:textStyle="bold" />
@@ -123,29 +123,15 @@
                 android:text="Download Notes PDF"
                 android:textSize="@dimen/dp_8" />-->
 
-            <com.google.android.gms.ads.AdView
-                android:id="@+id/adView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10sp"
-                android:layout_marginBottom="10dp"
-                android:visibility="visible"
-                app:adSize="BANNER"
-                app:adUnitId="ca-app-pub-7092743628840352/7891527992"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-            </com.google.android.gms.ads.AdView>
-
             <ListView
                 android:id="@+id/sem6SecHistoryNotesList"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/borderset"
                 android:divider="@color/black"
-                android:dividerHeight="2dp" />
+                android:dividerHeight="2dp"
+                android:footerDividersEnabled="true"
+                android:headerDividersEnabled="true"
+                android:padding="15dp" />
 
         </LinearLayout>
 <!--    </ScrollView>-->

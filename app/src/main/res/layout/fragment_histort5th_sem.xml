@@ -34,6 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:fontFamily="@font/abeezee"
                 android:text="@string/history_issues_in_twentieth_century_world_history_i"
                 android:textColor="#B72BF3"
                 android:textSize="@dimen/dp_10"
@@ -89,30 +90,16 @@
                 android:text="Get Unit 1-5 Complete Notes PDF"
                 android:textSize="@dimen/dp_7" />-->
 
-            <com.google.android.gms.ads.AdView
-                android:id="@+id/adView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10sp"
-                android:layout_marginBottom="10dp"
-                android:visibility="visible"
-                app:adSize="BANNER"
-                app:adUnitId="ca-app-pub-7092743628840352/8661598469"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-            </com.google.android.gms.ads.AdView>
-
 
             <ListView
                 android:id="@+id/sem5HistoryNotesList"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/borderset"
                 android:divider="@color/black"
-                android:dividerHeight="2dp" />
+                android:dividerHeight="2dp"
+                android:footerDividersEnabled="true"
+                android:headerDividersEnabled="true"
+                android:padding="15dp" />
 
         </LinearLayout>
 <!--    </ScrollView>-->

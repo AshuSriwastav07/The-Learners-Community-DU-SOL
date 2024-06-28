@@ -23,6 +23,7 @@ public class open_site_webpage extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         // Call finish() to close the activity when the back button is pressed
+        super.onBackPressed();
         finish();
     }
 

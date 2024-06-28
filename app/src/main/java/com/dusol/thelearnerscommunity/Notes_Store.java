@@ -1,7 +1,7 @@
 /**
  * App developed by:
  * Ashu Sriwastav
- *
+ * <p>
  * All rights reserved. This application is the property of Ashu Sriwastav.
  * Unauthorized reproduction, distribution, or modification of this application
  * without the explicit permission of Ashu Sriwastav is prohibited.
@@ -30,10 +30,10 @@ import com.google.firebase.messaging.FirebaseMessaging;
 import com.squareup.picasso.Picasso;
 
 
-public class    Notes_Store extends AppCompatActivity {
+public class Notes_Store extends AppCompatActivity {
 
     private ProgressBar progressBar;
-    private Handler handler = new Handler();
+    private final Handler handler = new Handler();
 
     String[] productName =notesdata.productName;
     String[] productDetails =notesdata.productDetails;
@@ -53,37 +53,34 @@ public class    Notes_Store extends AppCompatActivity {
         TextView textView=findViewById(R.id.StoreTitle);
 
         //Navigation Bar Button start here
-        ImageButton NavHome = (ImageButton)findViewById(R.id.navbarHome);
-        ImageButton NavBooks = (ImageButton)findViewById(R.id.navbarBooks);
-        ImageButton NavStudents = (ImageButton)findViewById(R.id.navbarStudent);
-        ImageButton NavVideos = (ImageButton)findViewById(R.id.navbarVideos);
+        ImageButton NavHome = findViewById(R.id.navbarHome);
+        ImageButton NavBooks = findViewById(R.id.navbarBooks);
+        ImageButton NavStudents = findViewById(R.id.navbarStudent);
+        ImageButton NavVideos = findViewById(R.id.navbarVideos);
 
 
         textView.setVisibility(View.GONE);
 
         //Videos // Left to make
-        NavVideos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Define the YouTube channel URL
-                String youtubeChannelUrl = "https://www.youtube.com/@TheLearnersCommunityDUSOL/videos";
+        NavVideos.setOnClickListener(view -> {
+            // Define the YouTube channel URL
+            String youtubeChannelUrl = "https://www.youtube.com/@TheLearnersCommunityDUSOL/videos";
 
-                // Create an Intent with the ACTION_VIEW action and the YouTube channel URL
-                Uri youtubeUri = Uri.parse(youtubeChannelUrl);
-                Intent intent = new Intent(Intent.ACTION_VIEW, youtubeUri);
+            // Create an Intent with the ACTION_VIEW action and the YouTube channel URL
+            Uri youtubeUri = Uri.parse(youtubeChannelUrl);
+            Intent intent = new Intent(Intent.ACTION_VIEW, youtubeUri);
 
-                // Set the package name of the YouTube app
-                intent.setPackage("com.google.android.youtube");
+            // Set the package name of the YouTube app
+            intent.setPackage("com.google.android.youtube");
 
-                // Check if the YouTube app is installed
-                if (intent.resolveActivity(getPackageManager()) != null) {
-                    // The YouTube app is installed, so open it
-                    startActivity(intent);
-                } else {
-                    // The YouTube app is not installed, you can handle this case as needed
-                    // For example, you can open the YouTube website in a web browser
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(youtubeChannelUrl)));
-                }
+            // Check if the YouTube app is installed
+            if (intent.resolveActivity(getPackageManager()) != null) {
+                // The YouTube app is installed, so open it
+                startActivity(intent);
+            } else {
+                // The YouTube app is not installed, you can handle this case as needed
+                // For example, you can open the YouTube website in a web browser
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(youtubeChannelUrl)));
             }
         });
 

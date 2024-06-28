@@ -8,40 +8,20 @@
  */
 package com.dusol.thelearnerscommunity;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.google.android.gms.ads.AdError;
-import com.google.android.gms.ads.AdRequest;
+import com.dusol.thelearnerscommunity.PDFDataCollerction.PDFDataManage;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.FullScreenContentCallback;
-import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class TranslationStudiesNotes extends Fragment {
 
@@ -61,8 +41,6 @@ public class TranslationStudiesNotes extends Fragment {
         bundle.putString("Sem4_Notes", "Sem4_Notes_Open");
         FirebaseAnalytics.getInstance(requireContext()).logEvent("Sem4_Notes_Open", bundle);
 
-
-        loadads();
 
         /*Button trans1 = view.findViewById(R.id.unit1);
         Button trans2 = view.findViewById(R.id.unit2);
@@ -290,14 +268,10 @@ public class TranslationStudiesNotes extends Fragment {
 
 
         ListView listView = view.findViewById(R.id.sem4TranslationStudiesNotesList);
-
-        AdView adView = view.findViewById(R.id.adView);
-
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
+        PDFDataManage.NotesManage(getActivity(),getContext(),"StudyNotes/BASem4/TranslationStudies",listView);
 
 
-
+/*
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference("StudyNotes/BASem4/TranslationStudies");
         List<String> sem4NotesTranslationStudiesName = new ArrayList<>();
@@ -412,12 +386,13 @@ public class TranslationStudiesNotes extends Fragment {
                 startActivity(intent);}
         });
 */
+
         return view;
 
 
     }
 
-
+/*
     public void loadads() {
         // Initialize the Mobile Ads SDK. You need to call this method once in your app.
         MobileAds.initialize(getActivity(), new OnInitializationCompleteListener() {
@@ -466,5 +441,7 @@ public class TranslationStudiesNotes extends Fragment {
             Toast.makeText(requireContext(), "No web browser found to open the URL.", Toast.LENGTH_SHORT).show();
         }
     }
+
+ */
 
 }

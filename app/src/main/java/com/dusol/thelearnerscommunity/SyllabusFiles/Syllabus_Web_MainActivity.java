@@ -6,7 +6,7 @@
  * Unauthorized reproduction, distribution, or modification of this application
  * without the explicit permission of Ashu Sriwastav is prohibited.
  */
-package com.dusol.thelearnerscommunity;
+package com.dusol.thelearnerscommunity.SyllabusFiles;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +19,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.dusol.thelearnerscommunity.Network.GetNetworkDetails;
+import com.dusol.thelearnerscommunity.R;
 
 public class Syllabus_Web_MainActivity extends AppCompatActivity {
     WebView webView;

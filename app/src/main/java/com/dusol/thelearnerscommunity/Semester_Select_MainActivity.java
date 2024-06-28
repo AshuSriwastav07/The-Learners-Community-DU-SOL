@@ -25,11 +25,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
@@ -41,7 +36,7 @@ public class Semester_Select_MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         // Call finish() to close the activity when the back button is pressed
         super.onBackPressed();
-        Intent intent = new Intent(this, LinkPage_MainActivity.class);
+        Intent intent = new Intent(this, DU_SOL_NOTES__MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);  //This will clear activities from stack and send user to specific activity
         startActivity(intent);
 
@@ -53,24 +48,15 @@ public class Semester_Select_MainActivity extends AppCompatActivity {
         setContentView(R.layout.select_semester_activity_main);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        //Add start
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
 
         //add ends
 
 
         Button buyNotes=findViewById(R.id.button7_Buy_Notes_PDF);
-        ImageButton NavHome = (ImageButton)findViewById(R.id.navbarHome);
-        ImageButton NavBooks = (ImageButton)findViewById(R.id.navbarBooks);
-        ImageButton NavStudents = (ImageButton)findViewById(R.id.navbarStudent);
-        ImageButton NavVideos = (ImageButton)findViewById(R.id.navbarVideos);
+        ImageButton NavHome = findViewById(R.id.navbarHome);
+        ImageButton NavBooks = findViewById(R.id.navbarBooks);
+        ImageButton NavStudents = findViewById(R.id.navbarStudent);
+        ImageButton NavVideos = findViewById(R.id.navbarVideos);
 
         //Videos // Left to make
         NavVideos.setOnClickListener(new View.OnClickListener() {
@@ -188,20 +174,19 @@ public class Semester_Select_MainActivity extends AppCompatActivity {
 
     //Buttons connect with semester notes
 
-    public void openStore(View v) { // This activity will send you to the 4th-semester notes page
+    public void openStore(View v) { // This activity will send you to the notes store page
         Intent intent = new Intent(this, Notes_Store.class);
         startActivity(intent);
     }
 
-    public void openSem1Notes(View v) { // This activity will send you to the 4th-semester notes page
-        Intent intent = new Intent(this, SubjectSelect_1stSem_MainActivity.class);
-        startActivity(intent);
+    public void openSem1Notes(View v) {
+        Toast.makeText(this, "CBCS 1st Semester Notes Not Available", Toast.LENGTH_SHORT).show();
     }
-    public void openSem2Notes(View v) { // This activity will send you to the 4th-semester notes page
-        Intent intent=new Intent(this, SubjectSelect_2ndSem_MainActivity.class);
-        startActivity(intent);
+    public void openSem2Notes(View v) { // This activity will send you to the 2nd-semester notes page
+        Toast.makeText(getApplicationContext(),"CBCS 2nd Semester Notes Not Available ",Toast.LENGTH_SHORT).show();
+
     }
-    public void openSem3Notes(View v) { // This activity will send you to the 4th-semester notes page
+    public void openSem3Notes(View v) { // This activity will send you to the 3rd-semester notes page
         Toast.makeText(getApplicationContext(),"3rd Semester Notes Will be available Soon",Toast.LENGTH_SHORT).show();
     }
     public void openSem4Notes(View v) { // This activity will send you to the 4th-semester notes page

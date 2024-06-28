@@ -6,7 +6,7 @@
  * Unauthorized reproduction, distribution, or modification of this application
  * without the explicit permission of Ashu Sriwastav is prohibited.
  */
-package com.dusol.thelearnerscommunity;
+package com.dusol.thelearnerscommunity.SyllabusFiles;
 
 import static android.content.ContentValues.TAG;
 
@@ -21,9 +21,12 @@ import android.widget.ImageButton;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.dusol.thelearnerscommunity.LinkPage_MainActivity;
+import com.dusol.thelearnerscommunity.R;
+import com.dusol.thelearnerscommunity.Semester_Select_MainActivity;
+import com.dusol.thelearnerscommunity.studentsBoard;
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
@@ -32,7 +35,7 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
-public class Syllabus_MainActivity extends AppCompatActivity {
+public class Syllabus_MainActivity_NotInUse extends AppCompatActivity {
 
     private  InterstitialAd mInterstitialAd;
     int click1=0;
@@ -144,7 +147,7 @@ public class Syllabus_MainActivity extends AppCompatActivity {
 
         //Home
         NavHome.setOnClickListener(view -> {
-            Intent intent=new Intent(getApplicationContext(),LinkPage_MainActivity.class);
+            Intent intent=new Intent(getApplicationContext(), LinkPage_MainActivity.class);
             startActivity(intent);
 
         });
@@ -153,14 +156,14 @@ public class Syllabus_MainActivity extends AppCompatActivity {
 
         //Notes Books
         NavBooks.setOnClickListener(view -> {
-            Intent intent=new Intent(getApplicationContext(),Semester_Select_MainActivity.class);
+            Intent intent=new Intent(getApplicationContext(), Semester_Select_MainActivity.class);
             startActivity(intent);
 
         });
 
         //Students Portal
         NavStudents.setOnClickListener(view -> {
-            Intent intent=new Intent(getApplicationContext(),studentsBoard.class);
+            Intent intent=new Intent(getApplicationContext(), studentsBoard.class);
             startActivity(intent);
 
         });
@@ -331,14 +334,7 @@ public class Syllabus_MainActivity extends AppCompatActivity {
             public void onInitializationComplete(InitializationStatus initializationStatus) {
             }
         });
-        AdView mAdView = findViewById(R.id.adView);
-        AdView mAdView1 = findViewById(R.id.adView2);
 
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-        mAdView1.loadAd(adRequest);
-
-        //add ends
 
     }
 
@@ -378,7 +374,7 @@ public class Syllabus_MainActivity extends AppCompatActivity {
     public void startads(String Links[],int linkNum){ //Provide array of links and Index number of link
         click1++; //count number of click
         if (mInterstitialAd != null && click1 % NumberOfClickToShowAsd==0) {
-            mInterstitialAd.show(Syllabus_MainActivity.this); // Google ads will node if user click on question paper button every second time
+            mInterstitialAd.show(Syllabus_MainActivity_NotInUse.this); // Google ads will node if user click on question paper button every second time
 
             mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback(){
                 @Override

@@ -14,30 +14,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.dusol.thelearnerscommunity.PDFDataCollerction.PDFDataManage;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class History5thSemNotes extends Fragment {
-    private InterstitialAd mInterstitialAd;
-    int click=0;
-    int NumberOfClickToShowAsd=2;
-    private AdView adView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
     }
 
@@ -54,33 +40,9 @@ public class History5thSemNotes extends Fragment {
         bundle.putString("Sem5_Notes", "Sem5_Notes_Open");
         FirebaseAnalytics.getInstance(requireContext()).logEvent("Sem5_Notes_Open", bundle);
 
-
-        loadads();
-
-        //Buttons
-        /*Button unit1=view.findViewById(R.id.unit1);
-        Button unit2A=view.findViewById(R.id.unit2a);
-        Button unit2B=view.findViewById(R.id.unit2b);
-        Button unit3=view.findViewById(R.id.unit3);
-        Button PaidNotesPDF=view.findViewById(R.id.PaidNotesPDF);*/
-
-
-        MobileAds.initialize(getActivity(), new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-
-        });
-
-        AdView mAdView = view.findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-
-        //Ads Ends
-
         PDFDataManage.NotesManage(getActivity(),getContext(),"StudyNotes/BASem5/History",listView);
 
-/*
+        /*
 
 //        Unit1
         unit1.setOnClickListener(new View.OnClickListener() {
@@ -242,7 +204,6 @@ public class History5thSemNotes extends Fragment {
 
 */
 
-
         /*final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference("StudyNotes/BASem5/History");
         List<String> sem5NotesHistoryName = new ArrayList<>();
@@ -337,51 +298,4 @@ public class History5thSemNotes extends Fragment {
         return view;
 
     }
-
-
-
-    public void loadads(){
-        MobileAds.initialize(getActivity(), new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {}
-        });
-        AdRequest adRequest = new AdRequest.Builder().build();
-
-        InterstitialAd.load(getActivity(),"ca-app-pub-7092743628840352/2084823075", adRequest,
-                new InterstitialAdLoadCallback() {
-                    @Override
-                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
-                        // The mInterstitialAd reference will be null until
-                        // an ad is loaded.
-                        mInterstitialAd = interstitialAd;
-//                        Log.i(TAG, "onAdLoaded");
-                    }
-
-                    @Override
-                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                        // Handle the error
-//                        Log.d(TAG, loadAdError.toString());
-                        mInterstitialAd = null;
-                    }
-                });
-    }
-
-    /*public void openIntend(String link){
-        Intent intent = new Intent(getActivity(), Notes_HomeWeb_MainActivity.class);
-        intent.putExtra("link", link);
-        startActivity(intent);
-    }
-
-    public void PaidNotesLinkOpen(String url){
-        // Create an intent with ACTION_VIEW and the URL as the data
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-
-        // Check if there is a web browser (e.g., Chrome) available to handle the intent
-        if (intent.resolveActivity(requireActivity().getPackageManager()) != null) {
-            // Start the activity to open the URL in the browser
-            startActivity(intent);
-        } else {
-            Toast.makeText(requireContext(), "No web browser found to open the URL.", Toast.LENGTH_SHORT).show();
-        }
-    }*/
 }

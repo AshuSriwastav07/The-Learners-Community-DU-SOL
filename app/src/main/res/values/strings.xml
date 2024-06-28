@@ -1,12 +1,14 @@
 <resources>
     <string name="app_name">The Learners Community</string>
     <string name="welcome">Welcome</string>
-    <string name="rights">© 2023 The Learners Community All Rights Reserved.</string>
+    <string name="rights">© 2024 The Learners Community All Rights Reserved.</string>
     <string name="du_notes">DU NOTES</string>
     <string name="todo">DU Image\n</string>
     <string name="sol_notice">SOL Updates</string>
     <string name="sol_materials">Study Material</string>
     <string name="sol_notes">SOL NOTES</string>
+    <string name="cbcs_notes">CBCS NOTES</string>
+    <string name="nep_notes">NEP NOTES</string>
     <string name="DU_SOL_NOTES">DU SOL Notes</string>
     <string name="previous_question_papers">Question Paper</string>
     <string name="your_semester">Select Your Semester</string>
@@ -135,7 +137,7 @@
     <string name="previous">Previous</string>
 
     <string name="video_notes">Video Notes</string>
-    <string name="n_ancient_society">प्राचीन समाज\n(Ancient Society)</string>
+    <string name="n_ancient_society">MAJOR : Paper-I DSC-1 (A/B)</string>
     <string name="education_sec_reflective_learning">Education SEC (Reflective Learning)</string>
     <string name="conflict_and_peace_building">संघर्ष और शांति निर्माण Conflict and Peace Building</string>
     <string name="media_in_education_in_hindi">Media in Education in Hindi</string>
@@ -153,5 +155,16 @@
     <string name="_6th_semester_exam_all_notes">6th Semester Exam All Notes</string>
     <string name="_5th_semester_exam_all_notes">5th Semester Exam All Notes</string>
     <string name="sem_4_all_exam_notes">Sem 4 All Exam Notes</string>
+    <string name="gender_in_the_modern_world">आधुनिक विश्व में जेंडर (Gender in the Modern World)</string>
+    <string name="history_sec">History SEC - भारत में रेडियो और सिनेमा</string>
+    <string name="paper_1_dsc">Paper 1 DSC</string>
+    <string name="paper_2_dsc">Paper 2 DSC</string>
+    <string name="paper_3_dsc">Paper 3 DSC</string>
+    <string name="aec">AEC</string>
+    <string name="ge">Generic Elective</string>
+    <string name="sec">SEC</string>
+    <string name="vac">VAC</string>
+    <string name="minor_paper_iii_discipline_b1">MINOR : Paper-III Discipline B1</string>
+    <string name="minor_paper_ii_discipline_a1">MINOR : Paper-II and III (A1+B1)</string>
 
 </resources>

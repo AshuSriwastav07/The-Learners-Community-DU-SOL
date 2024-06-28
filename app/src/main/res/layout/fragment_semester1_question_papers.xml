@@ -5,44 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.dusol.thelearnerscommunity.semester1QuestionPapers">
+    tools:context="com.dusol.thelearnerscommunity.QuestionPapers.semester1QuestionPapers">
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:fontFamily="@font/abeezee"
         android:text="@string/_1st_semester"
         android:textColor="#FF0000"
         android:textSize="@dimen/dp_10"
         android:textStyle="bold" />
-
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10sp"
-        android:layout_marginBottom="5dp"
-        android:visibility="visible"
-        app:adSize="BANNER"
-        app:adUnitId="ca-app-pub-7092743628840352/2554892090"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-    </com.google.android.gms.ads.AdView>
 
 
     <ListView
         android:id="@+id/sem1QPListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="0.9"
-        android:alwaysDrawnWithCache="true"
-        android:background="@drawable/borderset"
         android:divider="@color/black"
-        android:dividerHeight="2dp" />
+        android:dividerHeight="2dp"
+        android:footerDividersEnabled="true"
+        android:headerDividersEnabled="true"
+        android:padding="15dp" />
 
 </LinearLayout>
 
@@ -53,7 +38,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.dusol.thelearnerscommunity.semester1QuestionPapers"
+        tools:context="com.dusol.thelearnerscommunity.QuestionPapers.semester1QuestionPapers"
         android:background="@color/background_color_night"
         >
 
