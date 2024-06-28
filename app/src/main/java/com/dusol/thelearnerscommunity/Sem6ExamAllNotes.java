@@ -9,13 +9,9 @@ import android.widget.ListView;
 import androidx.fragment.app.Fragment;
 
 import com.dusol.thelearnerscommunity.PDFDataCollerction.PDFDataManage;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
 
 
 public class Sem6ExamAllNotes extends Fragment {
-    private InterstitialAd mInterstitialAd;
-    int click1=2;
-    int NumberOfClickToShowAsd=1;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

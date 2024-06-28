@@ -74,9 +74,6 @@ import com.google.android.gms.ads.interstitial.InterstitialAd;
 
 public class semester4QuestionPapers extends Fragment {
 
-    private InterstitialAd mInterstitialAd;
-    int click1=2;
-    int NumberOfClickToShowAsd=1;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

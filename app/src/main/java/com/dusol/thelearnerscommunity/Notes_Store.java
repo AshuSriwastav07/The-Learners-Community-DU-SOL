@@ -32,7 +32,6 @@ import com.squareup.picasso.Picasso;
 
 public class Notes_Store extends AppCompatActivity {
 
-    private ProgressBar progressBar;
     private final Handler handler = new Handler();
 
     String[] productName =notesdata.productName;
@@ -176,47 +175,17 @@ public class Notes_Store extends AppCompatActivity {
 
         productButton7.setOnClickListener(v -> showProductDetailsDialog(productName[6], productDetails[6], Price[6], BuyLink[6]));
 
-        productButton8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showProductDetailsDialog(productName[7], productDetails[7], Price[7], BuyLink[7]);
-            }
-        });
+        productButton8.setOnClickListener(v -> showProductDetailsDialog(productName[7], productDetails[7], Price[7], BuyLink[7]));
 
-        productButton9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showProductDetailsDialog(productName[8], productDetails[8], Price[8], BuyLink[8]);
-            }
-        });
+        productButton9.setOnClickListener(v -> showProductDetailsDialog(productName[8], productDetails[8], Price[8], BuyLink[8]));
 
-        productButton10.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showProductDetailsDialog(productName[9], productDetails[9], Price[9], BuyLink[9]);
-            }
-        });
+        productButton10.setOnClickListener(v -> showProductDetailsDialog(productName[9], productDetails[9], Price[9], BuyLink[9]));
 
-        productButton11.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showProductDetailsDialog(productName[10], productDetails[10], Price[10], BuyLink[10]);
-            }
-        });
+        productButton11.setOnClickListener(v -> showProductDetailsDialog(productName[10], productDetails[10], Price[10], BuyLink[10]));
 
-        productButton12.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showProductDetailsDialog(productName[11], productDetails[11], Price[11], BuyLink[11]);
-            }
-        });
+        productButton12.setOnClickListener(v -> showProductDetailsDialog(productName[11], productDetails[11], Price[11], BuyLink[11]));
 
-        productButton13.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showProductDetailsDialog(productName[12], productDetails[12], Price[12], BuyLink[12]);
-            }
-        });
+        productButton13.setOnClickListener(v -> showProductDetailsDialog(productName[12], productDetails[12], Price[12], BuyLink[12]));
 
         productButton14.setOnClickListener(new View.OnClickListener() {
             @Override

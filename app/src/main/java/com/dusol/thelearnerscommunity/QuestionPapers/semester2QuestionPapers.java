@@ -1,7 +1,6 @@
 /**
  * App developed by:
  * Ashu Sriwastav
- *
  * All rights reserved. This application is the property of Ashu Sriwastav.
  * Unauthorized reproduction, distribution, or modification of this application
  * without the explicit permission of Ashu Sriwastav is prohibited.
@@ -218,13 +217,9 @@ import androidx.fragment.app.Fragment;
 
 import com.dusol.thelearnerscommunity.PDFDataCollerction.PDFDataManage;
 import com.dusol.thelearnerscommunity.R;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
 
 public class semester2QuestionPapers extends Fragment {
 
-    private InterstitialAd mInterstitialAd;
-    int click1=2;
-    int NumberOfClickToShowAsd=1;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

@@ -265,9 +265,9 @@ public class semester1QuestionPapers extends Fragment {
                 for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
                     String key = childSnapshot.getKey();
                     String value = childSnapshot.getValue(String.class);
-                    Log.d("DataBaseLinks", value);
+ /*                   Log.d("DataBaseLinks", value);
                     Log.d("DataBaseLinks", key);
-
+*/
                     sem1QpName.add(key);
                     sem1QpLinks.add(value);
                 }

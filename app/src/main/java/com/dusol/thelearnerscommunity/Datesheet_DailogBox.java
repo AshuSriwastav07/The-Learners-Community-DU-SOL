@@ -1,6 +1,5 @@
 package com.dusol.thelearnerscommunity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -82,133 +81,106 @@ public class Datesheet_DailogBox extends DialogFragment {
         mTextView.setText(title);
 
         // Set click listeners for buttons
-        openNEP_BA.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Check if link is available
-                if (link1.equals("N/A")) {
-                    Toast.makeText(getContext(), " Not Available Now", Toast.LENGTH_SHORT).show();
-                } else {
-                    // Open web activity with link
-                    Intent intent = new Intent(requireContext(), Syllabus_Web_MainActivity.class);
-                    intent.putExtra("link", link1);
-                    startActivity(intent);
-                }
+        openNEP_BA.setOnClickListener(v -> {
+            // Check if link is available
+            if (link1.equals("N/A")) {
+                Toast.makeText(getContext(), " Not Available Now", Toast.LENGTH_SHORT).show();
+            } else {
+                // Open web activity with link
+                Intent intent = new Intent(requireContext(), Syllabus_Web_MainActivity.class);
+                intent.putExtra("link", link1);
+                startActivity(intent);
             }
         });
 
-        openNEP_BAHons.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Check if link is available
-                if (link2.equals("N/A")) {
-                    Toast.makeText(getContext(), " Not Available Now", Toast.LENGTH_SHORT).show();
-                } else {
-                    // Open web activity with link
-                    Intent intent = new Intent(requireContext(), Syllabus_Web_MainActivity.class);
-                    intent.putExtra("link", link2);
-                    startActivity(intent);
-                }
+        openNEP_BAHons.setOnClickListener(v -> {
+            // Check if link is available
+            if (link2.equals("N/A")) {
+                Toast.makeText(getContext(), " Not Available Now", Toast.LENGTH_SHORT).show();
+            } else {
+                // Open web activity with link
+                Intent intent = new Intent(requireContext(), Syllabus_Web_MainActivity.class);
+                intent.putExtra("link", link2);
+                startActivity(intent);
             }
         });
 
-        openNEP_Bcom.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Check if link is available
-                if (link3.equals("N/A")) {
-                    Toast.makeText(getContext(), " Not Available Now", Toast.LENGTH_SHORT).show();
-                } else {
-                    // Open web activity with link
-                    Intent intent = new Intent(requireContext(), Syllabus_Web_MainActivity.class);
-                    intent.putExtra("link", link3);
-                    startActivity(intent);
-                }
+        openNEP_Bcom.setOnClickListener(v -> {
+            // Check if link is available
+            if (link3.equals("N/A")) {
+                Toast.makeText(getContext(), " Not Available Now", Toast.LENGTH_SHORT).show();
+            } else {
+                // Open web activity with link
+                Intent intent = new Intent(requireContext(), Syllabus_Web_MainActivity.class);
+                intent.putExtra("link", link3);
+                startActivity(intent);
             }
         });
 
-        openNEP_BcomHons.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Check if link is available
-                if (link4.equals("N/A")) {
-                    Toast.makeText(getContext(), " Not Available Now", Toast.LENGTH_SHORT).show();
-                } else {
-                    // Open web activity with link
-                    Intent intent = new Intent(requireContext(), Syllabus_Web_MainActivity.class);
-                    intent.putExtra("link", link4);
-                    startActivity(intent);
-                }
+        openNEP_BcomHons.setOnClickListener(v -> {
+            // Check if link is available
+            if (link4.equals("N/A")) {
+                Toast.makeText(getContext(), " Not Available Now", Toast.LENGTH_SHORT).show();
+            } else {
+                // Open web activity with link
+                Intent intent = new Intent(requireContext(), Syllabus_Web_MainActivity.class);
+                intent.putExtra("link", link4);
+                startActivity(intent);
             }
         });
-        openCBCS_BA.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Check if link is available
-                if (link5.equals("N/A")) {
-                    Toast.makeText(getContext(), " Not Available Now", Toast.LENGTH_SHORT).show();
-                } else {
-                    // Open web activity with link
-                    Intent intent = new Intent(requireContext(), Syllabus_Web_MainActivity.class);
-                    intent.putExtra("link", link5);
-                    startActivity(intent);
-                }
+        openCBCS_BA.setOnClickListener(v -> {
+            // Check if link is available
+            if (link5.equals("N/A")) {
+                Toast.makeText(getContext(), " Not Available Now", Toast.LENGTH_SHORT).show();
+            } else {
+                // Open web activity with link
+                Intent intent = new Intent(requireContext(), Syllabus_Web_MainActivity.class);
+                intent.putExtra("link", link5);
+                startActivity(intent);
             }
         });
 
-        openCBCS_BAHons.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Check if link is available
-                if (link6.equals("N/A")) {
-                    Toast.makeText(getContext(), " Not Available Now", Toast.LENGTH_SHORT).show();
-                } else {
-                    // Open web activity with link
-                    Intent intent = new Intent(requireContext(), Syllabus_Web_MainActivity.class);
-                    intent.putExtra("link", link6);
-                    startActivity(intent);
-                }
+        openCBCS_BAHons.setOnClickListener(v -> {
+            // Check if link is available
+            if (link6.equals("N/A")) {
+                Toast.makeText(getContext(), " Not Available Now", Toast.LENGTH_SHORT).show();
+            } else {
+                // Open web activity with link
+                Intent intent = new Intent(requireContext(), Syllabus_Web_MainActivity.class);
+                intent.putExtra("link", link6);
+                startActivity(intent);
             }
         });
 
-        openCBCS_Bcom.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Check if link is available
-                if (link7.equals("N/A")) {
-                    Toast.makeText(getContext(), " Not Available Now", Toast.LENGTH_SHORT).show();
-                } else {
-                    // Open web activity with link
-                    Intent intent = new Intent(requireContext(), Syllabus_Web_MainActivity.class);
-                    intent.putExtra("link", link7);
-                    startActivity(intent);
-                }
+        openCBCS_Bcom.setOnClickListener(v -> {
+            // Check if link is available
+            if (link7.equals("N/A")) {
+                Toast.makeText(getContext(), " Not Available Now", Toast.LENGTH_SHORT).show();
+            } else {
+                // Open web activity with link
+                Intent intent = new Intent(requireContext(), Syllabus_Web_MainActivity.class);
+                intent.putExtra("link", link7);
+                startActivity(intent);
             }
         });
 
-        openCBCS_BcomHons.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Check if link is available
-                if (link8.equals("N/A")) {
-                    Toast.makeText(getContext(), " Not Available Now", Toast.LENGTH_SHORT).show();
-                } else {
-                    // Open web activity with link
-                    Intent intent = new Intent(requireContext(), Syllabus_Web_MainActivity.class);
-                    intent.putExtra("link", link8);
-                    startActivity(intent);
-                }
+        openCBCS_BcomHons.setOnClickListener(v -> {
+            // Check if link is available
+            if (link8.equals("N/A")) {
+                Toast.makeText(getContext(), " Not Available Now", Toast.LENGTH_SHORT).show();
+            } else {
+                // Open web activity with link
+                Intent intent = new Intent(requireContext(), Syllabus_Web_MainActivity.class);
+                intent.putExtra("link", link8);
+                startActivity(intent);
             }
         });
 
         // Set positive button to close dialog
         builder.setView(view)
-                .setPositiveButton("Close", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int id) {
-                        // Close the dialog
-                        dialog.dismiss();
-                    }
+                .setPositiveButton("Close", (dialog, id) -> {
+                    // Close the dialog
+                    dialog.dismiss();
                 });
 
         return view;

@@ -17,8 +17,6 @@ import android.widget.ListView;
 import androidx.fragment.app.Fragment;
 
 import com.dusol.thelearnerscommunity.PDFDataCollerction.PDFDataManage;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 
@@ -26,10 +24,6 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 public class EnglishGE6thSemNotes extends Fragment {
 
 
-    private InterstitialAd mInterstitialAd;
-    int click=0;
-    int NumberOfClickToShowAsd=2;
-    private AdView adView;
 
     /*String links[]={
             "https://drive.google.com/file/d/1JAZvYsR6fEjZj2chg59vZEjxO_9X8DWM/view?usp=sharing",

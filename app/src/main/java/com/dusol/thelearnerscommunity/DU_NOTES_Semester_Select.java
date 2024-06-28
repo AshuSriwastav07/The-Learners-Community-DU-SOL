@@ -12,12 +12,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.ads.interstitial.InterstitialAd;
-
 public class DU_NOTES_Semester_Select extends AppCompatActivity {
-    private InterstitialAd mInterstitialAd;
-    int click=0;
-    int NumberOfClickToShowAsd=1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

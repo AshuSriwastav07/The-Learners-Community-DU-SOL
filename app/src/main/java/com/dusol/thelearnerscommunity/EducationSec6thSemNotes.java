@@ -1,7 +1,6 @@
 /**
  * App developed by:
  * Ashu Sriwastav
- *
  * All rights reserved. This application is the property of Ashu Sriwastav.
  * Unauthorized reproduction, distribution, or modification of this application
  * without the explicit permission of Ashu Sriwastav is prohibited.
@@ -17,18 +16,11 @@ import android.widget.ListView;
 import androidx.fragment.app.Fragment;
 
 import com.dusol.thelearnerscommunity.PDFDataCollerction.PDFDataManage;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 
 
 public class EducationSec6thSemNotes extends Fragment {
-
-    private InterstitialAd mInterstitialAd;
-    int click=0;
-    int NumberOfClickToShowAsd=2;
-    private AdView adView;
 
 
     @Override

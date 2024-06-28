@@ -36,7 +36,7 @@
             android:layout_marginBottom="15sp"
             android:gravity="center"
             android:fontFamily="@font/abeezee"
-            android:text="Administration and Public Policy Concept and Theories"
+            android:text="@string/administration_and_public_policy_concept_and_theories"
             android:textColor="#B72BF3"
             android:textSize="@dimen/dp_10"
             android:textStyle="bold" />

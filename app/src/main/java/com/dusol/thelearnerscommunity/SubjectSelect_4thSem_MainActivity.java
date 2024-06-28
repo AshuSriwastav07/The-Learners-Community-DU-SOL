@@ -12,7 +12,6 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
@@ -67,28 +66,25 @@ public class SubjectSelect_4thSem_MainActivity extends AppCompatActivity {
 
         //Videos // Left to make
 
-        NavVideos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Define the YouTube channel URL
-                String youtubeChannelUrl = "https://www.youtube.com/@TheLearnersCommunityDUSOL/videos";
+        NavVideos.setOnClickListener(view -> {
+            // Define the YouTube channel URL
+            String youtubeChannelUrl = "https://www.youtube.com/@TheLearnersCommunityDUSOL/videos";
 
-                // Create an Intent with the ACTION_VIEW action and the YouTube channel URL
-                Uri youtubeUri = Uri.parse(youtubeChannelUrl);
-                Intent intent = new Intent(Intent.ACTION_VIEW, youtubeUri);
+            // Create an Intent with the ACTION_VIEW action and the YouTube channel URL
+            Uri youtubeUri = Uri.parse(youtubeChannelUrl);
+            Intent intent = new Intent(Intent.ACTION_VIEW, youtubeUri);
 
-                // Set the package name of the YouTube app
-                intent.setPackage("com.google.android.youtube");
+            // Set the package name of the YouTube app
+            intent.setPackage("com.google.android.youtube");
 
-                // Check if the YouTube app is installed
-                if (intent.resolveActivity(getPackageManager()) != null) {
-                    // The YouTube app is installed, so open it
-                    startActivity(intent);
-                } else {
-                    // The YouTube app is not installed, you can handle this case as needed
-                    // For example, you can open the YouTube website in a web browser
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(youtubeChannelUrl)));
-                }
+            // Check if the YouTube app is installed
+            if (intent.resolveActivity(getPackageManager()) != null) {
+                // The YouTube app is installed, so open it
+                startActivity(intent);
+            } else {
+                // The YouTube app is not installed, you can handle this case as needed
+                // For example, you can open the YouTube website in a web browser
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(youtubeChannelUrl)));
             }
         });
 
@@ -118,76 +114,58 @@ public class SubjectSelect_4thSem_MainActivity extends AppCompatActivity {
         });
 
 
-         btnHisFragement.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                fragmentManager.beginTransaction()
-                        .replace(R.id.CBCS_Semester4_Notes_Fragment_Container, History4thSemNotes.class, null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack("name") // Name can be null
-                        .commit();
-            }
+         btnHisFragement.setOnClickListener(view -> {
+             FragmentManager fragmentManager = getSupportFragmentManager();
+             fragmentManager.beginTransaction()
+                     .replace(R.id.CBCS_Semester4_Notes_Fragment_Container, History4thSemNotes.class, null)
+                     .setReorderingAllowed(true)
+                     .addToBackStack("name") // Name can be null
+                     .commit();
+         });
+
+        btnPolFragement.setOnClickListener(view -> {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.CBCS_Semester4_Notes_Fragment_Container, Political4thSemNotes.class, null)
+                    .setReorderingAllowed(true)
+                    .addToBackStack("name") // Name can be null
+                    .commit();
         });
 
-        btnPolFragement.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                fragmentManager.beginTransaction()
-                        .replace(R.id.CBCS_Semester4_Notes_Fragment_Container, Political4thSemNotes.class, null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack("name") // Name can be null
-                        .commit();
-            }
+        btnHindiFragement.setOnClickListener(view -> {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.CBCS_Semester4_Notes_Fragment_Container, Hindi4thSemNotes.class, null)
+                    .setReorderingAllowed(true)
+                    .addToBackStack("name") // Name can be null
+                    .commit();
         });
 
-        btnHindiFragement.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                fragmentManager.beginTransaction()
-                        .replace(R.id.CBCS_Semester4_Notes_Fragment_Container, Hindi4thSemNotes.class, null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack("name") // Name can be null
-                        .commit();
-            }
+        btnEduFragement.setOnClickListener(view -> {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.CBCS_Semester4_Notes_Fragment_Container, Edu4thSemNotes.class, null)
+                    .setReorderingAllowed(true)
+                    .addToBackStack("name") // Name can be null
+                    .commit();
         });
 
-        btnEduFragement.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                fragmentManager.beginTransaction()
-                        .replace(R.id.CBCS_Semester4_Notes_Fragment_Container, Edu4thSemNotes.class, null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack("name") // Name can be null
-                        .commit();
-            }
+        btnEngFragement.setOnClickListener(view -> {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.CBCS_Semester4_Notes_Fragment_Container, Eng4thSemNotes.class, null)
+                    .setReorderingAllowed(true)
+                    .addToBackStack("name") // Name can be null
+                    .commit();
         });
 
-        btnEngFragement.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                fragmentManager.beginTransaction()
-                        .replace(R.id.CBCS_Semester4_Notes_Fragment_Container, Eng4thSemNotes.class, null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack("name") // Name can be null
-                        .commit();
-            }
-        });
-
-        sem4ExamNotes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                fragmentManager.beginTransaction()
-                        .replace(R.id.CBCS_Semester4_Notes_Fragment_Container, Sem4ExamNotes.class, null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack("name") // Name can be null
-                        .commit();
-            }
+        sem4ExamNotes.setOnClickListener(view -> {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.CBCS_Semester4_Notes_Fragment_Container, Sem4ExamNotes.class, null)
+                    .setReorderingAllowed(true)
+                    .addToBackStack("name") // Name can be null
+                    .commit();
         });
 
 

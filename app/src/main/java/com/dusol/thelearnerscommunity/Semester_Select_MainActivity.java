@@ -20,13 +20,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 public class Semester_Select_MainActivity extends AppCompatActivity {
@@ -59,28 +56,25 @@ public class Semester_Select_MainActivity extends AppCompatActivity {
         ImageButton NavVideos = findViewById(R.id.navbarVideos);
 
         //Videos // Left to make
-        NavVideos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Define the YouTube channel URL
-                String youtubeChannelUrl = "https://www.youtube.com/@TheLearnersCommunityDUSOL/videos";
+        NavVideos.setOnClickListener(view -> {
+            // Define the YouTube channel URL
+            String youtubeChannelUrl = "https://www.youtube.com/@TheLearnersCommunityDUSOL/videos";
 
-                // Create an Intent with the ACTION_VIEW action and the YouTube channel URL
-                Uri youtubeUri = Uri.parse(youtubeChannelUrl);
-                Intent intent = new Intent(Intent.ACTION_VIEW, youtubeUri);
+            // Create an Intent with the ACTION_VIEW action and the YouTube channel URL
+            Uri youtubeUri = Uri.parse(youtubeChannelUrl);
+            Intent intent = new Intent(Intent.ACTION_VIEW, youtubeUri);
 
-                // Set the package name of the YouTube app
-                intent.setPackage("com.google.android.youtube");
+            // Set the package name of the YouTube app
+            intent.setPackage("com.google.android.youtube");
 
-                // Check if the YouTube app is installed
-                if (intent.resolveActivity(getPackageManager()) != null) {
-                    // The YouTube app is installed, so open it
-                    startActivity(intent);
-                } else {
-                    // The YouTube app is not installed, you can handle this case as needed
-                    // For example, you can open the YouTube website in a web browser
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(youtubeChannelUrl)));
-                }
+            // Check if the YouTube app is installed
+            if (intent.resolveActivity(getPackageManager()) != null) {
+                // The YouTube app is installed, so open it
+                startActivity(intent);
+            } else {
+                // The YouTube app is not installed, you can handle this case as needed
+                // For example, you can open the YouTube website in a web browser
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(youtubeChannelUrl)));
             }
         });
 
@@ -110,24 +104,21 @@ public class Semester_Select_MainActivity extends AppCompatActivity {
 
 // Subscribe the device to a specific topic named "SOL_NOTICE" using Firebase Cloud Messaging (FCM).
         FirebaseMessaging.getInstance().subscribeToTopic("SOL_NOTICE")
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        String msg = "Subscribed";
+                .addOnCompleteListener(task -> {
+                    String msg = "Subscribed";
 
-                        // Check if subscribing to the topic was successful
-                        if (!task.isSuccessful()) {
-                            // If not successful, you can handle any failure here
-                            // For example, you can uncomment the line below to set the message to "Subscribe failed"
-                            // msg = "Subscribe failed";
-                        } else {
-                            // If subscription is successful, you can perform any necessary actions here
-                            // For example, display a toast message to indicate success
-                            // Toast.makeText(MainActivity3.this, "Done", Toast.LENGTH_SHORT).show();
+                    // Check if subscribing to the topic was successful
+                    if (!task.isSuccessful()) {
+                        // If not successful, you can handle any failure here
+                        // For example, you can uncomment the line below to set the message to "Subscribe failed"
+                        // msg = "Subscribe failed";
+                    } else {
+                        // If subscription is successful, you can perform any necessary actions here
+                        // For example, display a toast message to indicate success
+                        // Toast.makeText(MainActivity3.this, "Done", Toast.LENGTH_SHORT).show();
 
-                            // Log a message to check whether the user successfully subscribed to the topic
-                            Log.d("notes_topic", msg);
-                        }
+                        // Log a message to check whether the user successfully subscribed to the topic
+                        Log.d("notes_topic", msg);
                     }
                 });
 

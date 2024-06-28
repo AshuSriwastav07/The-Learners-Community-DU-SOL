@@ -9,17 +9,11 @@ import android.widget.ListView;
 import androidx.fragment.app.Fragment;
 
 import com.dusol.thelearnerscommunity.PDFDataCollerction.PDFDataManage;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 
 
 public class EducationSem5SecWorkplaceNotes extends Fragment {
-
-    private InterstitialAd mInterstitialAd;
-    int click=0;
-    int NumberOfClickToShowAsd=2;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

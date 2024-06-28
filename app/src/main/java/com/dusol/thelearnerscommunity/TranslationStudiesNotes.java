@@ -1,7 +1,6 @@
 /**
  * App developed by:
  * Ashu Sriwastav
- *
  * All rights reserved. This application is the property of Ashu Sriwastav.
  * Unauthorized reproduction, distribution, or modification of this application
  * without the explicit permission of Ashu Sriwastav is prohibited.
@@ -19,16 +18,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.dusol.thelearnerscommunity.PDFDataCollerction.PDFDataManage;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class TranslationStudiesNotes extends Fragment {
-
-    private InterstitialAd mInterstitialAd=null;
-    int click=0;
-    int NumberOfClickToShowAsd=2;
-    private AdView adView;
 
     @Nullable
     @Override
