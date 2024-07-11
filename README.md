@@ -49,8 +49,9 @@ Thank you for choosing The Learners' Community DU SOL App. Let's embark on a jou
 
 
 ![Untitled (9)](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/750997cb-2e72-4a69-93f1-97bfd8127bb4)
+![Untitled (10)](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/a16e901d-5a4a-4b5b-8001-9efd0ebfc6a6)
 
-![Untitled (10)](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/56c4db46-9b04-44ab-a908-c5fdec9a1e13)
+
 ![1](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/43ab9cc0-ab65-40cc-a332-aa059093cb73)
 ![2 (3)](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/d94da628-a3f4-485c-b6c7-80fdf24324cf)
 ![3 (2)](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/c325a73d-ae7e-4576-ae98-77b264a90bcf)
