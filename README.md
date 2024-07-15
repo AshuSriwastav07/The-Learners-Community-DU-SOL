@@ -47,24 +47,24 @@ For support inquiries or feedback, contact us at ashusriwastav58@gmail.com.
 
 Thank you for choosing The Learners' Community DU SOL App. Let's embark on a journey of knowledge and success together!
 
-!![Untitled (9)](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/98f1c4ac-0ead-4c43-9ed8-70a05d9cd03c)
-![Untitled (10)](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/56c4db46-9b04-44ab-a908-c5fdec9a1e13)
-![1](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/43ab9cc0-ab65-40cc-a332-aa059093cb73)
-![2 (3)](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/d94da628-a3f4-485c-b6c7-80fdf24324cf)
-![3 (2)](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/c325a73d-ae7e-4576-ae98-77b264a90bcf)
-![Screenshot_2024-05-18-12-46-59-95_3d05959602a3445403e2d8fecb5453ad](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/477951c7-189d-498a-98f8-a5f22b101665)
-![Screenshot_2024-05-18-12-47-03-42_3d05959602a3445403e2d8fecb5453ad](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/10caa5a4-5115-42e3-9b68-8847c294d23a)
-![Screenshot_2024-05-18-12-47-44-86_3d05959602a3445403e2d8fecb5453ad](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/90155034-0d04-4b17-8ed2-30935703a44f)
-![Screenshot_2024-05-18-12-47-14-80_3d05959602a3445403e2d8fecb5453ad](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/8f03b027-dd9b-465c-8c43-579bebb506aa)
-![Screenshot_2024-05-18-12-47-36-24_3d05959602a3445403e2d8fecb5453ad](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/8245b1c8-ca33-43ea-b3c1-70caf2af284e)
-![Screenshot_2024-05-18-12-47-32-35_3d05959602a3445403e2d8fecb5453ad](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/3c408a7d-481d-42a0-9c57-170c500ff453)
-![Screenshot_2024-05-18-12-47-22-85_3d05959602a3445403e2d8fecb5453ad](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/7c891652-6d8c-42ba-bf1f-ac985375a3df)
-![Screenshot_2024-05-18-12-47-26-95_3d05959602a3445403e2d8fecb5453ad](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/60f22eae-23a6-4f28-a014-3780eb5c762d)
-![Screenshot_2024-05-18-12-48-15-96_3d05959602a3445403e2d8fecb5453ad](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/41f0cf8e-1461-4ef8-9927-28f953851755)
-![Screenshot_2024-05-18-12-47-49-62_3d05959602a3445403e2d8fecb5453ad](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/13196e5b-63ca-49fa-96f2-d44ee0343659)
 
 
+https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/bc7f5593-b57b-4533-8f20-397dbe08d70e
 
+![Untitled (9)](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/750997cb-2e72-4a69-93f1-97bfd8127bb4)
+![Untitled (10)](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/a16e901d-5a4a-4b5b-8001-9efd0ebfc6a6)
+![Screenshot_20240711-164050](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/f1c40f14-5b7f-4220-8563-0cffb260d9b6)
+![Screenshot_20240711-164109](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/d5c27f96-b778-406b-9578-5d44d6e56ba4)
+![Screenshot_20240711-164557](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/e91bf639-2d9d-4392-8e14-c0e812c504b3)
+![Screenshot_20240711-164123](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/ac028f8a-621b-48e2-9506-b929be8eb04f)
+![Screenshot_20240711-164134](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/c1e6be1b-a2c3-455a-899f-d97a421a3568)
+![Screenshot_20240711-164142](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/02be705e-a3cf-42ba-806d-ec8ba259756d)
+![Screenshot_20240711-164149](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/21f030b4-be74-424d-9ea3-da2cadba9462)
+![Screenshot_20240711-164154](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/411f7259-327d-472f-979c-e88311bfd273)
+![Screenshot_20240711-164608](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/e9d6c022-29d1-4ea7-be4e-16561debedc0)
+![Screenshot_20240711-164158](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/2b8ab5af-006c-494c-b503-335a6a101a58)
+![Screenshot_20240711-164244](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/97fd9a0f-648a-4507-8b43-82818fd70dda)
+![Screenshot_20240711-164212](https://github.com/AshuSriwastav07/The-Learners-Community-DU-SOL/assets/68800012/05a1c0f5-b29b-4b97-96e8-aa61879a9c4b)
 
 
 
