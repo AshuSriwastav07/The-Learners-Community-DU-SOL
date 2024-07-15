@@ -12,7 +12,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import com.dusol.thelearnerscommunity.Notes_HomeWeb_MainActivity;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,9 +23,6 @@ import java.util.List;
 
 public class PDFDataManage {
 
-    public static InterstitialAd mInterstitialAd;
-    public static int click=0;
-    public static int NumberOfClickToShowAsd=2;
     public static void NotesManage(Activity activity,Context context, String path, ListView listView) {
 
         List<String> NotesNameArray = new ArrayList<>();
@@ -39,19 +35,13 @@ public class PDFDataManage {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
-                    String key = childSnapshot.getKey();
-                    String value = childSnapshot.getValue(String.class);
-                    assert value != null;
-                    Log.d("DataBaseLinks", value);
-                    assert key != null;
-                    Log.d("DataBaseLinks", key);
+                    String key = childSnapshot.getKey();  //notes name
+                    String value = childSnapshot.getValue(String.class); //notes link
 
-
-                    if(!value.equals("N/A")){
+                    if(!value.equals("N/A") && !value.equals("")){
                         NotesNameArray.add(key+" ✔");
                     }else {
                         NotesNameArray.add(key);
-
                     }
 
 
@@ -116,5 +106,38 @@ public class PDFDataManage {
         } else {
             Toast.makeText(context, "No web browser found to open the URL.", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public static List<String> CheckNotesAvailable(){
+
+        List<String> NotesNameArray = new ArrayList<>();
+        List<String> NotesLinksArray = new ArrayList<>();
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ref = database.getReference("NEP_Notes/NotesAvailable");
+
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
+                    String key = childSnapshot.getKey();  //notes name
+                    String value = childSnapshot.getValue(String.class); //notes link
+
+                    assert value != null;
+                    Log.d("NotesNameArray",value);
+
+                    NotesLinksArray.add(value);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                System.out.println("The read failed: " + databaseError.getCode());
+            }
+
+
+        });
+        return NotesLinksArray;
     }
 }

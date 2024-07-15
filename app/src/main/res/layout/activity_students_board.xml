@@ -95,6 +95,7 @@
                 android:visibility="gone"
                 tools:ignore="SpeakableTextPresentCheck" />
 
+
             <Button
                 android:id="@+id/Student_new_Result3"
                 style="@style/basic_button"
@@ -124,6 +125,34 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="@dimen/dp_8" />
 
+            <Button
+                android:id="@+id/ExtraInfoBtn1"
+                style="@style/basic_button"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="10sp"
+                android:drawableLeft="@mipmap/information"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="@dimen/dp_8"
+                android:visibility="gone"
+                tools:ignore="SpeakableTextPresentCheck" />
+            <Button
+                android:id="@+id/ExtraInfoBtn2"
+                style="@style/basic_button"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="10sp"
+                android:drawableLeft="@mipmap/information"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="@dimen/dp_8"
+                android:visibility="gone"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <Button
             android:id="@+id/button7_Admit_Card"
@@ -178,6 +207,20 @@
                 android:layout_marginRight="10sp"
                 android:drawableLeft="@mipmap/img_2"
                 android:text="Academic Calendar"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="@dimen/dp_8" />
+
+            <Button
+                android:id="@+id/feeStructure"
+                style="@style/basic_button"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="10sp"
+                android:drawableLeft="@mipmap/fee"
+                android:text="UG Fee Structure"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="@dimen/dp_8" />
 

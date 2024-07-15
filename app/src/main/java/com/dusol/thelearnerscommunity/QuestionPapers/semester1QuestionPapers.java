@@ -210,43 +210,18 @@ public class semester1QuestionPapers extends Fragment {
 
 package com.dusol.thelearnerscommunity.QuestionPapers;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.dusol.thelearnerscommunity.QP_Web_Page_MainActivity;
+import com.dusol.thelearnerscommunity.PDFDataCollerction.PDFDataManage;
 import com.dusol.thelearnerscommunity.R;
-import com.google.android.gms.ads.AdError;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.FullScreenContentCallback;
-import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 
 public class semester1QuestionPapers extends Fragment {
-    private InterstitialAd mInterstitialAd;
-    int click1=2;
-    int NumberOfClickToShowAsd=1;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -254,6 +229,9 @@ public class semester1QuestionPapers extends Fragment {
         View view = inflater.inflate(R.layout.fragment_semester1_question_papers, container, false);
         ListView listView = view.findViewById(R.id.sem1QPListView);
 
+        PDFDataManage.NotesManage(getActivity(),getContext(),"QP_Links/sem1",listView);
+
+        /*
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference("QP_Links/sem1");
         List<String> sem1QpName = new ArrayList<>();
@@ -265,9 +243,11 @@ public class semester1QuestionPapers extends Fragment {
                 for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
                     String key = childSnapshot.getKey();
                     String value = childSnapshot.getValue(String.class);
- /*                   Log.d("DataBaseLinks", value);
+ */
+        /*                   Log.d("DataBaseLinks", value);
                     Log.d("DataBaseLinks", key);
 */
+        /*
                     sem1QpName.add(key);
                     sem1QpLinks.add(value);
                 }
@@ -285,9 +265,11 @@ public class semester1QuestionPapers extends Fragment {
         });
 
         listView.setOnItemClickListener((parent, view1, position, id) -> start_Ads(sem1QpLinks.get(position),click1));
+*/
 
         return view;
     }
+/*
 
 
     public void openIntend(String link){
@@ -374,6 +356,7 @@ public class semester1QuestionPapers extends Fragment {
 
 
     }
+*/
 
 
 
