@@ -43,6 +43,7 @@ public class open_site_webpage extends AppCompatActivity {
 
         // Enable JavaScript and other settings as needed
         webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setBuiltInZoomControls(true);
 
         String link = getIntent().getStringExtra("link");
 
@@ -78,21 +79,5 @@ public class open_site_webpage extends AppCompatActivity {
 
         }
 
-        /*if (isNetworkAvailable()) {
-            // Internet is available, so load the URL
-            webView.loadUrl(link);
-        } else {
-            // Internet is not available, show a message
-            Toast.makeText(this, "No internet connection available.", Toast.LENGTH_LONG).show();
-        }
-    }
-
-    private boolean isNetworkAvailable() {
-        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        if (connectivityManager != null) {
-            NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-            return activeNetworkInfo != null && activeNetworkInfo.isConnected();
-        }
-        return false;*/
     }
 }

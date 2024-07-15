@@ -6,11 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".NEP_Files.NEP_Sem1_MainActivity">
+
     <LinearLayout
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_height="0dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -102,41 +103,6 @@
                     android:textSize="@dimen/dp_8"
                     app:backgroundTint="#9A4191" />
 
-                <!--<Button
-                    android:id="@+id/sem5Political"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    style="@style/basic_button"
-                    android:layout_weight="0"
-                    android:text="@string/political_science_dse"
-                    android:textAlignment="textStart"
-                    android:textSize="@dimen/dp_8"
-                    app:backgroundTint="#9A4191" />
-
-                <Button
-                    android:id="@+id/sem5Hindi"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    style="@style/basic_button"
-                    android:layout_weight="0"
-                    android:text="@string/hindi_ge"
-                    android:textAlignment="textStart"
-                    android:textSize="@dimen/dp_8"
-                    app:backgroundTint="#9A4191" />
-                <Button
-                    android:id="@+id/sem5SecEdu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    style="@style/basic_button"
-                    android:layout_weight="0"
-                    android:text="Education SEC "
-                    android:textAlignment="textStart"
-                    android:textSize="@dimen/dp_8"
-                    app:backgroundTint="#9A4191" />-->
-
             </LinearLayout>
         </HorizontalScrollView>
 
@@ -151,56 +117,4 @@
 
     <!--  Navigation Button-->
 
-    <LinearLayout
-        android:id="@+id/linearLayout4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        android:backgroundTint="#FFFFFF"
-        android:foregroundGravity="bottom"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageButton
-            android:id="@+id/navbarHome"
-            android:layout_width="match_parent"
-            android:layout_height="60sp"
-            android:layout_marginStart="15sp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/background_color_night"
-            android:contentDescription="@string/NavBTN"
-            app:srcCompat="@mipmap/navhome" />
-
-        <ImageButton
-            android:id="@+id/navbarVideos"
-            android:layout_width="match_parent"
-            android:layout_height="60sp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/background_color_night"
-            android:contentDescription="@string/NavBTN"
-            app:srcCompat="@mipmap/navvideo" />
-
-        <ImageButton
-            android:id="@+id/navbarBooks"
-            android:layout_width="match_parent"
-            android:layout_height="60sp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/background_color_night"
-            android:contentDescription="@string/NavBTN"
-            app:srcCompat="@mipmap/navnotes" />
-
-        <ImageButton
-            android:id="@+id/navbarStudent"
-            android:layout_width="match_parent"
-            android:layout_height="60sp"
-            android:layout_marginEnd="15sp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/background_color_night"
-            android:contentDescription="@string/NavBTN"
-            app:srcCompat="@mipmap/navstudent" />
-
-
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

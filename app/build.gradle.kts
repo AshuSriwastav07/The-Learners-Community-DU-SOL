@@ -12,10 +12,10 @@ android {
     defaultConfig {
         applicationId = "com.dusol.thelearnerscommunity"
         minSdk = 25
-        targetSdk = 33
-        versionCode = 10
+        targetSdk = 34
+        versionCode = 12
         multiDexEnabled= true
-        versionName = "2.4" //This is Version Name 2.4 and we cant use same version code again
+        versionName = "2.4.2" //This is Version Name 2.4 and we cant use same version code again
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -46,15 +46,18 @@ dependencies {
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.google.firebase:firebase-messaging-ktx:24.0.0")
-    implementation ("com.google.android.gms:play-services-ads:23.1.0")// Adds
+    implementation ("com.google.android.gms:play-services-ads:23.2.0")// Adds
     implementation ("com.google.firebase:firebase-messaging:24.0.0")
     implementation ("com.android.support:multidex:1.0.3")
     implementation("com.google.firebase:firebase-database-ktx:21.0.0")
     implementation ("com.squareup.picasso:picasso:2.71828")
-    implementation ("com.google.firebase:firebase-analytics:22.0.0")
+    implementation ("com.google.firebase:firebase-analytics:22.0.2")
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
     implementation("com.google.android.material:material:1.12.0")
+    implementation("androidx.activity:activity-ktx:1.9.0")
+    implementation("androidx.navigation:navigation-fragment:2.7.7")
+    implementation("androidx.navigation:navigation-ui:2.7.7")
     implementation("androidx.activity:activity:1.9.0")
     testImplementation("junit:junit:4.13.2")
     implementation("com.google.firebase:firebase-analytics")

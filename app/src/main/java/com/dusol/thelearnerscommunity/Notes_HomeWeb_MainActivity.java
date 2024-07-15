@@ -28,7 +28,6 @@ public class Notes_HomeWeb_MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         // Call finish() to close the activity when the back button is pressed
-        super.onBackPressed();
         finish();
     }
 
@@ -72,25 +71,6 @@ public class Notes_HomeWeb_MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-        /*if (isNetworkAvailable()) {
-            // Internet is available, so load the URL
-            webView.loadUrl(link);
-        } else {
-            // Internet is not available, show a message
-            Toast.makeText(this, "No internet connection available.", Toast.LENGTH_LONG).show();
-        }
-    }
-
-    private boolean isNetworkAvailable() {
-        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        if (connectivityManager != null) {
-            NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-            return activeNetworkInfo != null && activeNetworkInfo.isConnected();
-        }
-        return false;
-    }*/
-
 
 
     GetNetworkDetails network = new GetNetworkDetails();  //Obj Created to get network Details

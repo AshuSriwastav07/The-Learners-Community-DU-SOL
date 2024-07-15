@@ -60,9 +60,13 @@ public class studentsBoard extends AppCompatActivity {
         Button DateSheet = findViewById(R.id.button6_Date_sheet);
         Button AdmitCard = findViewById(R.id.button7_Admit_Card);
         Button SOL_Degree = findViewById(R.id.button8_Sol_Degree);
+        Button feeStructure = findViewById(R.id.feeStructure);
         Button SOL_New_result1 = findViewById(R.id.Student_new_Result1);
         Button SOL_New_result2 = findViewById(R.id.Student_new_Result2);
         Button SOL_New_result3 = findViewById(R.id.Student_new_Result3);
+        Button ExtraInfo1 = findViewById(R.id.ExtraInfoBtn1);
+        Button ExtraInfo2 = findViewById(R.id.ExtraInfoBtn2);
+
         ImageButton NavHome = findViewById(R.id.navbarHome);
         ImageButton NavBooks = findViewById(R.id.navbarBooks);
         ImageButton NavVideos = findViewById(R.id.navbarVideos);
@@ -94,6 +98,15 @@ public class studentsBoard extends AppCompatActivity {
             startActivity(intent);
         });
 
+
+        feeStructure.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(),open_site_webpage.class);
+                intent.putExtra("link","https://sol.du.ac.in/admission_23_24/fee_structure.html");
+                startActivity(intent);
+            }
+        });
 
         // Button Student Login Page
         StudentLogin.setOnClickListener(v -> openWebPage("https://web.sol.du.ac.in/student-login"));
@@ -132,7 +145,7 @@ public class studentsBoard extends AppCompatActivity {
                 for(DataSnapshot data:snapshot.getChildren()){
                     newResultName.add(data.getKey());
                     newResultLink.add(data.getValue(String.class));
-                    Log.d("ResultLinks",data.getKey());
+                    Log.d("ResultLinks",data.getValue(String.class));
                 }}
 
                 if (!newResultLink.get(0).equals("N/A")){
@@ -165,11 +178,56 @@ public class studentsBoard extends AppCompatActivity {
 
             }
         });
-
-
         SOL_New_result1.setOnClickListener(v -> openWebPage(newResultLink.get(0)));
         SOL_New_result2.setOnClickListener(v -> openWebPage(newResultLink.get(1)));
         SOL_New_result3.setOnClickListener(v -> openWebPage(newResultLink.get(2)));
+
+
+
+
+        //Extra Info Button
+
+        DatabaseReference Extra1 = database.getReference("Links").child("ExtraInfo");
+        ArrayList<String> newInfoLink = new ArrayList<>();
+        ArrayList<String> newInfoName = new ArrayList<>();
+
+        Extra1.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(!(snapshot == null)){
+                    for(DataSnapshot data:snapshot.getChildren()){
+                        newInfoName.add(data.getKey());
+                        newInfoLink.add(data.getValue(String.class));
+                    }}
+
+                if (!newInfoLink.get(0).equals("N/A")){
+                    ExtraInfo1.setText(newInfoName.get(0));
+                    ExtraInfo1.setVisibility(View.VISIBLE);
+                }else {
+                    ExtraInfo1.setVisibility(View.GONE);
+                }
+
+                if (!newInfoLink.get(1).equals("N/A")){
+                    ExtraInfo2.setText(newInfoName.get(1));
+                    ExtraInfo2.setVisibility(View.VISIBLE);
+                }else {
+                    ExtraInfo2.setVisibility(View.GONE);
+                }
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e("DatabaseError", "The read failed: " + error.getCode());
+
+            }
+        });
+
+
+
+        ExtraInfo1.setOnClickListener(v -> openWebPage(newInfoLink.get(0)));
+        ExtraInfo2.setOnClickListener(v -> openWebPage(newInfoLink.get(1)));
 
 
         // Button New Admission Link
@@ -223,6 +281,11 @@ public class studentsBoard extends AppCompatActivity {
                 Log.e("DBError", "Error ");
             }
         });
+
+
+        //feeStructure
+
+
 
         // Button Admit Card
         DatabaseReference AdmitCardLinks = FirebaseDatabase.getInstance().getReference("AdmitCard");

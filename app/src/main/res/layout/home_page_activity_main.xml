@@ -60,7 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/alata"
-        android:text="Delhi University\nSchool of Opening Learning\nNon-Collegiate Women's Education Board"
+        android:text="@string/delhi_university_nschool_of_opening_learning_nnon_college_women_s_education_board"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="#0535E4"

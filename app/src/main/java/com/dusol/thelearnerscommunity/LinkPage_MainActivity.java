@@ -15,7 +15,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -25,7 +24,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.dusol.thelearnerscommunity.SyllabusFiles.SyllabusMainActivity;
+import com.dusol.thelearnerscommunity.SyllabusFiles.SyllabusTabLayoutActivity;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -176,7 +175,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
             bundle.putString("Question_Paper_Open", "button_clicked");
             FirebaseAnalytics.getInstance(this).logEvent("Question_Paper_Open", bundle);
 
-            Intent intent = new Intent(this, QuestionPapers_MainActivity.class);
+            Intent intent = new Intent(this, QP_TabLayout_Activity.class);
             startActivity(intent);
         });
 
@@ -204,7 +203,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
             bundle.putString("SOL_Syllabus", "button_clicked");
             FirebaseAnalytics.getInstance(this).logEvent("SOL_Syllabus", bundle);
 
-            Intent intent = new Intent(getApplicationContext(), SyllabusMainActivity.class);
+            Intent intent = new Intent(getApplicationContext(), SyllabusTabLayoutActivity.class);
             startActivity(intent);
         });
 
@@ -230,6 +229,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
             }
         });
 
+
         // Button 8
         sol_portal.setOnClickListener(v -> {
             Bundle bundle = new Bundle();
@@ -239,6 +239,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), studentsBoard.class);
             startActivity(intent);
         });
+
 
         // Button 10
         sol_materials.setOnClickListener(v -> {
@@ -259,9 +260,6 @@ public class LinkPage_MainActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), connect_with_us_MainActivity.class);
             startActivity(intent);
 
-            addContentView(Connect_with_us, new ViewGroup.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT));
         });
 
         // Firebase FCM

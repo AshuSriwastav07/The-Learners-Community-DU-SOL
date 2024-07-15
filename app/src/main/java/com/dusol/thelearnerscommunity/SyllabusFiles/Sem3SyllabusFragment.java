@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.dusol.thelearnerscommunity.Notes_HomeWeb_MainActivity;
 import com.dusol.thelearnerscommunity.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -49,7 +50,12 @@ public class Sem3SyllabusFragment extends Fragment {
                     String key = dataSnapshot.getKey();
                     String value = dataSnapshot.getValue(String.class);
 
-                    sem3CourseName.add(key);
+                    if(key.contains("NEP")) {
+                        sem3CourseName.add(key + "\uD83C\uDD95");
+                    }else{
+                        sem3CourseName.add(key);
+
+                    }
                     sem3CourseLinks.add(value);
                 }
 
@@ -73,9 +79,18 @@ public class Sem3SyllabusFragment extends Fragment {
 
     public void openIntend(String link) {
         if (!Objects.equals(link, "N/A")) {
-            Intent intent = new Intent(getActivity(), Syllabus_Web_MainActivity.class);
-            intent.putExtra("link", link);
-            startActivity(intent);
+            if(link.contains("drive")){
+                Intent intent = new Intent(getActivity(), Notes_HomeWeb_MainActivity.class);
+                intent.putExtra("link", link);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                startActivity(intent);
+            }
+            else if(link.contains("pdfhost")){
+                Intent intent = new Intent(getActivity(), Syllabus_Web_MainActivity.class);
+                intent.putExtra("link", link);
+                startActivity(intent);}
+
         } else if (link.contains("youtube")) {
             Uri youtubeUri = Uri.parse(link);
             Intent intent = new Intent(Intent.ACTION_VIEW, youtubeUri);

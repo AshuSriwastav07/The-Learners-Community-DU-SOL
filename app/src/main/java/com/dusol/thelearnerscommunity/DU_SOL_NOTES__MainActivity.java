@@ -17,7 +17,7 @@ import android.widget.ImageButton;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.dusol.thelearnerscommunity.NEP_Files.NEP_HomePage;
-import com.dusol.thelearnerscommunity.SyllabusFiles.SyllabusMainActivity;
+import com.dusol.thelearnerscommunity.SyllabusFiles.SyllabusTabLayoutActivity;
 
 public class DU_SOL_NOTES__MainActivity extends AppCompatActivity {
 
@@ -47,7 +47,7 @@ public class DU_SOL_NOTES__MainActivity extends AppCompatActivity {
         StudyMaterial.setOnClickListener(v -> startActivity(new Intent(DU_SOL_NOTES__MainActivity.this, study_materials.class)));
 
 //        button4
-        Syllabus.setOnClickListener(v -> startActivity(new Intent(DU_SOL_NOTES__MainActivity.this, SyllabusMainActivity.class)));
+        Syllabus.setOnClickListener(v -> startActivity(new Intent(DU_SOL_NOTES__MainActivity.this, SyllabusTabLayoutActivity.class)));
 
 
 

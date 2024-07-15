@@ -226,7 +226,7 @@ public class semester2QuestionPapers extends Fragment {
         View view = inflater.inflate(R.layout.fragment_semester2_question_papers, container, false);
         ListView listView = view.findViewById(R.id.sem2QPListView);
 
-        PDFDataManage.NotesManage(getActivity(),getContext(),"QP_Links/sem3",listView);
+        PDFDataManage.NotesManage(getActivity(),getContext(),"QP_Links/sem2",listView);
 
 
         /*final FirebaseDatabase database = FirebaseDatabase.getInstance();
