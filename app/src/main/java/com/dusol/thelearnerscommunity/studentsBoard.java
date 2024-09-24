@@ -129,7 +129,6 @@ public class studentsBoard extends AppCompatActivity {
         StudentResult.setOnClickListener(v -> openWebPage(AllResultLink[0])); //
 
 
-
         // Button to open Academic Calendar
         AcademicCalendar.setOnClickListener(v -> startActivity(new Intent(this, Academic_Calendar_MainActivity.class)));
 

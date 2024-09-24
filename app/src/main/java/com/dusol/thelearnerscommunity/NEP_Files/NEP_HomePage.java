@@ -29,7 +29,7 @@ public class NEP_HomePage extends AppCompatActivity {
         List<String> Values= PDFDataManage.CheckNotesAvailable();
 
         sem1NotesOpen.setOnClickListener(view->{
-            if(Values.get(0).equals("ok")){
+            if(!Values.isEmpty() && Values.get(0).equals("ok")){
             Intent intent=new Intent(this, NEP_Sem1_MainActivity.class);
             startActivity(intent);
             }else {
@@ -38,7 +38,7 @@ public class NEP_HomePage extends AppCompatActivity {
         });
 
         sem2NotesOpen.setOnClickListener(view->{
-            if(Values.get(1).equals("ok")){
+            if(!Values.isEmpty() && Values.get(1).equals("ok")){
                 Intent intent=new Intent(this, NEP_Sem2_MainActivity.class);
                 startActivity(intent);
             }else {
@@ -47,7 +47,7 @@ public class NEP_HomePage extends AppCompatActivity {
         });
 
         sem3NotesOpen.setOnClickListener(view->{
-            if(Values.get(2).equals("ok")){
+            if(!Values.isEmpty() && Values.get(2).equals("ok")){
                 Intent intent=new Intent(this, NEP_Sem3_MainActivity.class);
                 startActivity(intent);
             }else {
@@ -56,7 +56,7 @@ public class NEP_HomePage extends AppCompatActivity {
         });
 
         sem4NotesOpen.setOnClickListener(view->{
-            if(Values.get(3).equals("ok")){
+            if(!Values.isEmpty() && Values.get(3).equals("ok")){
                 Intent intent=new Intent(this, NEP_Sem4_MainActivity.class);
                 startActivity(intent);
             }else {
@@ -67,7 +67,7 @@ public class NEP_HomePage extends AppCompatActivity {
 
 
         sem5NotesOpen.setOnClickListener(view->{
-            if(Values.get(4).equals("ok")){
+            if(!Values.isEmpty() && Values.get(4).equals("ok")){
                 Intent intent=new Intent(this, NEP_Sem5_MainActivity.class);
                 startActivity(intent);
             }else {
@@ -78,7 +78,7 @@ public class NEP_HomePage extends AppCompatActivity {
 
 
         sem6NotesOpen.setOnClickListener(view->{
-            if(Values.get(5).equals("ok")){
+            if(!Values.isEmpty() && Values.get(5).equals("ok")){
                 Intent intent=new Intent(this, NEP_Sem6_MainActivity.class);
                 startActivity(intent);
             }else {
