@@ -8,15 +8,15 @@
  */
 package com.dusol.thelearnerscommunity;
 
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.net.Uri;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.tabs.TabLayout;
 
 
 public class SubjectSelect_4thSem_MainActivity extends AppCompatActivity {
@@ -40,7 +40,7 @@ public class SubjectSelect_4thSem_MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_subject_select4th_sem_main);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        Button btnTransFragement=findViewById(R.id.Trans4thsem);
+       /* Button btnTransFragement=findViewById(R.id.Trans4thsem);
         Button btnHisFragement=findViewById(R.id.His4thSem);
         Button btnPolFragement=findViewById(R.id.Pol4thSem);
         Button btnHindiFragement=findViewById(R.id.Hindi4thSem);
@@ -166,8 +166,27 @@ public class SubjectSelect_4thSem_MainActivity extends AppCompatActivity {
                     .setReorderingAllowed(true)
                     .addToBackStack("name") // Name can be null
                     .commit();
-        });
+        });*/
 
+        // Initialize views
+        TabLayout tabLayout = findViewById(R.id.cbcs_sem4_notes_TabLayout);  // Correct initialization
+        ViewPager viewPager = findViewById(R.id.cbcs_sem4_notes_PageViewer);  // Correct initialization
+
+        // Create the adapter that will return a fragment for each of the primary sections of the activity
+        VP_Adapter vpAdapter = new VP_Adapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        vpAdapter.addFragment(new TranslationStudiesNotes(), "Translation  Studies");
+        vpAdapter.addFragment(new History4thSemNotes(), "History");
+        vpAdapter.addFragment(new Political4thSemNotes(), "Political");
+        vpAdapter.addFragment(new Edu4thSemNotes(), "Education");
+        vpAdapter.addFragment(new Hindi4thSemNotes(), "Hindi");
+        vpAdapter.addFragment(new Eng4thSemNotes(), "English");
+        vpAdapter.addFragment(new Sem4ExamNotes(), "Exam Notes");
+
+        // Set up the ViewPager with the sections adapter.
+        viewPager.setAdapter(vpAdapter);
+
+        // Link the TabLayout with the ViewPager
+        tabLayout.setupWithViewPager(viewPager);
 
 
 }

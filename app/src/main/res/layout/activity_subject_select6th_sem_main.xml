@@ -26,127 +26,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView5"
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/cbcs_sem6_notes_TabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="serif"
-            android:gravity="center"
-            android:paddingBottom="10dp"
-            android:text="@string/your_subject"
-            android:textColor="#FF0000"
-            android:textSize="@dimen/dp_10"
-            android:textStyle="bold"
-            tools:ignore="MissingConstraints" />
+            app:tabMode="scrollable">
 
-        <HorizontalScrollView
-            android:id="@+id/horizontalScrollView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scrollbarStyle="outsideOverlay"
-            android:scrollbars="none">
-
-            <LinearLayout
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabItem1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:scrollbars="none">
+                />
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabItem2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabItem3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabItem4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabItem5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabItem6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </com.google.android.material.tabs.TabLayout>
 
-
-                <Button
-                    android:id="@+id/sem6Political"
-                    style="@style/basic_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="0"
-                    android:text="@string/political_science_dse"
-                    android:textAlignment="textStart"
-                    android:textSize="@dimen/dp_8"
-                    app:backgroundTint="#9A4191" />
-
-                <Button
-                    android:id="@+id/sem6History"
-                    style="@style/basic_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_weight="0"
-                    android:text="@string/history_dse"
-                    android:textAlignment="textStart"
-                    android:textSize="@dimen/dp_8"
-                    app:backgroundTint="#9A4191" />
-
-                <Button
-                    android:id="@+id/sem6HistorySec"
-                    style="@style/basic_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="0"
-                    android:text="Radio and Cinema"
-                    android:textAlignment="textStart"
-                    android:textSize="@dimen/dp_8"
-                    app:backgroundTint="#9A4191" />
-
-                <Button
-                    android:id="@+id/sem6EnglishGE"
-                    style="@style/basic_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="0"
-                    android:text="English GE"
-                    android:textAlignment="textStart"
-                    android:textSize="@dimen/dp_8"
-                    app:backgroundTint="#9A4191" />
-
-                <Button
-                    android:id="@+id/sem6EducationSEC"
-                    style="@style/basic_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="0"
-                    android:text="Education SEC"
-                    android:textAlignment="textStart"
-                    android:textSize="@dimen/dp_8"
-                    app:backgroundTint="#9A4191" />
-
-                <Button
-                    android:id="@+id/sem6PoliticalSEC"
-                    style="@style/basic_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="0"
-                    android:text="Political Sci SEC"
-                    android:textAlignment="textStart"
-                    android:textSize="@dimen/dp_8"
-                    app:backgroundTint="#9A4191" />
-
-                <Button
-                    android:id="@+id/sem6ExamNotes"
-                    style="@style/basic_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="0"
-                    android:text="Exam Notes"
-                    android:textAlignment="textStart"
-                    android:textSize="@dimen/dp_8"
-                    app:backgroundTint="#9A4191" />
-
-
-            </LinearLayout>
-        </HorizontalScrollView>
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/CBCS_Semester6_Notes_Fragment_Container"
-            android:name="com.dusol.thelearnerscommunity.Political6thSemNotes"
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/cbcs_sem6_notes_PageViewer"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:layout="@layout/fragment_political6th_sem" />
+            android:layout_height="match_parent"
+            android:contentDescription="@string/scroll" />
     </LinearLayout>
 
     <!--  Navigation Button-->
