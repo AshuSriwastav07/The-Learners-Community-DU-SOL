@@ -8,14 +8,14 @@
  */
 package com.dusol.thelearnerscommunity;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.tabs.TabLayout;
 
 
 public class SubjectSelect_5thSem_MainActivity extends AppCompatActivity {
@@ -37,7 +37,7 @@ public class SubjectSelect_5thSem_MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_subject_select5th_sem_main);
 
 
-        Button sem5HistoryNotes=findViewById(R.id.sem5History);
+        /*Button sem5HistoryNotes=findViewById(R.id.sem5History);
         Button sem5HindiNotes=findViewById(R.id.sem5Hindi);
         Button sem5PoliticalNotes=findViewById(R.id.sem5Political);
         Button sem5EduSecNotes=findViewById(R.id.sem5SecEdu);
@@ -160,8 +160,27 @@ sem5ExamNotes.setOnClickListener(view -> {
                     .setReorderingAllowed(true)
                     .addToBackStack("name") // Name can be null
                     .commit();
-        });
+        });*/
 
+        // Initialize views
+        TabLayout tabLayout = findViewById(R.id.cbcs_sem5_notes_TabLayout);  // Correct initialization
+        ViewPager viewPager = findViewById(R.id.cbcs_sem5_notes_PageViewer);  // Correct initialization
+
+        // Create the adapter that will return a fragment for each of the primary sections of the activity
+        VP_Adapter vpAdapter = new VP_Adapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        vpAdapter.addFragment(new History5thSemNotes(), "History");
+        vpAdapter.addFragment(new Political5thSemNotes(), "Political");
+        vpAdapter.addFragment(new Hindi5thSemNotes(), "Hindi GE");
+        vpAdapter.addFragment(new EducationSem5SecWorkplaceNotes(), "Education");
+        vpAdapter.addFragment(new EducationDSE5thSemNotes(), "Education DSE");
+        vpAdapter.addFragment(new HistoryGE5thSemNotes(), "History GE");
+        vpAdapter.addFragment(new Sem5ExamAllNotes(), "Exam Notes");
+
+        // Set up the ViewPager with the sections adapter.
+        viewPager.setAdapter(vpAdapter);
+
+        // Link the TabLayout with the ViewPager
+        tabLayout.setupWithViewPager(viewPager);
 
     }
 

@@ -1,13 +1,11 @@
 package com.dusol.thelearnerscommunity.NEP_Files;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
-import com.dusol.thelearnerscommunity.NEP_Files.NEP_Fragments.ManageFragment;
 import com.dusol.thelearnerscommunity.NEP_Files.NEP_Fragments.Sem5.Sem5_AEC;
 import com.dusol.thelearnerscommunity.NEP_Files.NEP_Fragments.Sem5.Sem5_GENERIC_ELECTIVE;
 import com.dusol.thelearnerscommunity.NEP_Files.NEP_Fragments.Sem5.Sem5_Paper1_DSC;
@@ -15,6 +13,8 @@ import com.dusol.thelearnerscommunity.NEP_Files.NEP_Fragments.Sem5.Sem5_Paper2_D
 import com.dusol.thelearnerscommunity.NEP_Files.NEP_Fragments.Sem5.Sem5_SEC;
 import com.dusol.thelearnerscommunity.NEP_Files.NEP_Fragments.Sem5.Sem5_VAC;
 import com.dusol.thelearnerscommunity.R;
+import com.dusol.thelearnerscommunity.VP_Adapter;
+import com.google.android.material.tabs.TabLayout;
 
 public class NEP_Sem5_MainActivity extends AppCompatActivity {
 
@@ -31,7 +31,7 @@ public class NEP_Sem5_MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_nep_sem5_main);
 
-        //Subject Select Buttons
+       /* //Subject Select Buttons
 
         Button paper1=findViewById(R.id.paper1DSC);
         Button paper2=findViewById(R.id.paper2DSC);
@@ -83,6 +83,25 @@ public class NEP_Sem5_MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ManageFragment.setButtonToLoadFragment(context,new Sem5_VAC(),R.id.NEPsem5Fragment);
             }
-        });
+        });*/
+
+        // Initialize views
+        TabLayout tabLayout = findViewById(R.id.nep_sem5_notes_TabLayout);  // Correct initialization
+        ViewPager viewPager = findViewById(R.id.nep_sem5_notes_PageViewer);  // Correct initialization
+
+        // Create the adapter that will return a fragment for each of the primary sections of the activity
+        VP_Adapter vpAdapter = new VP_Adapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        vpAdapter.addFragment(new Sem5_Paper1_DSC(), "Paper 1");
+        vpAdapter.addFragment(new Sem5_Paper2_DSC(), "Paper 2");
+        vpAdapter.addFragment(new Sem5_AEC(), "AEC");
+        vpAdapter.addFragment(new Sem5_GENERIC_ELECTIVE(), "GE");
+        vpAdapter.addFragment(new Sem5_SEC(), "SEC");
+        vpAdapter.addFragment(new Sem5_VAC(), "VAC");
+
+        // Set up the ViewPager with the sections adapter.
+        viewPager.setAdapter(vpAdapter);
+
+        // Link the TabLayout with the ViewPager
+        tabLayout.setupWithViewPager(viewPager);
     }
 }

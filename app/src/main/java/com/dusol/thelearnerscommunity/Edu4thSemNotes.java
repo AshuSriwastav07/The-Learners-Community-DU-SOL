@@ -26,11 +26,11 @@ public class Edu4thSemNotes extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_edu4thsem, container, false);
 
         ListView listView = view.findViewById(R.id.sem4SECEducationyNotesList);
-
 
         Bundle bundle = new Bundle();
         bundle.putString("Sem4_Notes", "Sem4_Notes_Open");

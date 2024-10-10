@@ -16,103 +16,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <HorizontalScrollView
-            android:id="@+id/horizontalScrollView2"
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/nep_sem5_notes_TabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbarStyle="outsideOverlay"
-            android:scrollbars="none">
+            app:tabMode="scrollable">
 
-            <LinearLayout
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabItem1"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:scrollbars="none">
+                android:layout_height="wrap_content"
+                />
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabItem2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabItem3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabItem4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabItem5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabItem6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </com.google.android.material.tabs.TabLayout>
 
-
-                <Button
-                    android:id="@+id/paper1DSC"
-                    style="@style/basic_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_weight="0"
-                    android:text="@string/paper_1_dsc"
-                    android:textAlignment="textStart"
-                    android:textSize="@dimen/dp_8"
-                    app:backgroundTint="#9A4191" />
-
-                <Button
-                    android:id="@+id/paper2DSC"
-                    style="@style/basic_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_weight="0"
-                    android:text="@string/paper_2_dsc"
-                    android:textAlignment="textStart"
-                    android:textSize="@dimen/dp_8"
-                    app:backgroundTint="#9A4191" />
-
-                <Button
-                    android:id="@+id/aec"
-                    style="@style/basic_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_weight="0"
-                    android:text="@string/aec"
-                    android:textAlignment="textStart"
-                    android:textSize="@dimen/dp_8"
-                    app:backgroundTint="#9A4191" />
-
-                <Button
-                    android:id="@+id/GenericElective"
-                    style="@style/basic_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_weight="0"
-                    android:text="@string/ge"
-                    android:textAlignment="textStart"
-                    android:textSize="@dimen/dp_8"
-                    app:backgroundTint="#9A4191" />
-
-                <Button
-                    android:id="@+id/sec"
-                    style="@style/basic_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_weight="0"
-                    android:text="@string/sec"
-                    android:textAlignment="textStart"
-                    android:textSize="@dimen/dp_8"
-                    app:backgroundTint="#9A4191" />
-
-                <Button
-                    android:id="@+id/vac"
-                    style="@style/basic_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_weight="0"
-                    android:text="@string/vac"
-                    android:textAlignment="textStart"
-                    android:textSize="@dimen/dp_8"
-                    app:backgroundTint="#9A4191" />
-
-
-            </LinearLayout>
-        </HorizontalScrollView>
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/NEPsem5Fragment"
-            android:name="com.dusol.thelearnerscommunity.NEP_Files.NEP_Fragments.Sem5.Sem5_Paper1_DSC"
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/nep_sem5_notes_PageViewer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:layout="@layout/sem5_nep_paper1_fragment" />
+            android:contentDescription="@string/scroll" />
 
     </LinearLayout>
 

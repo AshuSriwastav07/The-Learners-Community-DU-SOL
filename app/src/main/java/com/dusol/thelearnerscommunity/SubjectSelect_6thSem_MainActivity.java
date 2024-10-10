@@ -7,14 +7,14 @@
  */
 package com.dusol.thelearnerscommunity;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.tabs.TabLayout;
 
 
 public class SubjectSelect_6thSem_MainActivity extends AppCompatActivity {
@@ -35,7 +35,7 @@ public class SubjectSelect_6thSem_MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_subject_select6th_sem_main);
 
 
-        Button sem6PolSci=findViewById(R.id.sem6Political);
+        /*Button sem6PolSci=findViewById(R.id.sem6Political);
         Button sem6History=findViewById(R.id.sem6History);
         Button sem6HistorySec=findViewById(R.id.sem6HistorySec);
         Button sem6EnglishGE=findViewById(R.id.sem6EnglishGE);
@@ -153,7 +153,27 @@ public class SubjectSelect_6thSem_MainActivity extends AppCompatActivity {
                     .setReorderingAllowed(true)
                     .addToBackStack("name") // Name can be null
                     .commit();
-        });
+        });*/
+
+        // Initialize views
+        TabLayout tabLayout = findViewById(R.id.cbcs_sem6_notes_TabLayout);  // Correct initialization
+        ViewPager viewPager = findViewById(R.id.cbcs_sem6_notes_PageViewer);  // Correct initialization
+
+        // Create the adapter that will return a fragment for each of the primary sections of the activity
+        VP_Adapter vpAdapter = new VP_Adapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        vpAdapter.addFragment(new Political6thSemNotes(), "Political");
+        vpAdapter.addFragment(new History6thSemNotes(), "History");
+        vpAdapter.addFragment(new HistorySec6thSemNotes(),"History Sec");
+        vpAdapter.addFragment(new EnglishGE6thSemNotes(), "English GE");
+        vpAdapter.addFragment(new EducationSec6thSemNotes(), "Education Sec");
+        vpAdapter.addFragment(new PoliticalSciSEC_6thSemNotes(), "Political SEC");
+        vpAdapter.addFragment(new Sem6ExamAllNotes(), "Exam Notes");
+
+        // Set up the ViewPager with the sections adapter.
+        viewPager.setAdapter(vpAdapter);
+
+        // Link the TabLayout with the ViewPager
+        tabLayout.setupWithViewPager(viewPager);
 
     }
 }
