@@ -1,7 +1,6 @@
 /**
  * App developed by:
  * Ashu Sriwastav
- *
  * All rights reserved. This application is the property of Ashu Sriwastav.
  * Unauthorized reproduction, distribution, or modification of this application
  * without the explicit permission of Ashu Sriwastav is prohibited.
@@ -17,11 +16,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-
+import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
-
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,6 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class studentsBoard extends AppCompatActivity {
+
     String link1; String link2; String link3; String link4;String link5;String link6;String link7;String link8; String TitleAnsYear;
     String sem1title; String sem2title; String sem3title;
 
@@ -325,10 +324,11 @@ public class studentsBoard extends AppCompatActivity {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         PackageManager packageManager = getPackageManager();
         List<ResolveInfo> activities = packageManager.queryIntentActivities(intent, 0);
-        if (activities.size() > 0) {
+        if (!activities.isEmpty() && intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         } else {
-            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+            // If no activity found, show a message to the user
+            Toast.makeText(this, "No application found to open this link", Toast.LENGTH_LONG).show();
         }
     }
 
