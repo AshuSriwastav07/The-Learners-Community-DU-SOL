@@ -1,10 +1,13 @@
 package com.dusol.thelearnerscommunity;
 
 import android.os.Bundle;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.tabs.TabLayout;
 
 public class study_materials extends AppCompatActivity {
 
@@ -25,7 +28,7 @@ public class study_materials extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_study_materials);
 
-        Button ba_btn1=findViewById(R.id.BA_btn1);
+        /*Button ba_btn1=findViewById(R.id.BA_btn1);
         Button ba_polHons_btn2=findViewById(R.id.BA_PolHons_btn2);
         Button ba_engHons_btn3=findViewById(R.id.BA_EngHons_btm3);
         Button Bcom_btn4=findViewById(R.id.BCom_btn4);
@@ -95,8 +98,27 @@ public class study_materials extends AppCompatActivity {
                     .setReorderingAllowed(true)
                     .addToBackStack("name") // Name can be null
                     .commit();
-        });
+        });*/
 
+        // Initialize views
+        TabLayout tabLayout = findViewById(R.id.studyMaterial_TabLayout);  // Correct initialization
+        ViewPager viewPager = findViewById(R.id.studyMaterial_PageViewer);  // Correct initialization
+
+        // Create the adapter that will return a fragment for each of the primary sections of the activity
+        VP_Adapter vpAdapter = new VP_Adapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        vpAdapter.addFragment(new BA_ProgSM(), "BA Program");
+        vpAdapter.addFragment(new BA_PolHons_SM(), "BA Pol Hons");
+        vpAdapter.addFragment(new BA_EngHonsSM(), "BA Eng Hons");
+        vpAdapter.addFragment(new BA_PsyHonsSM(), "BA Psy Hons");
+        vpAdapter.addFragment(new BA_EconomicsHonsSM(), "BA Eco Hons");
+        vpAdapter.addFragment(new BCom_SM(), "B Com");
+        vpAdapter.addFragment(new BCom_HonsSM(), "B Com Hons");
+
+        // Set up the ViewPager with the sections adapter.
+        viewPager.setAdapter(vpAdapter);
+
+        // Link the TabLayout with the ViewPager
+        tabLayout.setupWithViewPager(viewPager);
 
 
     }
