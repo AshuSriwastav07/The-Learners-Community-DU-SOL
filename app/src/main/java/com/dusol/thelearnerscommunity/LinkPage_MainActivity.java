@@ -24,6 +24,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.dusol.thelearnerscommunity.NotesStoreManage.NotesStore_HomePage;
 import com.dusol.thelearnerscommunity.SyllabusFiles.SyllabusTabLayoutActivity;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.database.DataSnapshot;
@@ -155,7 +156,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
             bundle.putString("Notes_Store", "button_clicked");
             FirebaseAnalytics.getInstance(this).logEvent("Notes_Store", bundle);
 
-            Intent intent = new Intent(getApplicationContext(), Notes_Store.class);
+            Intent intent = new Intent(getApplicationContext(), NotesStore_HomePage.class);
             startActivity(intent);
         });
 
