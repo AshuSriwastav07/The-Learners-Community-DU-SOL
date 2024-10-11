@@ -34,7 +34,11 @@ public class Academic_Calendar_MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String Link= snapshot.getValue(String.class);
-                Picasso.get().load(Link).into(imageView);
+                Picasso.get()
+                        .load(Link)
+                        .error(R.drawable.nopictures)
+                        .placeholder(R.drawable.loading)
+                        .into(imageView);
 
             }
 
