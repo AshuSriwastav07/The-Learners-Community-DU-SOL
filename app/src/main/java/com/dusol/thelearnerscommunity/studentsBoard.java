@@ -65,6 +65,14 @@ public class studentsBoard extends AppCompatActivity {
         Button SOL_New_result3 = findViewById(R.id.Student_new_Result3);
         Button ExtraInfo1 = findViewById(R.id.ExtraInfoBtn1);
         Button ExtraInfo2 = findViewById(R.id.ExtraInfoBtn2);
+        Button ExtraInfo3 = findViewById(R.id.ExtraInfoBtn3);
+        Button ExtraInfo4 = findViewById(R.id.ExtraInfoBtn4);
+        Button ExtraInfo5 = findViewById(R.id.ExtraInfoBtn5);
+        Button ExtraInfo6 = findViewById(R.id.ExtraInfoBtn6);
+        Button ExtraInfo7 = findViewById(R.id.ExtraInfoBtn7);
+        Button ExtraInfo8 = findViewById(R.id.ExtraInfoBtn8);
+        Button ExtraInfo9 = findViewById(R.id.ExtraInfoBtn9);
+        Button ExtraInfo10 = findViewById(R.id.ExtraInfoBtn10);
 
         ImageButton NavHome = findViewById(R.id.navbarHome);
         ImageButton NavBooks = findViewById(R.id.navbarBooks);
@@ -212,6 +220,58 @@ public class studentsBoard extends AppCompatActivity {
                     ExtraInfo2.setVisibility(View.GONE);
                 }
 
+                if (!newInfoLink.get(2).equals("N/A")){
+                    ExtraInfo3.setText(newInfoName.get(2));
+                    ExtraInfo3.setVisibility(View.VISIBLE);
+                }else {
+                    ExtraInfo3.setVisibility(View.GONE);
+                }
+
+                if (!newInfoLink.get(3).equals("N/A")){
+                    ExtraInfo4.setText(newInfoName.get(3));
+                    ExtraInfo4.setVisibility(View.VISIBLE);
+                }else {
+                    ExtraInfo4.setVisibility(View.GONE);
+                }
+
+                if (!newInfoLink.get(4).equals("N/A")){
+                    ExtraInfo5.setText(newInfoName.get(4));
+                    ExtraInfo5.setVisibility(View.VISIBLE);
+                }else {
+                    ExtraInfo5.setVisibility(View.GONE);
+                }
+                if (!newInfoLink.get(5).equals("N/A")){
+                    ExtraInfo6.setText(newInfoName.get(5));
+                    ExtraInfo6.setVisibility(View.VISIBLE);
+                }else {
+                    ExtraInfo6.setVisibility(View.GONE);
+                }
+                if (!newInfoLink.get(6).equals("N/A")){
+                    ExtraInfo7.setText(newInfoName.get(6));
+                    ExtraInfo7.setVisibility(View.VISIBLE);
+                }else {
+                    ExtraInfo7.setVisibility(View.GONE);
+                }
+                if (!newInfoLink.get(7).equals("N/A")){
+                    ExtraInfo8.setText(newInfoName.get(7));
+                    ExtraInfo8.setVisibility(View.VISIBLE);
+                }else {
+                    ExtraInfo8.setVisibility(View.GONE);
+                }
+                if (!newInfoLink.get(8).equals("N/A")){
+                    ExtraInfo9.setText(newInfoName.get(8));
+                    ExtraInfo9.setVisibility(View.VISIBLE);
+                }else {
+                    ExtraInfo9.setVisibility(View.GONE);
+                }
+                if (!newInfoLink.get(9).equals("N/A")){
+                    ExtraInfo10.setText(newInfoName.get(9));
+                    ExtraInfo10.setVisibility(View.VISIBLE);
+                }
+                else {
+                    ExtraInfo10.setVisibility(View.GONE);
+                }
+
 
             }
 
@@ -226,6 +286,17 @@ public class studentsBoard extends AppCompatActivity {
 
         ExtraInfo1.setOnClickListener(v -> openWebPage(newInfoLink.get(0)));
         ExtraInfo2.setOnClickListener(v -> openWebPage(newInfoLink.get(1)));
+        ExtraInfo3.setOnClickListener(v -> openWebPage(newInfoLink.get(2)));
+        ExtraInfo4.setOnClickListener(v -> openWebPage(newInfoLink.get(3)));
+        ExtraInfo5.setOnClickListener(v -> openWebPage(newInfoLink.get(4)));
+        ExtraInfo6.setOnClickListener(v -> openWebPage(newInfoLink.get(5)));
+        ExtraInfo7.setOnClickListener(v -> openWebPage(newInfoLink.get(6)));
+        ExtraInfo8.setOnClickListener(v -> openWebPage(newInfoLink.get(7)));
+        ExtraInfo9.setOnClickListener(v -> openWebPage(newInfoLink.get(8)));
+        ExtraInfo10.setOnClickListener(v -> openWebPage(newInfoLink.get(9)));
+
+
+
 
 
         // Button New Admission Link
@@ -341,5 +412,7 @@ public class studentsBoard extends AppCompatActivity {
         DialogFragment dialogFragment = AdmitCardDailogBox.newInstance(AC_Link1, AC_Link2, AC_Link3, AC_Semtitle1, AC_Semtitle2, AC_Semtitle3, AC_yeartitle);
         dialogFragment.show(getSupportFragmentManager(), "AdmitCardLinks");
     }
+
+
 }
 

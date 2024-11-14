@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.dusol.thelearnerscommunity.PDFDataCollerction.PDFDataManage;
 import com.dusol.thelearnerscommunity.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import java.util.List;
 
@@ -18,6 +20,11 @@ public class NEP_HomePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nep_home_page);
+
+        //ads
+        AdView mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         Button sem1NotesOpen=findViewById(R.id.NEP_Sem1);
         Button sem2NotesOpen=findViewById(R.id.NEP_Sem2);

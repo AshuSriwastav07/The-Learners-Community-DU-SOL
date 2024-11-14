@@ -16,6 +16,8 @@ import androidx.fragment.app.Fragment;
 
 import com.dusol.thelearnerscommunity.Notes_HomeWeb_MainActivity;
 import com.dusol.thelearnerscommunity.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -38,6 +40,11 @@ public class Sem6SyllabusFragment extends Fragment {
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference sem1Links = database.getReference("Syllabus/sem6");
+
+        //ads
+        AdView mAdView = view.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         List<String> sem6CourseName = new ArrayList<>();  // Store Course Name
         List<String> sem6CourseLinks = new ArrayList<>();  // Store course PDF links

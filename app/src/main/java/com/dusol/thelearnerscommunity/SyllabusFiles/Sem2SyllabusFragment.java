@@ -16,6 +16,8 @@ import androidx.fragment.app.Fragment;
 
 import com.dusol.thelearnerscommunity.Notes_HomeWeb_MainActivity;
 import com.dusol.thelearnerscommunity.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -33,6 +35,12 @@ public class Sem2SyllabusFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_sem2_syllabus, container, false);
+
+
+        //ads
+        AdView mAdView = view.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         ListView listView = view.findViewById(R.id.sem2SyllabusList);
 

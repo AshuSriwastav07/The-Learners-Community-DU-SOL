@@ -13,9 +13,10 @@ android {
         applicationId = "com.dusol.thelearnerscommunity"
         minSdk = 25
         targetSdk = 34
-        versionCode = 14
+        versionCode = 16
         multiDexEnabled= true
-        versionName = "2.4.3" //This is Version Name 2.4 and we cant use same version code again
+        versionName = "2024.11.2.4.5" //Explain Year.month.versionName
+        //This is Version Name 2.4 and we cant use same version code again
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

@@ -30,3 +30,5 @@
 -keep class com.google.firebase.crashlytics.**
 -keep class com.google.firebase.perf.**
 -keep class com.google.firebase.messaging.**
+-dontwarn android.media.LoudnessCodecController$OnLoudnessCodecUpdateListener
+-dontwarn android.media.LoudnessCodecController

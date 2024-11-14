@@ -6,7 +6,6 @@
  * without the explicit permission of Ashu Sriwastav is prohibited.
  */
 
-
 package com.dusol.thelearnerscommunity;
 
 import android.content.Intent;
@@ -39,30 +38,28 @@ public class QuestionPapers_MainActivity extends AppCompatActivity {
             // If no fragments, close the activity
             finish();
         }
-    } //important function that clears the stack and sends you back
+    } // Important function that clears the stack and sends you back
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_papers_main);
 
-        Button sem1=findViewById(R.id.sem1QP);
-        Button sem2=findViewById(R.id.sem2QP);
-        Button sem3=findViewById(R.id.sem3QP);
-        Button sem4=findViewById(R.id.sem4QP);
-        Button sem5=findViewById(R.id.sem5QP);
-        Button sem6=findViewById(R.id.sem6QP);
+        // Get all Buttons
+        Button sem1 = findViewById(R.id.sem1QP);
+        Button sem2 = findViewById(R.id.sem2QP);
+        Button sem3 = findViewById(R.id.sem3QP);
+        Button sem4 = findViewById(R.id.sem4QP);
+        Button sem5 = findViewById(R.id.sem5QP);
+        Button sem6 = findViewById(R.id.sem6QP);
 
-
+        // Navigation buttons
         ImageButton NavHome = findViewById(R.id.navbarHome);
         ImageButton NavBooks = findViewById(R.id.navbarBooks);
         ImageButton NavStudents = findViewById(R.id.navbarStudent);
         ImageButton NavVideos = findViewById(R.id.navbarVideos);
 
-
-
-
-//Videos // Left to make
+        // Videos - Left to make
         NavVideos.setOnClickListener(view -> {
             // Define the YouTube channel URL
             String youtubeChannelUrl = "https://www.youtube.com/@TheLearnersCommunityDUSOL/videos";
@@ -86,84 +83,91 @@ public class QuestionPapers_MainActivity extends AppCompatActivity {
         });
 
         NavHome.setOnClickListener(view -> {
-            Intent intent=new Intent(getApplicationContext(),LinkPage_MainActivity.class);
+            Intent intent = new Intent(getApplicationContext(), LinkPage_MainActivity.class);
             startActivity(intent);
-
         });
 
-        //Notes Books
+        // Notes Books
         NavBooks.setOnClickListener(view -> {
-            Intent intent=new Intent(getApplicationContext(),Semester_Select_MainActivity.class);
+            Intent intent = new Intent(getApplicationContext(), Semester_Select_MainActivity.class);
             startActivity(intent);
-
         });
 
-        //Students Portal
+        // Students Portal
         NavStudents.setOnClickListener(view -> {
-            Intent intent=new Intent(getApplicationContext(),studentsBoard.class);
+            Intent intent = new Intent(getApplicationContext(), studentsBoard.class);
             startActivity(intent);
-
         });
 
-
-        TextView textView=findViewById(R.id.textBannerMarquee);
+        // Marquee text setup
+        TextView textView = findViewById(R.id.textBannerMarquee);
         textView.setEllipsize(TextUtils.TruncateAt.MARQUEE);
-        textView.setSelected(true); //Run Marquee
+        textView.setSelected(true); // Run Marquee
 
-
-
+        // Semester 1 - Question Papers
         sem1.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
+            semester1QuestionPapers sem1Fragment = new semester1QuestionPapers(); // Create new instance of the fragment
             fragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView, semester1QuestionPapers.class, null)
+                    .replace(R.id.fragmentContainerView, sem1Fragment)
                     .setReorderingAllowed(true)
-                    .addToBackStack("name") // Name can be null
+                    .addToBackStack("Sem1") // Name for the back stack entry
                     .commit();
         });
 
+        // Semester 2 - Question Papers
         sem2.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
+            semester2QuestionPapers sem2Fragment = new semester2QuestionPapers(); // Create new instance of the fragment
             fragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView, semester2QuestionPapers.class, null)
+                    .replace(R.id.fragmentContainerView, sem2Fragment)
                     .setReorderingAllowed(true)
-                    .addToBackStack("name") // Name can be null
+                    .addToBackStack("Sem2") // Name for the back stack entry
                     .commit();
         });
 
+        // Semester 3 - Question Papers
         sem3.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
+            semester3QuestionPapers sem3Fragment = new semester3QuestionPapers(); // Create new instance of the fragment
             fragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView, semester3QuestionPapers.class, null)
+                    .replace(R.id.fragmentContainerView, sem3Fragment)
                     .setReorderingAllowed(true)
-                    .addToBackStack("name") // Name can be null
+                    .addToBackStack("Sem3") // Name for the back stack entry
                     .commit();
         });
+
+        // Semester 4 - Question Papers
         sem4.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
+            semester4QuestionPapers sem4Fragment = new semester4QuestionPapers(); // Create new instance of the fragment
             fragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView, semester4QuestionPapers.class, null)
+                    .replace(R.id.fragmentContainerView, sem4Fragment)
                     .setReorderingAllowed(true)
-                    .addToBackStack("name") // Name can be null
+                    .addToBackStack("Sem4") // Name for the back stack entry
                     .commit();
         });
 
+        // Semester 5 - Question Papers
         sem5.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
+            semester5QuestionPapers sem5Fragment = new semester5QuestionPapers(); // Create new instance of the fragment
             fragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView, semester5QuestionPapers.class, null)
+                    .replace(R.id.fragmentContainerView, sem5Fragment)
                     .setReorderingAllowed(true)
-                    .addToBackStack("name") // Name can be null
+                    .addToBackStack("Sem5") // Name for the back stack entry
                     .commit();
         });
 
+        // Semester 6 - Question Papers
         sem6.setOnClickListener(view -> {
             FragmentManager fragmentManager = getSupportFragmentManager();
+            semester6QuestionPapers sem6Fragment = new semester6QuestionPapers(); // Create new instance of the fragment
             fragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView, semester6QuestionPapers.class, null)
+                    .replace(R.id.fragmentContainerView, sem6Fragment)
                     .setReorderingAllowed(true)
-                    .addToBackStack("name") // Name can be null
+                    .addToBackStack("Sem6") // Name for the back stack entry
                     .commit();
         });
-
     }
 }
