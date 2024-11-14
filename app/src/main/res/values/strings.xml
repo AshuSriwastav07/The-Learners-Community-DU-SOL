@@ -173,5 +173,7 @@
     <string name="media_and_communication_skills_ge">Media and Communication Skills (GE)</string>
     <string name="delhi_university_nschool_of_opening_learning_nnon_college_women_s_education_board">Delhi University\nSchool of Open Learning\nNon-College Women\'s Education Board</string>
     <string name="policy">Disclaimer: The app provides notes written by Developer and links to official college pages. This App does not represent a government entity.</string>
+    <string name="student_login">Student Login</string>
+    <string name="get_premium_notes">Get Premium Notes</string>
 
 </resources>

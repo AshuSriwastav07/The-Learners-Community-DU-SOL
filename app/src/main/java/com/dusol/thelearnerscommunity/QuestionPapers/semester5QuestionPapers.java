@@ -237,7 +237,8 @@ import androidx.fragment.app.Fragment;
 
 import com.dusol.thelearnerscommunity.PDFDataCollerction.PDFDataManage;
 import com.dusol.thelearnerscommunity.R;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 public class semester5QuestionPapers extends Fragment {
 
@@ -246,6 +247,10 @@ public class semester5QuestionPapers extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_semester5_question_papers, container, false);
         ListView listView = view.findViewById(R.id.sem5QPListView);
+
+        AdView mAdView = view.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         PDFDataManage.NotesManage(getActivity(),getContext(),"QP_Links/sem5",listView);
 

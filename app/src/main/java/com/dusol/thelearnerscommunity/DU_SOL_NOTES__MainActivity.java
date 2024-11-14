@@ -18,6 +18,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.dusol.thelearnerscommunity.NEP_Files.NEP_HomePage;
 import com.dusol.thelearnerscommunity.SyllabusFiles.SyllabusTabLayoutActivity;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 public class DU_SOL_NOTES__MainActivity extends AppCompatActivity {
 
@@ -26,6 +28,12 @@ public class DU_SOL_NOTES__MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_du_sol_notes_main);
+
+        //ads
+        AdView mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
         Button sol_notes = findViewById(R.id.button1_SOL_CBCS_NOTES); //Button 1
         Button nep_notes = findViewById(R.id.button2_NEP_Notes); //Button 2
         Button StudyMaterial = findViewById(R.id.button3_SOL_Material); //Button 3

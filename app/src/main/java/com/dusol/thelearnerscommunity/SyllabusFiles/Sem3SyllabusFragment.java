@@ -16,6 +16,8 @@ import androidx.fragment.app.Fragment;
 
 import com.dusol.thelearnerscommunity.Notes_HomeWeb_MainActivity;
 import com.dusol.thelearnerscommunity.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,6 +37,11 @@ public class Sem3SyllabusFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_sem3_syllabus, container, false);
 
         ListView listView = view.findViewById(R.id.sem3SyllabusList);
+
+        //ads
+        AdView mAdView = view.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference sem1Links = database.getReference("Syllabus/sem3");

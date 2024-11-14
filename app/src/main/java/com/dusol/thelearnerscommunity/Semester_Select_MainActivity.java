@@ -24,6 +24,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.dusol.thelearnerscommunity.NotesStoreManage.NotesStore_HomePage;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 public class Semester_Select_MainActivity extends AppCompatActivity {
@@ -46,7 +49,11 @@ public class Semester_Select_MainActivity extends AppCompatActivity {
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 
-        //add ends
+        //add
+        AdView mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
 
 
         Button buyNotes=findViewById(R.id.button7_Buy_Notes_PDF);
@@ -166,7 +173,7 @@ public class Semester_Select_MainActivity extends AppCompatActivity {
     //Buttons connect with semester notes
 
     public void openStore(View v) { // This activity will send you to the notes store page
-        Intent intent = new Intent(this, Notes_Store.class);
+        Intent intent = new Intent(this, NotesStore_HomePage.class);
         startActivity(intent);
     }
 

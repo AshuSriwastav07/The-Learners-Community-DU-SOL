@@ -166,7 +166,6 @@ public class Notes_Store extends AppCompatActivity {
 
         productButton3.setOnClickListener(v -> showProductDetailsDialog(productName[2], productDetails[2], Price[2], BuyLink[2]));
 
-
         productButton4.setOnClickListener(v -> showProductDetailsDialog(productName[3], productDetails[3], Price[3], BuyLink[3]));
 
         productButton5.setOnClickListener(v -> showProductDetailsDialog(productName[4], productDetails[4], Price[4], BuyLink[4]));
