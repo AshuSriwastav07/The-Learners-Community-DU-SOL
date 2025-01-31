@@ -1,32 +1,14 @@
 package com.dusol.thelearnerscommunity.SyllabusFiles;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.dusol.thelearnerscommunity.Notes_HomeWeb_MainActivity;
 import com.dusol.thelearnerscommunity.R;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 
 public class Sem6SyllabusFragment extends Fragment {
 
@@ -38,6 +20,9 @@ public class Sem6SyllabusFragment extends Fragment {
 
         ListView listView = view.findViewById(R.id.sem6SyllabusList);
 
+        syllabus_pdf_manage.SyllabusPDFManage(getActivity(),getContext(),"Syllabus/sem6",listView);
+
+        /*
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference sem1Links = database.getReference("Syllabus/sem6");
 
@@ -80,10 +65,10 @@ public class Sem6SyllabusFragment extends Fragment {
                 // Handle error
             }
         });
-
+    */
         return view;
     }
-
+/*
     public void openIntend(String link) {
         if (!Objects.equals(link, "N/A")) {
             if(link.contains("drive")){
@@ -107,4 +92,6 @@ public class Sem6SyllabusFragment extends Fragment {
             Toast.makeText(requireActivity(), "Syllabus Not Available Now!", Toast.LENGTH_SHORT).show();
         }
     }
+
+ */
 }
