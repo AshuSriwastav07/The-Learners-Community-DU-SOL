@@ -149,32 +149,18 @@
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/dp_4"
         android:layout_marginBottom="0dp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:adSize="BANNER"
         app:adUnitId="ca-app-pub-7092743628840352/8661598469"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/_2nd_semester"
-        android:textColor="#FF0000"
-        android:fontFamily="@font/abeezee"
-        android:textSize="@dimen/dp_10"
-        android:textStyle="bold" />
-
     <ListView
         android:id="@+id/sem2QPListView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:divider="@color/black"
-        android:dividerHeight="2dp"
-        android:footerDividersEnabled="true"
-        android:headerDividersEnabled="true"
-        android:padding="15dp" />
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:dividerHeight="0dp"/>
 
 </LinearLayout>

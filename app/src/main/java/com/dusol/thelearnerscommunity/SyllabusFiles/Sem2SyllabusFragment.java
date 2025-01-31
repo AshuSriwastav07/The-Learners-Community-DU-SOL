@@ -69,7 +69,7 @@ public class Sem2SyllabusFragment extends Fragment {
 
                 Log.d("SyllabusData", sem2CourseLinks.toString());
 
-                ArrayAdapter adapter = new ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, sem2CourseName);
+                ArrayAdapter adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, sem2CourseName);
                 listView.setAdapter(adapter);
 
                 listView.setOnItemClickListener((parent, view1, position, id) ->

@@ -56,11 +56,8 @@
                 android:id="@+id/sem4EnglishNotesList"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:divider="@color/black"
-                android:dividerHeight="2dp"
-                android:footerDividersEnabled="true"
-                android:headerDividersEnabled="true"
-                android:padding="15dp" />
+                android:divider="@null"
+                android:dividerHeight="0dp"/>
             <!--<Button
                 android:id="@+id/button1_DU_Notes"
                 android:layout_width="match_parent"

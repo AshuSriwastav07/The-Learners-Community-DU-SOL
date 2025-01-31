@@ -127,11 +127,8 @@
                 android:id="@+id/sem6SecHistoryNotesList"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:divider="@color/black"
-                android:dividerHeight="2dp"
-                android:footerDividersEnabled="true"
-                android:headerDividersEnabled="true"
-                android:padding="15dp" />
+                android:divider="@null"
+                android:dividerHeight="0dp"/>
 
         </LinearLayout>
 <!--    </ScrollView>-->

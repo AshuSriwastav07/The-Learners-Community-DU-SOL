@@ -1,25 +1,21 @@
-/**
- * App developed by:
- * Ashu Sriwastav
- *
- * All rights reserved. This application is the property of Ashu Sriwastav.
- * Unauthorized reproduction, distribution, or modification of this application
- * without the explicit permission of Ashu Sriwastav is prohibited.
- */
 package com.dusol.thelearnerscommunity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.WindowManager;
 import android.webkit.WebChromeClient;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.dusol.thelearnerscommunity.Network.GetNetworkDetails;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class Notes_HomeWeb_MainActivity extends AppCompatActivity {
     WebView webView;
@@ -27,67 +23,81 @@ public class Notes_HomeWeb_MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        // Call finish() to close the activity when the back button is pressed
         finish();
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE,WindowManager.LayoutParams.FLAG_SECURE);
-
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         setContentView(R.layout.notes_webpage_activity_main);
-
-        //Stop Taking SS
-//        getWindow().setFlags(
-//                WindowManager.LayoutParams.FLAG_SECURE,
-//                WindowManager.LayoutParams.FLAG_SECURE
-//        );
-
+        FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         webView = findViewById(R.id.notes_webview);
         progressBar = findViewById(R.id.progress_bar);
 
-        webView.setWebViewClient(new WebViewClient());
-
-        webView.getSettings().getBuiltInZoomControls();
-        // Enable JavaScript and other settings as needed
+        // Enable JavaScript and other necessary settings
         webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setBuiltInZoomControls(true);
 
         String link = getIntent().getStringExtra("link");
+        String name = getIntent().getStringExtra("PdfName");
 
-        // Set up WebView to show progress
+        // Set up WebChromeClient to show progress
         webView.setWebChromeClient(new WebChromeClient() {
             @Override
             public void onProgressChanged(WebView view, int newProgress) {
-                super.onProgressChanged(view, newProgress);
-
-                // Update the progress bar
                 progressBar.setProgress(newProgress);
-
-                // If the page has finished loading, hide the progress bar
                 if (newProgress == 100) {
                     progressBar.setVisibility(android.view.View.GONE);
                 }
             }
         });
 
+        // Set up WebViewClient to handle link clicks
+        webView.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                String url = request.getUrl().toString();
 
-    GetNetworkDetails network = new GetNetworkDetails();  //Obj Created to get network Details
-    boolean networkStatus= network.isNetworkAvailable(this);
+                if (url.contains("drive.google.com")) {
+                    return false;
+                } else {
+                    // Open other links in their respective apps or browsers
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                    startActivity(intent);
+                    return true;
+                }
+            }
 
-    Log.d("NetworkData", String.valueOf(networkStatus));
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                // For older Android versions
+                if (url.contains("drive.google.com")) {
+                    return false;
+                } else {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                    startActivity(intent);
+                    return true;
+                }
+            }
+        });
+
+        // Check network availability before loading the link
+        GetNetworkDetails network = new GetNetworkDetails();
+        boolean networkStatus = network.isNetworkAvailable(this);
 
         if (!networkStatus) {
-            // Internet is available, so load the URL
             Toast.makeText(this, "No internet connection available.", Toast.LENGTH_LONG).show();
-
         } else {
-            // Internet is not available, show a message
-            assert link != null;
-            webView.loadUrl(link);
+            if (link != null) {
+                Bundle bundle = new Bundle();
+                bundle.putString("pdf_name", name);
+                firebaseAnalytics.logEvent("pdf_opened", bundle);
+                webView.loadUrl(link);
 
+            }
         }
-
     }
+
 }

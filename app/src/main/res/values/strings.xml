@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">The Learners Community</string>
     <string name="welcome">Welcome</string>
-    <string name="rights">© 2024 The Learners Community All Rights Reserved.</string>
+    <string name="rights">© 2025 The Learners Community All Rights Reserved.</string>
     <string name="du_notes">DU NOTES</string>
     <string name="todo">DU Image\n</string>
     <string name="sol_notice">SOL Updates</string>
@@ -175,5 +175,6 @@
     <string name="policy">Disclaimer: The app provides notes written by Developer and links to official college pages. This App does not represent a government entity.</string>
     <string name="student_login">Student Login</string>
     <string name="get_premium_notes">Get Premium Notes</string>
+    <string name="pdf_title">PDF Title</string>
 
 </resources>
