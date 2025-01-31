@@ -52,6 +52,7 @@ public class open_site_webpage extends AppCompatActivity {
             @Override
             public void onProgressChanged(WebView view, int newProgress) {
                 super.onProgressChanged(view, newProgress);
+//                Log.d("AnalyticsCheck","work");
 
                 // Update the progress bar
                 progressBar.setProgress(newProgress);

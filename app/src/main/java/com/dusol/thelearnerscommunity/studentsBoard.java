@@ -101,7 +101,7 @@ public class studentsBoard extends AppCompatActivity {
         });
 
         NavBooks.setOnClickListener(view -> { // notes page
-            Intent intent = new Intent(getApplicationContext(), Semester_Select_MainActivity.class);
+            Intent intent = new Intent(getApplicationContext(), DU_SOL_NOTES__MainActivity.class);
             startActivity(intent);
         });
 

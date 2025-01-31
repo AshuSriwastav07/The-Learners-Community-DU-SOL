@@ -89,7 +89,7 @@ public class QuestionPapers_MainActivity extends AppCompatActivity {
 
         // Notes Books
         NavBooks.setOnClickListener(view -> {
-            Intent intent = new Intent(getApplicationContext(), Semester_Select_MainActivity.class);
+            Intent intent = new Intent(getApplicationContext(), DU_SOL_NOTES__MainActivity.class);
             startActivity(intent);
         });
 

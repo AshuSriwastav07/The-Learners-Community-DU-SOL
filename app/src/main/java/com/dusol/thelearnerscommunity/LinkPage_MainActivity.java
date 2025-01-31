@@ -111,7 +111,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
             bundle.putString("SOL_Notes_Open", "button_clicked");
             FirebaseAnalytics.getInstance(this).logEvent("SOL_Notes_Open", bundle);
 
-            Intent intent = new Intent(getApplicationContext(), Semester_Select_MainActivity.class);
+            Intent intent = new Intent(getApplicationContext(), DU_SOL_NOTES__MainActivity.class);
             startActivity(intent);
         });
 

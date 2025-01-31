@@ -20,9 +20,9 @@ import android.widget.ImageButton;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.dusol.thelearnerscommunity.DU_SOL_NOTES__MainActivity;
 import com.dusol.thelearnerscommunity.LinkPage_MainActivity;
 import com.dusol.thelearnerscommunity.R;
-import com.dusol.thelearnerscommunity.Semester_Select_MainActivity;
 import com.dusol.thelearnerscommunity.studentsBoard;
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
@@ -155,7 +155,7 @@ public class Syllabus_MainActivity_NotInUse extends AppCompatActivity {
 
         //Notes Books
         NavBooks.setOnClickListener(view -> {
-            Intent intent=new Intent(getApplicationContext(), Semester_Select_MainActivity.class);
+            Intent intent=new Intent(getApplicationContext(), DU_SOL_NOTES__MainActivity.class);
             startActivity(intent);
 
         });
