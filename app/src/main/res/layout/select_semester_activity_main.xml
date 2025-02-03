@@ -15,7 +15,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context="com.dusol.thelearnerscommunity.Semester_Select_MainActivity">
+    tools:context="com.dusol.thelearnerscommunity.Semester_Select_MainActivity"
+    style="@style/night_page">
 
     <!--  Navigation Button-->
 
@@ -44,7 +45,7 @@
                 android:gravity="center"
                 android:text="@string/your_semester"
                 android:textColor="#0037FF"
-                android:textSize="@dimen/dp_12"
+                android:textSize="@dimen/dp_10"
                 android:textStyle="bold"
                 tools:ignore="MissingConstraints" />
 

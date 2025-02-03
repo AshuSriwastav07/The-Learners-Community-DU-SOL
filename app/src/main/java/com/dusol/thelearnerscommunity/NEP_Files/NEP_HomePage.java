@@ -19,7 +19,7 @@ public class NEP_HomePage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nep_home_page);
+        setContentView(R.layout.activity_select_nep_semester);
 
         //ads
         AdView mAdView = findViewById(R.id.adView);

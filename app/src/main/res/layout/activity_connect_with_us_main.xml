@@ -38,14 +38,24 @@
             android:orientation="horizontal"
             android:padding="20dp">
 
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/YTLink"
+                style="@style/custome_SocialMedia_button"
+                android:layout_weight="1"
+                android:background="@drawable/image_button_border"
+                android:contentDescription="@string/yt"
+                android:soundEffectsEnabled="true"
+                android:src="@mipmap/connect_us_youtube" />
+
             <ImageButton
                 android:id="@+id/BloggerLink"
                 style="@style/custome_SocialMedia_button"
                 android:layout_width="@dimen/dp_120"
                 android:layout_height="80dp"
                 android:layout_weight="1"
-                android:background="@android:color/transparent"
+                android:background="@drawable/image_button_border"
                 android:contentDescription="@string/blogger"
+                android:soundEffectsEnabled="true"
                 android:src="@mipmap/blogger"
                 android:text="@string/blogger" />
 
@@ -55,9 +65,10 @@
                 android:layout_width="@dimen/dp_120"
                 android:layout_height="80dp"
                 android:layout_weight="1"
-                android:background="@android:color/transparent"
+                android:background="@drawable/image_button_border"
                 android:contentDescription="@string/instagram"
-                android:src="@mipmap/insta"
+                android:soundEffectsEnabled="true"
+                android:src="@mipmap/connect_us_instagram"
                 android:text="@string/instagram" />
         </LinearLayout>
 
@@ -68,21 +79,53 @@
             android:orientation="horizontal"
             android:padding="20dp">
 
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/YTLink"
-                style="@style/custome_SocialMedia_button"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:contentDescription="@string/yt"
-                android:src="@mipmap/yt" />
-
             <ImageButton
                 android:id="@+id/TelegramLink"
                 style="@style/custome_SocialMedia_button"
                 android:layout_weight="1"
-                android:background="@android:color/transparent"
+                android:background="@drawable/image_button_border"
                 android:contentDescription="@string/telegram"
-                android:src="@mipmap/telegram"
+                android:soundEffectsEnabled="true"
+                android:src="@mipmap/telegramone"
+                android:text="@string/telegramText" />
+
+            <ImageButton
+                android:id="@+id/TelegramLink2"
+                style="@style/custome_SocialMedia_button"
+                android:layout_weight="1"
+                android:background="@drawable/image_button_border"
+                android:contentDescription="@string/telegram"
+                android:soundEffectsEnabled="true"
+                android:src="@mipmap/telegramtwo"
+                android:text="@string/telegramText" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:padding="20dp">
+
+            <ImageButton
+                android:id="@+id/NotesStorePage"
+                style="@style/custome_SocialMedia_button"
+                android:layout_weight="1"
+                android:background="@drawable/image_button_border"
+                android:contentDescription="@string/telegram"
+                android:soundEffectsEnabled="true"
+                android:src="@mipmap/connect_us_notes"
+                android:text="@string/telegramText" />
+
+            <ImageButton
+                android:id="@+id/ShareApp"
+                style="@style/custome_SocialMedia_button"
+                android:layout_weight="1"
+                android:background="@drawable/image_button_border"
+                android:contentDescription="@string/telegram"
+                android:soundEffectsEnabled="true"
+                android:src="@mipmap/share"
                 android:text="@string/telegramText" />
 
         </LinearLayout>

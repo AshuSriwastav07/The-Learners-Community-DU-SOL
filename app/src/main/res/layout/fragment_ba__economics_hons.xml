@@ -1,102 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context=".BA_EconomicsHonsSM">
 
-    <ScrollView
+    <TextView
+        android:id="@+id/textView1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center_horizontal"
+        android:text="@string/ba_Economics"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+    <androidx.gridlayout.widget.GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:columnCount="2"
+        app:rowCount="8">
+
+        <!-- Row 1 -->
+        <Button
+            android:id="@+id/btn1"
+            style="@style/basic_syllabus_button"
+            android:text="@string/semester_1_syllabus"
+            app:layout_column="0"
+            app:layout_row="0" />
+
+        <Button
+            android:id="@+id/btn2"
+            style="@style/basic_syllabus_button"
+            android:text="@string/semester_2_syllabus"
+            app:layout_column="1"
+            app:layout_row="0" />
+
+        <!-- Row 2 -->
+        <Button
+            android:id="@+id/btn3"
+            style="@style/basic_syllabus_button"
+            android:text="@string/semester_3_syllabus"
+            app:layout_column="0"
+            app:layout_row="1" />
+
+        <Button
+            android:id="@+id/btn4"
+            style="@style/basic_syllabus_button"
+            android:text="@string/semester_4_syllabus"
+            app:layout_column="1"
+            app:layout_row="1" />
+
+        <!-- Row 3 -->
+        <Button
+            android:id="@+id/btn5"
+            style="@style/basic_syllabus_button"
+            android:text="@string/semester_5_syllabus"
+            app:layout_column="0"
+            app:layout_row="2" />
+
+        <Button
+            android:id="@+id/btn6"
+            style="@style/basic_syllabus_button"
+            android:text="@string/semester_6_syllabus"
+            app:layout_column="1"
+            app:layout_row="2" />
+
+        <!-- AdView -->
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_marginBottom="50dp"
-            android:gravity="center|center_horizontal"
-            android:orientation="vertical">
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="2dp"
+            android:visibility="gone"
+            app:adSize="BANNER"
+            app:adUnitId="ca-app-pub-7092743628840352/1241810429"
+            app:layout_column="0"
+            app:layout_columnSpan="2"
+            app:layout_gravity="center"
+            app:layout_row="7" />
+    </androidx.gridlayout.widget.GridLayout>
 
-            <TextView
-                android:id="@+id/textView1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="5dp"
-                android:gravity="center_horizontal"
-                android:text="@string/ba_Economics"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/btn1"
-                style="@style/basic_button"
-                android:layout_width="@dimen/dp_70"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="5dp"
-                android:text="@string/semester_1" />
-
-            <Button
-                android:id="@+id/btn2"
-                style="@style/basic_button"
-                android:layout_width="@dimen/dp_70"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="5dp"
-                android:text="@string/semester_2" />
-
-            <Button
-                android:id="@+id/btn3"
-                style="@style/basic_button"
-                android:layout_width="@dimen/dp_70"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="5dp"
-                android:text="@string/semester_3" />
-
-            <Button
-                android:id="@+id/btn4"
-                style="@style/basic_button"
-                android:layout_width="@dimen/dp_70"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="5dp"
-                android:text="@string/semester_4" />
-
-            <Button
-                android:id="@+id/btn5"
-                style="@style/basic_button"
-                android:layout_width="@dimen/dp_70"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="5dp"
-                android:text="@string/semester_5" />
-
-            <Button
-                android:id="@+id/btn6"
-                style="@style/basic_button"
-                android:layout_width="@dimen/dp_70"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="5dp"
-                android:text="@string/semester_6" />
-
-            <com.google.android.gms.ads.AdView
-                android:id="@+id/adView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="@dimen/dp_4"
-                android:layout_marginBottom="@dimen/dp_2"
-                android:visibility="visible"
-                app:adSize="BANNER"
-                app:adUnitId="ca-app-pub-7092743628840352/1241810429"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-        </LinearLayout>
-    </ScrollView>
-</FrameLayout>
+</LinearLayout>

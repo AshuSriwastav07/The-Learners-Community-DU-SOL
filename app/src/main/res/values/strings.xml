@@ -11,7 +11,8 @@
     <string name="nep_notes">NEP NOTES</string>
     <string name="DU_SOL_NOTES">DU SOL Notes</string>
     <string name="previous_question_papers">Question Paper</string>
-    <string name="your_semester">Select Your Semester</string>
+    <string name="your_semester">Select CBCS Your Semester</string>
+    <string name="select_Your_Nep_Semester">Select Your NEP Semester</string>
     <string name="your_subject">Select Your Subject</string>
     <string name="sub">subject scroll\n</string>
     <string name="_1st_semester">1st Semester</string>
@@ -176,5 +177,12 @@
     <string name="student_login">Student Login</string>
     <string name="get_premium_notes">Get Premium Notes</string>
     <string name="pdf_title">PDF Title</string>
+    <string name="semester_1_syllabus">Semester\n1\nSyllabus</string>
+    <string name="semester_4_syllabus">Semester\n4\nSyllabus</string>
+    <string name="semester_5_syllabus">Semester\n5\nSyllabus</string>
+    <string name="semester_6_syllabus">Semester\n6\nSyllabus</string>
+    <string name="semester_2_syllabus">Semester\n2\nSyllabus</string>
+    <string name="semester_3_syllabus">Semester\n3\nSyllabus</string>
+
 
 </resources>

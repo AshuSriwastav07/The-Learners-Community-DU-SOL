@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    style="@style/night_page">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -24,7 +25,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="16dp">
+            android:padding="16dp"
+            style="@style/night_list_item">
 
             <ImageView
                 android:id="@+id/pdfThumbnail"
@@ -46,7 +48,8 @@
                     android:layout_height="wrap_content"
                     android:text="@string/pdf_title"
                     android:textSize="@dimen/dp_5"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
 
             </LinearLayout>
         </LinearLayout>

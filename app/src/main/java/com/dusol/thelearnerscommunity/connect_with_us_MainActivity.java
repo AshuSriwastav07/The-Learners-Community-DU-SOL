@@ -1,8 +1,7 @@
 /**
  * App developed by:
  * Ashu Sriwastav
- *
- * All rights reserved. This application is the property of Ashu Sriwastav.
+  * All rights reserved. This application is the property of Ashu Sriwastav.
  * Unauthorized reproduction, distribution, or modification of this application
  * without the explicit permission of Ashu Sriwastav is prohibited.
  */
@@ -51,9 +50,33 @@ public class connect_with_us_MainActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton openTelegramChannelButton = findViewById(R.id.TelegramLink);
+        ImageButton openTelegramChannelButton1 = findViewById(R.id.TelegramLink);
 
-        openTelegramChannelButton.setOnClickListener(view -> {
+        openTelegramChannelButton1.setOnClickListener(view -> {
+            // Define the Telegram channel URL
+            String TelegramChannelUrl = "https://t.me/The_learnersCommunity";
+
+            // Create an Intent with the ACTION_VIEW action and the Telegram channel URL
+            Uri telegramUri = Uri.parse(TelegramChannelUrl);
+            Intent intent = new Intent(Intent.ACTION_VIEW, telegramUri);
+
+            // Set the package name of the Telegram app
+            intent.setPackage("org.telegram.messenger");
+
+            // Check if the Telegram app is installed
+            if (intent.resolveActivity(getPackageManager()) != null) {
+                // The Telegram app is installed, so open it
+                startActivity(intent);
+            } else {
+                // The Telegram app is not installed, you can handle this case as needed
+                // For example, you can open the Telegram website in a web browser
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(TelegramChannelUrl)));
+            }
+        });
+
+        ImageButton openTelegramChannelButton2 = findViewById(R.id.TelegramLink2);
+
+        openTelegramChannelButton2.setOnClickListener(view -> {
             // Define the Telegram channel URL
             String TelegramChannelUrl = "https://t.me/The_LCTyoutube";
 
@@ -103,10 +126,10 @@ public class connect_with_us_MainActivity extends AppCompatActivity {
 
         openInstagram.setOnClickListener(view -> {
             // Define the Blogger channel URL
-            String instasite = "https://www.instagram.com/the_learners_community_dusol/";
+            String instagramUri = "https://www.instagram.com/the_learners_community_dusol/";
 
             // Create an Intent with the ACTION_VIEW action and the Blogger channel URL
-            Uri BloggerUri = Uri.parse(instasite);
+            Uri BloggerUri = Uri.parse(instagramUri);
             Intent intent = new Intent(Intent.ACTION_VIEW, BloggerUri);
 
             // Set the package name of the Blogger app
@@ -119,9 +142,61 @@ public class connect_with_us_MainActivity extends AppCompatActivity {
             } else {
                 // The Blogger app is not installed, you can handle this case as needed
                 // For example, you can open the Blogger website in a web browser
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(instasite)));
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(instagramUri)));
             }
         });
+
+        ImageButton shareButton = findViewById(R.id.ShareApp);
+        shareButton.setOnClickListener(v -> {
+            //The link you want to share
+            String link = "https://play.google.com/store/apps/details?id=com.dusol.thelearnerscommunity";
+
+            // Custom message
+            String message = "⚡️ Download the Best Study App for DU/SOL/NCWEB & Ace Your Exams!⚡️\n" +
+                    "✅ CBCS/NEP Course Notes\n" +
+                    "💯 Semester 1-6 Question Papers 📝\n" +
+                    "📚 Semester 1-6 Study Material 📚\n" +
+                    "🎥 Video Explain Notes 🎥\n" +
+                    "✨ Student Portal for Every Need ✨\n\n" +
+                    "Check it out: " + link;
+
+            // Create an Intent with ACTION_SEND
+            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+
+            // Set the type of content to text
+            shareIntent.setType("text/plain");
+
+            // Add the message to the Intent
+            shareIntent.putExtra(Intent.EXTRA_TEXT, message);
+
+            // Add a subject (optional)
+            shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Check this out!");
+
+            // Start the share activity
+            startActivity(Intent.createChooser(shareIntent, "Share via"));
+        });
+
+        ImageButton openNotesWebsite = findViewById(R.id.NotesStorePage);
+
+        openNotesWebsite.setOnClickListener(view -> {
+            // Define the Blogger channel URL
+            String SiteUrl = "https://thelearnerscommunitynotes.myinstamojo.com/";
+
+            // Create an Intent with the ACTION_VIEW action and the Blogger channel URL
+            Uri BloggerUri = Uri.parse(SiteUrl);
+            Intent intent = new Intent(Intent.ACTION_VIEW, BloggerUri);
+
+            // Check if the Blogger app is installed
+            if (intent.resolveActivity(getPackageManager()) != null) {
+                // The Blogger app is installed, so open it
+                startActivity(intent);
+            } else {
+                // The Blogger app is not installed, you can handle this case as needed
+                // For example, you can open the Blogger website in a web browser
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(SiteUrl)));
+            }
+        });
+
 
 
         //Videos // Left to make
