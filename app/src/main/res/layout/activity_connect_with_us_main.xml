@@ -138,7 +138,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="9dp"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="sans-serif-condensed-medium"
         android:gravity="center"
         android:text="@string/join_us"
         android:textSize="@dimen/dp_18"

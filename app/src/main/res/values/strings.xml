@@ -77,7 +77,7 @@
     <string name="scroll">scroll view\n</string>
     <string name="button">Button</string>
     <string name="history_issues_in_twentieth_century_world_history_i">History - Issues in Twentieth Century World History I</string>
-    <string name="the_learners_community_notes_store">Study Notes Store</string>
+    <string name="the_learners_community_notes_store">Best Exam Notes</string>
     <string name="portal">portal</string>
     <string name="insta">Instagram</string>
     <string name="study_notes_store">Notes Store</string>
@@ -96,7 +96,7 @@
     <string name="chapter_3_notes">Chapter 3 Notes</string>
     <string name="sol_dates">Academic Dates</string>
     <string name="NavBTN">Navigation Button\n</string>
-    <string name="sol_study_materials">SOL Study Materials</string>
+    <string name="sol_study_materials">Study Materials</string>
     <string name="semester_1">Semester 1</string>
     <string name="semester_4">Semester 4</string>
     <string name="semester_5">Semester 5</string>
@@ -150,7 +150,7 @@
     <string name="making_the_workplace_inclusive">कार्यस्थल को समावेशी बनाना (Making the Workplace Inclusive)</string>
     <string name="_2nd_sem_exam_notes">2nd Sem Exam Notes</string>
     <string name="_2nd_semester_exam_notes_nall_subjects">2nd Semester Exam Notes\nAll Subjects</string>
-    <string name="cbcs_datesheet">CBCS DateSheet</string>
+    <string name="cbcs_datesheet">CBCS Date Sheet</string>
     <string name="check">Check</string>
     <string name="ba_hons">BA Hons</string>
     <string name="_6th_semester_exam_all_notes">6th Semester Exam All Notes</string>
@@ -183,6 +183,13 @@
     <string name="semester_6_syllabus">Semester\n6\nSyllabus</string>
     <string name="semester_2_syllabus">Semester\n2\nSyllabus</string>
     <string name="semester_3_syllabus">Semester\n3\nSyllabus</string>
+    <string name="academic_calendar">Academic Calendar</string>
+    <string name="_1st">1st</string>
+    <string name="_2nd">2nd</string>
+    <string name="_3rd">3rd</string>
+    <string name="_4th">4th</string>
+    <string name="_5th">5th</string>
+    <string name="_6th">6th</string>
 
 
 </resources>

@@ -21,6 +21,7 @@
         <item name="cornerRadius">@dimen/dp_10</item> <!-- Custom corner radius -->
         <item name="rippleColor">#7BE0D4</item> <!-- Ripple effect color -->
         <item name="android:layout_gravity">center</item>
+        <item name="fontFamily">@font/nunito</item>
     </style>
 
     <!-- Optional: Add a pressed state for the button -->
