@@ -28,6 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:fontFamily="@font/nunito_extrabold"
                 android:gravity="center"
                 android:text="@string/select_semester_and_question_paper"
                 android:textColor="#005DFF"
@@ -39,10 +40,12 @@
                 android:id="@+id/textBannerMarquee"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/alata"
                 android:singleLine="true"
                 android:text="Share Your Questions Paper With us On Telegram! "
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/QP_TabLayout"
@@ -52,32 +55,33 @@
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1st" />
+                    android:text="@string/_1st"
+                    />
 
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2nd" />
+                    android:text="@string/_2nd" />
 
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="3rd" />
+                    android:text="@string/_3rd" />
 
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="4th" />
+                    android:text="@string/_4th" />
 
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="5th" />
+                    android:text="@string/_5th" />
 
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="6th" />
+                    android:text="@string/_6th" />
 
             </com.google.android.material.tabs.TabLayout>
 

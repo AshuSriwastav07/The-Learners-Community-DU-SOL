@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/night_page"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".study_materials">
@@ -20,12 +21,11 @@
             android:id="@+id/textView_Cbcs"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_20"
-            android:fontFamily="serif"
+            android:fontFamily="@font/roboto_mono_bold"
             android:gravity="center"
             android:text="@string/sol_study_materials"
-            android:textColor="#0004FF"
+            android:textColor="#212121"
             android:textSize="26sp"
-            android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -34,7 +34,10 @@
             android:id="@+id/studyMaterial_TabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabMode="scrollable">
+            app:tabMode="scrollable"
+            style="@style/night_page"
+            >
+
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/tabItem1"

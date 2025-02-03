@@ -4,6 +4,12 @@
         <item>@font/alata</item>
         <item>@font/allerta</item>
         <item>@font/andika</item>
+        <item>@font/noto_sans_adlam_unjoined_bold</item>
+        <item>@font/nunito</item>
+        <item>@font/nunito_black</item>
+        <item>@font/nunito_extrabold</item>
+        <item>@font/nunito_extralight</item>
         <item>@font/oswald_bold</item>
+        <item>@font/roboto_mono_bold</item>
     </array>
 </resources>

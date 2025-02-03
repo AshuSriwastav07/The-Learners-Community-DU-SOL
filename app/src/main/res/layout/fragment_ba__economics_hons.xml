@@ -16,7 +16,9 @@
         android:gravity="center_horizontal"
         android:text="@string/ba_Economics"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:fontFamily="@font/nunito"
+        android:textColor="@color/black"/>
 
     <androidx.gridlayout.widget.GridLayout
         android:layout_width="wrap_content"

@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    style="@style/night_page"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".BCom_SM">
@@ -15,8 +16,11 @@
         android:layout_marginBottom="5dp"
         android:gravity="center_horizontal"
         android:text="@string/cbcs_bcom"
+        style="@style/night_page"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:fontFamily="@font/nunito"
+        android:textColor="@color/black"/>
 
     <ScrollView
         android:layout_width="wrap_content"
@@ -89,7 +93,9 @@
                 app:layout_column="0"
                 app:layout_columnSpan="2"
                 app:layout_gravity="center"
-                app:layout_row="3" />
+                app:layout_row="3"
+                android:fontFamily="@font/nunito"
+                android:textColor="@color/black"/>
 
             <!-- Row 5 -->
             <Button
