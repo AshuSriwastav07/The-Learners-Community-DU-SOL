@@ -1,0 +1,30 @@
+<resources>
+    <!-- Basic Button Style -->
+    <style name="basic_syllabus_button">
+        <item name="android:layout_width">@dimen/dp_50</item> <!-- Set width -->
+        <item name="android:layout_height">wrap_content</item> <!-- Set height -->
+        <item name="android:backgroundTint">#5B72F4</item> <!-- Background color -->
+        <item name="android:textColor">@android:color/white</item> <!-- Text color -->
+        <item name="android:textSize">@dimen/dp_7</item> <!-- Text size -->
+        <item name="android:textStyle">bold</item> <!-- Text style -->
+        <item name="android:padding">12dp</item> <!-- Padding -->
+        <item name="android:layout_marginStart">@dimen/dp_5</item> <!-- Margin -->
+        <item name="android:layout_marginEnd">@dimen/dp_5</item> <!-- Margin -->
+        <item name="android:layout_marginTop">8dp</item> <!-- Margin -->
+        <item name="android:layout_marginBottom">8dp</item> <!-- Margin -->
+        <item name="android:gravity">center</item> <!-- Center text -->
+        <item name="android:drawablePadding">8dp</item> <!-- Padding for drawable (if any) -->
+        <item name="android:clickable">true</item> <!-- Make button clickable -->
+        <item name="android:focusable">true</item> <!-- Make button focusable -->
+        <item name="android:elevation">4dp</item> <!-- Add elevation for shadow -->
+        <item name="android:stateListAnimator">@null</item> <!-- Disable default state animation -->
+        <item name="cornerRadius">@dimen/dp_10</item> <!-- Custom corner radius -->
+        <item name="rippleColor">#7BE0D4</item> <!-- Ripple effect color -->
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <!-- Optional: Add a pressed state for the button -->
+    <style name="basic_button_pressed" parent="basic_button">
+        <item name="android:backgroundTint">#5AC8C0</item> <!-- Darker color when pressed -->
+    </style>
+</resources>

@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".NEP_Files.NEP_HomePage">
+    tools:context=".NEP_Files.NEP_HomePage"
+    style="@style/night_page">
 
     <TextView
         android:id="@+id/textView5"
@@ -14,9 +15,9 @@
         android:layout_height="@dimen/dp_30"
         android:fontFamily="serif"
         android:gravity="center"
-        android:text="@string/your_semester"
+        android:text="@string/select_Your_Nep_Semester"
         android:textColor="#0037FF"
-        android:textSize="@dimen/dp_12"
+        android:textSize="@dimen/dp_10"
         android:textStyle="bold"
         tools:ignore="MissingConstraints" />
 

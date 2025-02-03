@@ -1,0 +1,13 @@
+<!-- res/drawable/image_button_stroke.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Solid background color (optional) -->
+    <solid android:color="#FFFFFF" /> <!-- Change to your desired background color -->
+
+    <!-- Stroke (border) -->
+    <stroke
+        android:width="2dp"
+    android:color="#FF0000" /> <!-- Stroke color -->
+
+    <!-- Corners (optional) -->
+    <corners android:radius="8dp" /> <!-- Rounded corners -->
+</shape>
