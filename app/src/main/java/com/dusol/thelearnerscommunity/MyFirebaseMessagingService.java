@@ -1,60 +1,88 @@
-/**
- * App developed by:
- * Ashu Sriwastav
- *
- * All rights reserved. This application is the property of Ashu Sriwastav.
- * Unauthorized reproduction, distribution, or modification of this application
- * without the explicit permission of Ashu Sriwastav is prohibited.
- */
 package com.dusol.thelearnerscommunity;
 
 import static com.dusol.thelearnerscommunity.R.drawable.notification_icon;
 
+import android.Manifest;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import com.dusol.thelearnerscommunity.NotesStoreManage.NotesStore_HomePage;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
-
     @Override
     public void onMessageReceived(@NonNull RemoteMessage message) {
         super.onMessageReceived(message);
 
-        getFirebaseMessage(message.getNotification().getTitle(), message.getNotification().getBody());  //remote message don't work
+        // Extract data from the notification
+        String title = message.getNotification().getTitle();
+        String body = message.getNotification().getBody();
 
+        // Get custom data if needed
+        String targetActivity = message.getData().get("targetActivity"); // Example: activity name passed in "targetActivity" key
+
+        sendFirebaseNotification(title, body, targetActivity);
     }
-    public void getFirebaseMessage(String title, String message) {
 
-        // Create a notification using NotificationCompat.Builder
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "myNotificationChannel")
-                .setSmallIcon(notification_icon) // Set the small notification icon
-                .setContentTitle(title) // Set the notification title
-                .setContentText(message) // Set the notification message
-                .setAutoCancel(false); // Set whether the notification should be automatically canceled when clicked
+    public void sendFirebaseNotification(String title, String message, String targetActivity) {
+        // Create an Intent to open the specific activity
+        Intent intent = null;
 
-        // Get the NotificationManagerCompat instance
-        NotificationManagerCompat manager = NotificationManagerCompat.from(this);
-
-        // Check if the app has the POST_NOTIFICATIONS permission
-        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
-            // If permission is not granted, consider requesting it
-            // TODO: Consider calling ActivityCompat#requestPermissions here to request the missing permissions,
-            // and then override onRequestPermissionsResult to handle user permission response.
-            // See the documentation for ActivityCompat#requestPermissions for more details.
-            return; // Return if permission is not granted
+        if ("QP".equals(targetActivity)) {
+            intent = new Intent(this, QP_TabLayout_Activity.class);
+            Log.d("FirebaseRegToken", "QPNotify");
+        } else if ("paid_notes".equals(targetActivity)) {
+            intent = new Intent(this, NotesStore_HomePage.class);
+        } else if ("updates".equals(targetActivity)) {
+            intent = new Intent(this, studentsBoard.class);
         }
 
-        // Notify with the built notification (notification ID: 101)
+        // Ensure that the activity opens correctly even if the app is closed
+        if (intent != null) {
+            // Use both flags to ensure the activity is opened correctly and clears any back stack
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // Open in new task and clear stack
+        }
+
+        // Add data to the Intent if needed
+        intent.putExtra("notificationMessage", message);
+
+        // Create the PendingIntent to launch the activity
+        PendingIntent pendingIntent = PendingIntent.getActivity(
+                this,
+                0,
+                intent,
+                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE
+        );
+
+        // Build the notification
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "myNotificationChannel")
+                .setSmallIcon(notification_icon)
+                .setContentTitle(title)
+                .setContentText(message)
+                .setAutoCancel(true)
+                .setContentIntent(pendingIntent);  // Attach the PendingIntent
+
+        // Display the notification
+        NotificationManagerCompat manager = NotificationManagerCompat.from(this);
+
+        // Check for notification permission
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+            // Handle missing permission if needed
+            return;
+        }
+
+        // Send the notification
         manager.notify(101, builder.build());
     }
 
+
 }
-
-

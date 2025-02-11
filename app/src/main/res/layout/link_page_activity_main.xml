@@ -29,20 +29,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/imageView2"
+        <TextView
+            android:id="@+id/textView12"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_45"
-            android:contentDescription="@string/todo"
-            android:scaleType="fitCenter"
-            app:srcCompat="@mipmap/du" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_3"
+            android:fontFamily="@font/nunito_extrabold"
+            android:text="@string/bannertext"
+            android:textAlignment="center"
+            android:textColor="#C51162"
+            android:textSize="@dimen/dp_10"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/LinkPageMarquee"
+            style="@style/banner_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/alata"
             android:singleLine="true"
-            style="@style/banner_text"
             android:text=""
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -65,48 +70,78 @@
                     android:layout_weight="1"
                     android:orientation="horizontal">
 
-                    <Button
-                        android:id="@+id/button1_du_sol_notes_page"
-                        style="@style/basic_button"
+                    <FrameLayout
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/dp_42"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:backgroundTint="#054bb4"
-                        android:drawableTop="@mipmap/img"
-                        android:fontFamily="@font/alata"
-                        android:gravity="center"
-                        android:text="@string/DU_SOL_NOTES"
-                        android:textAlignment="center"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                        android:textSize="@dimen/dp_6"
-                        android:typeface="normal"
-                        app:cornerRadius="30dp"
-                        app:rippleColor="#EDE8E8"
-                        app:strokeColor="#686767"
-                        tools:ignore="TextSizeCheck" />
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
 
-                    <Button
-                        android:id="@+id/button10_SOL_Study_Material"
-                        style="@style/basic_button"
+                        <Button
+                            android:id="@+id/button1_du_sol_notes_page"
+                            style="@style/basic_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_42"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="#054bb4"
+                            android:drawableTop="@mipmap/img"
+                            android:fontFamily="@font/alata"
+                            android:gravity="center"
+                            android:text="@string/DU_SOL_NOTES"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textSize="@dimen/dp_5"
+                            android:typeface="normal"
+                            app:cornerRadius="30dp"
+                            app:rippleColor="#EDE8E8"
+                            app:strokeColor="#686767"
+                            tools:ignore="TextSizeCheck" />
+
+                        <ImageView
+                            android:id="@+id/newNotesUpload"
+                            android:layout_width="@dimen/dp_15"
+                            android:layout_height="@dimen/dp_15"
+                            android:layout_gravity="right"
+                            android:layout_margin="18dp"
+                            android:visibility="gone" />
+
+                    </FrameLayout>
+
+                    <FrameLayout
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/dp_42"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:backgroundTint="#054bb4"
-                        android:drawableTop="@mipmap/materials"
-                        android:fontFamily="@font/alata"
-                        android:gravity="center"
-                        android:text="@string/sol_materials"
-                        android:textAlignment="center"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                        android:textSize="@dimen/dp_6"
-                        android:typeface="normal"
-                        app:cornerRadius="30dp"
-                        app:rippleColor="#EDE8E8"
-                        tools:ignore="TextSizeCheck" />
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <Button
+                            android:id="@+id/button10_SOL_Study_Material"
+                            style="@style/basic_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_42"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="#054bb4"
+                            android:drawableTop="@mipmap/materials"
+                            android:fontFamily="@font/alata"
+                            android:gravity="center"
+                            android:text="@string/sol_materials"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textSize="@dimen/dp_5"
+                            android:typeface="normal"
+                            app:cornerRadius="30dp"
+                            app:rippleColor="#EDE8E8"
+                            tools:ignore="TextSizeCheck" />
+
+                        <ImageView
+                            android:id="@+id/newStudyMaterialUpload"
+                            android:layout_width="@dimen/dp_15"
+                            android:layout_height="@dimen/dp_15"
+                            android:layout_gravity="right"
+                            android:layout_margin="18dp"
+                            android:visibility="gone" />
+
+                    </FrameLayout>
 
                 </LinearLayout>
 
@@ -116,47 +151,78 @@
                     android:layout_weight="1"
                     android:orientation="horizontal">
 
-                    <Button
-                        android:id="@+id/button2_SOL_Updates"
-                        style="@style/basic_button"
+                    <FrameLayout
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/dp_42"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:backgroundTint="#054bb4"
-                        android:drawableTop="@mipmap/notice"
-                        android:fontFamily="@font/alata"
-                        android:gravity="center"
-                        android:text="@string/sol_notice"
-                        android:textAlignment="center"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                        android:textSize="@dimen/dp_6"
-                        android:typeface="normal"
-                        app:cornerRadius="30dp"
-                        app:rippleColor="#EDE8E8"
-                        tools:ignore="TextSizeCheck" />
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
 
-                    <Button
-                        android:id="@+id/button3_QP"
-                        style="@style/basic_button"
+                        <Button
+                            android:id="@+id/button2_SOL_Updates"
+                            style="@style/basic_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_42"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="#054bb4"
+                            android:drawableTop="@mipmap/notice"
+                            android:fontFamily="@font/alata"
+                            android:gravity="center"
+                            android:text="@string/collage_updates"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textSize="@dimen/dp_5"
+                            android:typeface="normal"
+                            app:cornerRadius="30dp"
+                            app:rippleColor="#EDE8E8"
+                            tools:ignore="TextSizeCheck" />
+
+                        <ImageView
+                            android:id="@+id/newCollageUpdate"
+                            android:layout_width="@dimen/dp_15"
+                            android:layout_height="@dimen/dp_15"
+                            android:layout_gravity="right"
+                            android:layout_margin="18dp"
+                            android:visibility="gone" />
+
+                    </FrameLayout>
+
+                    <FrameLayout
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/dp_42"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:backgroundTint="#054bb4"
-                        android:drawableTop="@mipmap/exam"
-                        android:fontFamily="@font/alata"
-                        android:gravity="center"
-                        android:text="@string/previous_question_papers"
-                        android:textAlignment="center"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                        android:textSize="@dimen/dp_6"
-                        android:typeface="normal"
-                        app:cornerRadius="30dp"
-                        app:rippleColor="#EDE8E8"
-                        tools:ignore="TextSizeCheck" />
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <Button
+                            android:id="@+id/button3_QP"
+                            style="@style/basic_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_42"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="#054bb4"
+                            android:drawableTop="@mipmap/exam"
+                            android:fontFamily="@font/alata"
+                            android:gravity="center"
+                            android:text="@string/previous_question_papers"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textSize="@dimen/dp_5"
+                            android:typeface="normal"
+                            app:cornerRadius="30dp"
+                            app:rippleColor="#EDE8E8"
+                            tools:ignore="TextSizeCheck" />
+
+                        <ImageView
+                            android:id="@+id/newQPUpload"
+                            android:layout_width="@dimen/dp_15"
+                            android:layout_height="@dimen/dp_15"
+                            android:layout_gravity="right"
+                            android:layout_margin="18dp"
+                            android:visibility="gone" />
+
+                    </FrameLayout>
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -165,48 +231,78 @@
                     android:layout_weight="1"
                     android:orientation="horizontal">
 
-                    <Button
-                        android:id="@+id/button4_SOL_Syllabus"
-                        style="@style/basic_button"
+                    <FrameLayout
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/dp_42"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:backgroundTint="#054bb4"
-                        android:drawableTop="@mipmap/list"
-                        android:fontFamily="@font/alata"
-                        android:gravity="center"
-                        android:text="@string/sol_syllabus"
-                        android:textAlignment="center"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                        android:textSize="@dimen/dp_6"
-                        android:typeface="normal"
-                        app:cornerRadius="30dp"
-                        app:rippleColor="#EDE8E8"
-                        tools:ignore="TextSizeCheck" />
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
 
-                    <Button
-                        android:id="@+id/button5_Portal"
-                        style="@style/basic_button"
+                        <Button
+                            android:id="@+id/button4_SOL_Syllabus"
+                            style="@style/basic_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_42"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="#054bb4"
+                            android:drawableTop="@mipmap/list"
+                            android:fontFamily="@font/alata"
+                            android:gravity="center"
+                            android:text="@string/sol_syllabus"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textSize="@dimen/dp_5"
+                            android:typeface="normal"
+                            app:cornerRadius="30dp"
+                            app:rippleColor="#EDE8E8"
+                            tools:ignore="TextSizeCheck" />
+                        <ImageView
+                            android:id="@+id/newSyllabusUpload"
+                            android:layout_width="@dimen/dp_15"
+                            android:layout_height="@dimen/dp_15"
+                            android:layout_gravity="right"
+                            android:layout_margin="18dp"
+                            android:visibility="gone" />
+
+                    </FrameLayout>
+
+                    <FrameLayout
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/dp_42"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:backgroundTint="#054bb4"
-                        android:drawableTop="@mipmap/student"
-                        android:fontFamily="@font/alata"
-                        android:gravity="center"
-                        android:singleLine="true"
-                        android:text="@string/studentPortal"
-                        android:textAlignment="center"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                        android:textSize="@dimen/dp_6"
-                        android:typeface="normal"
-                        app:cornerRadius="30dp"
-                        app:rippleColor="#EDE8E8"
-                        tools:ignore="TextSizeCheck" />
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <Button
+                            android:id="@+id/button5_Portal3"
+                            style="@style/basic_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_42"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="#054bb4"
+                            android:drawableTop="@mipmap/student"
+                            android:fontFamily="@font/alata"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="@string/studentPortal"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textSize="@dimen/dp_5"
+                            android:typeface="normal"
+                            app:cornerRadius="30dp"
+                            app:rippleColor="#EDE8E8"
+                            tools:ignore="TextSizeCheck" />
+
+                        <ImageView
+                            android:id="@+id/newInfoUpload"
+                            android:layout_width="@dimen/dp_15"
+                            android:layout_height="@dimen/dp_15"
+                            android:layout_gravity="right"
+                            android:layout_margin="18dp"
+                            android:visibility="gone" />
+
+                    </FrameLayout>
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -215,47 +311,77 @@
                     android:layout_weight="1"
                     android:orientation="horizontal">
 
-                    <Button
-                        android:id="@+id/button6_notes_store"
-                        style="@style/basic_button"
+                    <FrameLayout
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/dp_42"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:backgroundTint="#054bb4"
-                        android:drawableTop="@mipmap/shop"
-                        android:fontFamily="@font/alata"
-                        android:gravity="center"
-                        android:text="@string/study_notes_store"
-                        android:textAlignment="center"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                        android:textSize="@dimen/dp_6"
-                        android:typeface="normal"
-                        app:cornerRadius="30dp"
-                        app:rippleColor="#EDE8E8"
-                        tools:ignore="TextSizeCheck" />
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
 
-                    <Button
-                        android:id="@+id/button7_Videos"
-                        style="@style/basic_button"
+                        <Button
+                            android:id="@+id/button6_notes_store"
+                            style="@style/basic_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_42"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="#054bb4"
+                            android:drawableTop="@mipmap/shop"
+                            android:fontFamily="@font/alata"
+                            android:gravity="center"
+                            android:text="@string/paid_notes_store"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textSize="@dimen/dp_5"
+                            android:typeface="normal"
+                            app:cornerRadius="30dp"
+                            app:rippleColor="#EDE8E8"
+                            tools:ignore="TextSizeCheck" />
+
+                        <ImageView
+                            android:id="@+id/newPaidNotesUpload"
+                            android:layout_width="@dimen/dp_15"
+                            android:layout_height="@dimen/dp_15"
+                            android:layout_gravity="right"
+                            android:layout_margin="18dp"
+                            android:visibility="gone" />
+
+                    </FrameLayout>
+
+                    <FrameLayout
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/dp_42"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:backgroundTint="#054bb4"
-                        android:drawableTop="@mipmap/play"
-                        android:fontFamily="@font/alata"
-                        android:gravity="center"
-                        android:text="@string/video_notes"
-                        android:textAlignment="center"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                        android:textSize="@dimen/dp_6"
-                        android:typeface="normal"
-                        app:cornerRadius="30dp"
-                        app:rippleColor="#C8C4C4"
-                        tools:ignore="TextSizeCheck" />
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <Button
+                            android:id="@+id/button7_Videos"
+                            style="@style/basic_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_42"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="#054bb4"
+                            android:drawableTop="@mipmap/play"
+                            android:fontFamily="@font/alata"
+                            android:gravity="center"
+                            android:text="@string/video_notes"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textSize="@dimen/dp_5"
+                            android:typeface="normal"
+                            app:cornerRadius="30dp"
+                            app:rippleColor="#C8C4C4"
+                            tools:ignore="TextSizeCheck" />
+
+                        <ImageView
+                            android:id="@+id/newVideoNotesUpload"
+                            android:layout_width="@dimen/dp_15"
+                            android:layout_height="@dimen/dp_15"
+                            android:layout_gravity="right"
+                            android:layout_margin="18dp"
+                            android:visibility="gone" />
+
+                    </FrameLayout>
 
                 </LinearLayout>
 
@@ -289,15 +415,16 @@
 
                 <TextView
                     android:id="@+id/textView11"
-                    android:layout_width="match_parent"
                     style="@style/banner_text"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingTop="0dp"
                     android:paddingBottom="5dp"
                     android:text="@string/policy"
                     android:textAlignment="center"
                     android:textSize="@dimen/dp_7"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
 
             </LinearLayout>

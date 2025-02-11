@@ -109,10 +109,10 @@
                 android:layout_gravity="center"
                 android:layout_margin="12dp"
                 android:layout_weight="1"
-                android:drawableTop="@mipmap/img"
-                android:text="@string/study_matrial"
+                android:drawableTop="@mipmap/materials"
+                android:text="@string/sol_materials"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-                android:textSize="@dimen/dp_7"
+                android:textSize="@dimen/dp_6"
                 app:cornerRadius="30dp" />
 
             <Button
@@ -123,10 +123,10 @@
                 android:layout_gravity="center"
                 android:layout_margin="12dp"
                 android:layout_weight="1"
-                android:drawableTop="@mipmap/img"
+                android:drawableTop="@mipmap/list"
                 android:text="@string/sol_syllabus"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-                android:textSize="@dimen/dp_7"
+                android:textSize="@dimen/dp_6"
                 app:cornerRadius="30dp" />
         </LinearLayout>
 
@@ -137,7 +137,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/dp_4"
             android:layout_marginBottom="@dimen/dp_20"
-            android:visibility="visible"
+            android:visibility="gone"
             app:adSize="BANNER"
             app:adUnitId="ca-app-pub-7092743628840352/8661598469"
             app:layout_constraintBottom_toBottomOf="parent"

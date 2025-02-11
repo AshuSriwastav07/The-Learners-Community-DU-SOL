@@ -71,7 +71,6 @@ public class NotesManagerAdapter extends RecyclerView.Adapter<NotesManagerAdapte
 
         Picasso.get()
                 .load(notesImageView[position])
-                .fit()
                 .error(R.drawable.nopictures)
                 .placeholder(R.drawable.loading)
                 .into(holder.NotesImage);

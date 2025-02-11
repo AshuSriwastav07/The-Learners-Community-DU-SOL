@@ -4,13 +4,14 @@
     <string name="rights">© 2025 The Learners Community All Rights Reserved.</string>
     <string name="du_notes">DU NOTES</string>
     <string name="todo">DU Image\n</string>
-    <string name="sol_notice">SOL Updates</string>
-    <string name="sol_materials">Study Material</string>
+    <string name="sol_notice">SOL UPDATES</string>
+    <string name="collage_updates">COLLAGE UPDATES</string>
+    <string name="sol_materials">STUDY MATERIAL</string>
     <string name="sol_notes">SOL NOTES</string>
     <string name="cbcs_notes">CBCS NOTES</string>
     <string name="nep_notes">NEP NOTES</string>
-    <string name="DU_SOL_NOTES">DU SOL Notes</string>
-    <string name="previous_question_papers">Question Paper</string>
+    <string name="DU_SOL_NOTES">DU SOL NOTES</string>
+    <string name="previous_question_papers">QUESTION PAPERS</string>
     <string name="your_semester">Select CBCS Your Semester</string>
     <string name="select_Your_Nep_Semester">Select Your NEP Semester</string>
     <string name="your_subject">Select Your Subject</string>
@@ -35,8 +36,8 @@
     <string name="bcom">B.Com</string>
     <string name="b.com_hons">B.Com Hons</string>
     <string name="important_notes_and_questions">Important Notes and Questions</string>
-    <string name="studentPortal">Student\nPortal</string>
-    <string name="connect">Connect With US</string>
+    <string name="studentPortal">STUDENT\nPORTAL</string>
+    <string name="connect">CONNECT WITH US</string>
     <string name="photo_gallery">Photo Gallery</string>
     <string name="the_learners_community_logo">The Learners Community Logo</string>
     <string name="_1st_semester_syllabusNEP">1st Semester Syllabus NEP</string>
@@ -53,7 +54,7 @@
     <string name="b_com_nep_sem2">B.Com NEP</string>
     <string name="ba_prog_nep_sem2">BA Prog NEP</string>
     <string name="b_com_hons_nep_Sem2">B.Com Hons NEP</string>
-    <string name="sol_syllabus">SOL Syllabus</string>
+    <string name="sol_syllabus">ALL SYLLABUS</string>
     <string name="yt">Youtube\n</string>
     <string name="telegram">"telegram "</string>
     <string name="join_us">Join US</string>
@@ -81,6 +82,7 @@
     <string name="portal">portal</string>
     <string name="insta">Instagram</string>
     <string name="study_notes_store">Notes Store</string>
+    <string name="paid_notes_store">NOTES PDF</string>
     <string name="instagram">Instagram</string>
     <string name="check_details">Check Details</string>
     <string name="political_science_international_relations">Political Science (International Relations)</string>
@@ -137,7 +139,7 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="video_notes">Video Notes</string>
+    <string name="video_notes">VIDEO NOTES</string>
     <string name="n_ancient_society">MAJOR : Paper-I DSC-1 (A/B)</string>
     <string name="education_sec_reflective_learning">Education SEC (Reflective Learning)</string>
     <string name="conflict_and_peace_building">संघर्ष और शांति निर्माण Conflict and Peace Building</string>
@@ -190,6 +192,7 @@
     <string name="_4th">4th</string>
     <string name="_5th">5th</string>
     <string name="_6th">6th</string>
+    <string name="bannertext"><![CDATA[Your One-Stop Solution for\nDU SOL Notes & Resources]]></string>
 
 
 </resources>

@@ -2,6 +2,7 @@ package com.dusol.thelearnerscommunity;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,6 +28,9 @@ public class QP_TabLayout_Activity extends AppCompatActivity {
         textView.setEllipsize(TextUtils.TruncateAt.MARQUEE);
         textView.setSelected(true); //Run Marquee
 
+        // Log the intent to see if it's correctly passed
+        String notificationMessage = getIntent().getStringExtra("notificationMessage");
+        Log.d("QP_TabLayout_Activity", "Notification message: " + notificationMessage);
 
         // Initialize views
         TabLayout tabLayout = findViewById(R.id.QP_TabLayout);  // Correct initialization
