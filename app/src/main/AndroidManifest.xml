@@ -11,6 +11,7 @@
     <!-- */ -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 
     <application
         android:allowBackup="true"
@@ -24,6 +25,7 @@
         android:theme="@style/Theme.TheLearnersCommunity"
         android:usesCleartextTraffic="true"
         tools:targetApi="33">
+
         <activity
             android:name=".NotesStoreManage.NotesStore_HomePage"
             android:exported="false" />
@@ -45,7 +47,8 @@
             android:exported="false" />
         <activity
             android:name=".QP_TabLayout_Activity"
-            android:exported="false" />
+            android:exported="true"
+            android:launchMode="singleTask"/>
         <activity
             android:name=".NEP_Files.NEP_Sem2_MainActivity"
             android:exported="false" />
@@ -78,7 +81,8 @@
             android:exported="false" />
         <activity
             android:name=".studentsBoard"
-            android:exported="false" />
+            android:exported="false"
+            android:launchMode="singleTask"/>
         <activity
             android:name=".Notes_Store"
             android:exported="false" />
@@ -128,7 +132,7 @@
             android:parentActivityName=".LinkPage_MainActivity" />
         <activity
             android:name=".LinkPage_MainActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="NotesLinkPage"
             android:parentActivityName=".HomePage_MainActivity" />
         <activity

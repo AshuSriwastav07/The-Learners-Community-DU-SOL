@@ -7,25 +7,39 @@
  */
 package com.dusol.thelearnerscommunity;
 
+import static android.content.ContentValues.TAG;
+
+import android.Manifest;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.dusol.thelearnerscommunity.NotesStoreManage.NotesStore_HomePage;
 import com.dusol.thelearnerscommunity.SyllabusFiles.SyllabusTabLayoutActivity;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -33,7 +47,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
-
+import com.dusol.thelearnerscommunity.FunctionManager.functionManager;
 import java.util.List;
 
 public class LinkPage_MainActivity extends AppCompatActivity {
@@ -61,11 +75,14 @@ public class LinkPage_MainActivity extends AppCompatActivity {
 
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
 
+        checkNotificationPermission();
+
+
         Button du_and_sol_notes_page = findViewById(R.id.button1_du_sol_notes_page); //button1
         Button solUpdates = findViewById(R.id.button2_SOL_Updates); //Button 2
         Button QuestionPapers = findViewById(R.id.button3_QP); //Button 3
         Button SOL_Syllabus = findViewById(R.id.button4_SOL_Syllabus); //Button 4
-        Button sol_portal = findViewById(R.id.button5_Portal); //Button 5
+        Button sol_portal = findViewById(R.id.button5_Portal3); //Button 5
         Button shop = findViewById(R.id.button6_notes_store); //button 6
         Button watch_videos = findViewById(R.id.button7_Videos); //button 7
         Button Connect_with_us = findViewById(R.id.button9_connect_us); //button 8
@@ -74,6 +91,9 @@ public class LinkPage_MainActivity extends AppCompatActivity {
         ImageButton NavBooks = findViewById(R.id.navbarBooks);
         ImageButton NavStudents = findViewById(R.id.navbarStudent);
         ImageButton NavVideos = findViewById(R.id.navbarVideos);
+
+        functionManager.managerNewSignLogo(this,this);
+
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -180,6 +200,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+
         // Button 3
         solUpdates.setOnClickListener(v -> {
             Bundle bundle = new Bundle();
@@ -279,5 +300,75 @@ public class LinkPage_MainActivity extends AppCompatActivity {
                         // Log a message to check whether the user successfully subscribed to the topic
                     }
                 });
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel(
+                    "myNotificationChannel",
+                    "General Notifications",
+                    NotificationManager.IMPORTANCE_HIGH
+            );
+            channel.setDescription("Channel for general app notifications");
+
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            if (manager != null) {
+                manager.createNotificationChannel(channel);
+            }
+        }
+
+        //get Teg Code
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(new OnCompleteListener<String>() {
+                    @Override
+                    public void onComplete(@NonNull Task<String> task) {
+                        if (!task.isSuccessful()) {
+                            Log.w(TAG, "Fetching FCM registration token failed", task.getException());
+                            return;
+                        }
+
+                        // Get new FCM registration token
+                        String token = task.getResult();
+
+                        Log.d("FirebaseRegToken", token);
+
+                    }
+                });
+
+
     }
+
+    private void checkNotificationPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) { // Android 13 and above
+            // Check if the notification permission is granted
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+                // If permission is not granted, request it
+                requestNotificationPermission();
+            }
+        }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
+    private void requestNotificationPermission() {
+        // Request permission for notifications (Android 13+)
+        requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS);
+    }
+
+    // Activity result launcher for requesting notification permission
+    private final ActivityResultLauncher<String> requestPermissionLauncher =
+            registerForActivityResult(new ActivityResultContracts.RequestPermission(), new ActivityResultCallback<Boolean>() {
+                @Override
+                public void onActivityResult(Boolean isGranted) {
+                    if (isGranted) {
+                        // Permission granted
+                        Log.d("Notification", "Permission granted for notifications.");
+                        Toast.makeText(LinkPage_MainActivity.this, "Notifications are enabled!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        // Permission denied
+                        Log.d("Notification", "Permission denied for notifications.");
+                        Toast.makeText(LinkPage_MainActivity.this, "Notifications are disabled.", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+
+
+
 }
