@@ -49,6 +49,7 @@
             android:fontFamily="@font/alata"
             android:singleLine="true"
             android:text=""
+            android:textAlignment="center"
             android:textSize="20sp"
             android:textStyle="bold" />
 

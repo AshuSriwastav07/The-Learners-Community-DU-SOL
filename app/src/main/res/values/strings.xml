@@ -193,6 +193,17 @@
     <string name="_5th">5th</string>
     <string name="_6th">6th</string>
     <string name="bannertext"><![CDATA[Your One-Stop Solution for\nDU SOL Notes & Resources]]></string>
+    <string name="new_admission">New Admission</string>
+    <string name="next_semester_details">Next Semester Details</string>
+    <string name="ug_fee_structure">UG Fee Structure</string>
+    <string name="exam_date_sheet">Exam Date Sheet</string>
+    <string name="collage_marksheet">Collage Marksheet</string>
+    <string name="check_admit_card">Check Admit Card</string>
+    <string name="published_results">Published Results</string>
+    <string name="know_your_barcode">Know Your Barcode</string>
+    <string name="student_provisional_certificate">Student Provisional Certificate</string>
+    <string name="du_sol_ncweb_nquestion_paper_hub">DU - SOL - NCWEB\nQuestion Paper HUB</string>
+    <string name="get_nep_study_material">Get NEP Study Material</string>
 
 
 </resources>

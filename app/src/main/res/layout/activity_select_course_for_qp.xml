@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/night_page"
+    tools:context=".selectCourseForQP">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:fontFamily="@font/nunito_extrabold"
+            android:text="@string/du_sol_ncweb_nquestion_paper_hub"
+            android:textAlignment="center"
+            android:textColor="#C51162"
+            android:textSize="@dimen/dp_10"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/baQuestionPaperCourse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/button_border"
+            android:drawableLeft="@mipmap/bapq"
+            android:text="@string/ba_prog"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="@dimen/dp_7" />
+
+        <Button
+            android:id="@+id/baHonsQuestionPaperCourse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/button_border"
+            android:drawableLeft="@mipmap/bahqp"
+            android:text="@string/ba_hons"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="@dimen/dp_7" />
+
+        <Button
+            android:id="@+id/bcomQuestionPaperCourse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/button_border"
+            android:drawableLeft="@mipmap/bcomqp"
+            android:text="@string/bcom"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="@dimen/dp_7" />
+
+        <Button
+            android:id="@+id/bcomHonsQuestionPaperCourse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/button_border"
+            android:drawableLeft="@mipmap/bcomhqp"
+            android:text="@string/b.com_hons"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="@dimen/dp_7" />
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

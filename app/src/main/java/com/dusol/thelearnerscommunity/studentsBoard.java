@@ -17,9 +17,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,7 +29,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class studentsBoard extends AppCompatActivity {
 
@@ -73,6 +77,10 @@ public class studentsBoard extends AppCompatActivity {
         Button ExtraInfo8 = findViewById(R.id.ExtraInfoBtn8);
         Button ExtraInfo9 = findViewById(R.id.ExtraInfoBtn9);
         Button ExtraInfo10 = findViewById(R.id.ExtraInfoBtn10);
+        Button GetStudyMaterial = findViewById(R.id.GetStudyMaterial);
+        Button knowYourBarcode = findViewById(R.id.button9_knowYourBC);
+        Button ProvisionalCertificate = findViewById(R.id.button10_ProvisionalCertificate);
+
 
         ImageButton NavHome = findViewById(R.id.navbarHome);
         ImageButton NavBooks = findViewById(R.id.navbarBooks);
@@ -200,78 +208,32 @@ public class studentsBoard extends AppCompatActivity {
         Extra1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(!(snapshot == null)){
+                if(snapshot != null){
                     for(DataSnapshot data:snapshot.getChildren()){
                         newInfoName.add(data.getKey());
                         newInfoLink.add(data.getValue(String.class));
+
+                        Log.d("CheckStatus", Objects.requireNonNull(data.getValue(String.class)));
                     }}
 
-                if (!newInfoLink.get(0).equals("N/A")){
-                    ExtraInfo1.setText(newInfoName.get(0));
-                    ExtraInfo1.setVisibility(View.VISIBLE);
-                }else {
-                    ExtraInfo1.setVisibility(View.GONE);
-                }
+                // Create a list of buttons
+                List<Button> extraInfoButtons = Arrays.asList(
+                        ExtraInfo1, ExtraInfo2, ExtraInfo3, ExtraInfo4, ExtraInfo5,
+                        ExtraInfo6, ExtraInfo7, ExtraInfo8, ExtraInfo9
+                );
 
-                if (!newInfoLink.get(1).equals("N/A")){
-                    ExtraInfo2.setText(newInfoName.get(1));
-                    ExtraInfo2.setVisibility(View.VISIBLE);
-                }else {
-                    ExtraInfo2.setVisibility(View.GONE);
-                }
+                // Ensure the loop doesn't exceed the number of buttons
+                int maxButtons = Math.min(newInfoLink.size(), extraInfoButtons.size());
 
-                if (!newInfoLink.get(2).equals("N/A")){
-                    ExtraInfo3.setText(newInfoName.get(2));
-                    ExtraInfo3.setVisibility(View.VISIBLE);
-                }else {
-                    ExtraInfo3.setVisibility(View.GONE);
+                // Iterate and update buttons
+                for (int i = 0; i < maxButtons; i++) {
+                    if (!newInfoLink.get(i).equals("N/A")) {
+                        extraInfoButtons.get(i).setText(newInfoName.get(i)); // Set button text
+                        extraInfoButtons.get(i).setVisibility(View.VISIBLE); // Make button visible
+                    } else {
+                        extraInfoButtons.get(i).setVisibility(View.GONE); // Hide button
+                    }
                 }
-
-                if (!newInfoLink.get(3).equals("N/A")){
-                    ExtraInfo4.setText(newInfoName.get(3));
-                    ExtraInfo4.setVisibility(View.VISIBLE);
-                }else {
-                    ExtraInfo4.setVisibility(View.GONE);
-                }
-
-                if (!newInfoLink.get(4).equals("N/A")){
-                    ExtraInfo5.setText(newInfoName.get(4));
-                    ExtraInfo5.setVisibility(View.VISIBLE);
-                }else {
-                    ExtraInfo5.setVisibility(View.GONE);
-                }
-                if (!newInfoLink.get(5).equals("N/A")){
-                    ExtraInfo6.setText(newInfoName.get(5));
-                    ExtraInfo6.setVisibility(View.VISIBLE);
-                }else {
-                    ExtraInfo6.setVisibility(View.GONE);
-                }
-                if (!newInfoLink.get(6).equals("N/A")){
-                    ExtraInfo7.setText(newInfoName.get(6));
-                    ExtraInfo7.setVisibility(View.VISIBLE);
-                }else {
-                    ExtraInfo7.setVisibility(View.GONE);
-                }
-                if (!newInfoLink.get(7).equals("N/A")){
-                    ExtraInfo8.setText(newInfoName.get(7));
-                    ExtraInfo8.setVisibility(View.VISIBLE);
-                }else {
-                    ExtraInfo8.setVisibility(View.GONE);
-                }
-                if (!newInfoLink.get(8).equals("N/A")){
-                    ExtraInfo9.setText(newInfoName.get(8));
-                    ExtraInfo9.setVisibility(View.VISIBLE);
-                }else {
-                    ExtraInfo9.setVisibility(View.GONE);
-                }
-                if (!newInfoLink.get(9).equals("N/A")){
-                    ExtraInfo10.setText(newInfoName.get(9));
-                    ExtraInfo10.setVisibility(View.VISIBLE);
-                }
-                else {
-                    ExtraInfo10.setVisibility(View.GONE);
-                }
-
 
             }
 
@@ -294,9 +256,6 @@ public class studentsBoard extends AppCompatActivity {
         ExtraInfo8.setOnClickListener(v -> openWebPage(newInfoLink.get(7)));
         ExtraInfo9.setOnClickListener(v -> openWebPage(newInfoLink.get(8)));
         ExtraInfo10.setOnClickListener(v -> openWebPage(newInfoLink.get(9)));
-
-
-
 
 
         // Button New Admission Link
@@ -382,13 +341,21 @@ public class studentsBoard extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
                 Log.e("DBError", "Error ");
             }
+
         });
 
         // Button Next Semester Subject
-        AllSemSub.setOnClickListener(v -> openWebPage("https://web.sol.du.ac.in/info/study_materials_new"));
+        AllSemSub.setOnClickListener(v -> openWebPage("https://web.sol.du.ac.in/info/ug-course-structure-based-on-nep-semester-i"));
 
         // Button SOL Degree
         SOL_Degree.setOnClickListener(v -> openWebPage("https://durslt.du.ac.in/AC_INTERNET_INDEX/Online_Fee_Payment/Std_Rslt_Index.aspx"));
+
+        knowYourBarcode.setOnClickListener(v -> openWebPage("https://web.sol.du.ac.in/misc/student_info/kyb_24.php"));
+
+        ProvisionalCertificate.setOnClickListener(v -> openWebPage("https://web.sol.du.ac.in/info/provisional"));
+
+        GetStudyMaterial.setOnClickListener(v ->openWebPage("https://web.sol.du.ac.in/info/nep-resources"));
+
     }
 
     private void openWebPage(String url) {

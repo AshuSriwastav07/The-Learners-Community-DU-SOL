@@ -32,3 +32,5 @@
 -keep class com.google.firebase.messaging.**
 -dontwarn android.media.LoudnessCodecController$OnLoudnessCodecUpdateListener
 -dontwarn android.media.LoudnessCodecController
+-keep class com.github.barteksc.pdfviewer.** { *; }
+-keep class com.shockwave.**

@@ -38,7 +38,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         Intent intent = null;
 
         if ("QP".equals(targetActivity)) {
-            intent = new Intent(this, QP_TabLayout_Activity.class);
+            intent = new Intent(this, BA_QP_TabLayout_Activity.class);
             Log.d("FirebaseRegToken", "QPNotify");
         } else if ("paid_notes".equals(targetActivity)) {
             intent = new Intent(this, NotesStore_HomePage.class);

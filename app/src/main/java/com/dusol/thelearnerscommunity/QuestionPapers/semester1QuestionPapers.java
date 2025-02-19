@@ -236,7 +236,7 @@ public class semester1QuestionPapers extends Fragment {
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-        PDFDataManage.NotesManage(getActivity(),getContext(),"QP_Links/sem1",listView);
+        PDFDataManage.NotesManage(getActivity(),getContext(),"QP_Links/sem1/BA",listView);
 
         /*
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
