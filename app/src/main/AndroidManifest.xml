@@ -11,7 +11,7 @@
     <!-- */ -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:allowBackup="true"
@@ -25,7 +25,12 @@
         android:theme="@style/Theme.TheLearnersCommunity"
         android:usesCleartextTraffic="true"
         tools:targetApi="33">
-
+        <activity
+            android:name=".pdf_adapter_manage.PDFViewerPage"
+            android:exported="false" />
+        <activity
+            android:name=".selectCourseForQP"
+            android:exported="false" />
         <activity
             android:name=".NotesStoreManage.NotesStore_HomePage"
             android:exported="false" />
@@ -46,9 +51,9 @@
             android:name=".SyllabusFiles.SyllabusTabLayoutActivity"
             android:exported="false" />
         <activity
-            android:name=".QP_TabLayout_Activity"
+            android:name=".BA_QP_TabLayout_Activity"
             android:exported="true"
-            android:launchMode="singleTask"/>
+            android:launchMode="singleTask" />
         <activity
             android:name=".NEP_Files.NEP_Sem2_MainActivity"
             android:exported="false" />
@@ -82,7 +87,7 @@
         <activity
             android:name=".studentsBoard"
             android:exported="false"
-            android:launchMode="singleTask"/>
+            android:launchMode="singleTask" />
         <activity
             android:name=".Notes_Store"
             android:exported="false" />

@@ -17,7 +17,7 @@ import com.dusol.thelearnerscommunity.QuestionPapers.semester5QuestionPapers;
 import com.dusol.thelearnerscommunity.QuestionPapers.semester6QuestionPapers;
 import com.google.android.material.tabs.TabLayout;
 
-public class QP_TabLayout_Activity extends AppCompatActivity {
+public class BA_QP_TabLayout_Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,7 @@ public class QP_TabLayout_Activity extends AppCompatActivity {
 
         // Log the intent to see if it's correctly passed
         String notificationMessage = getIntent().getStringExtra("notificationMessage");
-        Log.d("QP_TabLayout_Activity", "Notification message: " + notificationMessage);
+        Log.d("BA_QP_TabLayout_Activity", "Notification message: " + notificationMessage);
 
         // Initialize views
         TabLayout tabLayout = findViewById(R.id.QP_TabLayout);  // Correct initialization

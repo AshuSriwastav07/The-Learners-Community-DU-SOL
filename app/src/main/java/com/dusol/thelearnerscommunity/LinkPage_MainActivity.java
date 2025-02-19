@@ -196,7 +196,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
             bundle.putString("Question_Paper_Open", "button_clicked");
             FirebaseAnalytics.getInstance(this).logEvent("Question_Paper_Open", bundle);
 
-            Intent intent = new Intent(this, QP_TabLayout_Activity.class);
+            Intent intent = new Intent(this, selectCourseForQP.class);
             startActivity(intent);
         });
 
