@@ -1,3 +1,32 @@
+/build
+.json
+# Firebase configuration
+google-services.json
+
+# Keystore files
+*.jks
+*.keystore
+
+# Local configuration
+local.properties
+
+# Environment files
+.env
+secrets.properties
+
+# Build files
+/app/build
+*.apk
+
+# IDE files
+.idea/
+
+# Log files
+*.log
+
+# Gradle files (if sensitive)
+gradle.properties
+
 *.iml
 .gradle
 /local.properties
@@ -8,9 +37,7 @@
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
 .DS_Store
-/build
 /captures
 .externalNativeBuild
 .cxx
-local.properties
-.json
+.abb
