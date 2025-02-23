@@ -145,6 +145,20 @@
             tools:ignore="TextSizeCheck" />
     </LinearLayout>
 
+    <Button
+        android:id="@+id/button7_Buy_Notes_PDF2"
+        style="@style/basic_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
+        android:layout_marginBottom="10sp"
+        android:drawableLeft="@mipmap/buy"
+        android:onClick="openStore"
+        android:text="@string/get_premium_notes"
+        android:textSize="@dimen/dp_8" />
+
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
         android:layout_width="wrap_content"

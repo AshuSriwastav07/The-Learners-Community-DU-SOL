@@ -20,7 +20,11 @@
             android:gravity="center"
             android:text="@string/semester_4"
             android:textColor="@color/banners"
-            android:textSize="@dimen/dp_10" />
+            android:textSize="@dimen/dp_10"
+            android:shadowColor="@color/white"
+            android:shadowDx="0.0"
+            android:shadowDy="0.0"
+            android:shadowRadius="20"/>
 
         <ListView
             android:id="@+id/sem4SyllabusList"

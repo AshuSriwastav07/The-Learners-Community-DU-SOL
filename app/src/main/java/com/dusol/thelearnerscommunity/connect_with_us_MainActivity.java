@@ -154,10 +154,12 @@ public class connect_with_us_MainActivity extends AppCompatActivity {
             // Custom message
             String message = "⚡️ Download the Best Study App for DU/SOL/NCWEB & Ace Your Exams!⚡️\n" +
                     "✅ CBCS/NEP Course Notes\n" +
-                    "💯 Semester 1-6 Question Papers 📝\n" +
-                    "📚 Semester 1-6 Study Material 📚\n" +
-                    "🎥 Video Explain Notes 🎥\n" +
-                    "✨ Student Portal for Every Need ✨\n\n" +
+                    "💯 Semester 1-6 Question Papers📝\n" +
+                    "📚 Semester 1-6 Study Material📚\n" +
+                    "📚 All Semesters Updated Syllabus\n"+
+                    "💯 All Collage Updates\n"+
+                    "🎥 Video Explain Notes🎥\n" +
+                    "✨ Student Portal for Every Need✨\n\n" +
                     "Check it out: " + link;
 
             // Create an Intent with ACTION_SEND

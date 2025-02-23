@@ -2,6 +2,8 @@ package com.dusol.thelearnerscommunity.FunctionManager;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -137,4 +139,50 @@ public class functionManager {
             imageView.setVisibility(View.GONE);
         }
     }
+
+
+    public static void openShareQP_Group(Activity activity){
+        // Define the Telegram channel URL
+        String TelegramChannelUrl = "https://t.me/+rj4RGxLU-1QyZTI1";
+
+        // Create an Intent with the ACTION_VIEW action and the Telegram channel URL
+        Uri telegramUri = Uri.parse(TelegramChannelUrl);
+        Intent intent = new Intent(Intent.ACTION_VIEW, telegramUri);
+
+        // Set the package name of the Telegram app
+        intent.setPackage("org.telegram.messenger");
+
+        // Check if the Telegram app is installed
+        if (intent.resolveActivity(activity.getPackageManager()) != null) {
+            // The Telegram app is installed, so open it
+            activity.startActivity(intent);
+        } else {
+            // The Telegram app is not installed, you can handle this case as needed
+            // For example, you can open the Telegram website in a web browser
+           activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(TelegramChannelUrl)));
+        }
+    };
+
+    public static void askDoubtHere(Activity activity){
+        // Define the Telegram channel URL
+        String TelegramChannelUrl = "https://t.me/The_LCTyoutube";
+
+        // Create an Intent with the ACTION_VIEW action and the Telegram channel URL
+        Uri telegramUri = Uri.parse(TelegramChannelUrl);
+        Intent intent = new Intent(Intent.ACTION_VIEW, telegramUri);
+
+        // Set the package name of the Telegram app
+        intent.setPackage("org.telegram.messenger");
+
+        // Check if the Telegram app is installed
+        if (intent.resolveActivity(activity.getPackageManager()) != null) {
+            // The Telegram app is installed, so open it
+            activity.startActivity(intent);
+        } else {
+            // The Telegram app is not installed, you can handle this case as needed
+            // For example, you can open the Telegram website in a web browser
+            activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(TelegramChannelUrl)));
+        }
+    };
+
 }

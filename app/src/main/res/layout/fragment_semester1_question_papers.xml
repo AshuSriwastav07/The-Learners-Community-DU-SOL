@@ -3,10 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    style="@style/night_page"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.dusol.thelearnerscommunity.QuestionPapers.semester1QuestionPapers">
+    tools:context="com.dusol.thelearnerscommunity.QuestionPapers.BAProg.semester1QuestionPapers">
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
@@ -31,7 +30,6 @@
         android:dividerHeight="0dp" />
 
 
-
 </LinearLayout>
 
 
@@ -41,7 +39,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.dusol.thelearnerscommunity.QuestionPapers.semester1QuestionPapers"
+        tools:context="com.dusol.thelearnerscommunity.QuestionPapers.BAProg.semester1QuestionPapers"
         android:background="@color/background_color_night"
         >
 
