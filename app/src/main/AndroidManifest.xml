@@ -35,9 +35,6 @@
             android:name=".BAH_QP_TabLayout_Acitivty"
             android:exported="false" />
         <activity
-            android:name=".pdf_adapter_manage.PDFViewerPage"
-            android:exported="false" />
-        <activity
             android:name=".selectCourseForQP"
             android:exported="false" />
         <activity
