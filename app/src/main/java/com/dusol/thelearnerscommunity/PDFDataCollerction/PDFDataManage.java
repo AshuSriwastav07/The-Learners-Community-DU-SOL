@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -13,7 +12,6 @@ import androidx.annotation.NonNull;
 
 import com.dusol.thelearnerscommunity.Notes_HomeWeb_MainActivity;
 import com.dusol.thelearnerscommunity.pdf_adapter_manage.NotesAdapter;
-import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -40,7 +38,8 @@ public class PDFDataManage {
                     String key = childSnapshot.getKey();  //notes name
                     String value = childSnapshot.getValue(String.class); //notes link
 
-                    if(!value.equals("N/A") && !value.equals("")){
+                    assert value != null;
+                    if(!value.equals("N/A") && !value.isEmpty()){
                         NotesNameArray.add(key+" ✔");
                     }else {
                         NotesNameArray.add(key);
@@ -67,38 +66,35 @@ public class PDFDataManage {
 
 
         listView.setOnItemClickListener((parent, view1, position, id) -> {
+            String link = NotesLinksArray.get(position);
 
-            if (NotesLinksArray.get(position).contains("youtube")) {
+            if (link.contains("youtube")) {
 
                 Uri youtubeUri = Uri.parse(NotesLinksArray.get(position));
                 Intent intent = new Intent(Intent.ACTION_VIEW, youtubeUri);
 
                 // Set the package name of the YouTube app
                 intent.setPackage("com.google.android.youtube");
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 context.startActivity(intent);
 
-            } else if (NotesLinksArray.get(position).contains("myinstamojo")) {
-
+            } else if (link.contains("myinstamojo")) {
                 PaidNotesLinkOpen(context, NotesLinksArray.get(position));
-            } else if (NotesLinksArray.get(position).contains("N/A")) {
+            } else if (link.contains("N/A")) {
                 Toast.makeText(activity, "Notes Will Available Soon!", Toast.LENGTH_SHORT).show();
             } else {
-                openIntend(context, NotesLinksArray.get(position),NotesNameArray.get(position));
+                openIntend(context, link,NotesNameArray.get(position),path);
             }
-
 
         });
     }
 
 
-    public static void openIntend(Context context,String link,String Name){
+    public static void openIntend(Context context,String link,String Name, String PDFType){
         Intent intent = new Intent(context, Notes_HomeWeb_MainActivity.class);
         intent.putExtra("link", link);
         intent.putExtra("PdfName", Name);
-
-        Bundle bundle = new Bundle();
-        bundle.putString("pdf_name", Name);
-        FirebaseAnalytics.getInstance(context).logEvent("pdf_opened", bundle);
+        intent.putExtra("Path", PDFType);
 
         context.startActivity(intent);
     }

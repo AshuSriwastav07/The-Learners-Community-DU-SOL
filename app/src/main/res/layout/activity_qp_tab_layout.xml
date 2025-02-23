@@ -6,12 +6,13 @@
     style="@style/night_page"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/exambg"
     tools:context=".BA_QP_TabLayout_Activity">
 
     <LinearLayout
+        android:id="@+id/linearLayout13"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,17 +22,18 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingBottom="10dp">
+            android:background="@color/white"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_weight="1"
                 android:fontFamily="@font/nunito_extrabold"
                 android:gravity="center"
-                android:text="@string/select_semester_and_question_paper"
+                android:text="@string/baQuestionPapers"
                 android:textColor="#005DFF"
                 android:textSize="@dimen/dp_10"
                 android:textStyle="bold"
@@ -44,9 +46,22 @@
                 android:fontFamily="@font/ar_one_sans_medium"
                 android:gravity="center"
                 android:singleLine="true"
-                android:text="Share Your Questions Paper With us On Telegram! "
+                android:text="@string/qpMessage1"
+                android:textColor="#6200EA"
+                android:textSize="@dimen/dp_6"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/textBannerMarquee2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ar_one_sans_medium"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/qpMessage2"
                 android:textColor="@color/yt_red"
-                android:textSize="20sp"
+                android:textSize="@dimen/dp_6"
                 android:textStyle="bold"
                 tools:ignore="HardcodedText" />
 
@@ -60,8 +75,7 @@
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/_1st"
-                    />
+                    android:text="@string/_1st" />
 
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
@@ -101,10 +115,24 @@
         <!--
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerView"
-            android:name="com.dusol.thelearnerscommunity.QuestionPapers.semester1QuestionPapers"
+            android:name="com.dusol.thelearnerscommunity.QuestionPapers.BAProg.semester1QuestionPapers"
             tools:layout="@layout/fragment_semester1_question_papers" />
 -->
 
 
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/shareOnTelegram"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        android:layout_gravity="center"
+        android:layout_marginBottom="44dp"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.981"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/qpshare" />
 </androidx.constraintlayout.widget.ConstraintLayout>

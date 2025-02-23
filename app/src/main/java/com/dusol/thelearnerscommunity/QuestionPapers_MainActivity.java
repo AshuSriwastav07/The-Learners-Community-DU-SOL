@@ -19,12 +19,12 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
-import com.dusol.thelearnerscommunity.QuestionPapers.semester1QuestionPapers;
-import com.dusol.thelearnerscommunity.QuestionPapers.semester2QuestionPapers;
-import com.dusol.thelearnerscommunity.QuestionPapers.semester3QuestionPapers;
-import com.dusol.thelearnerscommunity.QuestionPapers.semester4QuestionPapers;
-import com.dusol.thelearnerscommunity.QuestionPapers.semester5QuestionPapers;
-import com.dusol.thelearnerscommunity.QuestionPapers.semester6QuestionPapers;
+import com.dusol.thelearnerscommunity.QuestionPapers.BAProg.semester1QuestionPapers;
+import com.dusol.thelearnerscommunity.QuestionPapers.BAProg.semester2QuestionPapers;
+import com.dusol.thelearnerscommunity.QuestionPapers.BAProg.semester3QuestionPapers;
+import com.dusol.thelearnerscommunity.QuestionPapers.BAProg.semester4QuestionPapers;
+import com.dusol.thelearnerscommunity.QuestionPapers.BAProg.semester5QuestionPapers;
+import com.dusol.thelearnerscommunity.QuestionPapers.BAProg.semester6QuestionPapers;
 
 public class QuestionPapers_MainActivity extends AppCompatActivity {
 

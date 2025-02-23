@@ -6,6 +6,7 @@
     style="@style/night_page"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/syllabusbg"
     tools:context=".SyllabusFiles.SyllabusTabLayoutActivity">
 
     <LinearLayout
@@ -28,44 +29,53 @@
             android:textAlignment="center"
             android:textColor="@color/banners"
             android:textSize="@dimen/dp_12"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:shadowColor="#F0D987"
+            android:shadowDx="0.0"
+            android:shadowDy="0.0"
+            android:shadowRadius="15"/>
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/Syllabus_TabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:background="#5EFFFFFF"
+            app:tabRippleColor="#6200EA"
             app:tabTextColor="@color/black">
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1st" />
+                android:shadowColor="#F0D987"
+                android:shadowDx="0.0"
+                android:shadowDy="0.0"
+                android:shadowRadius="5"
+                android:text="@string/_1st" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2nd" />
+                android:text="@string/_2nd" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="3rd" />
+                android:text="@string/_3rd" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="4th" />
+                android:text="@string/_4th" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="5th" />
+                android:text="@string/_5th" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="6th" />
+                android:text="@string/_6th" />
 
         </com.google.android.material.tabs.TabLayout>
 

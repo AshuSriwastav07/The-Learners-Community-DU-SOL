@@ -2,11 +2,13 @@ package com.dusol.thelearnerscommunity.NEP_Files;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.dusol.thelearnerscommunity.NotesStoreManage.NotesStore_HomePage;
 import com.dusol.thelearnerscommunity.PDFDataCollerction.PDFDataManage;
 import com.dusol.thelearnerscommunity.R;
 import com.google.android.gms.ads.AdRequest;
@@ -93,5 +95,12 @@ public class NEP_HomePage extends AppCompatActivity {
             }
 
         });
+
+
+    }
+
+    public void openStore(View v) { // This activity will send you to the notes store page
+        Intent intent = new Intent(this, NotesStore_HomePage.class);
+        startActivity(intent);
     }
 }

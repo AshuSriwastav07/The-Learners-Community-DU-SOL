@@ -15,7 +15,6 @@ import android.app.NotificationManager;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -27,19 +26,16 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import com.dusol.thelearnerscommunity.FunctionManager.functionManager;
 import com.dusol.thelearnerscommunity.NotesStoreManage.NotesStore_HomePage;
 import com.dusol.thelearnerscommunity.SyllabusFiles.SyllabusTabLayoutActivity;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -47,8 +43,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
-import com.dusol.thelearnerscommunity.FunctionManager.functionManager;
-import java.util.List;
 
 public class LinkPage_MainActivity extends AppCompatActivity {
     private long Timeback;
@@ -67,90 +61,54 @@ public class LinkPage_MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE,WindowManager.LayoutParams.FLAG_SECURE); //Prevent taking screenshot
-
         setContentView(R.layout.link_page_activity_main);
-        // Obtain the FirebaseAnalytics instance.
 
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
 
-        checkNotificationPermission();
+        // Check and request notification permission every time the app starts
+        checkAndRequestNotificationPermission();
 
-
-        Button du_and_sol_notes_page = findViewById(R.id.button1_du_sol_notes_page); //button1
-        Button solUpdates = findViewById(R.id.button2_SOL_Updates); //Button 2
-        Button QuestionPapers = findViewById(R.id.button3_QP); //Button 3
-        Button SOL_Syllabus = findViewById(R.id.button4_SOL_Syllabus); //Button 4
-        Button sol_portal = findViewById(R.id.button5_Portal3); //Button 5
-        Button shop = findViewById(R.id.button6_notes_store); //button 6
-        Button watch_videos = findViewById(R.id.button7_Videos); //button 7
-        Button Connect_with_us = findViewById(R.id.button9_connect_us); //button 8
-        Button sol_materials = findViewById(R.id.button10_SOL_Study_Material); //button 10
+        // Initialize UI elements
+        Button du_and_sol_notes_page = findViewById(R.id.button1_du_sol_notes_page);
+        Button solUpdates = findViewById(R.id.button2_SOL_Updates);
+        Button QuestionPapers = findViewById(R.id.button3_QP);
+        Button SOL_Syllabus = findViewById(R.id.button4_SOL_Syllabus);
+        Button sol_portal = findViewById(R.id.button5_Portal3);
+        Button shop = findViewById(R.id.button6_notes_store);
+        Button watch_videos = findViewById(R.id.button7_Videos);
+        Button Connect_with_us = findViewById(R.id.button9_connect_us);
+        Button sol_materials = findViewById(R.id.button10_SOL_Study_Material);
+        ImageButton askDoubt = findViewById(R.id.askHere);
 
         ImageButton NavBooks = findViewById(R.id.navbarBooks);
         ImageButton NavStudents = findViewById(R.id.navbarStudent);
         ImageButton NavVideos = findViewById(R.id.navbarVideos);
 
-        functionManager.managerNewSignLogo(this,this);
-
+        functionManager.managerNewSignLogo(this, this);
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.show();
         }
 
-        // Navigation Bar Button
-
-        // Videos
-        NavVideos.setOnClickListener(view -> {
-            // Define the YouTube channel URL
-            String youtubeChannelUrl = "https://www.youtube.com/@TheLearnersCommunityDUSOL/videos";
-
-            // Create an Intent with the ACTION_VIEW action and the YouTube channel URL
-            Uri youtubeUri = Uri.parse(youtubeChannelUrl);
-            Intent intent = new Intent(Intent.ACTION_VIEW, youtubeUri);
-
-            // Set the package name of the YouTube app
-            intent.setPackage("com.google.android.youtube");
-
-            // Check if the YouTube app is installed
-            if (intent.resolveActivity(getPackageManager()) != null) {
-                // The YouTube app is installed, so open it
-                startActivity(intent);
-            } else {
-                // The YouTube app is not installed, you can handle this case as needed
-                // For example, you can open the YouTube website in a web browser
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(youtubeChannelUrl)));
-            }
-        });
-
-        // Notes Books
+        // Navigation Bar Button Listeners (unchanged)
+        NavVideos.setOnClickListener(view -> openYouTubeChannel());
         NavBooks.setOnClickListener(view -> {
             Bundle bundle = new Bundle();
             bundle.putString("SOL_Notes_Open", "button_clicked");
             FirebaseAnalytics.getInstance(this).logEvent("SOL_Notes_Open", bundle);
-
-            Intent intent = new Intent(getApplicationContext(), DU_SOL_NOTES__MainActivity.class);
-            startActivity(intent);
+            startActivity(new Intent(getApplicationContext(), DU_SOL_NOTES__MainActivity.class));
         });
-
-        // Students Portal
         NavStudents.setOnClickListener(view -> {
             Bundle bundle = new Bundle();
             bundle.putString("SOL_Portal", "button_clicked");
             FirebaseAnalytics.getInstance(this).logEvent("SOL_Portal", bundle);
-
-            Intent intent = new Intent(getApplicationContext(), studentsBoard.class);
-            startActivity(intent);
+            startActivity(new Intent(getApplicationContext(), studentsBoard.class));
         });
 
-        // Main Buttons
-
-        // Text Marquee
+        // Text Marquee (unchanged)
         TextView textView = findViewById(R.id.LinkPageMarquee);
         textView.setEllipsize(TextUtils.TruncateAt.MARQUEE);
-
         DatabaseReference MarqueeText = FirebaseDatabase.getInstance().getReference("MainPageBanner");
         MarqueeText.addValueEventListener(new ValueEventListener() {
             @Override
@@ -166,138 +124,75 @@ public class LinkPage_MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-            }
+            public void onCancelled(@NonNull DatabaseError error) {}
         });
 
-        // Notes Store Button
+        // Main Buttons Listeners (unchanged)
         shop.setOnClickListener(view -> {
             Bundle bundle = new Bundle();
             bundle.putString("Notes_Store", "button_clicked");
             FirebaseAnalytics.getInstance(this).logEvent("Notes_Store", bundle);
-
-            Intent intent = new Intent(getApplicationContext(), NotesStore_HomePage.class);
-            startActivity(intent);
+            startActivity(new Intent(getApplicationContext(), NotesStore_HomePage.class));
         });
 
-        // Button 1
         du_and_sol_notes_page.setOnClickListener(view -> {
             Bundle bundle = new Bundle();
             bundle.putString("SOL_Notes_Open", "button_clicked");
             FirebaseAnalytics.getInstance(this).logEvent("SOL_Notes_Open", bundle);
-
-            Intent intent = new Intent(getApplicationContext(), DU_SOL_NOTES__MainActivity.class);
-            startActivity(intent);
+            startActivity(new Intent(getApplicationContext(), DU_SOL_NOTES__MainActivity.class));
         });
 
-        // Button 2
         QuestionPapers.setOnClickListener(view -> {
             Bundle bundle = new Bundle();
             bundle.putString("Question_Paper_Open", "button_clicked");
-            FirebaseAnalytics.getInstance(this).logEvent("Question_Paper_Open", bundle);
-
-            Intent intent = new Intent(this, selectCourseForQP.class);
-            startActivity(intent);
+//            FirebaseAnalytics.getInstance(this).logEvent("Question_Paper_Open", bundle);
+            startActivity(new Intent(this, selectCourseForQP.class));
         });
 
-
-        // Button 3
         solUpdates.setOnClickListener(v -> {
             Bundle bundle = new Bundle();
             bundle.putString("SOL_Updates", "button_clicked");
             FirebaseAnalytics.getInstance(this).logEvent("SOL_Updates", bundle);
-
-            String urlToOpen = "https://web.sol.du.ac.in/home";
-
-            // Create an Intent to open the web browser with the specified URL
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(urlToOpen));
-
-            // Check if there's a web browser available to handle the Intent
-            PackageManager packageManager = getPackageManager();
-            List<ResolveInfo> activities = packageManager.queryIntentActivities(intent, 0);
-            boolean isIntentSafe = activities.size() > 0;
-            startActivity(intent);
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://web.sol.du.ac.in/home")));
         });
 
-        // Button 5
         SOL_Syllabus.setOnClickListener(view -> {
             Bundle bundle = new Bundle();
             bundle.putString("SOL_Syllabus", "button_clicked");
             FirebaseAnalytics.getInstance(this).logEvent("SOL_Syllabus", bundle);
-
-            Intent intent = new Intent(getApplicationContext(), SyllabusTabLayoutActivity.class);
-            startActivity(intent);
+            startActivity(new Intent(getApplicationContext(), SyllabusTabLayoutActivity.class));
         });
 
-        watch_videos.setOnClickListener(view -> {
-            // Define the YouTube channel URL
-            String youtubeChannelUrl = "https://www.youtube.com/@TheLearnersCommunityDUSOL/videos";
+        watch_videos.setOnClickListener(view -> openYouTubeChannel());
 
-            // Create an Intent with the ACTION_VIEW action and the YouTube channel URL
-            Uri youtubeUri = Uri.parse(youtubeChannelUrl);
-            Intent intent = new Intent(Intent.ACTION_VIEW, youtubeUri);
-
-            // Set the package name of the YouTube app
-            intent.setPackage("com.google.android.youtube");
-
-            // Check if the YouTube app is installed
-            if (intent.resolveActivity(getPackageManager()) != null) {
-                // The YouTube app is installed, so open it
-                startActivity(intent);
-            } else {
-                // The YouTube app is not installed, you can handle this case as needed
-                // For example, you can open the YouTube website in a web browser
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(youtubeChannelUrl)));
-            }
-        });
-
-
-        // Button 8
         sol_portal.setOnClickListener(v -> {
             Bundle bundle = new Bundle();
             bundle.putString("SOL_Portal", "button_clicked");
             FirebaseAnalytics.getInstance(this).logEvent("SOL_Portal", bundle);
-
-            Intent intent = new Intent(getApplicationContext(), studentsBoard.class);
-            startActivity(intent);
+            startActivity(new Intent(getApplicationContext(), studentsBoard.class));
         });
 
-
-        // Button 10
         sol_materials.setOnClickListener(v -> {
             Bundle bundle = new Bundle();
             bundle.putString("SOL_Portal", "button_clicked");
             FirebaseAnalytics.getInstance(this).logEvent("SOL_Portal", bundle);
-
-            Intent intent = new Intent(getApplicationContext(), study_materials.class);
-            startActivity(intent);
+            startActivity(new Intent(getApplicationContext(), study_materials.class));
         });
 
-        // Button 9
         Connect_with_us.setOnClickListener(view -> {
             Bundle bundle = new Bundle();
             bundle.putString("Join_US", "button_clicked");
             FirebaseAnalytics.getInstance(this).logEvent("Join_US", bundle);
-
-            Intent intent = new Intent(getApplicationContext(), connect_with_us_MainActivity.class);
-            startActivity(intent);
-
+            startActivity(new Intent(getApplicationContext(), connect_with_us_MainActivity.class));
         });
 
-        // Firebase FCM
+        askDoubt.setOnClickListener(view -> functionManager.askDoubtHere(LinkPage_MainActivity.this));
+
+        // Firebase FCM (unchanged)
         FirebaseMessaging.getInstance().subscribeToTopic("All_Notification")
                 .addOnCompleteListener(task -> {
-                    // Check if subscribing to the topic was successful
                     if (!task.isSuccessful()) {
-                        // If not successful, you can handle any failure here
-                        // For example, you can uncomment the line below to set the message to "Subscribe failed"
-                        // msg = "Subscribe failed";
-                    } else {
-                        // If subscription is successful, you can perform any necessary actions here
-                        // For example, display a toast message to indicate success
-                        // Toast.makeText(MainActivity3.this, "Done", Toast.LENGTH_SHORT).show();
-
-                        // Log a message to check whether the user successfully subscribed to the topic
+                        Log.w(TAG, "Subscription to topic failed");
                     }
                 });
 
@@ -308,67 +203,65 @@ public class LinkPage_MainActivity extends AppCompatActivity {
                     NotificationManager.IMPORTANCE_HIGH
             );
             channel.setDescription("Channel for general app notifications");
-
             NotificationManager manager = getSystemService(NotificationManager.class);
             if (manager != null) {
                 manager.createNotificationChannel(channel);
             }
         }
 
-        //get Teg Code
         FirebaseMessaging.getInstance().getToken()
-                .addOnCompleteListener(new OnCompleteListener<String>() {
-                    @Override
-                    public void onComplete(@NonNull Task<String> task) {
-                        if (!task.isSuccessful()) {
-                            Log.w(TAG, "Fetching FCM registration token failed", task.getException());
-                            return;
-                        }
-
-                        // Get new FCM registration token
-                        String token = task.getResult();
-
-                        Log.d("FirebaseRegToken", token);
-
+                .addOnCompleteListener(task -> {
+                    if (!task.isSuccessful()) {
+                        Log.w(TAG, "Fetching FCM registration token failed", task.getException());
+                        return;
                     }
+                    String token = task.getResult();
+                    Log.d("FirebaseRegToken", token);
                 });
-
-
     }
 
-    private void checkNotificationPermission() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) { // Android 13 and above
-            // Check if the notification permission is granted
+    // Combined method to check and request notification permission
+    private void checkAndRequestNotificationPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) { // Android 13+
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
-                // If permission is not granted, request it
-                requestNotificationPermission();
+                // Permission not granted, request it every time
+                requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS);
+            } else {
+                Log.d("Notification", "Permission already granted.");
+                Toast.makeText(this, "Notifications are already enabled!", Toast.LENGTH_SHORT).show();
+            }
+        } else { // Pre-Android 13
+            if (!androidx.core.app.NotificationManagerCompat.from(this).areNotificationsEnabled()) {
+                Toast.makeText(this, "Please enable notifications in settings.", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(android.provider.Settings.ACTION_APP_NOTIFICATION_SETTINGS)
+                        .putExtra(android.provider.Settings.EXTRA_APP_PACKAGE, getPackageName());
+                startActivity(intent);
             }
         }
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
-    private void requestNotificationPermission() {
-        // Request permission for notifications (Android 13+)
-        requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS);
-    }
-
     // Activity result launcher for requesting notification permission
     private final ActivityResultLauncher<String> requestPermissionLauncher =
-            registerForActivityResult(new ActivityResultContracts.RequestPermission(), new ActivityResultCallback<Boolean>() {
-                @Override
-                public void onActivityResult(Boolean isGranted) {
-                    if (isGranted) {
-                        // Permission granted
-                        Log.d("Notification", "Permission granted for notifications.");
-                        Toast.makeText(LinkPage_MainActivity.this, "Notifications are enabled!", Toast.LENGTH_SHORT).show();
-                    } else {
-                        // Permission denied
-                        Log.d("Notification", "Permission denied for notifications.");
-                        Toast.makeText(LinkPage_MainActivity.this, "Notifications are disabled.", Toast.LENGTH_SHORT).show();
-                    }
+            registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
+                if (isGranted) {
+                    Log.d("Notification", "Permission granted for notifications.");
+                    Toast.makeText(this, "Notifications are enabled!", Toast.LENGTH_SHORT).show();
+                } else {
+                    Log.d("Notification", "Permission denied for notifications.");
+                    Toast.makeText(this, "Notifications are disabled. You can enable them in settings.", Toast.LENGTH_SHORT).show();
                 }
             });
 
-
-
+    // Helper method to open YouTube channel (to avoid code repetition)
+    private void openYouTubeChannel() {
+        String youtubeChannelUrl = "https://www.youtube.com/@TheLearnersCommunityDUSOL/videos";
+        Uri youtubeUri = Uri.parse(youtubeChannelUrl);
+        Intent intent = new Intent(Intent.ACTION_VIEW, youtubeUri);
+        intent.setPackage("com.google.android.youtube");
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        } else {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(youtubeChannelUrl)));
+        }
+    }
 }

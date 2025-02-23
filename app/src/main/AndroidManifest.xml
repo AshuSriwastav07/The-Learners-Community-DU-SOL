@@ -26,6 +26,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="33">
         <activity
+            android:name=".BcomHons_QP_TabLayout_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Bcom_QP_TabLayout_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".BAH_QP_TabLayout_Acitivty"
+            android:exported="false" />
+        <activity
             android:name=".pdf_adapter_manage.PDFViewerPage"
             android:exported="false" />
         <activity

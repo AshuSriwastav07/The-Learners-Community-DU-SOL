@@ -1,7 +1,7 @@
 package com.dusol.thelearnerscommunity.NotesStoreManage;
 
 import android.os.Bundle;
-import android.util.Log;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -47,10 +47,10 @@ public class NotesStore_HomePage extends AppCompatActivity {
                             List<String> ngoData = (List<String>) i.getValue();
 
                             if (ngoData != null) {
-                                Log.d("PaidNotesData", ngoData.get(0));
-                                Log.d("PaidNotesData", ngoData.get(1));
-                                Log.d("PaidNotesData", ngoData.get(2));
-                                Log.d("PaidNotesData", ngoData.get(3));
+//                                Log.d("PaidNotesData", ngoData.get(0));
+//                                Log.d("PaidNotesData", ngoData.get(1));
+//                                Log.d("PaidNotesData", ngoData.get(2));
+//                                Log.d("PaidNotesData", ngoData.get(3));
 
                                 // Uncomment if you want to add the data to the lists
                                  title.add(ngoData.get(0));

@@ -169,6 +169,20 @@
                 android:textSize="@dimen/dp_7" />
 
             <Button
+                android:id="@+id/button8_Sol_Degree"
+                style="@style/basic_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_5"
+                android:layout_marginTop="20sp"
+                android:layout_marginEnd="@dimen/dp_5"
+                android:drawableLeft="@mipmap/degree"
+                android:text="@string/collage_marksheet"
+                android:textAlignment="viewStart"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="@dimen/dp_7" />
+
+            <Button
                 android:id="@+id/ExtraInfoBtn1"
                 style="@style/basic_button"
                 android:layout_width="match_parent"
@@ -328,20 +342,6 @@
                 android:layout_marginEnd="@dimen/dp_5"
                 android:drawableLeft="@mipmap/admitcard"
                 android:text="@string/check_admit_card"
-                android:textAlignment="viewStart"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textSize="@dimen/dp_7" />
-
-            <Button
-                android:id="@+id/button8_Sol_Degree"
-                style="@style/basic_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dp_5"
-                android:layout_marginTop="20sp"
-                android:layout_marginEnd="@dimen/dp_5"
-                android:drawableLeft="@mipmap/degree"
-                android:text="@string/collage_marksheet"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="@dimen/dp_7" />

@@ -3,6 +3,7 @@ package com.dusol.thelearnerscommunity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.WindowManager;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
@@ -36,12 +37,19 @@ public class Notes_HomeWeb_MainActivity extends AppCompatActivity {
         webView = findViewById(R.id.notes_webview);
         progressBar = findViewById(R.id.progress_bar);
 
+        webView.setOnLongClickListener(v -> true);
+        webView.setLongClickable(false);
+
         // Enable JavaScript and other necessary settings
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setBuiltInZoomControls(true);
 
         String link = getIntent().getStringExtra("link");
         String name = getIntent().getStringExtra("PdfName");
+        String path = getIntent().getStringExtra("Path");
+
+        assert path != null;
+        Log.d("AnalyticsData",path);
 
         // Set up WebChromeClient to show progress
         webView.setWebChromeClient(new WebChromeClient() {
@@ -92,8 +100,13 @@ public class Notes_HomeWeb_MainActivity extends AppCompatActivity {
         } else {
             if (link != null) {
                 Bundle bundle = new Bundle();
-                bundle.putString("pdf_name", name);
+                if(path.contains("Question")){
+                    bundle.putString("pdf_name", "QP_ "+name);
+                }else{
+                    bundle.putString("pdf_name", name);
+                }
                 firebaseAnalytics.logEvent("pdf_opened", bundle);
+
                 webView.loadUrl(link);
 
             }

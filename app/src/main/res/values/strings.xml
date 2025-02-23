@@ -62,7 +62,7 @@
     <string name="youtube">YouTube</string>
     <string name="telegramText">Telegram</string>
     <string name="select_QP" />
-    <string name="select_semester_and_question_paper">Select Semester and Question Paper</string>
+    <string name="baQuestionPapers">BA Prog Question Paper</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="study">study</string>
@@ -204,6 +204,12 @@
     <string name="student_provisional_certificate">Student Provisional Certificate</string>
     <string name="du_sol_ncweb_nquestion_paper_hub">DU - SOL - NCWEB\nQuestion Paper HUB</string>
     <string name="get_nep_study_material">Get NEP Study Material</string>
+    <string name="ba_hons_question_papers">BA Hons Question Papers</string>
+    <string name="bcom_questions_papers">Bcom Questions Papers</string>
+    <string name="bcom_hons_questions_paper">Bcom Hons Questions Paper</string>
+    <string name="qpMessage1">Share Your Question Papers With us On Telegram!</string>
+    <string name="qpMessage2">Match Paper Code with Your Code in Admit Card!</string>
+
 
 
 </resources>
