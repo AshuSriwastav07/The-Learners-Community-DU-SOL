@@ -63,70 +63,80 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/button1_SOL_CBCS_NOTES"
                 style="@style/basic_button"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="12dp"
                 android:layout_weight="1"
                 android:drawableTop="@mipmap/img"
+                android:fontFamily="@font/nunito"
                 android:text="@string/cbcs_notes"
+                android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-                android:textSize="@dimen/dp_7"
+                android:textSize="@dimen/dp_5"
+                android:textStyle="bold"
                 app:cornerRadius="30dp" />
 
             <Button
                 android:id="@+id/button2_NEP_Notes"
                 style="@style/basic_button"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="12dp"
                 android:layout_weight="1"
                 android:drawableTop="@mipmap/img"
+                android:fontFamily="@font/nunito"
                 android:text="@string/nep_notes"
+                android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-                android:textSize="@dimen/dp_7"
+                android:textSize="@dimen/dp_5"
+                android:textStyle="bold"
                 app:cornerRadius="30dp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/button3_SOL_Material"
                 style="@style/basic_button"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="12dp"
                 android:layout_weight="1"
                 android:drawableTop="@mipmap/materials"
-                android:text="@string/sol_materials"
+                android:fontFamily="@font/nunito"
+                android:text="@string/books"
+                android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-                android:textSize="@dimen/dp_6"
+                android:textSize="@dimen/dp_5"
+                android:textStyle="bold"
                 app:cornerRadius="30dp" />
 
             <Button
                 android:id="@+id/button4_SOL_Syllabus"
                 style="@style/basic_button"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="12dp"
                 android:layout_weight="1"
                 android:drawableTop="@mipmap/list"
-                android:text="@string/sol_syllabus"
+                android:fontFamily="@font/nunito"
+                android:text="@string/only_syllabus"
+                android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-                android:textSize="@dimen/dp_6"
+                android:textSize="@dimen/dp_5"
+                android:textStyle="bold"
                 app:cornerRadius="30dp" />
         </LinearLayout>
 

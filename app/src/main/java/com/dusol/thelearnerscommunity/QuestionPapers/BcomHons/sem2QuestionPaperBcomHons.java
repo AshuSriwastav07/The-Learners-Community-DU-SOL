@@ -30,7 +30,7 @@ public class sem2QuestionPaperBcomHons extends Fragment {
         mAdView.loadAd(adRequest);
 
         // Fetch PDF links from Firebase based on course and semester
-        PDFDataManage.NotesManage(getActivity(), getContext(), "QuestionPapers/Sem1/Sem2/BCOMH", listView);
+        PDFDataManage.NotesManage(getActivity(), getContext(), "QuestionPapers/Sem2/BCOMH", listView);
 
         return view;
     }
