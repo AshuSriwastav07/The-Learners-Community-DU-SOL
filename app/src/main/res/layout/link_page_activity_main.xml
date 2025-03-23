@@ -19,6 +19,26 @@
     tools:ignore="UsingOnClickInXml">
 
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        app:cardBackgroundColor="@color/background_color_night"
+        app:cardCornerRadius="@dimen/dp_30"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/currentUserNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/noto_sans_adlam_unjoined_bold"
+            android:padding="@dimen/dp_1"
+            android:text=""
+            android:textColor="#560202" />
+    </androidx.cardview.widget.CardView>
+
     <LinearLayout
         android:id="@+id/linearLayout8"
         android:layout_width="match_parent"
@@ -47,15 +67,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/alata"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:shadowColor="#F0D987"
+            android:shadowDx="0.0"
+            android:shadowDy="0.0"
+            android:shadowRadius="5"
             android:singleLine="true"
             android:text=""
             android:textAlignment="center"
             android:textSize="@dimen/dp_7"
-            android:textStyle="bold"
-            android:shadowColor="#F0D987"
-            android:shadowDx="0.0"
-            android:shadowDy="0.0"
-            android:shadowRadius="5"/>
+            android:textStyle="bold" />
 
         <ScrollView
             android:id="@+id/scrollView3"
@@ -409,7 +430,7 @@
                         android:drawableLeft="@mipmap/links"
                         android:fontFamily="@font/alata"
                         android:gravity="center"
-                        android:text="@string/connect"
+                        android:text=""
                         android:textAlignment="center"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                         android:textSize="@dimen/dp_6"
@@ -437,6 +458,8 @@
         </ScrollView>
 
     </LinearLayout>
+
+    <!-- Add this where you want the message box, e.g., at the top or center -->
 
     <ImageButton
         android:id="@+id/askHere"

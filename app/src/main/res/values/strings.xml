@@ -209,7 +209,9 @@
     <string name="bcom_hons_questions_paper">Bcom Hons Questions Paper</string>
     <string name="qpMessage1">Share Your Question Papers With us On Telegram!</string>
     <string name="qpMessage2">Match Paper Code with Your Code in Admit Card!</string>
-
+    <string name="loading_purchase_updates">Loading purchase updates…</string>
+    <string name="books">Books</string>
+    <string name="only_syllabus">Syllabus</string>
 
 
 </resources>

@@ -18,6 +18,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -43,6 +44,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
+
+import java.util.Calendar;
+import java.util.Locale;
+import java.util.Random;
 
 public class LinkPage_MainActivity extends AppCompatActivity {
     private long Timeback;
@@ -80,6 +85,8 @@ public class LinkPage_MainActivity extends AppCompatActivity {
         Button sol_materials = findViewById(R.id.button10_SOL_Study_Material);
         ImageButton askDoubt = findViewById(R.id.askHere);
 
+        TextView currentUserNumber = findViewById(R.id.currentUserNumber);
+
         ImageButton NavBooks = findViewById(R.id.navbarBooks);
         ImageButton NavStudents = findViewById(R.id.navbarStudent);
         ImageButton NavVideos = findViewById(R.id.navbarVideos);
@@ -90,6 +97,30 @@ public class LinkPage_MainActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.show();
         }
+
+        showRealisticUserCount(currentUserNumber);
+
+        //Set Review ans connect us button name
+        DatabaseReference reviewData = FirebaseDatabase.getInstance().getReference("ReviewUSNow");
+        final String[] buttonName = new String[1];
+        reviewData.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                buttonName[0] = snapshot.getValue(String.class);
+                assert buttonName[0] != null;
+                if(!buttonName[0].equals("N/A")){
+                    Connect_with_us.setText(buttonName[0]);
+                }
+                else {
+                    Connect_with_us.setText(R.string.connect);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         // Navigation Bar Button Listeners (unchanged)
         NavVideos.setOnClickListener(view -> openYouTubeChannel());
@@ -179,12 +210,19 @@ public class LinkPage_MainActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(), study_materials.class));
         });
 
-        Connect_with_us.setOnClickListener(view -> {
-            Bundle bundle = new Bundle();
-            bundle.putString("Join_US", "button_clicked");
-            FirebaseAnalytics.getInstance(this).logEvent("Join_US", bundle);
-            startActivity(new Intent(getApplicationContext(), connect_with_us_MainActivity.class));
+       Connect_with_us.setOnClickListener(view -> {
+           if(!buttonName[0].equals("N/A")){
+               reviewUsPageOpen();
+           }
+           else{
+               Bundle bundle = new Bundle();
+               bundle.putString("Join_US", "button_clicked");
+               FirebaseAnalytics.getInstance(this).logEvent("Join_US", bundle);
+               startActivity(new Intent(getApplicationContext(), connect_with_us_MainActivity.class));
+           }
+
         });
+
 
         askDoubt.setOnClickListener(view -> functionManager.askDoubtHere(LinkPage_MainActivity.this));
 
@@ -264,4 +302,152 @@ public class LinkPage_MainActivity extends AppCompatActivity {
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(youtubeChannelUrl)));
         }
     }
+
+    private void reviewUsPageOpen(){
+        String playStorePage = "https://play.google.com/store/apps/details?id=com.dusol.thelearnerscommunity";
+        Uri youtubeUri = Uri.parse(playStorePage);
+        Intent intent = new Intent(Intent.ACTION_VIEW, youtubeUri);
+        intent.setPackage("com.google.android.playstore");
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        } else {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(playStorePage)));
+        }
+    }
+
+
+
+    //Show current user number 
+    private final Handler handler = new Handler();
+    private Runnable updateNumberRunnable;
+    private final Random random = new Random();
+
+    private void showRealisticUserCount(TextView textView) {
+        DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference("exam_status");
+        databaseRef.keepSynced(true);
+
+        final Boolean[] lastExamStatus = {null};
+
+        databaseRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Boolean isExamOngoing = snapshot.getValue(Boolean.class);
+                if (isExamOngoing == null) {
+                    Log.e("isExamOngoing", "Exam status is null, keeping last state.");
+                    return;
+                }
+
+                if (lastExamStatus[0] == null || !lastExamStatus[0].equals(isExamOngoing)) {
+                    lastExamStatus[0] = isExamOngoing;
+                    Log.d("isExamOngoing", "Exam status changed: " + isExamOngoing);
+
+                    // Smooth Start
+                    int targetUserCount = isExamOngoing ? 809 : 403;
+                    startSmoothUserIncrease(textView, targetUserCount, isExamOngoing);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e("Firebase", "Error fetching exam status", error.toException());
+            }
+        });
+
+        startSmoothUserIncrease(textView, 403, false); // Default start with non-exam mode
+    }
+
+    // Slowly increases user count instead of jumping instantly
+    private void startSmoothUserIncrease(TextView textView, int targetUserCount, boolean isExamOngoing) {
+        if (updateNumberRunnable != null) {
+            handler.removeCallbacks(updateNumberRunnable);
+        }
+
+        updateNumberRunnable = new Runnable() {
+            private int currentUserCount = targetUserCount - random.nextInt(20) - 30; // Start lower by 30-50 users
+
+            @Override
+            public void run() {
+                if (currentUserCount < targetUserCount) {
+                    currentUserCount += random.nextInt(5) + 2; // Increase by 2-6 each time
+
+                    if (currentUserCount > targetUserCount) {
+                        currentUserCount = targetUserCount; // Stop at exact target
+                    }
+
+                    Log.e("isExamOngoing", "Increasing user count: " + currentUserCount);
+                    textView.setText(String.format(Locale.getDefault(), "%d", currentUserCount));
+
+                    handler.postDelayed(this, random.nextInt(500) + 500); // Update every 0.5 - 1 sec
+                } else {
+                    // Once smooth increase is done, start normal updates
+                    startUserCountUpdater(textView, isExamOngoing, targetUserCount);
+                }
+            }
+        };
+
+        handler.post(updateNumberRunnable);
+    }
+
+    private void startUserCountUpdater(TextView textView, boolean isExamOngoing, int initialUserCount) {
+        if (updateNumberRunnable != null) {
+            handler.removeCallbacks(updateNumberRunnable);
+        }
+
+        updateNumberRunnable = new Runnable() {
+            private int currentUserCount = initialUserCount; // Start with the given initial value
+
+            @Override
+            public void run() {
+                int currentHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+                boolean isPeakHours = (currentHour >= 6 && currentHour <= 10) || (currentHour >= 18 && currentHour <= 23);
+
+                // Define realistic min-max range based on exam status
+                int targetMin = isExamOngoing ? (isPeakHours ? 800 : 500) : (isPeakHours ? 400 : 250);
+                int targetMax = isExamOngoing ? (isPeakHours ? 1200 : 700) : (isPeakHours ? 450 : 300);
+
+                // Ensure user count remains within range
+                if (currentUserCount < targetMin) {
+                    currentUserCount = targetMin;
+                } else if (currentUserCount > targetMax) {
+                    currentUserCount = targetMax;
+                }
+
+                // Create a more realistic fluctuation pattern
+                int change = random.nextInt(6) - 2; // -2 to +3 variation (some leaving, some joining)
+
+                if (isExamOngoing) {
+                    // Exams → Mostly an increase, but some drops
+                    if (random.nextInt(5) == 0) { // 1 out of 5 times, decrease
+                        currentUserCount -= random.nextInt(3) + 1; // Drop by 1-3
+                    } else {
+                        currentUserCount += random.nextInt(4) + 1; // Increase by 1-4
+                    }
+                } else {
+                    // Non-exam → More balanced joining/leaving
+                    currentUserCount += change;
+                }
+
+                // Keep user count within realistic range
+                if (currentUserCount < targetMin) currentUserCount = targetMin;
+                if (currentUserCount > targetMax) currentUserCount = targetMax;
+
+                // Log realistic user count change
+                Log.e("isExamOngoing", "Current user count: " + currentUserCount);
+
+                // Update TextView
+                textView.setText(String.format(Locale.getDefault(), "%d", currentUserCount));
+
+                textView.setOnClickListener(v ->
+                        textView.setText(String.format(Locale.getDefault(), "Current Users: %d", currentUserCount))
+                );
+
+                // Randomize update interval slightly (4 to 7 seconds)
+                int nextUpdate = 4000 + random.nextInt(3000);
+                handler.postDelayed(this, nextUpdate);
+            }
+        };
+
+        handler.post(updateNumberRunnable);
+    }
+
 }

@@ -101,9 +101,9 @@ public class Notes_HomeWeb_MainActivity extends AppCompatActivity {
             if (link != null) {
                 Bundle bundle = new Bundle();
                 if(path.contains("Question")){
-                    bundle.putString("pdf_name", "QP_ "+name);
+                    bundle.putString("pdf_name", "QP_"+name);
                 }else{
-                    bundle.putString("pdf_name", name);
+                    bundle.putString("pdf_name","Notes_"+name);
                 }
                 firebaseAnalytics.logEvent("pdf_opened", bundle);
 

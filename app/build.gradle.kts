@@ -13,7 +13,7 @@ android {
         applicationId = "com.dusol.thelearnerscommunity"
         minSdk = 21
         targetSdk = 34
-        versionCode = 18
+        versionCode = 19
         multiDexEnabled= true
         versionName = "2025.02.2.4.7" //Explain Year.month.versionName
         //This is Version Name 2.4 and we cant use same version code again
