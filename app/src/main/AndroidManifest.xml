@@ -26,6 +26,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="33">
         <activity
+            android:name=".NotesStoreManage.NotesStoreTabActivity"
+            android:exported="false" />
+        <activity
             android:name=".BcomHons_QP_TabLayout_Activity"
             android:exported="false" />
         <activity

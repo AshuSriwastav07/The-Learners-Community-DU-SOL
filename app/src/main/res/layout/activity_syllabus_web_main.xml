@@ -15,7 +15,6 @@
     android:id="@+id/SyllabusWebViewLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="-80sp"
     android:background="@color/background_color_night"
     tools:context="com.dusol.thelearnerscommunity.SyllabusFiles.Syllabus_Web_MainActivity">
 

@@ -183,6 +183,6 @@ public class functionManager {
             // For example, you can open the Telegram website in a web browser
             activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(TelegramChannelUrl)));
         }
-    };
+    }
 
 }

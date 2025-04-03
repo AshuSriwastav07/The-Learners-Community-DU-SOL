@@ -35,6 +35,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import com.dusol.thelearnerscommunity.FunctionManager.functionManager;
+import com.dusol.thelearnerscommunity.NotesStoreManage.NotesStoreTabActivity;
 import com.dusol.thelearnerscommunity.NotesStoreManage.NotesStore_HomePage;
 import com.dusol.thelearnerscommunity.SyllabusFiles.SyllabusTabLayoutActivity;
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -161,35 +162,35 @@ public class LinkPage_MainActivity extends AppCompatActivity {
         // Main Buttons Listeners (unchanged)
         shop.setOnClickListener(view -> {
             Bundle bundle = new Bundle();
-            bundle.putString("Notes_Store", "button_clicked");
+            bundle.putString("Notes_Store", "Notes_Store_Opens");
             FirebaseAnalytics.getInstance(this).logEvent("Notes_Store", bundle);
-            startActivity(new Intent(getApplicationContext(), NotesStore_HomePage.class));
+            startActivity(new Intent(getApplicationContext(), NotesStoreTabActivity.class));
         });
 
         du_and_sol_notes_page.setOnClickListener(view -> {
             Bundle bundle = new Bundle();
-            bundle.putString("SOL_Notes_Open", "button_clicked");
+            bundle.putString("SOL_Notes_Open", "SOL_Notes_Open");
             FirebaseAnalytics.getInstance(this).logEvent("SOL_Notes_Open", bundle);
             startActivity(new Intent(getApplicationContext(), DU_SOL_NOTES__MainActivity.class));
         });
 
         QuestionPapers.setOnClickListener(view -> {
             Bundle bundle = new Bundle();
-            bundle.putString("Question_Paper_Open", "button_clicked");
-//            FirebaseAnalytics.getInstance(this).logEvent("Question_Paper_Open", bundle);
+            bundle.putString("Question_Paper_Open", "Question_Paper_Open");
+            FirebaseAnalytics.getInstance(this).logEvent("Question_Paper_Open", bundle);
             startActivity(new Intent(this, selectCourseForQP.class));
         });
 
         solUpdates.setOnClickListener(v -> {
             Bundle bundle = new Bundle();
-            bundle.putString("SOL_Updates", "button_clicked");
+            bundle.putString("SOL_Updates", "SOL_Updates_Opens");
             FirebaseAnalytics.getInstance(this).logEvent("SOL_Updates", bundle);
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://web.sol.du.ac.in/home")));
         });
 
         SOL_Syllabus.setOnClickListener(view -> {
             Bundle bundle = new Bundle();
-            bundle.putString("SOL_Syllabus", "button_clicked");
+            bundle.putString("SOL_Syllabus", "SOL_Syllabus_Opens");
             FirebaseAnalytics.getInstance(this).logEvent("SOL_Syllabus", bundle);
             startActivity(new Intent(getApplicationContext(), SyllabusTabLayoutActivity.class));
         });
@@ -198,15 +199,15 @@ public class LinkPage_MainActivity extends AppCompatActivity {
 
         sol_portal.setOnClickListener(v -> {
             Bundle bundle = new Bundle();
-            bundle.putString("SOL_Portal", "button_clicked");
+            bundle.putString("SOL_Portal", "SOL_Portal_Opens");
             FirebaseAnalytics.getInstance(this).logEvent("SOL_Portal", bundle);
             startActivity(new Intent(getApplicationContext(), studentsBoard.class));
         });
 
         sol_materials.setOnClickListener(v -> {
             Bundle bundle = new Bundle();
-            bundle.putString("SOL_Portal", "button_clicked");
-            FirebaseAnalytics.getInstance(this).logEvent("SOL_Portal", bundle);
+            bundle.putString("SOL_Materials", "SOL_Materials_Opens");
+            FirebaseAnalytics.getInstance(this).logEvent("SOL_Materials", bundle);
             startActivity(new Intent(getApplicationContext(), study_materials.class));
         });
 
@@ -216,7 +217,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
            }
            else{
                Bundle bundle = new Bundle();
-               bundle.putString("Join_US", "button_clicked");
+               bundle.putString("Join_US", "JoinUS_Opens");
                FirebaseAnalytics.getInstance(this).logEvent("Join_US", bundle);
                startActivity(new Intent(getApplicationContext(), connect_with_us_MainActivity.class));
            }
