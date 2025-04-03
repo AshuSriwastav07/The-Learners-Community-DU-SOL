@@ -40,10 +40,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dp_6"
             android:layout_marginEnd="@dimen/dp_6"
-            android:fontFamily="@font/alata"
+            android:fontFamily="sans-serif"
             android:textColor="@color/banners"
-            android:textSize="@dimen/dp_8"
-            android:textStyle="bold|italic" />
+            android:textSize="@dimen/dp_7"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/openNotesLink"
@@ -53,6 +53,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="15sp"
+            android:backgroundTint="#3D8048"
             android:gravity="center"
             android:text="@string/check_details"
             android:textSize="@dimen/dp_8" />

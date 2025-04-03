@@ -50,20 +50,25 @@ public class Syllabus_Web_MainActivity extends AppCompatActivity {
 
         // Enable JavaScript and other settings as needed
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.getSettings().setBuiltInZoomControls(true);
         webView.getSettings().setSupportZoom(true);
         webView.setVerticalScrollBarEnabled(true);
         webView.getSettings().setUseWideViewPort(true);
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setDisplayZoomControls(true);
 
+
         String link = getIntent().getStringExtra("link");
+
 
         // Set up WebView to show progress
         webView.setWebChromeClient(new WebChromeClient() {
             @Override
             public void onProgressChanged(WebView view, int newProgress) {
                 super.onProgressChanged(view, newProgress);
+
+                view.loadUrl("javascript:(function() { " +
+                        "document.querySelector('nav').style.display='none'; " +
+                        "})()");
 
                 // Update the progress bar
                 progressBar.setProgress(newProgress);
