@@ -66,14 +66,18 @@ public class ProductDetailsDialogFragment extends DialogFragment {
         }
 
         Button buyButton = view.findViewById(R.id.buyButton);
-        buyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Handle the "Buy" button click
-                // Open the product link in an external browser
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(productLink));
-                startActivity(intent);
-            }
+        buyButton.setOnClickListener(v -> {
+            // Handle the "Buy" button click
+            // Open the product link in an external browser
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(productLink));
+            startActivity(intent);
+        });
+        Button buyButton2 = view.findViewById(R.id.buyButton2);
+        buyButton2.setOnClickListener(v -> {
+            // Handle the "Buy" button click
+            // Open the product link in an external browser
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(productLink));
+            startActivity(intent);
         });
 
         builder.setView(view)

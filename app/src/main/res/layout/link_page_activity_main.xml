@@ -18,27 +18,6 @@
     tools:context="com.dusol.thelearnerscommunity.LinkPage_MainActivity"
     tools:ignore="UsingOnClickInXml">
 
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp"
-        app:cardBackgroundColor="@color/background_color_night"
-        app:cardCornerRadius="@dimen/dp_30"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/currentUserNumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/noto_sans_adlam_unjoined_bold"
-            android:padding="@dimen/dp_1"
-            android:text=""
-            android:textColor="#560202" />
-    </androidx.cardview.widget.CardView>
-
     <LinearLayout
         android:id="@+id/linearLayout8"
         android:layout_width="match_parent"
@@ -50,7 +29,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView12"
+            android:id="@+id/bannerText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_3"
@@ -111,7 +90,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#054bb4"
                             android:drawableTop="@mipmap/img"
-                            android:fontFamily="@font/alata"
+                            android:fontFamily="@font/lato_bold"
                             android:gravity="center"
                             android:text="@string/DU_SOL_NOTES"
                             android:textAlignment="center"
@@ -148,7 +127,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#054bb4"
                             android:drawableTop="@mipmap/materials"
-                            android:fontFamily="@font/alata"
+                            android:fontFamily="@font/lato_bold"
                             android:gravity="center"
                             android:text="@string/sol_materials"
                             android:textAlignment="center"
@@ -192,7 +171,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#054bb4"
                             android:drawableTop="@mipmap/notice"
-                            android:fontFamily="@font/alata"
+                            android:fontFamily="@font/lato_bold"
                             android:gravity="center"
                             android:text="@string/collage_updates"
                             android:textAlignment="center"
@@ -228,7 +207,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#054bb4"
                             android:drawableTop="@mipmap/exam"
-                            android:fontFamily="@font/alata"
+                            android:fontFamily="@font/lato_bold"
                             android:gravity="center"
                             android:text="@string/previous_question_papers"
                             android:textAlignment="center"
@@ -272,7 +251,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#054bb4"
                             android:drawableTop="@mipmap/list"
-                            android:fontFamily="@font/alata"
+                            android:fontFamily="@font/lato_bold"
                             android:gravity="center"
                             android:text="@string/sol_syllabus"
                             android:textAlignment="center"
@@ -308,7 +287,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#054bb4"
                             android:drawableTop="@mipmap/student"
-                            android:fontFamily="@font/alata"
+                            android:fontFamily="@font/lato_bold"
                             android:gravity="center"
                             android:singleLine="true"
                             android:text="@string/studentPortal"
@@ -353,7 +332,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#054bb4"
                             android:drawableTop="@mipmap/shop"
-                            android:fontFamily="@font/alata"
+                            android:fontFamily="@font/lato_bold"
                             android:gravity="center"
                             android:text="@string/paid_notes_store"
                             android:textAlignment="center"
@@ -389,7 +368,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#054bb4"
                             android:drawableTop="@mipmap/play"
-                            android:fontFamily="@font/alata"
+                            android:fontFamily="@font/lato_bold"
                             android:gravity="center"
                             android:text="@string/video_notes"
                             android:textAlignment="center"
@@ -427,8 +406,9 @@
                         android:layout_margin="10dp"
                         android:layout_weight="1"
                         android:backgroundTint="#054bb4"
+                        android:contentDescription="@string/connect"
                         android:drawableLeft="@mipmap/links"
-                        android:fontFamily="@font/alata"
+                        android:fontFamily="@font/lato_bold"
                         android:gravity="center"
                         android:text=""
                         android:textAlignment="center"

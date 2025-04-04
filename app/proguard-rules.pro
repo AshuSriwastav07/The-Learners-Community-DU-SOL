@@ -33,4 +33,4 @@
 -dontwarn android.media.LoudnessCodecController$OnLoudnessCodecUpdateListener
 -dontwarn android.media.LoudnessCodecController
 -keep class com.github.barteksc.pdfviewer.** { *; }
--keep class com.shockwave.**
+-keep class com.shockwave.pdfium.** { *; }
