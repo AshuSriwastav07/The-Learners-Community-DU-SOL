@@ -17,6 +17,8 @@ import com.dusol.thelearnerscommunity.NotesStoreManage.NotesStore_HomePage;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
+import java.util.Objects;
+
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     @Override
@@ -24,7 +26,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         super.onMessageReceived(message);
 
         // Extract data from the notification
-        String title = message.getNotification().getTitle();
+        String title = Objects.requireNonNull(message.getNotification()).getTitle();
         String body = message.getNotification().getBody();
 
         // Get custom data if needed
@@ -53,6 +55,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         }
 
         // Add data to the Intent if needed
+        assert intent != null;
         intent.putExtra("notificationMessage", message);
 
         // Create the PendingIntent to launch the activity

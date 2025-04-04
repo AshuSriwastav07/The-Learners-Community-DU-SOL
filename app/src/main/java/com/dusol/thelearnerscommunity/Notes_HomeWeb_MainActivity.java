@@ -24,6 +24,7 @@ public class Notes_HomeWeb_MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        super.onBackPressed();
         finish();
     }
 
@@ -48,9 +49,11 @@ public class Notes_HomeWeb_MainActivity extends AppCompatActivity {
         String name = getIntent().getStringExtra("PdfName");
         String path = getIntent().getStringExtra("Path");
 
-        assert path != null;
-        Log.d("AnalyticsData",path);
-
+        if (path != null) {
+            Log.d("AnalyticsData", path);
+        } else {
+            Log.d("AnalyticsData", "Path is null");
+        }
         // Set up WebChromeClient to show progress
         webView.setWebChromeClient(new WebChromeClient() {
             @Override
@@ -98,19 +101,21 @@ public class Notes_HomeWeb_MainActivity extends AppCompatActivity {
         if (!networkStatus) {
             Toast.makeText(this, "No internet connection available.", Toast.LENGTH_LONG).show();
         } else {
-            if (link != null) {
-                Bundle bundle = new Bundle();
-                if(path.contains("Question")){
-                    bundle.putString("pdf_name", "QP_"+name);
-                }else{
-                    bundle.putString("pdf_name","Notes_"+name);
+            Bundle bundle = new Bundle();
+            new android.os.Handler().postDelayed(() -> {
+                assert path != null;
+                if (path.contains("Question")) {
+                    bundle.putString("pdf_name", "QP_" + name);
+                } else {
+                    bundle.putString("pdf_name", "Notes_" + name);
                 }
                 firebaseAnalytics.logEvent("pdf_opened", bundle);
+            }, 500);  // Delay of 500 milliseconds
 
-                webView.loadUrl(link);
+            assert link != null;
+            webView.loadUrl(link);
 
-            }
+        }
         }
     }
 
-}

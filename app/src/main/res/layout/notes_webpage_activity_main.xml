@@ -14,11 +14,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="-60sp"
-    tools:context="com.dusol.thelearnerscommunity.Notes_HomeWeb_MainActivity"
-    tools:layout_editor_absoluteY="25dp"
+    android:layout_marginTop="-60dp"
+    android:layout_marginBottom="0dp"
     android:background="@color/background_color_night"
-    >
+    tools:context="com.dusol.thelearnerscommunity.Notes_HomeWeb_MainActivity"
+    tools:layout_editor_absoluteY="25dp">
 
 
   <WebView
