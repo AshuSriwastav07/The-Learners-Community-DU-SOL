@@ -63,9 +63,6 @@ public class BA_PolHons_SM extends Fragment {
         Button btn10 = view.findViewById(R.id.btn11); //NEP
         Button btn11 = view.findViewById(R.id.btn12); //NEP
 
-        Bundle bundle = new Bundle();
-        bundle.putString("StudyMaterial", "StudyMaterialPage_Open");
-        FirebaseAnalytics.getInstance(requireContext()).logEvent("StudyMaterial_Open", bundle);
 
 
         // Add buttons for Button 2 to Button 12
@@ -76,6 +73,7 @@ public class BA_PolHons_SM extends Fragment {
             buttons[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    sendStudyMaterialData("Semester "+buttonIndex);
                     openNextActivity(links[buttonIndex]);
                 }
             });
@@ -85,10 +83,12 @@ public class BA_PolHons_SM extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String data= snapshot.getValue(String.class);
+                assert data != null;
                 Log.d("FirebaseLinks",data);
                 btn9.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        sendStudyMaterialData("NEP_Semester4");
                         openNextActivity(data);
                     }
                 });
@@ -106,12 +106,11 @@ public class BA_PolHons_SM extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String data= snapshot.getValue(String.class);
+                assert data != null;
                 Log.d("FirebaseLinks",data);
-                btn10.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        openNextActivity(data);
-                    }
+                btn10.setOnClickListener(v -> {
+                    sendStudyMaterialData("NEP_Semester5");
+                    openNextActivity(data);
                 });
 
 
@@ -127,10 +126,12 @@ public class BA_PolHons_SM extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String data= snapshot.getValue(String.class);
+                assert data != null;
                 Log.d("FirebaseLinks",data);
                 btn11.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        sendStudyMaterialData("NEP_Semester6");
                         openNextActivity(data);
                     }
                 });
@@ -159,6 +160,15 @@ public class BA_PolHons_SM extends Fragment {
             Intent intent = new Intent(Intent.ACTION_VIEW, BookLink);
             startActivity(intent);
         };
+    }
+
+    private void sendStudyMaterialData(String SemesterOpened){
+        new android.os.Handler().postDelayed(() -> {
+            Bundle bundle = new Bundle();
+            bundle.putString("BA_PolHons", SemesterOpened);
+            FirebaseAnalytics.getInstance(requireContext()).logEvent("StudyMaterial", bundle);
+        },500);
+
     }
 
 }

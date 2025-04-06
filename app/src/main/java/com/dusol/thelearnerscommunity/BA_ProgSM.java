@@ -67,19 +67,17 @@ public class BA_ProgSM extends Fragment {
 
 
         Bundle bundle = new Bundle();
-        bundle.putString("StudyMaterial", "StudyMaterialPage_Open");
-        FirebaseAnalytics.getInstance(requireContext()).logEvent("StudyMaterial_Open", bundle);
+        bundle.putString("StudyMaterial", "BA_ProgSM");
+        FirebaseAnalytics.getInstance(requireContext()).logEvent("StudyMaterial", bundle);
 
         // Add buttons for Button 2 to Button 12
 
         // Set click listeners for each button
         for (int i = 0; i < buttons.length; i++) {
             final int buttonIndex = i;
-            buttons[i].setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    openNextActivity(links[buttonIndex]);
-                }
+            buttons[i].setOnClickListener(view1 -> {
+                sendStudyMaterialData("Semester "+buttonIndex);
+                openNextActivity(links[buttonIndex]);
             });
         }
 
@@ -87,12 +85,11 @@ public class BA_ProgSM extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String data= snapshot.getValue(String.class);
+                assert data != null;
                 Log.d("FirebaseLinks",data);
-                btn9.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        openNextActivity(data);
-                    }
+                btn9.setOnClickListener(v -> {
+                    sendStudyMaterialData("NEP_Semester4");
+                    openNextActivity(data);
                 });
 
 
@@ -108,12 +105,11 @@ public class BA_ProgSM extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String data= snapshot.getValue(String.class);
+                assert data != null;
                 Log.d("FirebaseLinks",data);
-                btn10.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        openNextActivity(data);
-                    }
+                btn10.setOnClickListener(v -> {
+                    sendStudyMaterialData("NEP_Semester5");
+                    openNextActivity(data);
                 });
 
 
@@ -129,14 +125,12 @@ public class BA_ProgSM extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String data= snapshot.getValue(String.class);
+                assert data != null;
                 Log.d("FirebaseLinks",data);
-                btn11.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        openNextActivity(data);
-                    }
+                btn11.setOnClickListener(v -> {
+                    sendStudyMaterialData("NEP_Semester6");
+                    openNextActivity(data);
                 });
-
 
             }
 
@@ -145,8 +139,6 @@ public class BA_ProgSM extends Fragment {
 
             }
         });
-
-
 
     return view;
     }
@@ -163,4 +155,12 @@ public class BA_ProgSM extends Fragment {
         };
     }
 
+    private void sendStudyMaterialData(String SemesterOpened){
+        new android.os.Handler().postDelayed(() -> {
+            Bundle bundle = new Bundle();
+            bundle.putString("BA_Prog", SemesterOpened);
+            FirebaseAnalytics.getInstance(requireContext()).logEvent("StudyMaterial", bundle);
+        },500);
+
+    }
 }

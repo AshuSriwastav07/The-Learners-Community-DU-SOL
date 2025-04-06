@@ -27,7 +27,7 @@ public class BCom_HonsSM extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view=inflater.inflate(R.layout.fragment_bcom__hons, container, false);
+        View view = inflater.inflate(R.layout.fragment_bcom__hons, container, false);
 
         AdView mAdView = view.findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -40,7 +40,7 @@ public class BCom_HonsSM extends Fragment {
         FirebaseAnalytics.getInstance(requireContext()).logEvent("StudyMaterial_Open", bundle);
 
 
-        String [] links={"https://web.sol.du.ac.in/info/bcom-hons-semester-i",
+        String[] links = {"https://web.sol.du.ac.in/info/bcom-hons-semester-i",
                 "https://web.sol.du.ac.in/info/bcom-hons-semester-ii",
                 "https://web.sol.du.ac.in/info/bcom-hons-semester-iii",
                 "https://web.sol.du.ac.in/info/bcom-hons-semester-iv",
@@ -76,6 +76,7 @@ public class BCom_HonsSM extends Fragment {
             buttons[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    sendStudyMaterialData("Semester " + buttonIndex);
                     openNextActivity(links[buttonIndex]);
                 }
             });
@@ -84,11 +85,12 @@ public class BCom_HonsSM extends Fragment {
         mDatabase.child("sem4").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String data= snapshot.getValue(String.class);
+                String data = snapshot.getValue(String.class);
                 btn9.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if(data!=null) {
+                        if (data != null) {
+                            sendStudyMaterialData("NEP_Semester4");
                             openNextActivity(data);
                         }
                     }
@@ -106,11 +108,12 @@ public class BCom_HonsSM extends Fragment {
         mDatabase.child("sem5").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String data= snapshot.getValue(String.class);
+                String data = snapshot.getValue(String.class);
                 btn10.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if(data!=null) {
+                        if (data != null) {
+                            sendStudyMaterialData("NEP_Semester5");
                             openNextActivity(data);
                         }
                     }
@@ -128,13 +131,15 @@ public class BCom_HonsSM extends Fragment {
         mDatabase.child("sem6").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String data= snapshot.getValue(String.class);
+                String data = snapshot.getValue(String.class);
 
                 btn11.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if(data!=null) {
+                        if (data != null) {
+                            sendStudyMaterialData("NEP_Semester6");
                             openNextActivity(data);
+
                         }
                     }
                 });
@@ -149,20 +154,27 @@ public class BCom_HonsSM extends Fragment {
         });
 
 
-
         return view;
     }
 
 
     private void openNextActivity(String link) {
-        if(link.equals("N/A")){
+        if (link.equals("N/A")) {
             Toast.makeText(getActivity(), "Not Available", Toast.LENGTH_SHORT).show();
-        }
-        else{
+        } else {
             Uri BookLink = Uri.parse(link);
             Intent intent = new Intent(Intent.ACTION_VIEW, BookLink);
             startActivity(intent);
-        };
+        }
+    }
+
+    private void sendStudyMaterialData(String SemesterOpened) {
+        new android.os.Handler().postDelayed(() -> {
+            Bundle bundle = new Bundle();
+            bundle.putString("BComHons", SemesterOpened);
+            FirebaseAnalytics.getInstance(requireContext()).logEvent("StudyMaterial", bundle);
+        }, 500);
+
     }
 
 }

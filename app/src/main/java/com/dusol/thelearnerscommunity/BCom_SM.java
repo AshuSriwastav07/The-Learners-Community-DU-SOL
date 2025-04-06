@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -69,11 +70,9 @@ public class BCom_SM extends Fragment {
         // Set click listeners for each button
         for (int i = 0; i < buttons.length; i++) {
             final int buttonIndex = i;
-            buttons[i].setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    openNextActivity(links[buttonIndex]);
-                }
+            buttons[i].setOnClickListener(view1 -> {
+                sendStudyMaterialData("Semester "+buttonIndex);
+                openNextActivity(links[buttonIndex]);
             });
         }
 
@@ -81,12 +80,11 @@ public class BCom_SM extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String data= snapshot.getValue(String.class);
+                assert data != null;
                 Log.d("FirebaseLinks",data);
-                btn9.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        openNextActivity(data);
-                    }
+                btn9.setOnClickListener(v -> {
+                    sendStudyMaterialData("NEP_Semester 4");
+                    openNextActivity(data);
                 });
 
 
@@ -102,12 +100,11 @@ public class BCom_SM extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String data= snapshot.getValue(String.class);
+                assert data != null;
                 Log.d("FirebaseLinks",data);
-                btn10.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        openNextActivity(data);
-                    }
+                btn10.setOnClickListener(v -> {
+                    sendStudyMaterialData("NEP_Semester 5");
+                    openNextActivity(data);
                 });
 
 
@@ -123,12 +120,11 @@ public class BCom_SM extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String data= snapshot.getValue(String.class);
+                assert data != null;
                 Log.d("FirebaseLinks",data);
-                btn11.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        openNextActivity(data);
-                    }
+                btn11.setOnClickListener(v -> {
+                    sendStudyMaterialData("NEP_Semester 6");
+                    openNextActivity(data);
                 });
 
 
@@ -154,7 +150,16 @@ public class BCom_SM extends Fragment {
             Uri BookLink = Uri.parse(link);
             Intent intent = new Intent(Intent.ACTION_VIEW, BookLink);
             startActivity(intent);
-        };
+        }
+    }
+
+    private void sendStudyMaterialData(String SemesterOpened){
+        new android.os.Handler().postDelayed(() -> {
+            Bundle bundle = new Bundle();
+            bundle.putString("Bcom", SemesterOpened);
+            FirebaseAnalytics.getInstance(requireContext()).logEvent("StudyMaterial", bundle);
+        },500);
+
     }
 
     }
