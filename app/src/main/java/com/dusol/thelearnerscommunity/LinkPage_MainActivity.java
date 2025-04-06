@@ -99,15 +99,19 @@ public class LinkPage_MainActivity extends AppCompatActivity {
         // Navigation Bar Button Listeners (unchanged)
         NavVideos.setOnClickListener(view -> openYouTubeChannel());
         NavBooks.setOnClickListener(view -> {
+            new android.os.Handler().postDelayed(() -> {
             Bundle bundle = new Bundle();
             bundle.putString("SOL_Notes_Open", "button_clicked");
-            FirebaseAnalytics.getInstance(this).logEvent("SOL_Notes_Open", bundle);
+            FirebaseAnalytics.getInstance(this).logEvent("SOL_Notes_Open", bundle);}, 500);
             startActivity(new Intent(getApplicationContext(), DU_SOL_NOTES__MainActivity.class));
         });
         NavStudents.setOnClickListener(view -> {
-            Bundle bundle = new Bundle();
-            bundle.putString("SOL_Portal", "button_clicked");
-            FirebaseAnalytics.getInstance(this).logEvent("SOL_Portal", bundle);
+            new android.os.Handler().postDelayed(() -> {
+                Bundle bundle = new Bundle();
+                bundle.putString("SOL_Portal", "button_clicked");
+                FirebaseAnalytics.getInstance(this).logEvent("SOL_Portal", bundle);
+            }, 500);
+
             startActivity(new Intent(getApplicationContext(), studentsBoard.class));
         });
 
@@ -134,53 +138,71 @@ public class LinkPage_MainActivity extends AppCompatActivity {
 
         // Main Buttons Listeners (unchanged)
         shop.setOnClickListener(view -> {
-            Bundle bundle = new Bundle();
-            bundle.putString("Notes_Store", "Notes_Store_Opens");
-            FirebaseAnalytics.getInstance(this).logEvent("Notes_Store", bundle);
+            new android.os.Handler().postDelayed(() -> {
+                        Bundle bundle = new Bundle();
+                        bundle.putString("Notes_Store", "Notes_Store_Opens");
+                        FirebaseAnalytics.getInstance(this).logEvent("Notes_Store", bundle);
+                    },500);
             startActivity(new Intent(getApplicationContext(), NotesStoreTabActivity.class));
         });
 
         du_and_sol_notes_page.setOnClickListener(view -> {
+            new android.os.Handler().postDelayed(() -> {
+
             Bundle bundle = new Bundle();
             bundle.putString("SOL_Notes_Open", "SOL_Notes_Open");
             FirebaseAnalytics.getInstance(this).logEvent("SOL_Notes_Open", bundle);
+            },500);
             startActivity(new Intent(getApplicationContext(), DU_SOL_NOTES__MainActivity.class));
         });
 
         QuestionPapers.setOnClickListener(view -> {
+            new android.os.Handler().postDelayed(() -> {
             Bundle bundle = new Bundle();
             bundle.putString("Question_Paper_Open", "Question_Paper_Open");
             FirebaseAnalytics.getInstance(this).logEvent("Question_Paper_Open", bundle);
+            },500);
             startActivity(new Intent(this, selectCourseForQP.class));
         });
 
         solUpdates.setOnClickListener(v -> {
-            Bundle bundle = new Bundle();
-            bundle.putString("SOL_Updates", "SOL_Updates_Opens");
-            FirebaseAnalytics.getInstance(this).logEvent("SOL_Updates", bundle);
+            new android.os.Handler().postDelayed(() -> {
+                Bundle bundle = new Bundle();
+                bundle.putString("SOL_Updates", "SOL_Updates_Opens");
+                FirebaseAnalytics.getInstance(this).logEvent("SOL_Updates", bundle);
+
+            },500);
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://web.sol.du.ac.in/home")));
         });
 
         SOL_Syllabus.setOnClickListener(view -> {
-            Bundle bundle = new Bundle();
-            bundle.putString("SOL_Syllabus", "SOL_Syllabus_Opens");
-            FirebaseAnalytics.getInstance(this).logEvent("SOL_Syllabus", bundle);
+            new android.os.Handler().postDelayed(() -> {
+                Bundle bundle = new Bundle();
+                bundle.putString("SOL_Syllabus", "SOL_Syllabus_Opens");
+                FirebaseAnalytics.getInstance(this).logEvent("SOL_Syllabus", bundle);
+            },500);
+
             startActivity(new Intent(getApplicationContext(), SyllabusTabLayoutActivity.class));
         });
 
         watch_videos.setOnClickListener(view -> openYouTubeChannel());
 
         sol_portal.setOnClickListener(v -> {
-            Bundle bundle = new Bundle();
-            bundle.putString("SOL_Portal", "SOL_Portal_Opens");
-            FirebaseAnalytics.getInstance(this).logEvent("SOL_Portal", bundle);
+            new android.os.Handler().postDelayed(() -> {
+                Bundle bundle = new Bundle();
+                bundle.putString("StudentPortal", "SOL_Portal_Opens");
+                FirebaseAnalytics.getInstance(this).logEvent("StudentPortal", bundle);
+            },500);
             startActivity(new Intent(getApplicationContext(), studentsBoard.class));
         });
 
         sol_materials.setOnClickListener(v -> {
-            Bundle bundle = new Bundle();
-            bundle.putString("SOL_Materials", "SOL_Materials_Opens");
-            FirebaseAnalytics.getInstance(this).logEvent("SOL_Materials", bundle);
+            new android.os.Handler().postDelayed(() -> {
+                Bundle bundle = new Bundle();
+                bundle.putString("SOL_Materials", "SOL_Materials_Opens");
+                FirebaseAnalytics.getInstance(this).logEvent("SOL_Materials", bundle);
+            },500);
+
             startActivity(new Intent(getApplicationContext(), study_materials.class));
         });
 

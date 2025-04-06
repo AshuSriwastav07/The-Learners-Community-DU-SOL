@@ -29,7 +29,7 @@ public class BA_PsyHonsSM extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_ba_psy_hons_material, container, false);
+        View view = inflater.inflate(R.layout.fragment_ba_psy_hons_material, container, false);
 
         AdView mAdView = view.findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -44,21 +44,15 @@ public class BA_PsyHonsSM extends Fragment {
         Button btn5 = view.findViewById(R.id.btn5); //NEP
         Button btn6 = view.findViewById(R.id.btn6); //NEP
 
-        Bundle bundle = new Bundle();
-        bundle.putString("StudyMaterial", "StudyMaterialPage_Open");
-        FirebaseAnalytics.getInstance(requireContext()).logEvent("StudyMaterial_Open", bundle);
-
-
         mDatabase.child("sem1").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String data= snapshot.getValue(String.class);
-                Log.d("FirebaseLinks",data);
-                btn1.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        openNextActivity(data);
-                    }
+                String data = snapshot.getValue(String.class);
+                assert data != null;
+                Log.d("FirebaseLinks", data);
+                btn1.setOnClickListener(v -> {
+                    sendStudyMaterialData("Semester1");
+                    openNextActivity(data);
                 });
             }
 
@@ -71,13 +65,12 @@ public class BA_PsyHonsSM extends Fragment {
         mDatabase.child("sem2").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String data= snapshot.getValue(String.class);
-                Log.d("FirebaseLinks",data);
-                btn2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        openNextActivity(data);
-                    }
+                String data = snapshot.getValue(String.class);
+                assert data != null;
+                Log.d("FirebaseLinks", data);
+                btn2.setOnClickListener(v -> {
+                    sendStudyMaterialData("Semester2");
+                    openNextActivity(data);
                 });
 
 
@@ -92,15 +85,15 @@ public class BA_PsyHonsSM extends Fragment {
         mDatabase.child("sem3").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String data= snapshot.getValue(String.class);
-                Log.d("FirebaseLinks",data);
-                btn3.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        openNextActivity(data);
-                    }
+                String data = snapshot.getValue(String.class);
+                assert data != null;
+                Log.d("FirebaseLinks", data);
+                btn3.setOnClickListener(v -> {
+                    sendStudyMaterialData("Semester3");
+                    openNextActivity(data);
                 });
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
@@ -110,15 +103,15 @@ public class BA_PsyHonsSM extends Fragment {
         mDatabase.child("sem4").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String data= snapshot.getValue(String.class);
-                Log.d("FirebaseLinks",data);
-                btn4.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        openNextActivity(data);
-                    }
+                String data = snapshot.getValue(String.class);
+                assert data != null;
+                Log.d("FirebaseLinks", data);
+                btn4.setOnClickListener(v -> {
+                    sendStudyMaterialData("Semester4");
+                    openNextActivity(data);
                 });
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
@@ -128,15 +121,15 @@ public class BA_PsyHonsSM extends Fragment {
         mDatabase.child("sem5").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String data= snapshot.getValue(String.class);
-                Log.d("FirebaseLinks",data);
-                btn5.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        openNextActivity(data);
-                    }
+                String data = snapshot.getValue(String.class);
+                assert data != null;
+                Log.d("FirebaseLinks", data);
+                btn5.setOnClickListener(v -> {
+                    sendStudyMaterialData("Semester5");
+                    openNextActivity(data);
                 });
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
@@ -146,15 +139,15 @@ public class BA_PsyHonsSM extends Fragment {
         mDatabase.child("sem6").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String data= snapshot.getValue(String.class);
-                Log.d("FirebaseLinks",data);
-                btn6.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        openNextActivity(data);
-                    }
+                String data = snapshot.getValue(String.class);
+                assert data != null;
+                Log.d("FirebaseLinks", data);
+                btn6.setOnClickListener(v -> {
+                    sendStudyMaterialData("Semester6");
+                    openNextActivity(data);
                 });
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
@@ -162,19 +155,26 @@ public class BA_PsyHonsSM extends Fragment {
         });
 
 
-
         return view;
     }
 
 
     private void openNextActivity(String link) {
-        if(link.equals("N/A")){
+        if (link.equals("N/A")) {
             Toast.makeText(getActivity(), "Not Available", Toast.LENGTH_SHORT).show();
-        }
-        else{
+        } else {
             Uri BookLink = Uri.parse(link);
             Intent intent = new Intent(Intent.ACTION_VIEW, BookLink);
             startActivity(intent);
-        };
+        }
     }
+
+    private void sendStudyMaterialData(String SemesterOpened){
+       new android.os.Handler().postDelayed(() -> {
+           Bundle bundle = new Bundle();
+           bundle.putString("BA_PsyHons", SemesterOpened);
+           FirebaseAnalytics.getInstance(requireContext()).logEvent("StudyMaterial", bundle);
+       },500);
+
     }
+}
