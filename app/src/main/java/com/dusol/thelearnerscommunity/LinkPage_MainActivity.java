@@ -100,9 +100,10 @@ public class LinkPage_MainActivity extends AppCompatActivity {
         NavVideos.setOnClickListener(view -> openYouTubeChannel());
         NavBooks.setOnClickListener(view -> {
             new android.os.Handler().postDelayed(() -> {
-            Bundle bundle = new Bundle();
-            bundle.putString("SOL_Notes_Open", "button_clicked");
-            FirebaseAnalytics.getInstance(this).logEvent("SOL_Notes_Open", bundle);}, 500);
+                Bundle bundle = new Bundle();
+                bundle.putString("SOL_Notes_Open", "button_clicked");
+                FirebaseAnalytics.getInstance(this).logEvent("SOL_Notes_Open", bundle);
+            }, 500);
             startActivity(new Intent(getApplicationContext(), DU_SOL_NOTES__MainActivity.class));
         });
         NavStudents.setOnClickListener(view -> {
@@ -133,35 +134,36 @@ public class LinkPage_MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {}
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
         });
 
         // Main Buttons Listeners (unchanged)
         shop.setOnClickListener(view -> {
             new android.os.Handler().postDelayed(() -> {
-                        Bundle bundle = new Bundle();
-                        bundle.putString("Notes_Store", "Notes_Store_Opens");
-                        FirebaseAnalytics.getInstance(this).logEvent("Notes_Store", bundle);
-                    },500);
+                Bundle bundle = new Bundle();
+                bundle.putString("Notes_Store", "Notes_Store_Opens");
+                FirebaseAnalytics.getInstance(this).logEvent("Notes_Store", bundle);
+            }, 500);
             startActivity(new Intent(getApplicationContext(), NotesStoreTabActivity.class));
         });
 
         du_and_sol_notes_page.setOnClickListener(view -> {
             new android.os.Handler().postDelayed(() -> {
 
-            Bundle bundle = new Bundle();
-            bundle.putString("SOL_Notes_Open", "SOL_Notes_Open");
-            FirebaseAnalytics.getInstance(this).logEvent("SOL_Notes_Open", bundle);
-            },500);
+                Bundle bundle = new Bundle();
+                bundle.putString("SOL_Notes_Open", "SOL_Notes_Open");
+                FirebaseAnalytics.getInstance(this).logEvent("SOL_Notes_Open", bundle);
+            }, 500);
             startActivity(new Intent(getApplicationContext(), DU_SOL_NOTES__MainActivity.class));
         });
 
         QuestionPapers.setOnClickListener(view -> {
             new android.os.Handler().postDelayed(() -> {
-            Bundle bundle = new Bundle();
-            bundle.putString("Question_Paper_Open", "Question_Paper_Open");
-            FirebaseAnalytics.getInstance(this).logEvent("Question_Paper_Open", bundle);
-            },500);
+                Bundle bundle = new Bundle();
+                bundle.putString("Question_Paper_Open", "Question_Paper_Open");
+                FirebaseAnalytics.getInstance(this).logEvent("Question_Paper_Open", bundle);
+            }, 500);
             startActivity(new Intent(this, selectCourseForQP.class));
         });
 
@@ -171,7 +173,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
                 bundle.putString("SOL_Updates", "SOL_Updates_Opens");
                 FirebaseAnalytics.getInstance(this).logEvent("SOL_Updates", bundle);
 
-            },500);
+            }, 500);
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://web.sol.du.ac.in/home")));
         });
 
@@ -180,7 +182,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
                 Bundle bundle = new Bundle();
                 bundle.putString("SOL_Syllabus", "SOL_Syllabus_Opens");
                 FirebaseAnalytics.getInstance(this).logEvent("SOL_Syllabus", bundle);
-            },500);
+            }, 500);
 
             startActivity(new Intent(getApplicationContext(), SyllabusTabLayoutActivity.class));
         });
@@ -192,7 +194,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
                 Bundle bundle = new Bundle();
                 bundle.putString("StudentPortal", "SOL_Portal_Opens");
                 FirebaseAnalytics.getInstance(this).logEvent("StudentPortal", bundle);
-            },500);
+            }, 500);
             startActivity(new Intent(getApplicationContext(), studentsBoard.class));
         });
 
@@ -201,22 +203,22 @@ public class LinkPage_MainActivity extends AppCompatActivity {
                 Bundle bundle = new Bundle();
                 bundle.putString("SOL_Materials", "SOL_Materials_Opens");
                 FirebaseAnalytics.getInstance(this).logEvent("SOL_Materials", bundle);
-            },500);
+            }, 500);
 
             startActivity(new Intent(getApplicationContext(), study_materials.class));
         });
 
-       Connect_with_us.setOnClickListener(view -> {
-           if(!buttonName[0].equals("N/A")){
-               reviewUsPageOpen();
-           }
-           else{
-               Bundle bundle = new Bundle();
-               bundle.putString("Join_US", "JoinUS_Opens");
-               FirebaseAnalytics.getInstance(this).logEvent("Join_US", bundle);
-               startActivity(new Intent(getApplicationContext(), connect_with_us_MainActivity.class));
-           }
-
+        Connect_with_us.setOnClickListener(view -> {
+            if ("N/A".equals(buttonName[0])) {
+                // buttonName[0] is "N/A" or null-safe
+                Bundle bundle = new Bundle();
+                bundle.putString("Join_US", "JoinUS_Opens");
+                FirebaseAnalytics.getInstance(this).logEvent("Join_US", bundle);
+                startActivity(new Intent(getApplicationContext(), connect_with_us_MainActivity.class));
+            } else {
+                // buttonName[0] is not "N/A"
+                reviewUsPageOpen();
+            }
         });
 
 
@@ -253,7 +255,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
                     Log.d("FirebaseRegToken", token);
                 });
 
-        new Thread(() -> fetchConnectUsButtonData(buttonName,Connect_with_us)).start(); //New Thread for better performance
+        new Thread(() -> fetchConnectUsButtonData(buttonName, Connect_with_us)).start(); //New Thread for better performance
 
     }
 
@@ -302,7 +304,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
         }
     }
 
-    private void reviewUsPageOpen(){
+    private void reviewUsPageOpen() {
         String playStorePage = "https://play.google.com/store/apps/details?id=com.dusol.thelearnerscommunity";
         Uri youtubeUri = Uri.parse(playStorePage);
         Intent intent = new Intent(Intent.ACTION_VIEW, youtubeUri);
@@ -314,7 +316,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
         }
     }
 
-    private void fetchConnectUsButtonData(String[] buttonName, Button Connect_with_us){
+    private void fetchConnectUsButtonData(String[] buttonName, Button Connect_with_us) {
 
         DatabaseReference reviewData = FirebaseDatabase.getInstance().getReference("ReviewUSNow");
         reviewData.addValueEventListener(new ValueEventListener() {
@@ -322,10 +324,9 @@ public class LinkPage_MainActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 buttonName[0] = snapshot.getValue(String.class);
                 assert buttonName[0] != null;
-                if(!buttonName[0].equals("N/A")){
+                if (!buttonName[0].equals("N/A")) {
                     Connect_with_us.setText(buttonName[0]);
-                }
-                else {
+                } else {
                     Connect_with_us.setText(R.string.connect);
                 }
             }

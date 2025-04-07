@@ -410,7 +410,7 @@
                         android:drawableLeft="@mipmap/links"
                         android:fontFamily="@font/lato_bold"
                         android:gravity="center"
-                        android:text=""
+                        android:text="@string/connect_with_us"
                         android:textAlignment="center"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                         android:textSize="@dimen/dp_6"

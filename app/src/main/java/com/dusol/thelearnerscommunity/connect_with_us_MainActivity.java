@@ -199,6 +199,22 @@ public class connect_with_us_MainActivity extends AppCompatActivity {
             }
         });
 
+        ImageButton reviewUS=findViewById(R.id.reviewUS);
+
+        reviewUS.setOnClickListener(view ->{
+            String playStorePage = "https://play.google.com/store/apps/details?id=com.dusol.thelearnerscommunity";
+            Uri youtubeUri = Uri.parse(playStorePage);
+            Intent intent = new Intent(Intent.ACTION_VIEW, youtubeUri);
+            intent.setPackage("com.google.android.playstore");
+            if (intent.resolveActivity(getPackageManager()) != null) {
+                startActivity(intent);
+            } else {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(playStorePage)));
+            }
+
+
+        });
+
 
 
         //Videos // Left to make

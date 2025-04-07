@@ -103,8 +103,8 @@ public class Notes_HomeWeb_MainActivity extends AppCompatActivity {
         } else {
             Bundle bundle = new Bundle();
             new android.os.Handler().postDelayed(() -> {
-                assert path != null;
-                if (path.contains("Question")) {
+                if (path != null && name != null)
+                    if (path.contains("Question")) {
                     bundle.putString("pdf_name", "QP_" + name);
                 } else {
                     bundle.putString("pdf_name", "Notes_" + name);
@@ -112,8 +112,9 @@ public class Notes_HomeWeb_MainActivity extends AppCompatActivity {
                 firebaseAnalytics.logEvent("pdf_opened", bundle);
             }, 500);  // Delay of 500 milliseconds
 
-            assert link != null;
-            webView.loadUrl(link);
+            if (link != null) {
+                webView.loadUrl(link);
+            }
 
         }
         }

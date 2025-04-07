@@ -37,6 +37,5 @@ public class SyllabusTabLayoutActivity extends AppCompatActivity {
         // Link the TabLayout with the ViewPager
         tabLayout.setupWithViewPager(viewPager);
 
-
     }
 }

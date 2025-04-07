@@ -24,7 +24,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.dusol.thelearnerscommunity.NotesStoreManage.NotesStore_HomePage;
+import com.dusol.thelearnerscommunity.NotesStoreManage.NotesStoreTabActivity;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.firebase.messaging.FirebaseMessaging;
@@ -173,7 +173,7 @@ public class Semester_Select_MainActivity extends AppCompatActivity {
     //Buttons connect with semester notes
 
     public void openStore(View v) { // This activity will send you to the notes store page
-        Intent intent = new Intent(this, NotesStore_HomePage.class);
+        Intent intent = new Intent(this, NotesStoreTabActivity.class);
         startActivity(intent);
     }
 

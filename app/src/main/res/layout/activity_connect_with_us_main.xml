@@ -130,6 +130,16 @@
 
         </LinearLayout>
 
+        <ImageButton
+            android:id="@+id/reviewUS"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_20"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:layout_marginRight="@dimen/dp_8"
+            android:layout_weight="1"
+            android:background="@drawable/image_button_border"
+            app:srcCompat="@mipmap/fivestars" />
+
     </LinearLayout>
 
     <TextView
