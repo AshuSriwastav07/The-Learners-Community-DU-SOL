@@ -357,7 +357,7 @@ public class studentsBoard extends AppCompatActivity {
                         String value = dateSnapshot.getValue(String.class);
                         datesheetList.add(value);
                         assert value != null;
-                        Log.d("DateSheetData", value);
+//                        Log.d("DateSheetData", value);
                     }
 
 
@@ -480,7 +480,6 @@ public class studentsBoard extends AppCompatActivity {
             FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(this);
             Bundle bundle = new Bundle();
             bundle.putString("operation_name", operationName);
-
             firebaseAnalytics.logEvent("StudentPortal", bundle); // Use consistent lowercase event name
 
         }

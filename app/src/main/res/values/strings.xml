@@ -212,5 +212,6 @@
     <string name="loading_purchase_updates">Loading purchase updates…</string>
     <string name="books">Study Books</string>
     <string name="only_syllabus">Syllabus</string>
+    <string name="connect_with_us">Connect with Us</string>
 
 </resources>

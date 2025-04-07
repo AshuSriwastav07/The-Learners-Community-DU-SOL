@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.dusol.thelearnerscommunity.NotesStoreManage.NotesStore_HomePage;
+import com.dusol.thelearnerscommunity.NotesStoreManage.NotesStoreTabActivity;
 import com.dusol.thelearnerscommunity.PDFDataCollerction.PDFDataManage;
 import com.dusol.thelearnerscommunity.R;
 import com.google.android.gms.ads.AdRequest;
@@ -100,7 +100,7 @@ public class NEP_HomePage extends AppCompatActivity {
     }
 
     public void openStore(View v) { // This activity will send you to the notes store page
-        Intent intent = new Intent(this, NotesStore_HomePage.class);
+        Intent intent = new Intent(this, NotesStoreTabActivity.class);
         startActivity(intent);
     }
 }
