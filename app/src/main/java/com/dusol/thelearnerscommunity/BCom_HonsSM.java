@@ -35,11 +35,6 @@ public class BCom_HonsSM extends Fragment {
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("DBLinks").child("BCom_Hons");
 
-        Bundle bundle = new Bundle();
-        bundle.putString("StudyMaterial", "StudyMaterialPage_Open");
-        FirebaseAnalytics.getInstance(requireContext()).logEvent("StudyMaterial_Open", bundle);
-
-
         String[] links = {"https://web.sol.du.ac.in/info/bcom-hons-semester-i",
                 "https://web.sol.du.ac.in/info/bcom-hons-semester-ii",
                 "https://web.sol.du.ac.in/info/bcom-hons-semester-iii",

@@ -26,6 +26,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
@@ -36,6 +38,13 @@ import androidx.core.content.ContextCompat;
 import com.dusol.thelearnerscommunity.FunctionManager.functionManager;
 import com.dusol.thelearnerscommunity.NotesStoreManage.NotesStoreTabActivity;
 import com.dusol.thelearnerscommunity.SyllabusFiles.SyllabusTabLayoutActivity;
+import com.google.android.gms.tasks.Task;
+import com.google.android.play.core.appupdate.AppUpdateInfo;
+import com.google.android.play.core.appupdate.AppUpdateManager;
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
+import com.google.android.play.core.appupdate.AppUpdateOptions;
+import com.google.android.play.core.install.model.AppUpdateType;
+import com.google.android.play.core.install.model.UpdateAvailability;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -57,6 +66,8 @@ public class LinkPage_MainActivity extends AppCompatActivity {
             finishAffinity();
         }
     }
+
+    private ActivityResultLauncher activityResultLauncher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,10 +105,11 @@ public class LinkPage_MainActivity extends AppCompatActivity {
 
         //Set Review ans connect us button name
         final String[] buttonName = new String[1];
-
+        checkInAppUpdate();
 
         // Navigation Bar Button Listeners (unchanged)
         NavVideos.setOnClickListener(view -> openYouTubeChannel());
+
         NavBooks.setOnClickListener(view -> {
             new android.os.Handler().postDelayed(() -> {
                 Bundle bundle = new Bundle();
@@ -150,7 +162,6 @@ public class LinkPage_MainActivity extends AppCompatActivity {
 
         du_and_sol_notes_page.setOnClickListener(view -> {
             new android.os.Handler().postDelayed(() -> {
-
                 Bundle bundle = new Bundle();
                 bundle.putString("SOL_Notes_Open", "SOL_Notes_Open");
                 FirebaseAnalytics.getInstance(this).logEvent("SOL_Notes_Open", bundle);
@@ -336,5 +347,48 @@ public class LinkPage_MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void checkInAppUpdate() {
+        AppUpdateManager appUpdateManager = AppUpdateManagerFactory.create(getApplicationContext());
+
+// Returns an intent object that you use to check for an update.
+        Task<AppUpdateInfo> appUpdateInfoTask = appUpdateManager.getAppUpdateInfo();
+
+// Checks that the platform will allow the specified type of update.
+        appUpdateInfoTask.addOnSuccessListener(appUpdateInfo -> {
+            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
+                    // This example applies an immediate update. To apply a flexible update
+                    // instead, pass in AppUpdateType.FLEXIBLE
+                    && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
+                // Request the update.
+
+                appUpdateManager.startUpdateFlowForResult(
+                        // Pass the intent that is returned by 'getAppUpdateInfo()'.
+                        appUpdateInfo,
+                        // an activity result launcher registered via registerForActivityResult
+                        activityResultLauncher,
+                        // Or pass 'AppUpdateType.FLEXIBLE' to newBuilder() for
+                        // flexible updates.
+                        AppUpdateOptions.newBuilder(AppUpdateType.IMMEDIATE).build());
+
+            }
+
+        });
+        activityResultLauncher= registerForActivityResult(
+                new ActivityResultContracts.StartIntentSenderForResult(),
+                new ActivityResultCallback<ActivityResult>() {
+                    @Override
+                    public void onActivityResult(ActivityResult result) {
+                        // handle callback
+                        if (result.getResultCode() != RESULT_OK) {
+//                            log("Update flow failed! Result code: " + result.getResultCode());
+                            // If the update is canceled or fails,
+                            // you can request to start the update again.
+                        }
+                    }
+                });
+
+
     }
 }

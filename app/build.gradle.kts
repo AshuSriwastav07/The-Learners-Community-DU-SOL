@@ -13,9 +13,9 @@ android {
         applicationId = "com.dusol.thelearnerscommunity"
         minSdk = 23
         targetSdk = 34
-        versionCode = 19
+        versionCode = 20
         multiDexEnabled= true
-        versionName = "2025.02.2.4.7" //Explain Year.month.versionName
+        versionName = "2025.04.2.4.8" //Explain Year.month.versionName
         //This is Version Name 2.4 and we cant use same version code again
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -61,6 +61,7 @@ dependencies {
     implementation("androidx.navigation:navigation-ui:2.8.9")
     implementation("androidx.activity:activity:1.10.1")
     implementation("androidx.gridlayout:gridlayout:1.0.0")
+    implementation("com.google.android.play:app-update:2.1.0")// For in App Update
     testImplementation("junit:junit:4.13.2")
     implementation(platform("com.google.firebase:firebase-bom:33.12.0"))
     implementation("com.google.firebase:firebase-analytics")
