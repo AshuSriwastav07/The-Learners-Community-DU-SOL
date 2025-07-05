@@ -44,6 +44,7 @@ public class Notes_HomeWeb_MainActivity extends AppCompatActivity {
         // Enable JavaScript and other necessary settings
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setBuiltInZoomControls(true);
+        WebView.setWebContentsDebuggingEnabled(false);
 
         String link = getIntent().getStringExtra("link");
         String name = getIntent().getStringExtra("PdfName");
