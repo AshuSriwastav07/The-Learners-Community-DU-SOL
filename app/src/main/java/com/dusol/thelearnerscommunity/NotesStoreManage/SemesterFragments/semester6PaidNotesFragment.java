@@ -1,7 +1,7 @@
 package com.dusol.thelearnerscommunity.NotesStoreManage.SemesterFragments;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -72,8 +72,19 @@ public class semester6PaidNotesFragment extends Fragment {
                         }
                     }
 
-                    NotesManagerAdapter adapter = new NotesManagerAdapter((Activity) view.getContext(), title, imageLink, pageLink,details, requireActivity().getSupportFragmentManager());
-                    recyclerView.setAdapter(adapter);
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (isAdded() && getActivity() != null) {
+                                NotesManagerAdapter adapter = new NotesManagerAdapter(
+                                        getActivity(), title, imageLink, pageLink, details,
+                                        getActivity().getSupportFragmentManager()
+                                );
+                                recyclerView.setAdapter(adapter);
+                            }
+                        }
+                    }, 3000); // 3 seconds delay
+
 
                 }
 
