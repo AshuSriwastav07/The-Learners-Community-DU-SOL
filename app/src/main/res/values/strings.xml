@@ -213,5 +213,11 @@
     <string name="books">Study Books</string>
     <string name="only_syllabus">Syllabus</string>
     <string name="connect_with_us">Connect with Us</string>
+    <string name="college_resources_du_sol">College Resources</string>
+    <string name="welcome_to_resources">Welcome to Resources</string>
+    <string name="access_all_your_academic_resources_in_one_place">Access all your academic resources in one place</string>
+    <string name="du_sol_notes">DU SOL Notes</string>
+    <string name="study_material">Study Material</string>
+    <string name="sol_updates">SOL Updates</string>
 
 </resources>
