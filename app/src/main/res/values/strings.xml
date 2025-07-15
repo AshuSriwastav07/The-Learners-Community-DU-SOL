@@ -179,12 +179,12 @@
     <string name="student_login">Student Login</string>
     <string name="get_premium_notes">Get Premium Notes</string>
     <string name="pdf_title">PDF Title</string>
-    <string name="semester_1_syllabus">Semester\n1\nSyllabus</string>
-    <string name="semester_4_syllabus">Semester\n4\nSyllabus</string>
-    <string name="semester_5_syllabus">Semester\n5\nSyllabus</string>
-    <string name="semester_6_syllabus">Semester\n6\nSyllabus</string>
-    <string name="semester_2_syllabus">Semester\n2\nSyllabus</string>
-    <string name="semester_3_syllabus">Semester\n3\nSyllabus</string>
+    <string name="semester_1_syllabus">Semester 1</string>
+    <string name="semester_4_syllabus">Semester 4</string>
+    <string name="semester_5_syllabus">Semester 5</string>
+    <string name="semester_6_syllabus">Semester 6</string>
+    <string name="semester_2_syllabus">Semester 2 </string>
+    <string name="semester_3_syllabus">Semester 3</string>
     <string name="academic_calendar">Academic Calendar</string>
     <string name="_1st">1st</string>
     <string name="_2nd">2nd</string>
@@ -219,5 +219,11 @@
     <string name="du_sol_notes">DU SOL Notes</string>
     <string name="study_material">Study Material</string>
     <string name="sol_updates">SOL Updates</string>
+    <string name="quick_access">Quick Access</string>
+    <string name="resources">Resources</string>
+    <string name="media">Media</string>
+    <string name="video_lectures">Video Lectures</string>
+    <string name="watch_educational_videos_for_learning">Watch educational videos for learning</string>
+    <string name="have_questions_or_need_assistance_reach_out_to_us">Have questions or need assistance? Reach out to us!</string>
 
 </resources>

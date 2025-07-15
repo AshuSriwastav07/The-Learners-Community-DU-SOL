@@ -1,3 +1,5 @@
+package com.dusol.thelearnerscommunity;
+
 /**
  * App developed by:
  * Ashu Sriwastav
@@ -5,7 +7,6 @@
  * Unauthorized reproduction, distribution, or modification of this application
  * without the explicit permission of Ashu Sriwastav is prohibited.
  */
-package com.dusol.thelearnerscommunity;
 
 import static android.content.ContentValues.TAG;
 
@@ -18,11 +19,14 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,8 +37,10 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 
+import com.bumptech.glide.Glide;
 import com.dusol.thelearnerscommunity.FunctionManager.functionManager;
 import com.dusol.thelearnerscommunity.NotesStoreManage.NotesStoreTabActivity;
 import com.dusol.thelearnerscommunity.SyllabusFiles.SyllabusTabLayoutActivity;
@@ -52,6 +58,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
+
+import java.util.List;
 
 public class LinkPage_MainActivity extends AppCompatActivity {
     private long Timeback;
@@ -80,20 +88,25 @@ public class LinkPage_MainActivity extends AppCompatActivity {
         checkAndRequestNotificationPermission();
 
         // Initialize UI elements
-        Button du_and_sol_notes_page = findViewById(R.id.button1_du_sol_notes_page);
-        Button solUpdates = findViewById(R.id.button2_SOL_Updates);
-        Button QuestionPapers = findViewById(R.id.button3_QP);
-        Button SOL_Syllabus = findViewById(R.id.button4_SOL_Syllabus);
-        Button sol_portal = findViewById(R.id.button5_Portal3);
-        Button shop = findViewById(R.id.button6_notes_store);
-        Button watch_videos = findViewById(R.id.button7_Videos);
+        CardView du_and_sol_notes_page = findViewById(R.id.button1_du_sol_notes_page);
+        CardView solUpdates = findViewById(R.id.button2_SOL_Updates);
+        CardView QuestionPapers = findViewById(R.id.button3_QP);
+        CardView SOL_Syllabus = findViewById(R.id.button4_SOL_Syllabus);
+        CardView sol_portal = findViewById(R.id.button5_Portal3);
+        CardView shop = findViewById(R.id.button6_notes_store);
+        ImageButton watch_videos = findViewById(R.id.button7_Videos);
         Button Connect_with_us = findViewById(R.id.button9_connect_us);
-        Button sol_materials = findViewById(R.id.button10_SOL_Study_Material);
+        CardView sol_materials = findViewById(R.id.button10_SOL_Study_Material);
         ImageButton askDoubt = findViewById(R.id.askHere);
 
         ImageButton NavBooks = findViewById(R.id.navbarBooks);
         ImageButton NavStudents = findViewById(R.id.navbarStudent);
         ImageButton NavVideos = findViewById(R.id.navbarVideos);
+
+        CardView YTVideo1CV=findViewById(R.id.YTVideosCV1);
+        CardView YTVideo2CV=findViewById(R.id.YTVideosCV2);
+        ImageView YTVideo1IV=findViewById(R.id.YTVideo1ImageView);
+        ImageView YTVideo2IV=findViewById(R.id.YTVideo2ImageView);
 
         functionManager.managerNewSignLogo(this, this);
 
@@ -108,7 +121,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
         checkInAppUpdate();
 
         // Navigation Bar Button Listeners (unchanged)
-        NavVideos.setOnClickListener(view -> openYouTubeChannel());
+        new Thread(()-> NavVideos.setOnClickListener(view -> openYouTubeChannel())).start();
 
         NavBooks.setOnClickListener(view -> {
             new android.os.Handler().postDelayed(() -> {
@@ -128,95 +141,58 @@ public class LinkPage_MainActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(), studentsBoard.class));
         });
 
+
+        //Feature Videos Function Call
+
+        new Thread(() -> fetchFeatureVideosData(YTVideo1CV,YTVideo2CV,YTVideo1IV,YTVideo2IV)).start();
+
         // Text Marquee (unchanged)
         TextView textView = findViewById(R.id.LinkPageMarquee);
-        textView.setEllipsize(TextUtils.TruncateAt.MARQUEE);
-        DatabaseReference MarqueeText = FirebaseDatabase.getInstance().getReference("MainPageBanner");
-        MarqueeText.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String TextToShow = snapshot.getValue(String.class);
-                assert TextToShow != null;
-                if (TextToShow.equals("N/A")) {
-                    textView.setVisibility(View.GONE);
-                } else {
-                    textView.setText(TextToShow);
-                    textView.setSelected(true);
-                }
-            }
+        new Thread(()-> marqueeTextViewBanner(textView)).start();
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-            }
-        });
+
 
         // Main Buttons Listeners (unchanged)
         shop.setOnClickListener(view -> {
-            new android.os.Handler().postDelayed(() -> {
-                Bundle bundle = new Bundle();
-                bundle.putString("Notes_Store", "Notes_Store_Opens");
-                FirebaseAnalytics.getInstance(this).logEvent("Notes_Store", bundle);
-            }, 500);
-            startActivity(new Intent(getApplicationContext(), NotesStoreTabActivity.class));
+            AnalyticsDataPushWithActivity("Notes_Store", "Notes_Store_Opens", "Notes_Store", NotesStoreTabActivity.class,this);
         });
 
         du_and_sol_notes_page.setOnClickListener(view -> {
-            new android.os.Handler().postDelayed(() -> {
-                Bundle bundle = new Bundle();
-                bundle.putString("SOL_Notes_Open", "SOL_Notes_Open");
-                FirebaseAnalytics.getInstance(this).logEvent("SOL_Notes_Open", bundle);
-            }, 500);
-            startActivity(new Intent(getApplicationContext(), DU_SOL_NOTES__MainActivity.class));
+
+            AnalyticsDataPushWithActivity("Notes_Open", "NotesActivityOpens", "Notes_Open", DU_SOL_NOTES__MainActivity.class,this);
+
         });
 
         QuestionPapers.setOnClickListener(view -> {
-            new android.os.Handler().postDelayed(() -> {
-                Bundle bundle = new Bundle();
-                bundle.putString("Question_Paper_Open", "Question_Paper_Open");
-                FirebaseAnalytics.getInstance(this).logEvent("Question_Paper_Open", bundle);
-            }, 500);
-            startActivity(new Intent(this, selectCourseForQP.class));
+            AnalyticsDataPushWithActivity("Question_Paper_Open", "Question_Paper_Open", "Question_Paper_Open", selectCourseForQP.class,this);
+
         });
 
         solUpdates.setOnClickListener(v -> {
-            new android.os.Handler().postDelayed(() -> {
-                Bundle bundle = new Bundle();
-                bundle.putString("SOL_Updates", "SOL_Updates_Opens");
-                FirebaseAnalytics.getInstance(this).logEvent("SOL_Updates", bundle);
 
-            }, 500);
-            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://web.sol.du.ac.in/home")));
+            AnalyticsDataPushWithLink("SOL_Updates", "SOL_Updates_Opens", "SOL_Updates","https://web.sol.du.ac.in/home",this);
+
         });
 
         SOL_Syllabus.setOnClickListener(view -> {
-            new android.os.Handler().postDelayed(() -> {
-                Bundle bundle = new Bundle();
-                bundle.putString("SOL_Syllabus", "SOL_Syllabus_Opens");
-                FirebaseAnalytics.getInstance(this).logEvent("SOL_Syllabus", bundle);
-            }, 500);
 
-            startActivity(new Intent(getApplicationContext(), SyllabusTabLayoutActivity.class));
+            AnalyticsDataPushWithActivity("SOL_Syllabus", "SOL_Syllabus_Opens", "SOL_Syllabus", SyllabusTabLayoutActivity.class,this);
+
         });
 
-        watch_videos.setOnClickListener(view -> openYouTubeChannel());
+        new Thread(()-> watch_videos.setOnClickListener(view -> openYouTubeChannel())).start();
+
 
         sol_portal.setOnClickListener(v -> {
-            new android.os.Handler().postDelayed(() -> {
-                Bundle bundle = new Bundle();
-                bundle.putString("StudentPortal", "SOL_Portal_Opens");
-                FirebaseAnalytics.getInstance(this).logEvent("StudentPortal", bundle);
-            }, 500);
-            startActivity(new Intent(getApplicationContext(), studentsBoard.class));
+
+            AnalyticsDataPushWithActivity("StudentPortal", "SOL_Portal_Opens", "StudentPortal", studentsBoard.class,this);
+
         });
 
         sol_materials.setOnClickListener(v -> {
-            new android.os.Handler().postDelayed(() -> {
-                Bundle bundle = new Bundle();
-                bundle.putString("SOL_Materials", "SOL_Materials_Opens");
-                FirebaseAnalytics.getInstance(this).logEvent("SOL_Materials", bundle);
-            }, 500);
 
-            startActivity(new Intent(getApplicationContext(), study_materials.class));
+            AnalyticsDataPushWithActivity("SOL_Materials", "SOL_Materials", "SOL_Materials", study_materials.class,this);
+
         });
 
         Connect_with_us.setOnClickListener(view -> {
@@ -304,10 +280,18 @@ public class LinkPage_MainActivity extends AppCompatActivity {
 
     // Helper method to open YouTube channel (to avoid code repetition)
     private void openYouTubeChannel() {
+
         String youtubeChannelUrl = "https://www.youtube.com/@TheLearnersCommunityDUSOL/videos";
         Uri youtubeUri = Uri.parse(youtubeChannelUrl);
         Intent intent = new Intent(Intent.ACTION_VIEW, youtubeUri);
         intent.setPackage("com.google.android.youtube");
+
+        new android.os.Handler().postDelayed(() -> {
+            Bundle bundle = new Bundle();
+            bundle.putString("YoutubeOpen", "YoutubeOpen");
+            FirebaseAnalytics.getInstance(this).logEvent("YoutubeOpen", bundle);
+            }, 500);
+
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         } else {
@@ -317,15 +301,27 @@ public class LinkPage_MainActivity extends AppCompatActivity {
 
     private void reviewUsPageOpen() {
         String playStorePage = "https://play.google.com/store/apps/details?id=com.dusol.thelearnerscommunity";
-        Uri youtubeUri = Uri.parse(playStorePage);
-        Intent intent = new Intent(Intent.ACTION_VIEW, youtubeUri);
-        intent.setPackage("com.google.android.playstore");
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-        } else {
-            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(playStorePage)));
-        }
+        Uri playStoreUri = Uri.parse(playStorePage);
+
+        // Create intent to open Play Store
+        Intent intent = new Intent(Intent.ACTION_VIEW, playStoreUri);
+        intent.setPackage("com.android.vending"); // Correct Play Store package name
+
+        new Handler(Looper.getMainLooper()).postDelayed(() -> {
+            // Push analytics event
+            Bundle bundle = new Bundle();
+            bundle.putString("Review_US", "Review_US_Opens");
+            FirebaseAnalytics.getInstance(this).logEvent("Review_US", bundle);
+
+            // Start Play Store or fallback to browser
+            if (intent.resolveActivity(getPackageManager()) != null) {
+                startActivity(intent);
+            } else {
+                startActivity(new Intent(Intent.ACTION_VIEW, playStoreUri));
+            }
+        }, 500);
     }
+
 
     private void fetchConnectUsButtonData(String[] buttonName, Button Connect_with_us) {
 
@@ -335,11 +331,13 @@ public class LinkPage_MainActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 buttonName[0] = snapshot.getValue(String.class);
                 assert buttonName[0] != null;
-                if (!buttonName[0].equals("N/A")) {
-                    Connect_with_us.setText(buttonName[0]);
-                } else {
-                    Connect_with_us.setText(R.string.connect);
-                }
+                runOnUiThread(() -> {
+                    if (!buttonName[0].equals("N/A")) {
+                        Connect_with_us.setText(buttonName[0]);
+                    } else {
+                        Connect_with_us.setText(R.string.connect);
+                    }
+                });
             }
 
             @Override
@@ -348,6 +346,48 @@ public class LinkPage_MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void fetchFeatureVideosData(CardView cardView1, CardView cardView2, ImageView imageView1, ImageView imageView2) {
+        DatabaseReference YTFeatureVideosData = FirebaseDatabase.getInstance().getReference("YTFeature");
+
+        YTFeatureVideosData.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                int index = 0;
+
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    List<String> value = (List<String>) dataSnapshot.getValue();
+
+                    if (value != null && value.size() >= 2) {
+                        String imageUrl = value.get(0);  // Thumbnail URL
+                        String videoUrl = value.get(1);  // YouTube video link
+
+                        if (index == 0) {
+                            Glide.with(imageView1.getContext()).load(imageUrl).into(imageView1);
+                            cardView1.setOnClickListener(v -> {
+                                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(videoUrl));
+                                imageView1.getContext().startActivity(intent);
+                            });
+                        } else if (index == 1) {
+                            Glide.with(imageView2.getContext()).load(imageUrl).into(imageView2);
+                            cardView2.setOnClickListener(v -> {
+                                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(videoUrl));
+                                imageView2.getContext().startActivity(intent);
+                            });
+                        }
+
+                        index++;
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e("YTFeature", "Database error: " + error.getMessage());
+            }
+        });
+    }
+
 
     private void checkInAppUpdate() {
         AppUpdateManager appUpdateManager = AppUpdateManagerFactory.create(getApplicationContext());
@@ -390,5 +430,55 @@ public class LinkPage_MainActivity extends AppCompatActivity {
                 });
 
 
+
     }
+
+    //Marquee TextView CallFunction
+    private void marqueeTextViewBanner(TextView textView) {
+        textView.setEllipsize(TextUtils.TruncateAt.MARQUEE);
+        DatabaseReference MarqueeText = FirebaseDatabase.getInstance().getReference("MainPageBanner");
+        MarqueeText.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String TextToShow = snapshot.getValue(String.class);
+                assert TextToShow != null;
+                if (TextToShow.equals("N/A")) {
+                    textView.setVisibility(View.GONE);
+                } else {
+                    textView.setText(TextToShow);
+                    textView.setSelected(true);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+    }
+
+
+    private void AnalyticsDataPushWithActivity(String key, String value, String name, Class<? extends AppCompatActivity> activityClass, AppCompatActivity activity) {
+        new android.os.Handler().postDelayed(() -> {
+            Bundle bundle = new Bundle();
+            bundle.putString(key, value);
+            FirebaseAnalytics.getInstance(activity).logEvent(name, bundle);
+
+            activity.startActivity(new Intent(activity.getApplicationContext(), activityClass));
+        }, 500);
+    }
+
+    private void AnalyticsDataPushWithLink(String key, String value, String name, String Link, AppCompatActivity activity) {
+        new android.os.Handler().postDelayed(() -> {
+            Bundle bundle = new Bundle();
+            bundle.putString(key, value);
+            FirebaseAnalytics.getInstance(activity).logEvent(name, bundle);
+
+            activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(Link)));
+        }, 500);
+    }
+
+
+
+
+
 }

@@ -89,13 +89,13 @@ public class functionManager {
                         setImageViewGif(activity, newSyllabus, false);
                     }
 
-                    // Video Notes Update Indicator
+                    /*// Video Notes Update Indicator
                     ImageView newVideoUpload = activity.findViewById(R.id.newVideoNotesUpload);
                     if (updateList.size() > 5 && Objects.equals(updateList.get(5), "YES")) {
                         setImageViewGif(activity, newVideoUpload, true);
                     } else {
                         setImageViewGif(activity, newVideoUpload, false);
-                    }
+                    }*/
 
                     // Question Paper Update Indicator
                     ImageView newQP = activity.findViewById(R.id.newQPUpload);

@@ -24,8 +24,23 @@
         <item name="fontFamily">@font/nunito</item>
     </style>
 
+
+    <style name="syllabusButtonNew">
+        <item name="android:layout_width">match_parent</item> <!-- Set width -->
+        <item name="android:layout_height">wrap_content</item> <!-- Set height -->
+        <item name="cornerRadius">@dimen/dp_8</item> <!-- Custom corner radius -->
+        <item name="android:backgroundTint">#005B72F4</item> <!-- Background color -->
+        <item name="strokeWidth">1dp</item>
+        <item name="android:layout_margin">@dimen/dp_4</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:drawableTop">@mipmap/book</item>
+        <item name="android:clickable">true</item> <!-- Make button clickable -->
+        <item name="rippleColor">#7BE0D4</item> <!-- Ripple effect color -->
+    </style>
     <!-- Optional: Add a pressed state for the button -->
     <style name="basic_button_pressed" parent="basic_button">
         <item name="android:backgroundTint">#5AC8C0</item> <!-- Darker color when pressed -->
     </style>
+
 </resources>
