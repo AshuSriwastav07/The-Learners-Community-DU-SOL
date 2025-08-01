@@ -17,32 +17,1123 @@
     android:background="@color/background_color_night"
     tools:context="com.dusol.thelearnerscommunity.studentsBoard">
 
-    <ImageView
-        android:id="@+id/imageView13"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:alpha="1"
-        android:contentDescription="@string/portal"
-        android:cropToPadding="true"
-        android:fitsSystemWindows="true"
-        android:focusable="auto"
-        android:focusableInTouchMode="true"
-        android:scaleType="fitCenter"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/portal" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Header Card -->
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/img_student_portal_icon"
+                        android:layout_width="@dimen/dp_18"
+                        android:layout_height="@dimen/dp_18"
+                        android:layout_weight="0"
+                        android:contentDescription="TODO"
+                        app:srcCompat="@mipmap/bagra" />
+
+                    <TextView
+                        android:id="@+id/txt_student_portal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/nunito_extrabold"
+                        android:gravity="center_vertical"
+                        android:text="@string/studentPortal"
+                        android:textSize="@dimen/dp_10" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Section Title -->
+            <TextView
+                android:id="@+id/txt_quick_access"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:paddingStart="@dimen/dp_8"
+                android:paddingEnd="0dp"
+                android:text="@string/quick_access"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold" />
+
+            <!-- Grid Section -->
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/dp_3"
+                app:columnCount="2"
+                app:rowCount="4">
+
+                <!-- Student Login -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv1_Student_Login"
+                    android:layout_margin="@dimen/dp_3"
+                    app:cardCornerRadius="@dimen/dp_8"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
+
+                    <TextView
+                        android:id="@+id/txt_student_login"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingTop="2dp"
+                        android:text="@string/student_login"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/dp_7"
+                        android:textStyle="bold"
+                        app:autoSizeMaxTextSize="@dimen/dp_7"
+                        app:autoSizeMinTextSize="@dimen/dp_4"
+                        app:autoSizeTextType="uniform"
+                        app:drawableTopCompat="@mipmap/profile" />
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Study Material -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/GetStudyMaterial"
+                    android:layout_margin="@dimen/dp_3"
+                    app:cardCornerRadius="@dimen/dp_8"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
+
+                    <TextView
+                        android:id="@+id/txt_study_material"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/study_material"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/dp_7"
+                        android:textStyle="bold"
+                        app:autoSizeMaxTextSize="@dimen/dp_7"
+                        app:autoSizeMinTextSize="@dimen/dp_4"
+                        app:autoSizeTextType="uniform"
+                        app:drawableTopCompat="@mipmap/materials" />
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Know Your Barcode -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv3_knowYourBC"
+                    android:layout_margin="@dimen/dp_3"
+                    app:cardCornerRadius="@dimen/dp_8"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
+
+                    <TextView
+                        android:id="@+id/txt_barcode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingTop="2dp"
+                        android:text="@string/know_your_barcode"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/dp_7"
+                        android:textStyle="bold"
+                        app:autoSizeMaxTextSize="@dimen/dp_7"
+                        app:autoSizeMinTextSize="@dimen/dp_4"
+                        app:autoSizeTextType="uniform"
+                        app:drawableTopCompat="@mipmap/barcodenew" />
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Results -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv4_Student_Result"
+                    android:layout_margin="@dimen/dp_3"
+                    app:cardCornerRadius="@dimen/dp_8"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
+
+                    <TextView
+                        android:id="@+id/txt_results"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingTop="2dp"
+                        android:text="@string/published_results"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/dp_7"
+                        android:textStyle="bold"
+                        app:autoSizeMaxTextSize="@dimen/dp_7"
+                        app:autoSizeMinTextSize="@dimen/dp_4"
+                        app:autoSizeTextType="uniform"
+                        app:drawableTopCompat="@mipmap/resultgrow" />
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Provisional Certificate -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv5_ProvisionalCertificate"
+                    android:layout_margin="@dimen/dp_3"
+                    app:cardCornerRadius="@dimen/dp_8"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
+
+                    <TextView
+                        android:id="@+id/txt_provisional"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingTop="2dp"
+                        android:text="@string/student_provisional_certificate"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/dp_7"
+                        android:textStyle="bold"
+                        app:autoSizeMaxTextSize="@dimen/dp_7"
+                        app:autoSizeMinTextSize="@dimen/dp_4"
+                        app:autoSizeTextType="uniform"
+                        app:drawableTopCompat="@mipmap/certificate" />
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- College Marksheet -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv6_Sol_Marksheet"
+                    android:layout_margin="@dimen/dp_3"
+                    app:cardCornerRadius="@dimen/dp_8"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
+
+                    <TextView
+                        android:id="@+id/txt_marksheet"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingTop="2dp"
+                        android:text="@string/collage_marksheet"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/dp_7"
+                        android:textStyle="bold"
+                        app:autoSizeMaxTextSize="@dimen/dp_7"
+                        app:autoSizeMinTextSize="@dimen/dp_4"
+                        app:autoSizeTextType="uniform"
+                        app:drawableTopCompat="@mipmap/spc" />
+
+                </androidx.cardview.widget.CardView>
+            </androidx.gridlayout.widget.GridLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:paddingStart="@dimen/dp_8"
+                android:paddingEnd="0dp"
+                android:text="@string/academic_services"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv7_Admit_Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_7"
+                android:layout_marginTop="@dimen/dp_3"
+                android:layout_marginEnd="@dimen/dp_7"
+                android:layout_marginBottom="@dimen/dp_3"
+                app:cardBackgroundColor="#F2F1F1"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_15"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/admitcard" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alata"
+                        android:gravity="center_vertical"
+                        android:text="@string/check_admit_card"
+                        android:textSize="@dimen/dp_8"
+                        app:autoSizeMaxTextSize="@dimen/dp_7"
+                        app:autoSizeMinTextSize="@dimen/dp_4"
+                        app:autoSizeTextType="uniform" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/rarrow" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv8_Date_sheet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_7"
+                android:layout_marginTop="@dimen/dp_3"
+                android:layout_marginEnd="@dimen/dp_7"
+                android:layout_marginBottom="@dimen/dp_3"
+                app:cardBackgroundColor="#F2F1F1"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_15"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/datesheet" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alata"
+                        android:gravity="center_vertical"
+                        android:text="@string/exam_date_sheet"
+                        android:textSize="@dimen/dp_8"
+                        app:autoSizeMaxTextSize="@dimen/dp_7"
+                        app:autoSizeMinTextSize="@dimen/dp_4"
+                        app:autoSizeTextType="uniform" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/rarrow" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv9_Academic_Calendar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_7"
+                android:layout_marginTop="@dimen/dp_3"
+                android:layout_marginEnd="@dimen/dp_7"
+                android:layout_marginBottom="@dimen/dp_3"
+                app:cardBackgroundColor="#F2F1F1"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_15"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/img_2" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alata"
+                        android:gravity="center_vertical"
+                        android:text="@string/academic_calendar"
+                        android:textSize="@dimen/dp_8"
+                        app:autoSizeMaxTextSize="@dimen/dp_7"
+                        app:autoSizeMinTextSize="@dimen/dp_4"
+                        app:autoSizeTextType="uniform" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/rarrow" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv10_All_semester_subject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_7"
+                android:layout_marginTop="@dimen/dp_3"
+                android:layout_marginEnd="@dimen/dp_7"
+                android:layout_marginBottom="@dimen/dp_3"
+                app:cardBackgroundColor="#F2F1F1"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_15"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/nsem" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alata"
+                        android:gravity="center_vertical"
+                        android:text="@string/next_semester_details"
+                        android:textSize="@dimen/dp_8"
+                        app:autoSizeMaxTextSize="@dimen/dp_7"
+                        app:autoSizeMinTextSize="@dimen/dp_4"
+                        app:autoSizeTextType="uniform" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/rarrow" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv11_Admission_Link"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_7"
+                android:layout_marginTop="@dimen/dp_3"
+                android:layout_marginEnd="@dimen/dp_7"
+                android:layout_marginBottom="@dimen/dp_3"
+                app:cardBackgroundColor="#F2F1F1"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_15"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/admission" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alata"
+                        android:gravity="center_vertical"
+                        android:text="@string/new_admission"
+                        android:textSize="@dimen/dp_8"
+                        app:autoSizeMaxTextSize="@dimen/dp_7"
+                        app:autoSizeMinTextSize="@dimen/dp_4"
+                        app:autoSizeTextType="uniform" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/rarrow" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv12_feeStructure"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_7"
+                android:layout_marginTop="@dimen/dp_3"
+                android:layout_marginEnd="@dimen/dp_7"
+                android:layout_marginBottom="@dimen/dp_3"
+                app:cardBackgroundColor="#F2F1F1"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_15"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/fee" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alata"
+                        android:gravity="center_vertical"
+                        android:text="@string/ug_fee_structure"
+                        android:textSize="@dimen/dp_8"
+                        app:autoSizeMaxTextSize="@dimen/dp_7"
+                        app:autoSizeMinTextSize="@dimen/dp_4"
+                        app:autoSizeTextType="uniform" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/rarrow" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Student_new_Result1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_7"
+                android:layout_marginTop="@dimen/dp_3"
+                android:layout_marginEnd="@dimen/dp_7"
+                android:layout_marginBottom="@dimen/dp_3"
+                android:visibility="gone"
+                app:cardBackgroundColor="#F2F1F1"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_15"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/newinfo" />
+
+                    <TextView
+                        android:id="@+id/SOL_New_result1TV"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alata"
+                        android:gravity="center_vertical"
+                        android:text="@string/next_semester_details"
+                        android:textSize="@dimen/dp_8" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/rarrow" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Student_new_Result2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_7"
+                android:layout_marginTop="@dimen/dp_3"
+                android:layout_marginEnd="@dimen/dp_7"
+                android:layout_marginBottom="@dimen/dp_3"
+                android:visibility="gone"
+                app:cardBackgroundColor="#F2F1F1"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_15"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/newinfo" />
+
+                    <TextView
+                        android:id="@+id/SOL_New_result2TV"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alata"
+                        android:gravity="center_vertical"
+                        android:text="@string/next_semester_details"
+                        android:textSize="@dimen/dp_8" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/rarrow" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Student_new_Result3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_7"
+                android:layout_marginTop="@dimen/dp_3"
+                android:layout_marginEnd="@dimen/dp_7"
+                android:layout_marginBottom="@dimen/dp_3"
+                android:visibility="gone"
+                app:cardBackgroundColor="#F2F1F1"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_15"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/newinfo" />
+
+                    <TextView
+                        android:id="@+id/SOL_New_result3TV"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alata"
+                        android:gravity="center_vertical"
+                        android:text="@string/next_semester_details"
+                        android:textSize="@dimen/dp_8" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/rarrow" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:paddingStart="@dimen/dp_8"
+                android:paddingEnd="0dp"
+                android:text="@string/recent_updates"
+                android:textSize="@dimen/dp_8"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ExtraInfoBtn1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp_7"
+                android:layout_marginTop="@dimen/dp_3"
+                android:layout_marginEnd="@dimen/dp_7"
+                android:layout_marginBottom="@dimen/dp_3"
+                android:visibility="gone"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_15"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/information" />
+
+                    <TextView
+                        android:id="@+id/ExtraInfoBtn1TV"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alata"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/dp_7"
+                        app:autoSizeMaxTextSize="@dimen/dp_7"
+                        app:autoSizeMinTextSize="@dimen/dp_4"
+                        app:autoSizeTextType="uniform" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/rarrow" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ExtraInfoBtn2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp_7"
+                android:layout_marginTop="@dimen/dp_3"
+                android:layout_marginEnd="@dimen/dp_7"
+                android:layout_marginBottom="@dimen/dp_3"
+                android:visibility="gone"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_15"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/information" />
+
+                    <TextView
+                        android:id="@+id/ExtraInfoBtn2TV"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alata"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/dp_7"
+                        app:autoSizeMaxTextSize="@dimen/dp_7"
+                        app:autoSizeMinTextSize="@dimen/dp_4"
+                        app:autoSizeTextType="uniform" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/rarrow" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ExtraInfoBtn3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp_7"
+                android:layout_marginTop="@dimen/dp_3"
+                android:layout_marginEnd="@dimen/dp_7"
+                android:layout_marginBottom="@dimen/dp_3"
+                android:visibility="gone"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_15"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/information" />
+
+                    <TextView
+                        android:id="@+id/ExtraInfoBtn3TV"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alata"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/dp_7"
+                        app:autoSizeMaxTextSize="@dimen/dp_7"
+                        app:autoSizeMinTextSize="@dimen/dp_4"
+                        app:autoSizeTextType="uniform" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/rarrow" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ExtraInfoBtn4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp_7"
+                android:layout_marginTop="@dimen/dp_3"
+                android:layout_marginEnd="@dimen/dp_7"
+                android:layout_marginBottom="@dimen/dp_3"
+                android:visibility="gone"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_15"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/information" />
+
+                    <TextView
+                        android:id="@+id/ExtraInfoBtn4TV"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alata"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/dp_7"
+                        app:autoSizeMaxTextSize="@dimen/dp_7"
+                        app:autoSizeMinTextSize="@dimen/dp_4"
+                        app:autoSizeTextType="uniform" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/rarrow" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ExtraInfoBtn5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp_7"
+                android:layout_marginTop="@dimen/dp_3"
+                android:layout_marginEnd="@dimen/dp_7"
+                android:layout_marginBottom="@dimen/dp_3"
+                android:visibility="gone"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_15"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/information" />
+
+                    <TextView
+                        android:id="@+id/ExtraInfoBtn5TV"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alata"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/dp_7"
+                        app:autoSizeMaxTextSize="@dimen/dp_7"
+                        app:autoSizeMinTextSize="@dimen/dp_4"
+                        app:autoSizeTextType="uniform" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/rarrow" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ExtraInfoBtn6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp_7"
+                android:layout_marginTop="@dimen/dp_3"
+                android:layout_marginEnd="@dimen/dp_7"
+                android:layout_marginBottom="@dimen/dp_3"
+                android:visibility="gone"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_15"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/information" />
+
+                    <TextView
+                        android:id="@+id/ExtraInfoBtn6TV"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alata"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/dp_7"
+                        app:autoSizeMaxTextSize="@dimen/dp_7"
+                        app:autoSizeMinTextSize="@dimen/dp_4"
+                        app:autoSizeTextType="uniform" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/rarrow" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ExtraInfoBtn7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp_7"
+                android:layout_marginTop="@dimen/dp_3"
+                android:layout_marginEnd="@dimen/dp_7"
+                android:layout_marginBottom="@dimen/dp_3"
+                android:visibility="gone"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_15"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/information" />
+
+                    <TextView
+                        android:id="@+id/ExtraInfoBtn7TV"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alata"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/dp_7"
+                        app:autoSizeMaxTextSize="@dimen/dp_7"
+                        app:autoSizeMinTextSize="@dimen/dp_4"
+                        app:autoSizeTextType="uniform" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/rarrow" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ExtraInfoBtn8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp_7"
+                android:layout_marginTop="@dimen/dp_3"
+                android:layout_marginEnd="@dimen/dp_7"
+                android:layout_marginBottom="@dimen/dp_3"
+                android:visibility="gone"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_15"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/information" />
+
+                    <TextView
+                        android:id="@+id/ExtraInfoBtn8TV"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alata"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/dp_7"
+                        app:autoSizeMaxTextSize="@dimen/dp_7"
+                        app:autoSizeMinTextSize="@dimen/dp_4"
+                        app:autoSizeTextType="uniform" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/rarrow" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ExtraInfoBtn9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp_7"
+                android:layout_marginTop="@dimen/dp_3"
+                android:layout_marginEnd="@dimen/dp_7"
+                android:layout_marginBottom="@dimen/dp_3"
+                android:visibility="gone"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_15"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/information" />
+
+                    <TextView
+                        android:id="@+id/ExtraInfoBtn9TV"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alata"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/dp_7"
+                        app:autoSizeMaxTextSize="@dimen/dp_7"
+                        app:autoSizeMinTextSize="@dimen/dp_4"
+                        app:autoSizeTextType="uniform" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/rarrow" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ExtraInfoBtn10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp_7"
+                android:layout_marginTop="@dimen/dp_3"
+                android:layout_marginEnd="@dimen/dp_7"
+                android:layout_marginBottom="@dimen/dp_3"
+                android:visibility="gone"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_15"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/information" />
+
+                    <TextView
+                        android:id="@+id/ExtraInfoBtn10TV"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alata"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/dp_7" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/rarrow" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!--
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="65dp"
         android:scrollbars="none"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:id="@+id/linearLayout2"
@@ -81,7 +1172,6 @@
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <Button
-                android:id="@+id/Student_new_Result1"
                 style="@style/basic_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -420,57 +1510,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <!--  Navigation Button-->
-    <LinearLayout
-        android:id="@+id/linearLayout5"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="#FFFFFF"
-        android:backgroundTint="#FFFFFF"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageButton
-            android:id="@+id/navbarHome"
-            android:layout_width="match_parent"
-            android:layout_height="60sp"
-            android:layout_marginStart="15sp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/background_color_night"
-            android:contentDescription="@string/NavBTN"
-            app:srcCompat="@mipmap/navhome" />
-
-        <ImageButton
-            android:id="@+id/navbarVideos"
-            android:layout_width="match_parent"
-            android:layout_height="60sp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/background_color_night"
-            android:contentDescription="@string/NavBTN"
-            app:srcCompat="@mipmap/navvideo" />
-
-        <ImageButton
-            android:id="@+id/navbarBooks"
-            android:layout_width="match_parent"
-            android:layout_height="60sp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/background_color_night"
-            android:contentDescription="@string/NavBTN"
-            app:srcCompat="@mipmap/navnotes" />
-
-        <ImageButton
-            android:id="@+id/navbarStudent"
-            android:layout_width="match_parent"
-            android:layout_height="60sp"
-            android:layout_marginEnd="15sp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/background_color_night"
-            android:contentDescription="@string/NavBTN"
-            app:srcCompat="@mipmap/navstudent" />
-
-
-    </LinearLayout>
+    Navigation Button-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

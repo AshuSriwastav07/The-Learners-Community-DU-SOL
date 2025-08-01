@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">The Learners Community</string>
+    <string name="app_name">College Resources</string>
     <string name="welcome">Welcome</string>
     <string name="rights">© 2025 The Learners Community All Rights Reserved.</string>
     <string name="du_notes">DU NOTES</string>
@@ -9,11 +9,11 @@
     <string name="sol_materials">Study Material</string>
     <string name="sol_notes">SOL NOTES</string>
     <string name="cbcs_notes">CBCS NOTES</string>
-    <string name="nep_notes">NEP Notes</string>
+    <string name="nep_notes">NEP NOTES</string>
     <string name="DU_SOL_NOTES">DU SOL Notes</string>
     <string name="previous_question_papers">Question Papers</string>
-    <string name="your_semester">Select CBCS Your Semester</string>
-    <string name="select_Your_Nep_Semester">Select Your NEP Semester</string>
+    <string name="your_semester">CBSC Notes</string>
+    <string name="select_Your_Nep_Semester">NEP NOTES</string>
     <string name="your_subject">Select Your Subject</string>
     <string name="sub">subject scroll\n</string>
     <string name="_1st_semester">1st Semester</string>
@@ -201,8 +201,10 @@
     <string name="check_admit_card">Check Admit Card</string>
     <string name="published_results">Published Results</string>
     <string name="know_your_barcode">Know Your Barcode</string>
-    <string name="student_provisional_certificate">Student Provisional Certificate</string>
-    <string name="du_sol_ncweb_nquestion_paper_hub">DU - SOL - NCWEB\nQuestion Paper HUB</string>
+    <string name="student_provisional_certificate">Student Provisional\nCertificate</string>
+    <string name="du_sol_ncweb_nquestion_paper_hub">Question Papers</string>
+    <string name="QPHeading1">Question Papers</string>
+    <string name="QPHeading2">Access question papers for all courses</string>
     <string name="get_nep_study_material">Get NEP Study Material</string>
     <string name="ba_hons_question_papers">BA Hons Question Papers</string>
     <string name="bcom_questions_papers">Bcom Questions Papers</string>
@@ -210,8 +212,9 @@
     <string name="qpMessage1">Share Your Question Papers With us On Telegram!</string>
     <string name="qpMessage2">Match Paper Code with Your Code in Admit Card!</string>
     <string name="loading_purchase_updates">Loading purchase updates…</string>
-    <string name="books">Study Books</string>
-    <string name="only_syllabus">Syllabus</string>
+    <string name="books">BOOK MATERIALS</string>
+    <string name="materials">MATERIALS</string>
+    <string name="only_syllabus">SYLLABUS</string>
     <string name="connect_with_us">Connect with Us</string>
     <string name="college_resources_du_sol">College Resources</string>
     <string name="welcome_to_resources">Welcome to Resources</string>
@@ -225,5 +228,15 @@
     <string name="video_lectures">Video Lectures</string>
     <string name="watch_educational_videos_for_learning">Watch educational videos for learning</string>
     <string name="have_questions_or_need_assistance_reach_out_to_us">Have questions or need assistance? Reach out to us!</string>
+    <string name="qplogo">QPLogo</string>
+    <string name="qpimage">QPImage</string>
+    <string name="bachelor_of_arts_program">Bachelor of Arts Program</string>
+    <string name="bachelor_of_arts_honours">Bachelor of Arts Honours</string>
+    <string name="_15_papers">15 Papers</string>
+    <string name="bachelor_of_commerce">Bachelor of Commerce</string>
+    <string name="bachelor_of_commerce_honours">Bachelor of Commerce\nHonours</string>
+    <string name="academic_services">Academic Services</string>
+    <string name="recent_updates">Recent Updates</string>
+    <string name="sharenow">shareNow</string>
 
 </resources>

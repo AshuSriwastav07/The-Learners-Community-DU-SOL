@@ -141,6 +141,19 @@ public class functionManager {
     }
 
 
+    private static void setImageViewAsGif(Activity activity, ImageView imageView, boolean isVisible) {
+        if (isVisible) {
+            imageView.setVisibility(View.VISIBLE);
+            Glide.with(activity)
+                    .asGif()
+                    .load(R.drawable.inew)
+                    .error(R.drawable.inew)
+                    .placeholder(R.drawable.inew)
+                    .into(imageView);
+        } else {
+            imageView.setVisibility(View.GONE);
+        }
+    }
     public static void openShareQP_Group(Activity activity){
         // Define the Telegram channel URL
         String TelegramChannelUrl = "https://t.me/+rj4RGxLU-1QyZTI1";

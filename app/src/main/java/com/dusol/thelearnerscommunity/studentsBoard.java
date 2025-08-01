@@ -14,12 +14,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.DialogFragment;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -66,63 +66,52 @@ public class studentsBoard extends AppCompatActivity {
         setContentView(R.layout.activity_students_board);
 
         // Initialize UI elements
-        Button StudentLogin = findViewById(R.id.button1_Student_Login);
-        Button StudentResult = findViewById(R.id.button2_Student_Result);
-        Button AcademicCalendar = findViewById(R.id.button3_Academic_Calendar);
-        Button AdmissionLink = findViewById(R.id.button4_Admission_Link);
-        Button AllSemSub = findViewById(R.id.button5_All_semester_subject);
-        Button DateSheet = findViewById(R.id.button6_Date_sheet);
-        Button AdmitCard = findViewById(R.id.button7_Admit_Card);
-        Button SOL_Degree = findViewById(R.id.button8_Sol_Degree);
-        Button feeStructure = findViewById(R.id.feeStructure);
-        Button SOL_New_result1 = findViewById(R.id.Student_new_Result1);
-        Button SOL_New_result2 = findViewById(R.id.Student_new_Result2);
-        Button SOL_New_result3 = findViewById(R.id.Student_new_Result3);
-        Button ExtraInfo1 = findViewById(R.id.ExtraInfoBtn1);
-        Button ExtraInfo2 = findViewById(R.id.ExtraInfoBtn2);
-        Button ExtraInfo3 = findViewById(R.id.ExtraInfoBtn3);
-        Button ExtraInfo4 = findViewById(R.id.ExtraInfoBtn4);
-        Button ExtraInfo5 = findViewById(R.id.ExtraInfoBtn5);
-        Button ExtraInfo6 = findViewById(R.id.ExtraInfoBtn6);
-        Button ExtraInfo7 = findViewById(R.id.ExtraInfoBtn7);
-        Button ExtraInfo8 = findViewById(R.id.ExtraInfoBtn8);
-        Button ExtraInfo9 = findViewById(R.id.ExtraInfoBtn9);
-        Button ExtraInfo10 = findViewById(R.id.ExtraInfoBtn10);
-        Button GetStudyMaterial = findViewById(R.id.GetStudyMaterial);
-        Button knowYourBarcode = findViewById(R.id.button9_knowYourBC);
-        Button ProvisionalCertificate = findViewById(R.id.button10_ProvisionalCertificate);
+        CardView StudentLogin = findViewById(R.id.cv1_Student_Login);
+        CardView GetStudyMaterial = findViewById(R.id.GetStudyMaterial);
+        CardView knowYourBarcode = findViewById(R.id.cv3_knowYourBC);
+        CardView StudentResult = findViewById(R.id.cv4_Student_Result);
+        CardView ProvisionalCertificate = findViewById(R.id.cv5_ProvisionalCertificate);
+        CardView SOL_Degree = findViewById(R.id.cv6_Sol_Marksheet);
+        CardView AdmitCard = findViewById(R.id.cv7_Admit_Card);
+        CardView DateSheet = findViewById(R.id.cv8_Date_sheet);
+        CardView AcademicCalendar = findViewById(R.id.cv9_Academic_Calendar);
+        CardView AllSemSub = findViewById(R.id.cv10_All_semester_subject);
+        CardView AdmissionLink = findViewById(R.id.cv11_Admission_Link);
+        CardView feeStructure = findViewById(R.id.cv12_feeStructure);
 
 
-        ImageButton NavHome = findViewById(R.id.navbarHome);
-        ImageButton NavBooks = findViewById(R.id.navbarBooks);
-        ImageButton NavVideos = findViewById(R.id.navbarVideos);
+        CardView SOL_New_result1 = findViewById(R.id.Student_new_Result1);
+        TextView SOL_New_result1TV=findViewById(R.id.SOL_New_result1TV);
+
+        CardView SOL_New_result2 = findViewById(R.id.Student_new_Result2);
+        TextView SOL_New_result2TV=findViewById(R.id.SOL_New_result2TV);
+
+        CardView SOL_New_result3 = findViewById(R.id.Student_new_Result3);
+        TextView SOL_New_result3TV=findViewById(R.id.SOL_New_result3TV);
+
+        CardView ExtraInfo1 = findViewById(R.id.ExtraInfoBtn1);
+        TextView ExtraInfoBtn1TV=findViewById(R.id.ExtraInfoBtn1TV);
+        CardView ExtraInfo2 = findViewById(R.id.ExtraInfoBtn2);
+        TextView ExtraInfoBtn2TV=findViewById(R.id.ExtraInfoBtn2TV);
+        CardView ExtraInfo3 = findViewById(R.id.ExtraInfoBtn3);
+        TextView ExtraInfoBtn3TV=findViewById(R.id.ExtraInfoBtn3TV);
+        CardView ExtraInfo4 = findViewById(R.id.ExtraInfoBtn4);
+        TextView ExtraInfoBtn4TV=findViewById(R.id.ExtraInfoBtn4TV);
+        CardView ExtraInfo5 = findViewById(R.id.ExtraInfoBtn5);
+        TextView ExtraInfoBtn5TV=findViewById(R.id.ExtraInfoBtn5TV);
+        CardView ExtraInfo6 = findViewById(R.id.ExtraInfoBtn6);
+        TextView ExtraInfoBtn6TV=findViewById(R.id.ExtraInfoBtn6TV);
+        CardView ExtraInfo7 = findViewById(R.id.ExtraInfoBtn7);
+        TextView ExtraInfoBtn7TV=findViewById(R.id.ExtraInfoBtn7TV);
+        CardView ExtraInfo8 = findViewById(R.id.ExtraInfoBtn8);
+        TextView ExtraInfoBtn8TV=findViewById(R.id.ExtraInfoBtn8TV);
+        CardView ExtraInfo9 = findViewById(R.id.ExtraInfoBtn9);
+        TextView ExtraInfoBtn9TV=findViewById(R.id.ExtraInfoBtn9TV);
+        CardView ExtraInfo10 = findViewById(R.id.ExtraInfoBtn10);
+        TextView ExtraInfoBtn10TV=findViewById(R.id.ExtraInfoBtn10TV);
 
         // Firebase database instance
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
-
-        // Navigation Bar Button Actions
-
-        NavHome.setOnClickListener(view -> { //Home
-            Intent intent = new Intent(getApplicationContext(), LinkPage_MainActivity.class);
-            startActivity(intent);
-        });
-
-        NavVideos.setOnClickListener(view -> { //YT channel
-            String youtubeChannelUrl = "https://www.youtube.com/@TheLearnersCommunityDUSOL/videos";
-            Uri youtubeUri = Uri.parse(youtubeChannelUrl);
-            Intent intent = new Intent(Intent.ACTION_VIEW, youtubeUri);
-            intent.setPackage("com.google.android.youtube");
-            if (intent.resolveActivity(getPackageManager()) != null) {
-                startActivity(intent);
-            } else {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(youtubeChannelUrl)));
-            }
-        });
-
-        NavBooks.setOnClickListener(view -> { // notes page
-            Intent intent = new Intent(getApplicationContext(), DU_SOL_NOTES__MainActivity.class);
-            startActivity(intent);
-        });
 
         feeStructure.setOnClickListener(v -> {
             sendDataToFirebaseAnalytics("feeStructure_Opens");
@@ -184,21 +173,21 @@ public class studentsBoard extends AppCompatActivity {
                 }
 
                 if (!newResultLink.get(0).equals("N/A")) {
-                    SOL_New_result1.setText(newResultName.get(0));
+                    SOL_New_result1TV.setText(newResultName.get(0));
                     SOL_New_result1.setVisibility(View.VISIBLE);
                 } else {
                     SOL_New_result1.setVisibility(View.GONE);
                 }
 
                 if (!newResultLink.get(1).equals("N/A")) {
-                    SOL_New_result2.setText(newResultName.get(1));
+                    SOL_New_result2TV.setText(newResultName.get(1));
                     SOL_New_result2.setVisibility(View.VISIBLE);
                 } else {
                     SOL_New_result2.setVisibility(View.GONE);
                 }
 
                 if (!newResultLink.get(2).equals("N/A")) {
-                    SOL_New_result3.setText(newResultName.get(2));
+                    SOL_New_result3TV.setText(newResultName.get(2));
                     SOL_New_result3.setVisibility(View.VISIBLE);
                 } else {
                     SOL_New_result3.setVisibility(View.GONE);
@@ -247,10 +236,16 @@ public class studentsBoard extends AppCompatActivity {
                     }
                 }
 
-                // Create a list of buttons
-                List<Button> extraInfoButtons = Arrays.asList(
+                // Create a list of CardView
+                List<CardView> extraInfoButtons = Arrays.asList(
                         ExtraInfo1, ExtraInfo2, ExtraInfo3, ExtraInfo4, ExtraInfo5,
                         ExtraInfo6, ExtraInfo7, ExtraInfo8, ExtraInfo9
+                );
+
+                // Create a list of CardView
+                List<TextView> extraInfoTextView = Arrays.asList(
+                        ExtraInfoBtn1TV, ExtraInfoBtn2TV, ExtraInfoBtn3TV, ExtraInfoBtn4TV, ExtraInfoBtn5TV,
+                        ExtraInfoBtn6TV, ExtraInfoBtn7TV, ExtraInfoBtn8TV, ExtraInfoBtn9TV, ExtraInfoBtn10TV
                 );
 
                 // Ensure the loop doesn't exceed the number of buttons
@@ -259,7 +254,7 @@ public class studentsBoard extends AppCompatActivity {
                 // Iterate and update buttons
                 for (int i = 0; i < maxButtons; i++) {
                     if (!newInfoLink.get(i).equals("N/A")) {
-                        extraInfoButtons.get(i).setText(newInfoName.get(i)); // Set button text
+                        extraInfoTextView.get(i).setText(newInfoName.get(i)); // Set button text
                         extraInfoButtons.get(i).setVisibility(View.VISIBLE); // Make button visible
                     } else {
                         extraInfoButtons.get(i).setVisibility(View.GONE); // Hide button
