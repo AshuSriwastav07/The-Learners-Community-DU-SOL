@@ -11,15 +11,13 @@ package com.dusol.thelearnerscommunity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.dusol.thelearnerscommunity.NEP_Files.NEP_HomePage;
 import com.dusol.thelearnerscommunity.SyllabusFiles.SyllabusTabLayoutActivity;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
 
 public class DU_SOL_NOTES__MainActivity extends AppCompatActivity {
 
@@ -29,15 +27,10 @@ public class DU_SOL_NOTES__MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_du_sol_notes_main);
 
-        //ads
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-
-        Button sol_notes = findViewById(R.id.button1_SOL_CBCS_NOTES); //Button 1
-        Button nep_notes = findViewById(R.id.button2_NEP_Notes); //Button 2
-        Button StudyMaterial = findViewById(R.id.button3_SOL_Material); //Button 3
-        Button Syllabus = findViewById(R.id.button4_SOL_Syllabus); //Button 3
+        CardView sol_notes = findViewById(R.id.button1_SOL_CBCS_NOTES); //Button 1
+        CardView nep_notes = findViewById(R.id.button2_NEP_Notes); //Button 2
+        CardView StudyMaterial = findViewById(R.id.button3_SOL_Material); //Button 3
+        CardView Syllabus = findViewById(R.id.button4_SOL_Syllabus); //Button 3
 
         ImageButton NavHome = findViewById(R.id.navbarHome);
         ImageButton NavBooks = findViewById(R.id.navbarBooks);

@@ -17,6 +17,8 @@ import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.FirebaseApp;
+
 
 public class HomePage_MainActivity extends AppCompatActivity {
     private static final int MY_PERMISSIONS_REQUEST_INTERNET = 123; // Replace with your desired request code
@@ -33,6 +35,7 @@ public class HomePage_MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FirebaseApp.initializeApp(this);
 
 //        Prevent App from SS
         getWindow().setFlags(

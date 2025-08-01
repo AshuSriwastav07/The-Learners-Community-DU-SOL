@@ -15,24 +15,22 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.dusol.thelearnerscommunity.NotesStoreManage.NotesStoreTabActivity;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 public class Semester_Select_MainActivity extends AppCompatActivity {
     private static final int MY_PERMISSIONS_REQUEST_INTERNET = 123; // Replace with your desired request code
 
-    @Override
+    /*@Override
     public void onBackPressed() {
         // Call finish() to close the activity when the back button is pressed
         super.onBackPressed();
@@ -41,26 +39,26 @@ public class Semester_Select_MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     } //important function that clears the stack and sends you back
-
+*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.select_semester_activity_main);
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
 
 
-        //add
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-
-
-
-        Button buyNotes=findViewById(R.id.button7_Buy_Notes_PDF);
+        Button buyNotes=findViewById(R.id.Buy_Notes_PDF);
         ImageButton NavHome = findViewById(R.id.navbarHome);
         ImageButton NavBooks = findViewById(R.id.navbarBooks);
         ImageButton NavStudents = findViewById(R.id.navbarStudent);
         ImageButton NavVideos = findViewById(R.id.navbarVideos);
+
+        CardView sem1 = findViewById(R.id.CBCS_sem1_notes);
+        CardView sem2 = findViewById(R.id.CBCS_sem2_notes);
+        CardView sem3 = findViewById(R.id.CBCS_sem3_notes);
+        CardView sem4 = findViewById(R.id.CBCS_sem4_notes);
+        CardView sem5 = findViewById(R.id.CBCS_sem5_notes);
+        CardView sem6 = findViewById(R.id.CBCS_sem6_notes);
 
         //Videos // Left to make
         NavVideos.setOnClickListener(view -> {
@@ -166,9 +164,36 @@ public class Semester_Select_MainActivity extends AppCompatActivity {
 
         });*/
 
+        sem1.setOnClickListener(v->{
+            Toast.makeText(this, "CBCS 1st Semester Notes Not Available", Toast.LENGTH_SHORT).show();
+        });
+        sem2.setOnClickListener(v->{
+            Toast.makeText(getApplicationContext(),"CBCS 2nd Semester Notes Not Available ",Toast.LENGTH_SHORT).show();
+        });
+        sem3.setOnClickListener(v->{
+            Toast.makeText(getApplicationContext(),"3rd Semester Notes Will be available Soon",Toast.LENGTH_SHORT).show();
+        });
+        sem4.setOnClickListener(v->{
+            Intent intent = new Intent(this, SubjectSelect_4thSem_MainActivity.class);
+            startActivity(intent);
+        });
+        sem5.setOnClickListener(v->{
+            Intent intent = new Intent(this, SubjectSelect_5thSem_MainActivity.class);
+            startActivity(intent);
+        });
+        sem6.setOnClickListener(v->{
+            Intent intent = new Intent(this, SubjectSelect_6thSem_MainActivity.class);
+            startActivity(intent);
+        });
+
+        buyNotes.setOnClickListener(view -> {
+            Intent intent = new Intent(this, NotesStoreTabActivity.class);
+            startActivity(intent);
+        });
+
     }
 
-
+/*
 
     //Buttons connect with semester notes
 
@@ -199,4 +224,6 @@ public class Semester_Select_MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SubjectSelect_6thSem_MainActivity.class);
         startActivity(intent);
     }
+
+    */
 }

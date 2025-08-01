@@ -13,9 +13,12 @@ import static android.content.ContentValues.TAG;
 import android.Manifest;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -59,6 +62,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class LinkPage_MainActivity extends AppCompatActivity {
@@ -87,6 +91,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
         // Check and request notification permission every time the app starts
         checkAndRequestNotificationPermission();
 
+        
         // Initialize UI elements
         CardView du_and_sol_notes_page = findViewById(R.id.button1_du_sol_notes_page);
         CardView solUpdates = findViewById(R.id.button2_SOL_Updates);
@@ -105,8 +110,27 @@ public class LinkPage_MainActivity extends AppCompatActivity {
 
         CardView YTVideo1CV=findViewById(R.id.YTVideosCV1);
         CardView YTVideo2CV=findViewById(R.id.YTVideosCV2);
+        CardView YTVideo3CV=findViewById(R.id.YTVideosCV3);
+        CardView YTVideo4CV=findViewById(R.id.YTVideosCV4);
+        CardView YTVideo5CV=findViewById(R.id.YTVideosCV5);
+
         ImageView YTVideo1IV=findViewById(R.id.YTVideo1ImageView);
         ImageView YTVideo2IV=findViewById(R.id.YTVideo2ImageView);
+        ImageView YTVideo3IV=findViewById(R.id.YTVideo3ImageView);
+        ImageView YTVideo4IV=findViewById(R.id.YTVideo4ImageView);
+        ImageView YTVideo5IV=findViewById(R.id.YTVideo5ImageView);
+
+        ImageView videoIcon=findViewById(R.id.VideoGifIconImageView);
+
+
+//        set Video Icon as GIf
+        Glide.with(this)
+                .asGif()
+                .load(R.drawable.video)
+                .error(R.drawable.video)
+                .placeholder(R.drawable.video)
+                .into(videoIcon);
+
 
         functionManager.managerNewSignLogo(this, this);
 
@@ -144,12 +168,11 @@ public class LinkPage_MainActivity extends AppCompatActivity {
 
         //Feature Videos Function Call
 
-        new Thread(() -> fetchFeatureVideosData(YTVideo1CV,YTVideo2CV,YTVideo1IV,YTVideo2IV)).start();
+        new Thread(() -> fetchFeatureVideosData(YTVideo1CV,YTVideo2CV,YTVideo3CV,YTVideo4CV,YTVideo5CV,YTVideo1IV,YTVideo2IV,YTVideo3IV,YTVideo4IV,YTVideo5IV)).start();
 
         // Text Marquee (unchanged)
         TextView textView = findViewById(R.id.LinkPageMarquee);
         new Thread(()-> marqueeTextViewBanner(textView)).start();
-
 
 
         // Main Buttons Listeners (unchanged)
@@ -244,7 +267,44 @@ public class LinkPage_MainActivity extends AppCompatActivity {
 
         new Thread(() -> fetchConnectUsButtonData(buttonName, Connect_with_us)).start(); //New Thread for better performance
 
+        findViewById(R.id.YTImageView).setOnClickListener(v ->
+                openExternalApp("https://www.youtube.com/@TheLearnersCommunityDUSOL/", "com.google.android.youtube"));
+
+        findViewById(R.id.TelegramImageView).setOnClickListener(v ->
+                openExternalApp("https://t.me/The_LCTyoutube", "org.telegram.messenger"));
+
+        findViewById(R.id.InstaImageView).setOnClickListener(v ->
+                openExternalApp("https://www.instagram.com/the_learners_community_dusol/", "com.instagram.android"));
+
+        initShareButton();
+
+
+        //Check Internet Is Working or Not
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+
+        if (netInfo != null && netInfo.isConnectedOrConnecting()) {
+            Log.d("FirebaseCheck", "Connected to internet");
+        } else {
+            Log.e("FirebaseCheck", "No internet connection");
+        }
+
+        Log.d("FirebaseCheck", "Attempting to fetch data...");
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("AcademicCalendarLink");
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Log.d("FirebaseCheck", "Data fetched successfully.");
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e("FirebaseCheck", "Error: " + error.getMessage());
+            }
+        });
+
     }
+
 
     // Combined method to check and request notification permission
     private void checkAndRequestNotificationPermission() {
@@ -281,7 +341,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
     // Helper method to open YouTube channel (to avoid code repetition)
     private void openYouTubeChannel() {
 
-        String youtubeChannelUrl = "https://www.youtube.com/@TheLearnersCommunityDUSOL/videos";
+        String youtubeChannelUrl = "https://www.youtube.com/@TheLearnersCommunityDUSOL";
         Uri youtubeUri = Uri.parse(youtubeChannelUrl);
         Intent intent = new Intent(Intent.ACTION_VIEW, youtubeUri);
         intent.setPackage("com.google.android.youtube");
@@ -343,11 +403,15 @@ public class LinkPage_MainActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+                Log.d("firebaseError",error.getMessage());
+
             }
         });
     }
 
-    private void fetchFeatureVideosData(CardView cardView1, CardView cardView2, ImageView imageView1, ImageView imageView2) {
+    private void fetchFeatureVideosData(CardView cardView1, CardView cardView2, CardView cardView3, CardView cardView4, CardView cardView5,
+                                        ImageView imageView1, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5) {
+
         DatabaseReference YTFeatureVideosData = FirebaseDatabase.getInstance().getReference("YTFeature");
 
         YTFeatureVideosData.addValueEventListener(new ValueEventListener() {
@@ -356,24 +420,33 @@ public class LinkPage_MainActivity extends AppCompatActivity {
                 int index = 0;
 
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    List<String> value = (List<String>) dataSnapshot.getValue();
+                    List<String> value = new ArrayList<>();
+                    for (DataSnapshot child : dataSnapshot.getChildren()) {
+                        value.add(String.valueOf(child.getValue()));
+                    }
 
-                    if (value != null && value.size() >= 2) {
+                    if (value.size() >= 2) {
                         String imageUrl = value.get(0);  // Thumbnail URL
                         String videoUrl = value.get(1);  // YouTube video link
 
-                        if (index == 0) {
-                            Glide.with(imageView1.getContext()).load(imageUrl).into(imageView1);
-                            cardView1.setOnClickListener(v -> {
-                                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(videoUrl));
-                                imageView1.getContext().startActivity(intent);
-                            });
-                        } else if (index == 1) {
-                            Glide.with(imageView2.getContext()).load(imageUrl).into(imageView2);
-                            cardView2.setOnClickListener(v -> {
-                                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(videoUrl));
-                                imageView2.getContext().startActivity(intent);
-                            });
+                        Log.d("YTVideo", imageUrl + " : " + videoUrl);
+
+                        switch (index) {
+                            case 0:
+                                loadFeature(imageView1, cardView1, imageUrl, videoUrl);
+                                break;
+                            case 1:
+                                loadFeature(imageView2, cardView2, imageUrl, videoUrl);
+                                break;
+                            case 2:
+                                loadFeature(imageView3, cardView3, imageUrl, videoUrl);
+                                break;
+                            case 3:
+                                loadFeature(imageView4, cardView4, imageUrl, videoUrl);
+                                break;
+                            case 4:
+                                loadFeature(imageView5, cardView5, imageUrl, videoUrl);
+                                break;
                         }
 
                         index++;
@@ -385,6 +458,14 @@ public class LinkPage_MainActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
                 Log.e("YTFeature", "Database error: " + error.getMessage());
             }
+        });
+    }
+
+    private void loadFeature(ImageView imageView, CardView cardView, String imageUrl, String videoUrl) {
+        Glide.with(imageView.getContext()).load(imageUrl).into(imageView);
+        cardView.setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(videoUrl));
+            imageView.getContext().startActivity(intent);
         });
     }
 
@@ -478,7 +559,49 @@ public class LinkPage_MainActivity extends AppCompatActivity {
     }
 
 
+    //Open Social Media Accounts
+    private void openExternalApp(String url, String packageName) {
+        Uri uri = Uri.parse(url);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        intent.setPackage(packageName);
 
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        } else {
+            startActivity(new Intent(Intent.ACTION_VIEW, uri));
+        }
+    }
+
+
+    //Share App
+    private static final String PLAY_STORE_URL =
+            "https://play.google.com/store/apps/details?id=com.dusol.thelearnerscommunity";
+
+    private static final String SHARE_TEXT = String.join("\n",
+            "⚡️ Download the Best Study App for DU/SOL/NCWEB & Ace Your Exams! ⚡️",
+            "✅ CBCS/NEP Course Notes",
+            "💯 Semester 1‑6 Question Papers 📝",
+            "📚 Semester 1‑6 Study Material",
+            "📚 All Semesters Updated Syllabus",
+            "💯 All College Updates",
+            "🎥 Video‑explain Notes 🎥",
+            "✨ Student Portal for Every Need ✨",
+            "",
+            "Check it out: " + PLAY_STORE_URL
+    );
+
+    private void initShareButton() {
+        findViewById(R.id.ShareNow).setOnClickListener(v -> shareApp());
+    }
+
+    private void shareApp() {
+        Intent intent = new Intent(Intent.ACTION_SEND)
+                .setType("text/plain")
+                .putExtra(Intent.EXTRA_SUBJECT, "Check this out!")
+                .putExtra(Intent.EXTRA_TEXT, SHARE_TEXT);
+
+        startActivity(Intent.createChooser(intent, "Share via"));
+    }
 
 
 }

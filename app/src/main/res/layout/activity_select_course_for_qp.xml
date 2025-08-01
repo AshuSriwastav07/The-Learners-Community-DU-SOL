@@ -6,24 +6,32 @@
     style="@style/night_page"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/bgqp"
+    android:background="#F9FAFB"
     tools:context=".selectCourseForQP">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#f9fafb"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView12"
+        <ImageView
+            android:id="@+id/imageView19"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:layout_marginBottom="6dp"
+            android:background="#FFFFFF"
+            android:contentDescription="@string/qplogo"
+            app:srcCompat="@mipmap/qphead" />
+
+        <TextView
+            android:id="@+id/QPheading1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
             android:fontFamily="@font/nunito_extrabold"
             android:text="@string/du_sol_ncweb_nquestion_paper_hub"
             android:textAlignment="center"
@@ -31,73 +39,290 @@
             android:textSize="@dimen/dp_12"
             android:textStyle="bold" />
 
-        <Button
+        <TextView
+            android:id="@+id/QPheading2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_4"
+            android:background="#FFFFFF"
+            android:fontFamily="@font/nunito_extrabold"
+            android:text="@string/QPHeading2"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="@dimen/dp_8" />
+
+        <androidx.cardview.widget.CardView
             android:id="@+id/baQuestionPaperCourse"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dp_8"
-            android:layout_marginTop="6dp"
-            android:layout_marginEnd="@dimen/dp_8"
-            android:layout_marginBottom="6dp"
-            android:background="@drawable/button_border"
-            android:drawableLeft="@mipmap/bapq"
-            android:fontFamily="@font/nunito_extrabold"
-            android:text="@string/ba_prog"
-            android:textAlignment="viewStart"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="@dimen/dp_7"
-            android:textStyle="bold" />
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginStart="@dimen/dp_4"
+            android:layout_marginTop="@dimen/dp_4"
+            android:layout_marginEnd="@dimen/dp_4"
+            android:layout_marginBottom="@dimen/dp_3"
+            app:cardCornerRadius="@dimen/dp_6">
 
-        <Button
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/dp_2"
+                    android:layout_weight="1"
+                    android:background="#00EFEBEB"
+                    android:contentDescription="@string/qpimage"
+                    app:srcCompat="@mipmap/bapq" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/dp_4"
+                    android:layout_marginEnd="@dimen/dp_4"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ba_prog"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bachelor_of_arts_program"
+                        android:textColor="@color/black"
+                        android:textStyle="italic" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/TotalBAQP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_2"
+                    android:layout_marginEnd="@dimen/dp_5"
+                    android:layout_weight="0"
+                    android:gravity="center"
+                    android:text="@string/_15_papers"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
             android:id="@+id/baHonsQuestionPaperCourse"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dp_8"
-            android:layout_marginTop="6dp"
-            android:layout_marginEnd="@dimen/dp_8"
-            android:layout_marginBottom="6dp"
-            android:background="@drawable/button_border"
-            android:drawableLeft="@mipmap/bahqp"
-            android:fontFamily="@font/nunito_extrabold"
-            android:text="@string/ba_hons"
-            android:textAlignment="viewStart"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="@dimen/dp_7"
-            android:textStyle="bold" />
+            android:layout_height="@dimen/dp_30"
+            android:layout_margin="@dimen/dp_4"
+            android:layout_marginTop="@dimen/dp_4"
+            android:layout_marginBottom="@dimen/dp_3"
+            app:cardCornerRadius="@dimen/dp_6">
 
-        <Button
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/dp_2"
+                    android:layout_weight="1"
+                    android:background="#00EFEBEB"
+                    android:contentDescription="@string/qpimage"
+                    app:srcCompat="@mipmap/bahqp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/dp_4"
+                    android:layout_marginEnd="@dimen/dp_4"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ba_hons"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bachelor_of_arts_honours"
+                        android:textColor="@color/black"
+                        android:textStyle="italic" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/TotalBAHQP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_2"
+                    android:layout_marginEnd="@dimen/dp_5"
+                    android:layout_weight="0"
+                    android:gravity="center"
+                    android:text="@string/_15_papers"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
             android:id="@+id/bcomQuestionPaperCourse"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dp_8"
-            android:layout_marginTop="6dp"
-            android:layout_marginEnd="@dimen/dp_8"
-            android:layout_marginBottom="6dp"
-            android:background="@drawable/button_border"
-            android:drawableLeft="@mipmap/bcomqp"
-            android:fontFamily="@font/nunito_extrabold"
-            android:text="@string/bcom"
-            android:textAlignment="viewStart"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="@dimen/dp_7"
-            android:textStyle="bold" />
+            android:layout_height="@dimen/dp_30"
+            android:layout_margin="@dimen/dp_4"
+            android:layout_marginTop="@dimen/dp_4"
+            android:layout_marginBottom="@dimen/dp_3"
+            app:cardCornerRadius="@dimen/dp_6">
 
-        <Button
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/dp_2"
+                    android:layout_weight="1"
+                    android:background="#00EFEBEB"
+                    android:contentDescription="@string/qpimage"
+                    app:srcCompat="@mipmap/bcomqp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/dp_4"
+                    android:layout_marginEnd="@dimen/dp_4"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bcom"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bachelor_of_commerce"
+                        android:textColor="@color/black"
+                        android:textStyle="italic" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/TotalBCOMQP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_2"
+                    android:layout_marginEnd="@dimen/dp_5"
+                    android:layout_weight="0"
+                    android:gravity="center"
+                    android:text="@string/_15_papers"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
             android:id="@+id/bcomHonsQuestionPaperCourse"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dp_8"
-            android:layout_marginTop="6dp"
-            android:layout_marginEnd="@dimen/dp_8"
-            android:layout_marginBottom="6dp"
-            android:background="@drawable/button_border"
-            android:drawableLeft="@mipmap/bcomhqp"
-            android:fontFamily="@font/nunito_extrabold"
-            android:text="@string/b.com_hons"
-            android:textAlignment="viewStart"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="@dimen/dp_7"
-            android:textStyle="bold" />
+            android:layout_height="@dimen/dp_30"
+            android:layout_margin="@dimen/dp_4"
+            android:layout_marginTop="@dimen/dp_4"
+            android:layout_marginBottom="@dimen/dp_3"
+            app:cardCornerRadius="@dimen/dp_6">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/dp_2"
+                    android:layout_weight="1"
+                    android:background="#00EFEBEB"
+                    android:contentDescription="@string/qpimage"
+                    app:srcCompat="@mipmap/bcomhqp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/dp_4"
+                    android:layout_marginEnd="@dimen/dp_4"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/b.com_hons"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bachelor_of_commerce_honours"
+                        android:textColor="@color/black"
+                        android:textStyle="italic" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/TotalBCOMHQP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_2"
+                    android:layout_marginEnd="@dimen/dp_5"
+                    android:layout_weight="0"
+                    android:gravity="center"
+                    android:text="@string/_15_papers"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
 
 
     </LinearLayout>

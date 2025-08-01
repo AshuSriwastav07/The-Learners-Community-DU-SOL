@@ -2,17 +2,15 @@ package com.dusol.thelearnerscommunity.NEP_Files;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.dusol.thelearnerscommunity.NotesStoreManage.NotesStoreTabActivity;
 import com.dusol.thelearnerscommunity.PDFDataCollerction.PDFDataManage;
 import com.dusol.thelearnerscommunity.R;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
 
 import java.util.List;
 
@@ -23,17 +21,13 @@ public class NEP_HomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_nep_semester);
 
-        //ads
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-
-        Button sem1NotesOpen=findViewById(R.id.NEP_Sem1);
-        Button sem2NotesOpen=findViewById(R.id.NEP_Sem2);
-        Button sem3NotesOpen=findViewById(R.id.NEP_Sem3);
-        Button sem4NotesOpen=findViewById(R.id.NEP_Sem4);
-        Button sem5NotesOpen=findViewById(R.id.NEP_Sem5);
-        Button sem6NotesOpen =findViewById(R.id.NEP_Sem6);
+        CardView sem1NotesOpen=findViewById(R.id.NEP_Sem1);
+        CardView sem2NotesOpen=findViewById(R.id.NEP_Sem2);
+        CardView sem3NotesOpen=findViewById(R.id.NEP_Sem3);
+        CardView sem4NotesOpen=findViewById(R.id.NEP_Sem4);
+        CardView sem5NotesOpen=findViewById(R.id.NEP_Sem5);
+        CardView sem6NotesOpen =findViewById(R.id.NEP_Sem6);
+        Button buyNotes=findViewById(R.id.Buy_Notes_PDF);
 
         List<String> Values= PDFDataManage.CheckNotesAvailable();
 
@@ -95,12 +89,17 @@ public class NEP_HomePage extends AppCompatActivity {
             }
 
         });
+        buyNotes.setOnClickListener(view->{
+            Intent intent = new Intent(this, NotesStoreTabActivity.class);
+            startActivity(intent);
+        });
+
 
 
     }
 
-    public void openStore(View v) { // This activity will send you to the notes store page
+    /*public void openStore(View v) { // This activity will send you to the notes store page
         Intent intent = new Intent(this, NotesStoreTabActivity.class);
         startActivity(intent);
-    }
+    }*/
 }
