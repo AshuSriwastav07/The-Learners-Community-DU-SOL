@@ -165,13 +165,13 @@ public class Semester_Select_MainActivity extends AppCompatActivity {
         });*/
 
         sem1.setOnClickListener(v->{
-            Toast.makeText(this, "CBCS 1st Semester Notes Not Available", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Notes Not Available", Toast.LENGTH_SHORT).show();
         });
         sem2.setOnClickListener(v->{
-            Toast.makeText(getApplicationContext(),"CBCS 2nd Semester Notes Not Available ",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),"Notes Not Available",Toast.LENGTH_SHORT).show();
         });
         sem3.setOnClickListener(v->{
-            Toast.makeText(getApplicationContext(),"3rd Semester Notes Will be available Soon",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),"Notes Not Available",Toast.LENGTH_SHORT).show();
         });
         sem4.setOnClickListener(v->{
             Intent intent = new Intent(this, SubjectSelect_4thSem_MainActivity.class);

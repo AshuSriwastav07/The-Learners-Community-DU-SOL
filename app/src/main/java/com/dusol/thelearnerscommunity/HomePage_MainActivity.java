@@ -13,10 +13,12 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.FirebaseApp;
 
 
@@ -37,6 +39,7 @@ public class HomePage_MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         FirebaseApp.initializeApp(this);
 
+
 //        Prevent App from SS
         getWindow().setFlags(
                 WindowManager.LayoutParams.FLAG_SECURE,
@@ -44,7 +47,16 @@ public class HomePage_MainActivity extends AppCompatActivity {
         );
 
         setContentView(R.layout.home_page_activity_main);
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
+
+        ImageView loadingGif = findViewById(R.id.loadingGif);
+        Glide.with(this)
+                .asGif()
+                .load(R.drawable.homeloading)
+                .error(R.drawable.homeloading)
+                .placeholder(R.drawable.homeloading)
+                .into(loadingGif);
+
 
         Intent intent=new Intent(this, LinkPage_MainActivity.class);
         new Handler().postDelayed(new Runnable() {

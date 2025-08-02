@@ -45,10 +45,11 @@
 
                     <ImageView
                         android:id="@+id/img_student_portal_icon"
-                        android:layout_width="@dimen/dp_18"
-                        android:layout_height="@dimen/dp_18"
+                        android:layout_width="@dimen/dp_15"
+                        android:layout_height="@dimen/dp_15"
+                        android:layout_margin="@dimen/dp_3"
                         android:layout_weight="0"
-                        android:contentDescription="TODO"
+                        android:contentDescription="@string/todo"
                         app:srcCompat="@mipmap/bagra" />
 
                     <TextView

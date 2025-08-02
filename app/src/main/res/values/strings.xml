@@ -2,10 +2,10 @@
     <string name="app_name">College Resources</string>
     <string name="welcome">Welcome</string>
     <string name="rights">© 2025 The Learners Community All Rights Reserved.</string>
-    <string name="du_notes">DU NOTES</string>
+    <string name="du_notes">DU Notes</string>
     <string name="todo">DU Image\n</string>
     <string name="sol_notice">SOL UPDATES</string>
-    <string name="collage_updates">Collage Updates</string>
+    <string name="collage_updates">College Updates</string>
     <string name="sol_materials">Study Material</string>
     <string name="sol_notes">SOL NOTES</string>
     <string name="cbcs_notes">CBCS NOTES</string>
@@ -55,8 +55,8 @@
     <string name="ba_prog_nep_sem2">BA Prog NEP</string>
     <string name="b_com_hons_nep_Sem2">B.Com Hons NEP</string>
     <string name="sol_syllabus">All Syllabus</string>
-    <string name="yt">Youtube\n</string>
-    <string name="telegram">"telegram "</string>
+    <string name="yt">YouTube</string>
+    <string name="telegram">"Telegram"</string>
     <string name="join_us">Join US</string>
     <string name="blogger">Blogger</string>
     <string name="youtube">YouTube</string>
@@ -67,7 +67,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="study">study</string>
     <string name="_6th_semester_papers">6th Semester Papers</string>
-    <string name="study_matrial">Study Matrial</string>
+    <string name="study_matrial">Study Material</string>
     <string name="hindi">Hindi: हिंदी गद्य उद्भव और विकास</string>
     <string name="notes_coming_soon">Notes Coming Soon</string>
     <string name="english_language_through_literature_2_language_course">English Language Through Literature-2 (Language Course)</string>
@@ -94,7 +94,7 @@
     <string name="hindi_katha_sahitye">Hindi Katha Sahitye</string>
     <string name="_3rd_semester_papers">3rd Semester Papers</string>
     <string name="chapter1">Chapter 1 Notes</string>
-    <string name="chapter2">Chapter 2 Notes\n</string>
+    <string name="chapter2">Chapter 2 Notes</string>
     <string name="chapter_3_notes">Chapter 3 Notes</string>
     <string name="sol_dates">Academic Dates</string>
     <string name="NavBTN">Navigation Button\n</string>
@@ -170,7 +170,7 @@
     <string name="minor_paper_iii_discipline_b1">MINOR : Paper-III Discipline B1</string>
     <string name="minor_paper_ii_discipline_a1">MINOR : Paper-II and III (A1+B1)</string>
     <string name="administration_and_public_policy_concept_and_theories">Administration and Public Policy Concept and Theories</string>
-    <string name="history_indian_history_1700_1950">History (Indian History 1700-1950)</string>
+    <string name="history_indian_history_1700_1950">History (Indian History 1700–1950)</string>
     <string name="hindi_anuvad_vyavhaar_aur_sidhante">Hindi - Anuvad Vyavhaar aur Sidhante</string>
     <string name="history_issues_in_twentieth_century_century_world_history_ii">History - Issues in Twentieth Century Century World History-II</string>
     <string name="media_and_communication_skills_ge">Media and Communication Skills (GE)</string>
@@ -197,7 +197,7 @@
     <string name="next_semester_details">Next Semester Details</string>
     <string name="ug_fee_structure">UG Fee Structure</string>
     <string name="exam_date_sheet">Exam Date Sheet</string>
-    <string name="collage_marksheet">Collage Marksheet</string>
+    <string name="collage_marksheet">College Mark sheet</string>
     <string name="check_admit_card">Check Admit Card</string>
     <string name="published_results">Published Results</string>
     <string name="know_your_barcode">Know Your Barcode</string>
@@ -238,5 +238,6 @@
     <string name="academic_services">Academic Services</string>
     <string name="recent_updates">Recent Updates</string>
     <string name="sharenow">shareNow</string>
+    <string name="homePageText">Welcome to College Resources\nYour One-Stop Platform for All DU SOL Materials.\nGet Notes, Study Materials, Exam Updates,\nDate Sheets, Admissions Info, and More — All in One Place.\nStudy Smart. Stay Updated. Grow with Us.</string>
 
 </resources>

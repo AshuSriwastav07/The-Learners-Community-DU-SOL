@@ -19,23 +19,31 @@
     tools:layout_editor_absoluteX="-2dp"
     tools:layout_editor_absoluteY="34dp">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="342dp"
-        android:layout_height="346dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="50dp"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/the_learners_community_logo"
-        android:cropToPadding="true"
-        android:scaleType="center"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/noto_sans_adlam_unjoined_bold"
+        android:text="@string/college_resources_du_sol"
+        android:textAlignment="center"
+        android:textSize="@dimen/dp_13"
+        app:layout_constraintBottom_toTopOf="@+id/loadingGif"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@mipmap/main" />
+        app:layout_constraintVertical_bias="0.357" />
+
+    <ImageView
+        android:id="@+id/loadingGif"
+        android:layout_width="@dimen/dp_120"
+        android:layout_height="@dimen/dp_120"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/progress_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9"
+        app:srcCompat="@drawable/homeloading" />
 
     <TextView
         android:id="@+id/textView4"

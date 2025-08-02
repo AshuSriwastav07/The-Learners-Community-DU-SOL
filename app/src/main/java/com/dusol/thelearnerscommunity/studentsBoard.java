@@ -14,6 +14,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.DialogFragment;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -112,6 +114,14 @@ public class studentsBoard extends AppCompatActivity {
 
         // Firebase database instance
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+        ImageView iconGif = findViewById(R.id.img_student_portal_icon);
+        Glide.with(this)
+                .asGif()
+                .load(R.drawable.sp)
+                .error(R.drawable.sp)
+                .placeholder(R.drawable.sp)
+                .into(iconGif);
 
         feeStructure.setOnClickListener(v -> {
             sendDataToFirebaseAnalytics("feeStructure_Opens");
