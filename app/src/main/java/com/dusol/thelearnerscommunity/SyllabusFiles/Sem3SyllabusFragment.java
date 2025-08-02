@@ -9,8 +9,6 @@ import android.widget.ListView;
 import androidx.fragment.app.Fragment;
 
 import com.dusol.thelearnerscommunity.R;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
 
 public class Sem3SyllabusFragment extends Fragment {
 
@@ -21,11 +19,6 @@ public class Sem3SyllabusFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_sem3_syllabus, container, false);
 
         ListView listView = view.findViewById(R.id.sem3SyllabusList);
-
-        //ads
-        AdView mAdView = view.findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
 
         syllabus_pdf_manage.SyllabusPDFManage(getActivity(),getContext(),"Syllabus/sem3",listView);
 

@@ -132,6 +132,8 @@ public class LinkPage_MainActivity extends AppCompatActivity {
                 .into(videoIcon);
 
 
+
+
         functionManager.managerNewSignLogo(this, this);
 
         ActionBar actionBar = getSupportActionBar();
