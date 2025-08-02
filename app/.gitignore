@@ -3,6 +3,8 @@
 # Firebase configuration
 google-services.json
 
+.txt
+
 # Keystore files
 *.jks
 *.keystore
