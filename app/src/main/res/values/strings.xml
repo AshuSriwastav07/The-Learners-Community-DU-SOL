@@ -144,7 +144,7 @@
     <string name="education_sec_reflective_learning">Education SEC (Reflective Learning)</string>
     <string name="conflict_and_peace_building">संघर्ष और शांति निर्माण Conflict and Peace Building</string>
     <string name="media_in_education_in_hindi">Media in Education in Hindi</string>
-    <string name="Syllabus">DU SOL Syllabus</string>
+    <string name="Syllabus">Syllabus</string>
 
     <string name="lorem_ipsum">
         hello
@@ -232,7 +232,7 @@
     <string name="qpimage">QPImage</string>
     <string name="bachelor_of_arts_program">Bachelor of Arts Program</string>
     <string name="bachelor_of_arts_honours">Bachelor of Arts Honours</string>
-    <string name="_15_papers">15 Papers</string>
+    <string name="_15_papers">Paper</string>
     <string name="bachelor_of_commerce">Bachelor of Commerce</string>
     <string name="bachelor_of_commerce_honours">Bachelor of Commerce\nHonours</string>
     <string name="academic_services">Academic Services</string>
