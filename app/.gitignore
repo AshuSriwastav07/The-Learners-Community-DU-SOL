@@ -1,9 +1,9 @@
 /build
 .json
+extra code.txt
 # Firebase configuration
 google-services.json
 
-.txt
 
 # Keystore files
 *.jks
