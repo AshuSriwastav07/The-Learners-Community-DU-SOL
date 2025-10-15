@@ -2,6 +2,7 @@ package com.dusol.thelearnerscommunity;
 
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -12,21 +13,24 @@ import com.google.android.material.tabs.TabLayout;
 public class study_materials extends AppCompatActivity {
 
     @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        if (getFragmentManager().getBackStackEntryCount() > 0) {
-            // If there are fragments in the back stack, clear it
-            getFragmentManager().popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-        } else {
-            // If no fragments, close the activity
-            finish();
-        }
-    } //important function that clears the stack and sends you back
-
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_study_materials);
+
+        // Set up modern back press handling
+        OnBackPressedCallback callback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                if (getFragmentManager().getBackStackEntryCount() > 0) {
+                    // If there are fragments in the back stack, clear it
+                    getFragmentManager().popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+                } else {
+                    // If no fragments, close the activity
+                    finish();
+                }
+            }
+        };
+        getOnBackPressedDispatcher().addCallback(this, callback);
 
         /*Button ba_btn1=findViewById(R.id.BA_btn1);
         Button ba_polHons_btn2=findViewById(R.id.BA_PolHons_btn2);

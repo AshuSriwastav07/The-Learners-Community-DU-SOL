@@ -39,7 +39,8 @@ public class syllabus_pdf_manage {
                     String key = childSnapshot.getKey();  //notes name
                     String value = childSnapshot.getValue(String.class); //notes link
 
-                    if(!value.equals("N/A") && !value.equals("")){
+                    assert value != null;
+                    if(!value.equals("N/A") && !value.isEmpty()){
                         NotesNameArray.add(key+" ✔");
                     }else {
                         NotesNameArray.add(key);

@@ -1,13 +1,5 @@
 package com.dusol.thelearnerscommunity;
 
-/**
- * App developed by:
- * Ashu Sriwastav
- * All rights reserved. This application is the property of Ashu Sriwastav.
- * Unauthorized reproduction, distribution, or modification of this application
- * without the explicit permission of Ashu Sriwastav is prohibited.
- */
-
 import static android.content.ContentValues.TAG;
 
 import android.Manifest;
@@ -18,7 +10,8 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
+import android.net.Network;
+import android.net.NetworkCapabilities;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -33,11 +26,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.OnBackPressedCallback;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -69,29 +61,21 @@ public class LinkPage_MainActivity extends AppCompatActivity {
     private long Timeback;
 
     @Override
-    public void onBackPressed() {
-        if (System.currentTimeMillis() - Timeback > 2000) {
-            Timeback = System.currentTimeMillis();
-            Toast.makeText(this, "Press again to exit", Toast.LENGTH_SHORT).show();
-        } else {
-            super.onBackPressed();
-            finishAffinity();
-        }
-    }
-
-    private ActivityResultLauncher activityResultLauncher;
-
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.link_page_activity_main);
 
+        // Set up modern back press handling
+        setupBackPressHandler();
+
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
 
         // Check and request notification permission every time the app starts
-        checkAndRequestNotificationPermission();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            checkAndRequestNotificationPermission();
+        }
 
-        
+
         // Initialize UI elements
         CardView du_and_sol_notes_page = findViewById(R.id.button1_du_sol_notes_page);
         CardView solUpdates = findViewById(R.id.button2_SOL_Updates);
@@ -150,7 +134,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
         new Thread(()-> NavVideos.setOnClickListener(view -> openYouTubeChannel())).start();
 
         NavBooks.setOnClickListener(view -> {
-            new android.os.Handler().postDelayed(() -> {
+            new Handler().postDelayed(() -> {
                 Bundle bundle = new Bundle();
                 bundle.putString("SOL_Notes_Open", "button_clicked");
                 FirebaseAnalytics.getInstance(this).logEvent("SOL_Notes_Open", bundle);
@@ -158,7 +142,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(), DU_SOL_NOTES__MainActivity.class));
         });
         NavStudents.setOnClickListener(view -> {
-            new android.os.Handler().postDelayed(() -> {
+            new Handler().postDelayed(() -> {
                 Bundle bundle = new Bundle();
                 bundle.putString("SOL_Portal", "button_clicked");
                 FirebaseAnalytics.getInstance(this).logEvent("SOL_Portal", bundle);
@@ -195,7 +179,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
 
         solUpdates.setOnClickListener(v -> {
 
-            AnalyticsDataPushWithLink("SOL_Updates", "SOL_Updates_Opens", "SOL_Updates","https://web.sol.du.ac.in/home",this);
+            AnalyticsDataPushWithLink(this);
 
         });
 
@@ -264,7 +248,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
                         return;
                     }
                     String token = task.getResult();
-                    Log.d("FirebaseRegToken", token);
+//                    Log.d("FirebaseRegToken", token);
                 });
 
         new Thread(() -> fetchConnectUsButtonData(buttonName, Connect_with_us)).start(); //New Thread for better performance
@@ -283,12 +267,19 @@ public class LinkPage_MainActivity extends AppCompatActivity {
 
         //Check Internet Is Working or Not
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo netInfo = cm.getActiveNetworkInfo();
-
-        if (netInfo != null && netInfo.isConnectedOrConnecting()) {
-            Log.d("FirebaseCheck", "Connected to internet");
-        } else {
-            Log.e("FirebaseCheck", "No internet connection");
+        if (cm != null) {
+            Network network = cm.getActiveNetwork();
+            if (network != null) {
+                NetworkCapabilities capabilities = cm.getNetworkCapabilities(network);
+                if (capabilities != null && (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ||
+                        capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR))) {
+                    Log.d("FirebaseCheck", "Connected to internet");
+                } else {
+                    Log.e("FirebaseCheck", "No internet connection");
+                }
+            } else {
+                Log.e("FirebaseCheck", "No active network");
+            }
         }
 
         Log.d("FirebaseCheck", "Attempting to fetch data...");
@@ -307,13 +298,36 @@ public class LinkPage_MainActivity extends AppCompatActivity {
 
     }
 
+    private void setupBackPressHandler() {
+        OnBackPressedCallback callback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                if (System.currentTimeMillis() - Timeback > 2000) {
+                    Timeback = System.currentTimeMillis();
+                    Toast.makeText(LinkPage_MainActivity.this, "Press again to exit", Toast.LENGTH_SHORT).show();
+                } else {
+                    finishAffinity();
+                }
+            }
+        };
+        getOnBackPressedDispatcher().addCallback(this, callback);
+    }
 
     // Combined method to check and request notification permission
+    @RequiresApi(api = Build.VERSION_CODES.O)
     private void checkAndRequestNotificationPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) { // Android 13+
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
                 // Permission not granted, request it every time
-                requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS);
+                registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
+                    if (isGranted) {
+                        Log.d("Notification", "Permission granted for notifications.");
+                        Toast.makeText(this, "Notifications are enabled!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Log.d("Notification", "Permission denied for notifications.");
+                        Toast.makeText(this, "Notifications are disabled. You can enable them in settings.", Toast.LENGTH_SHORT).show();
+                    }
+                }).launch(Manifest.permission.POST_NOTIFICATIONS);
             } else {
                 Log.d("Notification", "Permission already granted.");
                 Toast.makeText(this, "Notifications are already enabled!", Toast.LENGTH_SHORT).show();
@@ -327,18 +341,6 @@ public class LinkPage_MainActivity extends AppCompatActivity {
             }
         }
     }
-
-    // Activity result launcher for requesting notification permission
-    private final ActivityResultLauncher<String> requestPermissionLauncher =
-            registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
-                if (isGranted) {
-                    Log.d("Notification", "Permission granted for notifications.");
-                    Toast.makeText(this, "Notifications are enabled!", Toast.LENGTH_SHORT).show();
-                } else {
-                    Log.d("Notification", "Permission denied for notifications.");
-                    Toast.makeText(this, "Notifications are disabled. You can enable them in settings.", Toast.LENGTH_SHORT).show();
-                }
-            });
 
     // Helper method to open YouTube channel (to avoid code repetition)
     private void openYouTubeChannel() {
@@ -490,7 +492,16 @@ public class LinkPage_MainActivity extends AppCompatActivity {
                         // Pass the intent that is returned by 'getAppUpdateInfo()'.
                         appUpdateInfo,
                         // an activity result launcher registered via registerForActivityResult
-                        activityResultLauncher,
+                        registerForActivityResult(
+                                new ActivityResultContracts.StartIntentSenderForResult(),
+                                result -> {
+                                    // handle callback
+                                    if (result.getResultCode() != RESULT_OK) {
+                                        Log.d("LauncherCheck","Update flow failed! Result code: " + result.getResultCode());
+                                        // If the update is canceled or fails,
+                                        // you can request to start the update again.
+                                    }
+                                }),
                         // Or pass 'AppUpdateType.FLEXIBLE' to newBuilder() for
                         // flexible updates.
                         AppUpdateOptions.newBuilder(AppUpdateType.IMMEDIATE).build());
@@ -498,20 +509,6 @@ public class LinkPage_MainActivity extends AppCompatActivity {
             }
 
         });
-        activityResultLauncher= registerForActivityResult(
-                new ActivityResultContracts.StartIntentSenderForResult(),
-                new ActivityResultCallback<ActivityResult>() {
-                    @Override
-                    public void onActivityResult(ActivityResult result) {
-                        // handle callback
-                        if (result.getResultCode() != RESULT_OK) {
-//                            log("Update flow failed! Result code: " + result.getResultCode());
-                            // If the update is canceled or fails,
-                            // you can request to start the update again.
-                        }
-                    }
-                });
-
 
 
     }
@@ -550,13 +547,13 @@ public class LinkPage_MainActivity extends AppCompatActivity {
         }, 500);
     }
 
-    private void AnalyticsDataPushWithLink(String key, String value, String name, String Link, AppCompatActivity activity) {
+    private void AnalyticsDataPushWithLink(AppCompatActivity activity) {
         new android.os.Handler().postDelayed(() -> {
             Bundle bundle = new Bundle();
-            bundle.putString(key, value);
-            FirebaseAnalytics.getInstance(activity).logEvent(name, bundle);
+            bundle.putString("SOL_Updates", "SOL_Updates_Opens");
+            FirebaseAnalytics.getInstance(activity).logEvent("SOL_Updates", bundle);
 
-            activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(Link)));
+            activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://web.sol.du.ac.in/home")));
         }, 500);
     }
 

@@ -130,12 +130,9 @@ public class studentsBoard extends AppCompatActivity {
             startActivity(intent);
         });
 
-        StudentLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendDataToFirebaseAnalytics("StudentLogin_Opens");
-                openWebPage("https://web.sol.du.ac.in/student-login");
-            }
+        StudentLogin.setOnClickListener(v -> {
+            sendDataToFirebaseAnalytics("StudentLogin_Opens");
+            openWebPage("https://web.sol.du.ac.in/student-login");
         });
 
 
@@ -174,12 +171,10 @@ public class studentsBoard extends AppCompatActivity {
         NewResultLinks.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (!(snapshot == null)) {
-                    for (DataSnapshot data : snapshot.getChildren()) {
-                        newResultName.add(data.getKey());
-                        newResultLink.add(data.getValue(String.class));
-                        Log.d("ResultLinks", data.getValue(String.class));
-                    }
+                for (DataSnapshot data : snapshot.getChildren()) {
+                    newResultName.add(data.getKey());
+                    newResultLink.add(data.getValue(String.class));
+                    Log.d("ResultLinks", Objects.requireNonNull(data.getValue(String.class)));
                 }
 
                 if (!newResultLink.get(0).equals("N/A")) {
@@ -237,13 +232,11 @@ public class studentsBoard extends AppCompatActivity {
         Extra1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot != null) {
-                    for (DataSnapshot data : snapshot.getChildren()) {
-                        newInfoName.add(data.getKey());
-                        newInfoLink.add(data.getValue(String.class));
+                for (DataSnapshot data : snapshot.getChildren()) {
+                    newInfoName.add(data.getKey());
+                    newInfoLink.add(data.getValue(String.class));
 
-                        Log.d("CheckStatus", Objects.requireNonNull(data.getValue(String.class)));
-                    }
+                    Log.d("CheckStatus", Objects.requireNonNull(data.getValue(String.class)));
                 }
 
                 // Create a list of CardView
@@ -357,26 +350,29 @@ public class studentsBoard extends AppCompatActivity {
         DateSheetLinks.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot != null && dataSnapshot.hasChildren()) {
+                if (dataSnapshot.hasChildren()) {
                     for (DataSnapshot dateSnapshot : dataSnapshot.getChildren()) {
                         String value = dateSnapshot.getValue(String.class);
-                        datesheetList.add(value);
-                        assert value != null;
+                        if (value != null) {
+                            datesheetList.add(value);
+                        }
 //                        Log.d("DateSheetData", value);
                     }
 
+                    if (datesheetList.size() >= 9) {
 
-                    link1 = datesheetList.get(0);
-                    link2 = datesheetList.get(1);
-                    link3 = datesheetList.get(2);
-                    link4 = datesheetList.get(3);
+                        link1 = datesheetList.get(0);
+                        link2 = datesheetList.get(1);
+                        link3 = datesheetList.get(2);
+                        link4 = datesheetList.get(3);
 
-                    link5 = datesheetList.get(4);
-                    link6 = datesheetList.get(5);
-                    link7 = datesheetList.get(6);
-                    link8 = datesheetList.get(7);
+                        link5 = datesheetList.get(4);
+                        link6 = datesheetList.get(5);
+                        link7 = datesheetList.get(6);
+                        link8 = datesheetList.get(7);
 
-                    TitleAnsYear = datesheetList.get(8);
+                        TitleAnsYear = datesheetList.get(8);
+                    }
                     DateSheet.setOnClickListener(v -> {
                         sendDataToFirebaseAnalytics("DateSheet_Opens");
                         showDateSheetDiallog(link1, link2, link3, link4, link5, link6, link7, link8, TitleAnsYear);
@@ -400,7 +396,7 @@ public class studentsBoard extends AppCompatActivity {
         AdmitCardLinks.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot != null && dataSnapshot.hasChildren()) {
+                if (dataSnapshot.hasChildren()) {
                     for (DataSnapshot dateSnapshot : dataSnapshot.getChildren()) {
                         String value = dateSnapshot.getValue(String.class);
                         admitcardLinks.add(value);

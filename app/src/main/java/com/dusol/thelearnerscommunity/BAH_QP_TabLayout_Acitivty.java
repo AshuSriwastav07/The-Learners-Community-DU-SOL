@@ -54,8 +54,6 @@ public class BAH_QP_TabLayout_Acitivty extends AppCompatActivity {
         // Link the TabLayout with the ViewPager
         tabLayout.setupWithViewPager(viewPager);
 
-        Telegram.setOnClickListener(view -> {
-            functionManager.openShareQP_Group(BAH_QP_TabLayout_Acitivty.this);
-        });
+        Telegram.setOnClickListener(view -> functionManager.openShareQP_Group(BAH_QP_TabLayout_Acitivty.this));
     }
 }

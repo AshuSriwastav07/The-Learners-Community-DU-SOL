@@ -46,7 +46,7 @@ public class functionManager {
                 }
 
                 // Log the retrieved values for debugging
-                Log.d("NewSignInfo", updateList.toString());
+//                Log.d("NewSignInfo", updateList.toString());
 
                 try {
                     // Free Notes Update Indicator
@@ -89,7 +89,7 @@ public class functionManager {
                         setImageViewGif(activity, newSyllabus, false);
                     }
 
-                    /*// Video Notes Update Indicator
+                    /* Video Notes Update Indicator
                     ImageView newVideoUpload = activity.findViewById(R.id.newVideoNotesUpload);
                     if (updateList.size() > 5 && Objects.equals(updateList.get(5), "YES")) {
                         setImageViewGif(activity, newVideoUpload, true);
@@ -140,20 +140,6 @@ public class functionManager {
         }
     }
 
-
-    private static void setImageViewAsGif(Activity activity, ImageView imageView, boolean isVisible) {
-        if (isVisible) {
-            imageView.setVisibility(View.VISIBLE);
-            Glide.with(activity)
-                    .asGif()
-                    .load(R.drawable.inew)
-                    .error(R.drawable.inew)
-                    .placeholder(R.drawable.inew)
-                    .into(imageView);
-        } else {
-            imageView.setVisibility(View.GONE);
-        }
-    }
     public static void openShareQP_Group(Activity activity){
         // Define the Telegram channel URL
         String TelegramChannelUrl = "https://t.me/+rj4RGxLU-1QyZTI1";
@@ -174,7 +160,7 @@ public class functionManager {
             // For example, you can open the Telegram website in a web browser
            activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(TelegramChannelUrl)));
         }
-    };
+    }
 
     public static void askDoubtHere(Activity activity){
         // Define the Telegram channel URL

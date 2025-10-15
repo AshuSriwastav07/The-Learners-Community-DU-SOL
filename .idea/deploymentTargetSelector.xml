@@ -4,10 +4,10 @@
     <selectionStates>
       <SelectionState runConfigName="Unnamed">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2025-07-31T14:32:54.412872300Z">
+        <DropdownSelection timestamp="2025-08-08T15:56:53.318090100Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="PhysicalDevice" identifier="serial=c7c31c11" />
+              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\hp\.android\avd\Oppo_A1K.avd" />
             </handle>
           </Target>
         </DropdownSelection>
@@ -15,12 +15,12 @@
           <targets>
             <Target type="DEFAULT_BOOT">
               <handle>
-                <DeviceId pluginId="PhysicalDevice" identifier="serial=H66TBMEMQOKRFAVC" />
+                <DeviceId pluginId="PhysicalDevice" identifier="serial=c7c31c11" />
               </handle>
             </Target>
             <Target type="DEFAULT_BOOT">
               <handle>
-                <DeviceId pluginId="PhysicalDevice" identifier="serial=c7c31c11" />
+                <DeviceId pluginId="PhysicalDevice" identifier="serial=EQZLHIOF99TOSWSS" />
               </handle>
             </Target>
           </targets>

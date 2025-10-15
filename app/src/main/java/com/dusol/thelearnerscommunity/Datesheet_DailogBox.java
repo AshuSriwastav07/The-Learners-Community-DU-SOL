@@ -1,5 +1,6 @@
 package com.dusol.thelearnerscommunity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -25,7 +26,6 @@ public class Datesheet_DailogBox extends DialogFragment {
     private String link5;
     private String link6;
     private String link7;
-    private String title;
 
     // Method to create a new instance of the dialog box
     public static Datesheet_DailogBox newInstance(String link1, String link2, String link3, String link4,String link5,String link6,String link7,String link8, String title) {
@@ -53,7 +53,13 @@ public class Datesheet_DailogBox extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        // AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        Context context=this.getContext();
+
+        assert context != null;
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+
+
         View view = inflater.inflate(R.layout.fragment_datesheet__dailog_box, null);
 
         // Get arguments from bundle
@@ -66,7 +72,7 @@ public class Datesheet_DailogBox extends DialogFragment {
         link6 = getArguments().getString("link6");
         link7 = getArguments().getString("link7");
         link8 = getArguments().getString("link8");
-        title = getArguments().getString("title");
+        String title = getArguments().getString("title");
 
         // Initialize buttons and text view
         Button openNEP_BA = view.findViewById(R.id.NEPbutton1);

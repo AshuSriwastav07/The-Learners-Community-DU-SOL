@@ -22,6 +22,7 @@ public class NEP_Sem2_MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         // Close the activity immediately without managing back stack
+        super.onBackPressed();
         finish();
     }
 

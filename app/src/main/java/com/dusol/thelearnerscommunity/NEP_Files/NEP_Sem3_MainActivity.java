@@ -1,20 +1,11 @@
 package com.dusol.thelearnerscommunity.NEP_Files;
 
 import android.os.Bundle;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.dusol.thelearnerscommunity.NEP_Files.NEP_Fragments.ManageFragment;
-import com.dusol.thelearnerscommunity.NEP_Files.NEP_Fragments.Sem1.Sem1_AEC;
-import com.dusol.thelearnerscommunity.NEP_Files.NEP_Fragments.Sem1.Sem1_GENERIC_ELECTIVE;
-import com.dusol.thelearnerscommunity.NEP_Files.NEP_Fragments.Sem1.Sem1_Paper_1_DSC;
-import com.dusol.thelearnerscommunity.NEP_Files.NEP_Fragments.Sem1.Sem1_Paper_2_DSC;
-import com.dusol.thelearnerscommunity.NEP_Files.NEP_Fragments.Sem1.Sem1_SEC;
-import com.dusol.thelearnerscommunity.NEP_Files.NEP_Fragments.Sem1.Sem1_VAC;
 import com.dusol.thelearnerscommunity.NEP_Files.NEP_Fragments.Sem3.Sem3_AEC;
 import com.dusol.thelearnerscommunity.NEP_Files.NEP_Fragments.Sem3.Sem3_GENERIC_ELECTIVE;
 import com.dusol.thelearnerscommunity.NEP_Files.NEP_Fragments.Sem3.Sem3_Paper1_DSC;
@@ -31,6 +22,7 @@ public class NEP_Sem3_MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         // Close the activity immediately without managing back stack
+        super.onBackPressed();
         finish();
     }
 

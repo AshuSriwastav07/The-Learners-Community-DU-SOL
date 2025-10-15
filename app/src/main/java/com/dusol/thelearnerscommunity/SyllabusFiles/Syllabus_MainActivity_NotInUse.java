@@ -29,8 +29,6 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
@@ -260,9 +258,7 @@ public class Syllabus_MainActivity_NotInUse extends AppCompatActivity {
 
         nepsem3_BCOM.setOnClickListener(v -> startads(links,26));
 
-        nepsem3_BCOM_H.setOnClickListener(v -> {
-            startads(links,27);
-        });
+        nepsem3_BCOM_H.setOnClickListener(v -> startads(links,27));
 
     }
 
@@ -270,10 +266,7 @@ public class Syllabus_MainActivity_NotInUse extends AppCompatActivity {
     private void  load_banner_ads(){
 
         //add start
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
+        MobileAds.initialize(this, initializationStatus -> {
         });
 
 
@@ -287,10 +280,7 @@ public class Syllabus_MainActivity_NotInUse extends AppCompatActivity {
     }
 
     public void loadads(){
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {}
-        });
+        MobileAds.initialize(this, initializationStatus -> {});
         AdRequest adRequest = new AdRequest.Builder().build();
 
         InterstitialAd.load(this,"ca-app-pub-7092743628840352/8393735655", adRequest,
@@ -312,7 +302,7 @@ public class Syllabus_MainActivity_NotInUse extends AppCompatActivity {
                 });
     }
 
-    public void startads(String Links[],int linkNum){ //Provide array of links and Index number of link
+    public void startads(String[] Links, int linkNum){ //Provide array of links and Index number of link
         click1++; //count number of click
         if (mInterstitialAd != null && click1 % NumberOfClickToShowAsd==0) {
             mInterstitialAd.show(Syllabus_MainActivity_NotInUse.this); // Google ads will node if user click on question paper button every second time
@@ -329,7 +319,7 @@ public class Syllabus_MainActivity_NotInUse extends AppCompatActivity {
                     loadads();
                 }
                 @Override
-                public void onAdFailedToShowFullScreenContent(AdError adError) {
+                public void onAdFailedToShowFullScreenContent(@NonNull AdError adError) {
                     // Called when ad fails to show.
                     Log.e(TAG, "Ad failed to show fullscreen content.");
                     mInterstitialAd = null;
