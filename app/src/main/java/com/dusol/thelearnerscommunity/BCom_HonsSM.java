@@ -62,12 +62,9 @@ public class BCom_HonsSM extends Fragment {
         // Set click listeners for each button
         for (int i = 0; i < buttons.length; i++) {
             final int buttonIndex = i;
-            buttons[i].setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    sendStudyMaterialData("Semester " + buttonIndex);
-                    openNextActivity(links[buttonIndex]);
-                }
+            buttons[i].setOnClickListener(view1 -> {
+                sendStudyMaterialData("Semester " + buttonIndex);
+                openNextActivity(links[buttonIndex]);
             });
         }
 
@@ -75,13 +72,10 @@ public class BCom_HonsSM extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String data = snapshot.getValue(String.class);
-                btn9.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        if (data != null) {
-                            sendStudyMaterialData("NEP_Semester4");
-                            openNextActivity(data);
-                        }
+                btn9.setOnClickListener(v -> {
+                    if (data != null) {
+                        sendStudyMaterialData("NEP_Semester4");
+                        openNextActivity(data);
                     }
                 });
 
@@ -98,13 +92,10 @@ public class BCom_HonsSM extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String data = snapshot.getValue(String.class);
-                btn10.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        if (data != null) {
-                            sendStudyMaterialData("NEP_Semester5");
-                            openNextActivity(data);
-                        }
+                btn10.setOnClickListener(v -> {
+                    if (data != null) {
+                        sendStudyMaterialData("NEP_Semester5");
+                        openNextActivity(data);
                     }
                 });
 
@@ -122,14 +113,11 @@ public class BCom_HonsSM extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String data = snapshot.getValue(String.class);
 
-                btn11.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        if (data != null) {
-                            sendStudyMaterialData("NEP_Semester6");
-                            openNextActivity(data);
+                btn11.setOnClickListener(v -> {
+                    if (data != null) {
+                        sendStudyMaterialData("NEP_Semester6");
+                        openNextActivity(data);
 
-                        }
                     }
                 });
 

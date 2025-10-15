@@ -21,6 +21,7 @@ public class NEP_Sem1_MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         // Close the activity immediately without managing back stack
+        super.onBackPressed();
         finish();
     }
 
@@ -30,7 +31,7 @@ public class NEP_Sem1_MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nep_sem1_main);
 
-        /*//Subject Select Buttons
+        /* Subject Select Buttons
 
         Button paper1=findViewById(R.id.paper1DSC);
         Button paper2=findViewById(R.id.paper2DSC);
@@ -38,7 +39,7 @@ public class NEP_Sem1_MainActivity extends AppCompatActivity {
         Button ge=findViewById(R.id.GenericElective);
         Button sec=findViewById(R.id.sec);
         Button vac=findViewById(R.id.vac);*/
-        /*FragmentActivity context=this;
+        /* FragmentActivity context=this;
 
         paper1.setOnClickListener(new View.OnClickListener() {
             @Override

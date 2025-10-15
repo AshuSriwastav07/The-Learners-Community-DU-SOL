@@ -146,7 +146,7 @@ public class BA_ProgSM extends Fragment {
             Uri BookLink = Uri.parse(link);
             Intent intent = new Intent(Intent.ACTION_VIEW, BookLink);
             startActivity(intent);
-        };
+        }
     }
 
     private void sendStudyMaterialData(String SemesterOpened){

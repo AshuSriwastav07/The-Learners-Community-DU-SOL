@@ -20,12 +20,9 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.squareup.picasso.Picasso;
 
@@ -186,37 +183,14 @@ public class Notes_Store extends AppCompatActivity {
 
         productButton13.setOnClickListener(v -> showProductDetailsDialog(productName[12], productDetails[12], Price[12], BuyLink[12]));
 
-        productButton14.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showProductDetailsDialog(productName[13], productDetails[13], Price[13], BuyLink[13]);
-            }
-        });
-    productButton15.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showProductDetailsDialog(productName[14], productDetails[14], Price[14], BuyLink[14]);
-            }
-        });
-    productButton16.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showProductDetailsDialog(productName[15], productDetails[15], Price[15], BuyLink[15]);
-            }
-        });
-productButton17.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showProductDetailsDialog(productName[16], productDetails[16], Price[16], BuyLink[16]);
-            }
-        });
-productButton18.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showProductDetailsDialog(productName[17], productDetails[17], Price[17], BuyLink[17]);
-                textView.setVisibility(View.VISIBLE);
-            }
-        });
+        productButton14.setOnClickListener(v -> showProductDetailsDialog(productName[13], productDetails[13], Price[13], BuyLink[13]));
+    productButton15.setOnClickListener(v -> showProductDetailsDialog(productName[14], productDetails[14], Price[14], BuyLink[14]));
+    productButton16.setOnClickListener(v -> showProductDetailsDialog(productName[15], productDetails[15], Price[15], BuyLink[15]));
+productButton17.setOnClickListener(v -> showProductDetailsDialog(productName[16], productDetails[16], Price[16], BuyLink[16]));
+productButton18.setOnClickListener(v -> {
+    showProductDetailsDialog(productName[17], productDetails[17], Price[17], BuyLink[17]);
+    textView.setVisibility(View.VISIBLE);
+});
 
 
         ProgressBar progressBar = findViewById(R.id.progress_bar);
@@ -225,34 +199,28 @@ productButton18.setOnClickListener(new View.OnClickListener() {
         progressBar.setVisibility(View.VISIBLE);
 
         // Set a delay of 5 seconds (5000 milliseconds)
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                // Hide the ProgressBar after 5 seconds
-                progressBar.setVisibility(View.GONE);
-            }
+        handler.postDelayed(() -> {
+            // Hide the ProgressBar after 5 seconds
+            progressBar.setVisibility(View.GONE);
         }, 5000);
 
 
         FirebaseMessaging.getInstance().subscribeToTopic("SELL_NOTES")
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        String msg = "Subscribed";
+                .addOnCompleteListener(task -> {
+                    String msg = "Subscribed";
 
-                        // Check if subscribing to the topic was successful
-                        if (!task.isSuccessful()) {
-                            // If not successful, you can handle any failure here
-                            // For example, you can uncomment the line below to set the message to "Subscribe failed"
-                            // msg = "Subscribe failed";
-                        } else {
-                            // If subscription is successful, you can perform any necessary actions here
-                            // For example, display a toast message to indicate success
-                            // Toast.makeText(MainActivity3.this, "Done", Toast.LENGTH_SHORT).show();
+                    // Check if subscribing to the topic was successful
+                    if (!task.isSuccessful()) {
+                        // If not successful, you can handle any failure here
+                        // For example, you can uncomment the line below to set the message to "Subscribe failed"
+                        // msg = "Subscribe failed";
+                    } else {
+                        // If subscription is successful, you can perform any necessary actions here
+                        // For example, display a toast message to indicate success
+                        // Toast.makeText(MainActivity3.this, "Done", Toast.LENGTH_SHORT).show();
 
-                            // Log a message to check whether the user successfully subscribed to the topic
-                            Log.d("notes_topic", msg);
-                        }
+                        // Log a message to check whether the user successfully subscribed to the topic
+                        Log.d("notes_topic", msg);
                     }
                 });
 

@@ -16,6 +16,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
@@ -28,15 +29,12 @@ public class HomePage_MainActivity extends AppCompatActivity {
 
 
     @Override
-    public void onBackPressed() {
-        // Call finish() to close the activity when the back button is pressed
-        super.onBackPressed();
-        finish();
-    } //important function that clears the stack and sends you back
-
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        // Set up modern back press handling
+        setupBackPressHandler();
+        
         FirebaseApp.initializeApp(this);
 
 
@@ -59,14 +57,19 @@ public class HomePage_MainActivity extends AppCompatActivity {
 
 
         Intent intent=new Intent(this, LinkPage_MainActivity.class);
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-
-                startActivity(intent);
-            } },1000);
+        new Handler().postDelayed(() -> startActivity(intent),1000);
 
     }
 
+    private void setupBackPressHandler() {
+        OnBackPressedCallback callback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                // Call finish() to close the activity when the back button is pressed
+                finish();
+            }
+        };
+        getOnBackPressedDispatcher().addCallback(this, callback);
+    }
 
 }

@@ -38,7 +38,7 @@ public class SubjectSelect_4thSem_MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subject_select4th_sem_main);
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
 
        /* Button btnTransFragement=findViewById(R.id.Trans4thsem);
         Button btnHisFragement=findViewById(R.id.His4thSem);

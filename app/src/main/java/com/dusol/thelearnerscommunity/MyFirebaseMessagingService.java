@@ -22,6 +22,16 @@ import java.util.Objects;
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     @Override
+    public void onNewToken(@NonNull String token) {
+        super.onNewToken(token);
+
+        // Log or store the new token as needed
+//        Log.d("FirebaseRegToken", "New token: " + token);
+
+        // TODO: If needed, send this token to your app server
+    }
+
+    @Override
     public void onMessageReceived(@NonNull RemoteMessage message) {
         super.onMessageReceived(message);
 

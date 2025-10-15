@@ -9,7 +9,7 @@
 package com.dusol.thelearnerscommunity;
 
 import android.app.Dialog;
-import android.content.DialogInterface;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -26,9 +26,6 @@ import androidx.fragment.app.DialogFragment;
 
 public class ProductDetailsDialogFragment extends DialogFragment {
 
-    private String productName;
-    private String productDescription;
-    private double productPrice;
     private String productLink;
 
     public static ProductDetailsDialogFragment newInstance(String name, String description, double price, String link) {
@@ -45,14 +42,17 @@ public class ProductDetailsDialogFragment extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        Context context=this.getContext();
+
+        assert context != null;
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
         LayoutInflater inflater = requireActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.dialog_product_details, null);
 
         if (getArguments() != null) {
-            productName = getArguments().getString("name");
-            productDescription = getArguments().getString("description");
-            productPrice = getArguments().getDouble("price");
+            String productName = getArguments().getString("name");
+            String productDescription = getArguments().getString("description");
+            double productPrice = getArguments().getDouble("price");
             productLink = getArguments().getString("link");
 
             // Initialize and populate product details views
@@ -62,7 +62,7 @@ public class ProductDetailsDialogFragment extends DialogFragment {
 
             productNameView.setText(productName);
             productDescriptionView.setText(Html.fromHtml(productDescription));
-            productPriceView.setText(String.format("₹%.2f", productPrice));
+            productPriceView.setText(String.valueOf(productPrice));
         }
 
         Button buyButton = view.findViewById(R.id.buyButton);
@@ -81,12 +81,9 @@ public class ProductDetailsDialogFragment extends DialogFragment {
         });
 
         builder.setView(view)
-                .setPositiveButton("Close", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int id) {
-                        // Close the dialog
-                        dialog.dismiss();
-                    }
+                .setPositiveButton("Close", (dialog, id) -> {
+                    // Close the dialog
+                    dialog.dismiss();
                 });
 
         return builder.create();

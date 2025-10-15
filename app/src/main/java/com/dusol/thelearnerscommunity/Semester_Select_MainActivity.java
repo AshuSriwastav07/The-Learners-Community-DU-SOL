@@ -102,8 +102,6 @@ public class Semester_Select_MainActivity extends AppCompatActivity {
             // Permission is not granted, request it
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.INTERNET},
                     MY_PERMISSIONS_REQUEST_INTERNET);
-        } else {
-            // Permission is already granted, you can proceed with internet access
         }
 
 
@@ -164,15 +162,9 @@ public class Semester_Select_MainActivity extends AppCompatActivity {
 
         });*/
 
-        sem1.setOnClickListener(v->{
-            Toast.makeText(this, "Notes Not Available", Toast.LENGTH_SHORT).show();
-        });
-        sem2.setOnClickListener(v->{
-            Toast.makeText(getApplicationContext(),"Notes Not Available",Toast.LENGTH_SHORT).show();
-        });
-        sem3.setOnClickListener(v->{
-            Toast.makeText(getApplicationContext(),"Notes Not Available",Toast.LENGTH_SHORT).show();
-        });
+        sem1.setOnClickListener(v-> Toast.makeText(this, "Notes Not Available", Toast.LENGTH_SHORT).show());
+        sem2.setOnClickListener(v-> Toast.makeText(getApplicationContext(),"Notes Not Available",Toast.LENGTH_SHORT).show());
+        sem3.setOnClickListener(v-> Toast.makeText(getApplicationContext(),"Notes Not Available",Toast.LENGTH_SHORT).show());
         sem4.setOnClickListener(v->{
             Intent intent = new Intent(this, SubjectSelect_4thSem_MainActivity.class);
             startActivity(intent);

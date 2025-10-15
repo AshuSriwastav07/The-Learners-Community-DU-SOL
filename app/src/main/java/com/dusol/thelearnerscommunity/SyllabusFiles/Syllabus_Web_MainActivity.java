@@ -8,6 +8,10 @@
  */
 package com.dusol.thelearnerscommunity.SyllabusFiles;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
 import android.os.Bundle;
 import android.util.Log;
 import android.webkit.WebChromeClient;
@@ -16,6 +20,7 @@ import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.dusol.thelearnerscommunity.Network.GetNetworkDetails;
@@ -26,16 +31,12 @@ public class Syllabus_Web_MainActivity extends AppCompatActivity {
     ProgressBar progressBar;
 
     @Override
-    public void onBackPressed() {
-        // Call finish() to close the activity when the back button is pressed
-        super.onBackPressed();
-        finish();
-    }
-
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_syllabus_web_main);
+
+        // Set up modern back press handling
+        setupBackPressHandler();
 
         //Stop Taking SS
 //        getWindow().setFlags(
@@ -81,37 +82,32 @@ public class Syllabus_Web_MainActivity extends AppCompatActivity {
         });
 
 
-        GetNetworkDetails network = new GetNetworkDetails();  //Obj Created to get network Details
-        boolean networkStatus= network.isNetworkAvailable(this);
+        boolean networkStatus = GetNetworkDetails.isNetworkAvailable(this);
 
         Log.d("NetworkData", String.valueOf(networkStatus));
 
         if (!networkStatus) {
-            // Internet is available, so load the URL
-            Toast.makeText(this, "No internet connection available.", Toast.LENGTH_LONG).show();
-
-        } else {
-            // Internet is not available, show a message
-            assert link != null;
-            webView.loadUrl(link);
-
-        }
-
-        /*if (isNetworkAvailable()) {
-            // Internet is available, so load the URL
-            webView.loadUrl(link);
-        } else {
             // Internet is not available, show a message
             Toast.makeText(this, "No internet connection available.", Toast.LENGTH_LONG).show();
+        } else {
+            // Internet is available, so load the URL
+            if (link != null) {
+                webView.loadUrl(link);
+            }
         }
     }
 
-    private boolean isNetworkAvailable() {
-        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        if (connectivityManager != null) {
-            NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-            return activeNetworkInfo != null && activeNetworkInfo.isConnected();
-        }
-        return false;*/
+    private void setupBackPressHandler() {
+        OnBackPressedCallback callback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                if (webView.canGoBack()) {
+                    webView.goBack();
+                } else {
+                    finish();
+                }
+            }
+        };
+        getOnBackPressedDispatcher().addCallback(this, callback);
     }
 }

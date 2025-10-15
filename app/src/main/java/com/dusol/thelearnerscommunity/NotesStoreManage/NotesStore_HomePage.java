@@ -1,7 +1,9 @@
 package com.dusol.thelearnerscommunity.NotesStoreManage;
 
 import android.os.Bundle;
+import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,6 +13,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -36,15 +39,17 @@ public class NotesStore_HomePage extends AppCompatActivity {
                 final List<String> details = new ArrayList<>();
 
                 @Override
-                public void onDataChange(DataSnapshot snapshot) {
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
                     title.clear();
                     imageLink.clear();
                     pageLink.clear();
                     details.clear();
 
+
                     if (snapshot.exists()) {
                         for (DataSnapshot i : snapshot.getChildren()) {
-                            List<String> ngoData = (List<String>) i.getValue();
+                            GenericTypeIndicator<List<String>> t = new GenericTypeIndicator<List<String>>() {};
+                            List<String> ngoData = i.getValue(t);
 
                             if (ngoData != null) {
 //                                Log.d("PaidNotesData", ngoData.get(0));
@@ -53,27 +58,26 @@ public class NotesStore_HomePage extends AppCompatActivity {
 //                                Log.d("PaidNotesData", ngoData.get(3));
 
                                 // Uncomment if you want to add the data to the lists
-                                 title.add(ngoData.get(0));
-                                 imageLink.add(ngoData.get(1));
-                                 pageLink.add(ngoData.get(2));
-                                 details.add(ngoData.get(3));
+                                title.add(ngoData.get(0));
+                                imageLink.add(ngoData.get(1));
+                                pageLink.add(ngoData.get(2));
+                                details.add(ngoData.get(3));
 
                             }
                         }
                     }
-
                     NotesManagerAdapter adapter = new NotesManagerAdapter(NotesStore_HomePage.this, title, imageLink, pageLink,details,getSupportFragmentManager());
                     storeRecyclerView.setAdapter(adapter);
 
                 }
 
                 @Override
-                public void onCancelled(DatabaseError error) {
+                public void onCancelled(@NonNull DatabaseError error) {
                     // Handle error
                 }
             });
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.d("NotesStoreHomePageLogging", e.toString());
         }
     }
 }

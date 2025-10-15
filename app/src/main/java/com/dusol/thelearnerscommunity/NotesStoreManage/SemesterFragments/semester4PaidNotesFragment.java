@@ -18,6 +18,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -53,7 +54,8 @@ public class semester4PaidNotesFragment extends Fragment {
 
                     if (snapshot.exists()) {
                         for (DataSnapshot i : snapshot.getChildren()) {
-                            List<String> ngoData = (List<String>) i.getValue();
+                            GenericTypeIndicator<List<String>> t = new GenericTypeIndicator<List<String>>() {};
+                            List<String> ngoData = i.getValue(t);
 
                             if (ngoData != null) {
 //                                Log.d("PaidNotesData", ngoData.get(0));
@@ -71,16 +73,13 @@ public class semester4PaidNotesFragment extends Fragment {
                         }
                     }
 
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            if (isAdded() && getActivity() != null) {
-                                NotesManagerAdapter adapter = new NotesManagerAdapter(
-                                        getActivity(), title, imageLink, pageLink, details,
-                                        getActivity().getSupportFragmentManager()
-                                );
-                                recyclerView.setAdapter(adapter);
-                            }
+                    new Handler().postDelayed(() -> {
+                        if (isAdded() && getActivity() != null) {
+                            NotesManagerAdapter adapter = new NotesManagerAdapter(
+                                    getActivity(), title, imageLink, pageLink, details,
+                                    getActivity().getSupportFragmentManager()
+                            );
+                            recyclerView.setAdapter(adapter);
                         }
                     }, 3000); // 3 seconds delay
 

@@ -18,6 +18,7 @@ public class ActivityUtils {
         // Iterate through the list and count activities
         for (ActivityManager.RunningTaskInfo info : taskInfo) {
             // Filter out the activities in your app by checking the package name
+            assert info.baseActivity != null;
             if (context.getPackageName().equals(info.baseActivity.getPackageName())) {
                 count++;
             }

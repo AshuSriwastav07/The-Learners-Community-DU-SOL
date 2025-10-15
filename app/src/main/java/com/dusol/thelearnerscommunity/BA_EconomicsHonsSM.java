@@ -161,7 +161,7 @@ public class BA_EconomicsHonsSM extends Fragment {
             Intent intent = new Intent(Intent.ACTION_VIEW, BookLink);
             startActivity(intent);
         }
-        ;
+
     }
 
     private void sendStudyMaterialData(String SemesterOpened){

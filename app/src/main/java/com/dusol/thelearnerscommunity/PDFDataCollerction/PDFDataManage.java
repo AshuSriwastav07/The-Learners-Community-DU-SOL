@@ -128,7 +128,7 @@ public class PDFDataManage {
                     String value = childSnapshot.getValue(String.class); //notes link
 
                     assert value != null;
-                    Log.d("NotesNameArray",value);
+//                    Log.d("NotesNameArray",value);
 
                     NotesLinksArray.add(value);
                 }

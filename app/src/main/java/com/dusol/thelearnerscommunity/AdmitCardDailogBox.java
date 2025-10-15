@@ -1,6 +1,5 @@
 package com.dusol.thelearnerscommunity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,7 +16,8 @@ import androidx.fragment.app.DialogFragment;
 
 public class AdmitCardDailogBox extends DialogFragment  {
 
-    private String link1;private String link2;private String link3;private String link4;private String title;private String sem1;private String sem2;private String sem3;
+    private String link1;private String link2;private String link3;private String link4;
+    private String sem1;private String sem2;private String sem3;
 
     public static AdmitCardDailogBox newInstance(String link1, String link2, String link3, String sem1, String sem2, String sem3, String title) {
         AdmitCardDailogBox fragment = new AdmitCardDailogBox();
@@ -43,10 +43,11 @@ public class AdmitCardDailogBox extends DialogFragment  {
         View view= inflater.inflate(R.layout.fragment_admit_card_dailog_box, container, false);
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
+        assert getArguments() != null;
         link1= getArguments().getString("link1");
         link2= getArguments().getString("link2");
         link3= getArguments().getString("link3");
-        title= getArguments().getString("title");
+        String title = getArguments().getString("title");
         sem1= getArguments().getString("sem1");
         sem2= getArguments().getString("sem2");
         sem3= getArguments().getString("sem3");
@@ -70,54 +71,42 @@ public class AdmitCardDailogBox extends DialogFragment  {
 
 
 
-        Open_sem1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        Open_sem1.setOnClickListener(v -> {
 
-                if("N/A".equals(link1)) {
-                    Toast.makeText(getContext(), sem1+" Not Available Now", Toast.LENGTH_SHORT).show();
-                } else{
-                    Log.d("link",link1);
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(link1));
+            if("N/A".equals(link1)) {
+                Toast.makeText(getContext(), sem1+" Not Available Now", Toast.LENGTH_SHORT).show();
+            } else{
+                Log.d("link",link1);
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(link1));
+            startActivity(intent);}
+        });
+
+
+        Open_sem2.setOnClickListener(v -> {
+            if("N/A".equals(link2)) {
+                Toast.makeText(getContext(), sem2+" Not Available Now", Toast.LENGTH_SHORT).show();
+            } else{
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(link2));
                 startActivity(intent);}
-            }
-        });
-
-
-        Open_sem2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if("N/A".equals(link2)) {
-                    Toast.makeText(getContext(), sem2+" Not Available Now", Toast.LENGTH_SHORT).show();
-                } else{
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(link2));
-                    startActivity(intent);}
-            }
         });
 
 
 
-        Open_sem3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if("N/A".equals(link3)) {
-                    Toast.makeText(getContext(), sem3+" Not Available Now", Toast.LENGTH_SHORT).show();
-                } else{
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(link3));
-                    startActivity(intent);}
+        Open_sem3.setOnClickListener(v -> {
+            if("N/A".equals(link3)) {
+                Toast.makeText(getContext(), sem3+" Not Available Now", Toast.LENGTH_SHORT).show();
+            } else{
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(link3));
+                startActivity(intent);}
 
-            }
         });
 
 
 
         builder.setView(view)
-                .setPositiveButton("Close", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int id) {
-                        // Close the dialog
-                        dialog.dismiss();
-                    }
+                .setPositiveButton("Close", (dialog, id) -> {
+                    // Close the dialog
+                    dialog.dismiss();
                 });
 
 

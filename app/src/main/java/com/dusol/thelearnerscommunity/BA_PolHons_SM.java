@@ -64,12 +64,9 @@ public class BA_PolHons_SM extends Fragment {
         // Set click listeners for each button
         for (int i = 0; i < buttons.length; i++) {
             final int buttonIndex = i;
-            buttons[i].setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    sendStudyMaterialData("Semester "+buttonIndex);
-                    openNextActivity(links[buttonIndex]);
-                }
+            buttons[i].setOnClickListener(view1 -> {
+                sendStudyMaterialData("Semester "+buttonIndex);
+                openNextActivity(links[buttonIndex]);
             });
         }
 
@@ -79,12 +76,9 @@ public class BA_PolHons_SM extends Fragment {
                 String data= snapshot.getValue(String.class);
                 assert data != null;
                 Log.d("FirebaseLinks",data);
-                btn9.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        sendStudyMaterialData("NEP_Semester4");
-                        openNextActivity(data);
-                    }
+                btn9.setOnClickListener(v -> {
+                    sendStudyMaterialData("NEP_Semester4");
+                    openNextActivity(data);
                 });
 
 
@@ -122,12 +116,9 @@ public class BA_PolHons_SM extends Fragment {
                 String data= snapshot.getValue(String.class);
                 assert data != null;
                 Log.d("FirebaseLinks",data);
-                btn11.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        sendStudyMaterialData("NEP_Semester6");
-                        openNextActivity(data);
-                    }
+                btn11.setOnClickListener(v -> {
+                    sendStudyMaterialData("NEP_Semester6");
+                    openNextActivity(data);
                 });
 
 
@@ -153,7 +144,7 @@ public class BA_PolHons_SM extends Fragment {
             Uri BookLink = Uri.parse(link);
             Intent intent = new Intent(Intent.ACTION_VIEW, BookLink);
             startActivity(intent);
-        };
+        }
     }
 
     private void sendStudyMaterialData(String SemesterOpened){
