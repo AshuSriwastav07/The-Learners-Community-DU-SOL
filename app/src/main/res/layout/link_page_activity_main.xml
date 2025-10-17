@@ -18,13 +18,24 @@
     tools:context="com.dusol.thelearnerscommunity.LinkPage_MainActivity"
     tools:ignore="UsingOnClickInXml">
 
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@android:color/transparent"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/reviewnow" />
+
     <ScrollView
         android:id="@+id/scrollView3"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:paddingBottom="@dimen/dp_3"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavBar"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -36,20 +47,24 @@
             <TextView
                 android:id="@+id/heading1"
                 style="@style/nightHomePageButtons"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginStart="@dimen/dp_3"
                 android:layout_marginTop="@dimen/dp_3"
                 android:layout_marginEnd="0dp"
                 android:layout_marginBottom="0dp"
-                android:fontFamily="@font/lato_bold"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
                 android:text="@string/college_resources_du_sol"
-                android:textSize="@dimen/dp_9" />
+                android:textSize="@dimen/dp_11"
+                android:textStyle="bold" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_40"
                 android:layout_margin="@dimen/dp_2"
+                android:visibility="gone"
                 app:cardBackgroundColor="#374151"
                 app:cardCornerRadius="@dimen/dp_4"
                 app:cardElevation="5dp">
@@ -87,22 +102,38 @@
 
             </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:id="@+id/LinkPageMarquee"
-                style="@style/banner_text"
+            <LinearLayout
+                android:layout_marginTop="@dimen/dp_4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/alata"
-                android:marqueeRepeatLimit="marquee_forever"
-                android:shadowColor="#F0D987"
-                android:shadowDx="0.0"
-                android:shadowDy="0.0"
-                android:shadowRadius="5"
-                android:singleLine="true"
-                android:text=""
-                android:textAlignment="center"
-                android:textSize="@dimen/dp_7"
-                android:textStyle="bold" />
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/updateIcon"
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_12"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/updateicon"
+                    app:srcCompat="@drawable/anounc" />
+
+                <TextView
+                    android:id="@+id/linkPageMarquee"
+                    style="@style/banner_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_12"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/noto_sans_adlam_unjoined_bold"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:shadowColor="#F0D987"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="5"
+                    android:singleLine="true"
+                    android:text="@string/notification_show_123"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/dp_7"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
             <androidx.cardview.widget.CardView
                 style="@style/nightHomePageButtons"
@@ -473,7 +504,225 @@
             <androidx.cardview.widget.CardView
                 style="@style/nightHomePageButtons"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_90"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/dp_2"
+                app:cardCornerRadius="@dimen/dp_6"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/UpcomingExamsNotes"
+                        style="@style/nightHomePageButtons"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_4"
+                        android:layout_marginTop="@dimen/dp_3"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:text="@string/upcomingExams"
+                        android:textSize="@dimen/dp_6"
+                        android:textStyle="bold" />
+
+                    <androidx.cardview.widget.CardView
+                        style="@style/nightHomePageButtons"
+                        android:id="@+id/semester12"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_15"
+                        android:layout_margin="@dimen/dp_3"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="@dimen/dp_2"
+                        app:cardElevation="5dp">
+
+                        <TextView
+                            android:id="@+id/semester12TV"
+                            style="@style/nightHomePageButtons"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/dp_2"
+                            android:fontFamily="@font/nunito_extrabold"
+                            android:text="@string/semester_2"
+                            android:textStyle="bold" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        style="@style/nightHomePageButtons"
+                        android:id="@+id/semester34"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_15"
+                        android:layout_margin="@dimen/dp_3"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="@dimen/dp_2"
+                        app:cardElevation="5dp">
+
+                        <TextView
+                            android:id="@+id/semester34TV"
+                            style="@style/nightHomePageButtons"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/dp_2"
+                            android:fontFamily="@font/nunito_extrabold"
+                            android:text="@string/semester_3"
+                            android:textStyle="bold" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        style="@style/nightHomePageButtons"
+                        android:id="@+id/semester56"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_15"
+                        android:layout_margin="@dimen/dp_3"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="@dimen/dp_2"
+                        app:cardElevation="5dp">
+
+                        <TextView
+                            android:id="@+id/semester56TV"
+                            style="@style/nightHomePageButtons"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/dp_2"
+                            android:fontFamily="@font/nunito_extrabold"
+                            android:text="@string/semester_5"
+                            android:textStyle="bold" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        style="@style/nightHomePageButtons"
+                        android:id="@+id/semester78"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_15"
+                        android:layout_margin="@dimen/dp_3"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="@dimen/dp_2"
+                        app:cardElevation="5dp">
+
+                        <TextView
+                            android:id="@+id/semester78TV"
+                            style="@style/nightHomePageButtons"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/dp_2"
+                            android:fontFamily="@font/nunito_extrabold"
+                            android:text="@string/semester_7"
+                            android:textStyle="bold" />
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                style="@style/nightHomePageButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_2"
+                app:cardCornerRadius="@dimen/dp_6"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/connectWithUS"
+                        style="@style/nightHomePageButtons"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_4"
+                        android:layout_marginTop="@dimen/dp_3"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:text="@string/connect_with_us"
+                        android:textSize="@dimen/dp_6"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/connectWithUs2"
+                        style="@style/nightHomePageButtons"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_4"
+                        android:layout_marginTop="@dimen/dp_3"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:text="@string/have_questions_or_need_assistance_reach_out_to_us"
+                        android:textSize="@dimen/dp_6"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_3"
+                        android:layout_marginBottom="@dimen/dp_2"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:id="@+id/InstaImageView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dp_20"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="@string/insta"
+                            app:srcCompat="@mipmap/insta" />
+
+                        <ImageButton
+                            android:id="@+id/TelegramImageView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dp_20"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="@string/telegramText"
+                            app:srcCompat="@mipmap/telegram" />
+
+                        <ImageButton
+                            android:id="@+id/YTImageView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dp_20"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="@string/youtube"
+                            app:srcCompat="@mipmap/yt" />
+
+                        <ImageButton
+                            android:id="@+id/ShareNow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dp_20"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="@string/sharenow"
+                            app:srcCompat="@mipmap/sharenew" />
+
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/button9_connect_us"
+                        android:layout_width="@dimen/dp_90"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dp_2"
+                        android:layout_marginBottom="0dp"
+                        android:backgroundTint="#DB89BD"
+                        android:text="@string/connect"
+                        android:visibility="visible"
+                        app:rippleColor="#E9B3B3" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                style="@style/nightHomePageButtons"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_150"
                 android:layout_margin="@dimen/dp_2"
                 app:cardCornerRadius="@dimen/dp_6"
                 app:cardElevation="5dp">
@@ -502,13 +751,13 @@
 
                         <ImageView
                             android:id="@+id/VideoGifIconImageView"
-                            android:layout_width="@dimen/dp_25"
+                            android:layout_width="@dimen/dp_15"
                             android:layout_height="match_parent"
                             android:layout_marginStart="@dimen/dp_2"
                             android:layout_marginEnd="0dp"
                             android:layout_weight="1"
                             android:contentDescription="TODO"
-                            tools:srcCompat="@drawable/video"  />
+                            tools:srcCompat="@drawable/video" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -537,8 +786,8 @@
 
                         <ImageButton
                             android:id="@+id/button7_Videos"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
+                            android:layout_width="@dimen/dp_8"
+                            android:layout_height="@dimen/dp_15"
                             android:layout_weight="1"
                             android:background="@android:color/transparent"
                             app:srcCompat="@mipmap/rightarrow" />
@@ -547,8 +796,9 @@
 
                     <HorizontalScrollView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:layout_weight="1"
                         android:scrollbars="none">
 
                         <LinearLayout
@@ -638,104 +888,99 @@
                         </LinearLayout>
                     </HorizontalScrollView>
 
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                style="@style/nightHomePageButtons"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_70"
-                android:layout_margin="@dimen/dp_2"
-                app:cardCornerRadius="@dimen/dp_6"
-                app:cardElevation="5dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/connectWithUS"
-                        style="@style/nightHomePageButtons"
+                    <HorizontalScrollView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/dp_4"
-                        android:layout_marginTop="@dimen/dp_3"
-                        android:layout_marginEnd="0dp"
-                        android:layout_marginBottom="0dp"
-                        android:text="@string/connect_with_us"
-                        android:textSize="@dimen/dp_6"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/connectWithUs2"
-                        style="@style/nightHomePageButtons"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/dp_4"
-                        android:layout_marginTop="@dimen/dp_3"
-                        android:layout_marginEnd="0dp"
-                        android:layout_marginBottom="0dp"
-                        android:text="@string/have_questions_or_need_assistance_reach_out_to_us"
-                        android:textSize="@dimen/dp_6"
-                        android:textStyle="bold" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dp_3"
-                        android:layout_marginBottom="0dp"
-                        android:orientation="horizontal">
-
-                        <ImageButton
-                            android:id="@+id/InstaImageView"
-                            android:layout_width="wrap_content"
-                            android:layout_height="@dimen/dp_20"
-                            android:layout_weight="1"
-                            android:background="@android:color/transparent"
-                            android:contentDescription="@string/insta"
-                            app:srcCompat="@mipmap/insta" />
-
-                        <ImageButton
-                            android:id="@+id/TelegramImageView"
-                            android:layout_width="wrap_content"
-                            android:layout_height="@dimen/dp_20"
-                            android:layout_weight="1"
-                            android:background="@android:color/transparent"
-                            android:contentDescription="@string/telegramText"
-                            app:srcCompat="@mipmap/telegram" />
-
-                        <ImageButton
-                            android:id="@+id/YTImageView"
-                            android:layout_width="wrap_content"
-                            android:layout_height="@dimen/dp_20"
-                            android:layout_weight="1"
-                            android:background="@android:color/transparent"
-                            android:contentDescription="@string/youtube"
-                            app:srcCompat="@mipmap/yt" />
-
-                        <ImageButton
-                            android:id="@+id/ShareNow"
-                            android:layout_width="wrap_content"
-                            android:layout_height="@dimen/dp_20"
-                            android:layout_weight="1"
-                            android:background="@android:color/transparent"
-                            android:contentDescription="@string/sharenow"
-                            app:srcCompat="@mipmap/sharenew" />
-
-
-                    </LinearLayout>
-
-                    <Button
-                        android:id="@+id/button9_connect_us"
-                        android:layout_width="@dimen/dp_90"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="@dimen/dp_2"
-                        android:layout_marginBottom="0dp"
-                        android:backgroundTint="#DB89BD"
-                        android:text="@string/connect"
-                        app:rippleColor="#E9B3B3" />
+                        android:layout_weight="1"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/dp_2"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/YTVideosCV6"
+                                style="@style/nightHomePageButtons"
+                                android:layout_width="@dimen/dp_60"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/dp_4"
+                                android:layout_weight="1"
+                                app:cardCornerRadius="@dimen/dp_6">
+
+                                <ImageView
+                                    android:id="@+id/YTVideo6ImageView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/YTVideosCV7"
+                                style="@style/nightHomePageButtons"
+                                android:layout_width="@dimen/dp_60"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/dp_4"
+                                android:layout_weight="1"
+                                app:cardCornerRadius="@dimen/dp_6">
+
+                                <ImageView
+                                    android:id="@+id/YTVideo7ImageView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/YTVideosCV8"
+                                style="@style/nightHomePageButtons"
+                                android:layout_width="@dimen/dp_60"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/dp_4"
+                                android:layout_weight="1"
+                                app:cardCornerRadius="@dimen/dp_6">
+
+                                <ImageView
+                                    android:id="@+id/YTVideo8ImageView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+                            </androidx.cardview.widget.CardView>
+
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/YTVideosCV9"
+                                style="@style/nightHomePageButtons"
+                                android:layout_width="@dimen/dp_60"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/dp_4"
+                                android:layout_weight="1"
+                                app:cardCornerRadius="@dimen/dp_6">
+
+                                <ImageView
+                                    android:id="@+id/YTVideo9ImageView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+                            </androidx.cardview.widget.CardView>
+
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/YTVideosCV10"
+                                style="@style/nightHomePageButtons"
+                                android:layout_width="@dimen/dp_60"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/dp_4"
+                                android:layout_weight="1"
+                                app:cardCornerRadius="@dimen/dp_6">
+
+                                <ImageView
+                                    android:id="@+id/YTVideo10ImageView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+                            </androidx.cardview.widget.CardView>
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

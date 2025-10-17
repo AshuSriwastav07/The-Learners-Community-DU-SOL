@@ -97,14 +97,39 @@ public class LinkPage_MainActivity extends AppCompatActivity {
         CardView YTVideo3CV=findViewById(R.id.YTVideosCV3);
         CardView YTVideo4CV=findViewById(R.id.YTVideosCV4);
         CardView YTVideo5CV=findViewById(R.id.YTVideosCV5);
+        CardView YTVideo6CV=findViewById(R.id.YTVideosCV6);
+        CardView YTVideo7CV=findViewById(R.id.YTVideosCV7);
+        CardView YTVideo8CV=findViewById(R.id.YTVideosCV8);
+        CardView YTVideo9CV=findViewById(R.id.YTVideosCV9);
+        CardView YTVideo10CV=findViewById(R.id.YTVideosCV10);
 
         ImageView YTVideo1IV=findViewById(R.id.YTVideo1ImageView);
         ImageView YTVideo2IV=findViewById(R.id.YTVideo2ImageView);
         ImageView YTVideo3IV=findViewById(R.id.YTVideo3ImageView);
         ImageView YTVideo4IV=findViewById(R.id.YTVideo4ImageView);
         ImageView YTVideo5IV=findViewById(R.id.YTVideo5ImageView);
+        ImageView YTVideo6IV=findViewById(R.id.YTVideo6ImageView);
+        ImageView YTVideo7IV=findViewById(R.id.YTVideo7ImageView);
+        ImageView YTVideo8IV=findViewById(R.id.YTVideo8ImageView);
+        ImageView YTVideo9IV=findViewById(R.id.YTVideo9ImageView);
+        ImageView YTVideo10IV=findViewById(R.id.YTVideo10ImageView);
 
         ImageView videoIcon=findViewById(R.id.VideoGifIconImageView);
+
+
+        //Upcoming Exams
+        CardView semester12=findViewById(R.id.semester12);
+        CardView semester34=findViewById(R.id.semester34);
+        CardView semester56=findViewById(R.id.semester56);
+        CardView semester78=findViewById(R.id.semester78);
+
+        TextView semester12TV=findViewById(R.id.semester12TV);
+        TextView semester34TV=findViewById(R.id.semester34TV);
+        TextView semester56TV=findViewById(R.id.semester56TV);
+        TextView semester78TV=findViewById(R.id.semester78TV);
+
+        ImageView notificationIcon= findViewById(R.id.updateIcon);
+
 
 
 //        set Video Icon as GIf
@@ -115,8 +140,13 @@ public class LinkPage_MainActivity extends AppCompatActivity {
                 .placeholder(R.drawable.video)
                 .into(videoIcon);
 
-
-
+        //Set Notification Icon
+        Glide.with(this)
+                .asGif()
+                .load(R.drawable.anounc)
+                .error(R.drawable.anounc)
+                .placeholder(R.drawable.anounc)
+                .into(notificationIcon);
 
         functionManager.managerNewSignLogo(this, this);
 
@@ -151,13 +181,15 @@ public class LinkPage_MainActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(), studentsBoard.class));
         });
 
+        //upcoming exams
+        functionManager.upComingExams(this,semester12,semester34,semester56,semester78,semester12TV,semester34TV,semester56TV,semester78TV);
 
         //Feature Videos Function Call
 
-        new Thread(() -> fetchFeatureVideosData(YTVideo1CV,YTVideo2CV,YTVideo3CV,YTVideo4CV,YTVideo5CV,YTVideo1IV,YTVideo2IV,YTVideo3IV,YTVideo4IV,YTVideo5IV)).start();
+        new Thread(() -> fetchFeatureVideosData(YTVideo1CV,YTVideo2CV,YTVideo3CV,YTVideo4CV,YTVideo5CV,YTVideo6CV,YTVideo7CV,YTVideo8CV,YTVideo9CV,YTVideo10CV,YTVideo1IV,YTVideo2IV,YTVideo3IV,YTVideo4IV,YTVideo5IV,YTVideo6IV,YTVideo7IV,YTVideo8IV,YTVideo9IV,YTVideo10IV)).start();
 
         // Text Marquee (unchanged)
-        TextView textView = findViewById(R.id.LinkPageMarquee);
+        TextView textView = findViewById(R.id.linkPageMarquee);
         new Thread(()-> marqueeTextViewBanner(textView)).start();
 
 
@@ -413,8 +445,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
         });
     }
 
-    private void fetchFeatureVideosData(CardView cardView1, CardView cardView2, CardView cardView3, CardView cardView4, CardView cardView5,
-                                        ImageView imageView1, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5) {
+    private void fetchFeatureVideosData(CardView cardView1, CardView cardView2, CardView cardView3, CardView cardView4, CardView cardView5,CardView cardView6, CardView cardView7, CardView cardView8, CardView cardView9, CardView cardView10,ImageView imageView1, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5,ImageView imageView6, ImageView imageView7, ImageView imageView8, ImageView imageView9, ImageView imageView10) {
 
         DatabaseReference YTFeatureVideosData = FirebaseDatabase.getInstance().getReference("YTFeature");
 
@@ -450,6 +481,21 @@ public class LinkPage_MainActivity extends AppCompatActivity {
                                 break;
                             case 4:
                                 loadFeature(imageView5, cardView5, imageUrl, videoUrl);
+                                break;
+                            case 5:
+                                loadFeature(imageView6, cardView6, imageUrl, videoUrl);
+                                break;
+                            case 6:
+                                loadFeature(imageView7, cardView7, imageUrl, videoUrl);
+                                break;
+                            case 7:
+                                loadFeature(imageView8, cardView8, imageUrl, videoUrl);
+                                break;
+                            case 8:
+                                loadFeature(imageView9, cardView9, imageUrl, videoUrl);
+                                break;
+                            case 9:
+                                loadFeature(imageView10, cardView10, imageUrl, videoUrl);
                                 break;
                         }
 
