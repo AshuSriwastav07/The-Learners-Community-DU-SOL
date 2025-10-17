@@ -105,6 +105,8 @@
     <string name="semester_6">Semester 6</string>
     <string name="semester_2">Semester 2</string>
     <string name="semester_3">Semester 3</string>
+    <string name="semester_7">Semester 7</string>
+    <string name="semester_8">Semester 8</string>
     <string name="cbcs_ba_program">CBCS BA Program</string>
     <string name="nep_ba_program">NEP BA Program</string>
     <string name="cbcs_ba_EngHons">CBCS BA English Hons</string>
@@ -215,6 +217,7 @@
     <string name="books">BOOK MATERIALS</string>
     <string name="materials">MATERIALS</string>
     <string name="only_syllabus">SYLLABUS</string>
+    <string name="upcomingExams">Upcoming Exams Notes</string>
     <string name="connect_with_us">Connect with Us</string>
     <string name="college_resources_du_sol">College Resources</string>
     <string name="welcome_to_resources">Welcome to Resources</string>
@@ -226,7 +229,7 @@
     <string name="resources">Resources</string>
     <string name="media">Media</string>
     <string name="video_lectures">Video Lectures</string>
-    <string name="watch_educational_videos_for_learning">Watch educational videos for learning</string>
+    <string name="watch_educational_videos_for_learning">Watch DU SOL Notes Videos</string>
     <string name="have_questions_or_need_assistance_reach_out_to_us">Have questions or need assistance? Reach out to us!</string>
     <string name="qplogo">QPLogo</string>
     <string name="qpimage">QPImage</string>
@@ -239,5 +242,7 @@
     <string name="recent_updates">Recent Updates</string>
     <string name="sharenow">shareNow</string>
     <string name="homePageText">Welcome to College Resources\nYour One-Stop Platform for All DU SOL Materials.\nGet Notes, Study Materials, Exam Updates,\nDate Sheets, Admissions Info, and More — All in One Place.\nStudy Smart. Stay Updated. Grow with Us.</string>
+    <string name="notification_show_123">Notification Show 123</string>
+    <string name="updateicon">UpdateIcon</string>
 
 </resources>

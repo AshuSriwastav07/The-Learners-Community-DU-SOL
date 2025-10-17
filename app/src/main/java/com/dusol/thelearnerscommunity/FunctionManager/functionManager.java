@@ -1,5 +1,6 @@
 package com.dusol.thelearnerscommunity.FunctionManager;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -7,10 +8,20 @@ import android.net.Uri;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 
 import com.bumptech.glide.Glide;
+import com.dusol.thelearnerscommunity.DU_SOL_NOTES__MainActivity;
+import com.dusol.thelearnerscommunity.NEP_Files.NEP_Sem1_MainActivity;
+import com.dusol.thelearnerscommunity.NEP_Files.NEP_Sem2_MainActivity;
+import com.dusol.thelearnerscommunity.NEP_Files.NEP_Sem3_MainActivity;
+import com.dusol.thelearnerscommunity.NEP_Files.NEP_Sem4_MainActivity;
+import com.dusol.thelearnerscommunity.NEP_Files.NEP_Sem5_MainActivity;
+import com.dusol.thelearnerscommunity.NEP_Files.NEP_Sem6_MainActivity;
 import com.dusol.thelearnerscommunity.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -183,5 +194,118 @@ public class functionManager {
             activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(TelegramChannelUrl)));
         }
     }
+
+
+    public static void upComingExams(Context context,
+                                     CardView semester12, CardView semester34,
+                                     CardView semester56, CardView semester78,
+                                     TextView semester12TV, TextView semester34TV,
+                                     TextView semester56TV, TextView semester78TV) {
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("UpcomingExams");
+
+        // Firebase real-time listener
+        myRef.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                // Clear previous text
+                semester12TV.setText("");
+                semester34TV.setText("");
+                semester56TV.setText("");
+                semester78TV.setText("");
+
+                // Loop through each child node
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    String value = snapshot.getValue(String.class);
+
+                    if (value == null) continue;
+
+                    switch (value) {
+                        case "1":
+                            semester12TV.setText("Semester 1");
+                            semester12.setOnClickListener(view -> {
+                                Intent intent = new Intent(context, NEP_Sem1_MainActivity.class);
+                                intent.putExtra("semester", "1");
+                                context.startActivity(intent);
+                            });
+                            break;
+                        case "2":
+                            semester12TV.setText("Semester 2");
+                            semester12.setOnClickListener(view -> {
+                                Intent intent = new Intent(context, NEP_Sem2_MainActivity.class);
+                                intent.putExtra("semester", "2");
+                                context.startActivity(intent);
+                            });
+                            break;
+
+
+                        case "3":
+                            semester34TV.setText("Semester 3");
+                            semester34.setOnClickListener(view -> {
+                                Intent intent = new Intent(context, NEP_Sem3_MainActivity.class);
+                                intent.putExtra("semester", "3");
+                                context.startActivity(intent);
+                            });
+                            break;
+
+                        case "4":
+                            semester34TV.setText("Semester 4");
+                            semester34.setOnClickListener(view -> {
+                                Intent intent = new Intent(context, NEP_Sem4_MainActivity.class);
+                                intent.putExtra("semester", "4");
+                                context.startActivity(intent);
+                            });
+                            break;
+
+                        case "5":
+                            semester56TV.setText("Semester 5");
+                            semester56.setOnClickListener(view -> {
+                                Intent intent = new Intent(context, NEP_Sem5_MainActivity.class);
+                                intent.putExtra("semester", "5");
+                                context.startActivity(intent);
+                            });
+                            break;
+
+                        case "6":
+                            semester56TV.setText("Semester 6");
+                            semester56.setOnClickListener(view -> {
+                                Intent intent = new Intent(context, NEP_Sem6_MainActivity.class);
+                                intent.putExtra("semester", "6");
+                                context.startActivity(intent);
+                            });
+                            break;
+
+
+                        case "7":
+                            semester78TV.setText("Semester 7");
+                            semester78.setOnClickListener(view -> {
+                                Intent intent = new Intent(context, DU_SOL_NOTES__MainActivity.class);
+                                intent.putExtra("semester", "7");
+                                context.startActivity(intent);
+                            });
+                            break;
+
+                        case "8":
+                            semester78TV.setText("Semester 8");
+                            semester78.setOnClickListener(view -> {
+                                Intent intent = new Intent(context, DU_SOL_NOTES__MainActivity.class);
+                                intent.putExtra("semester", "8");
+                                context.startActivity(intent);
+                            });
+                            break;
+
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(context, "Failed to load exams: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 
 }
