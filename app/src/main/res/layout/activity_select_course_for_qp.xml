@@ -52,6 +52,7 @@
             android:textSize="@dimen/dp_8" />
 
         <androidx.cardview.widget.CardView
+            style="@style/night_CardView"
             android:id="@+id/baQuestionPaperCourse"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_30"
@@ -121,6 +122,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            style="@style/night_CardView"
             android:id="@+id/baHonsQuestionPaperCourse"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_30"
@@ -189,6 +191,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            style="@style/night_CardView"
             android:id="@+id/bcomQuestionPaperCourse"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_30"
@@ -257,6 +260,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            style="@style/night_CardView"
             android:id="@+id/bcomHonsQuestionPaperCourse"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_30"
