@@ -20,7 +20,6 @@ import android.os.Looper;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -84,7 +83,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
         CardView sol_portal = findViewById(R.id.button5_Portal3);
         CardView shop = findViewById(R.id.button6_notes_store);
         ImageButton watch_videos = findViewById(R.id.button7_Videos);
-        Button Connect_with_us = findViewById(R.id.button9_connect_us);
+        ImageButton Connect_with_us = findViewById(R.id.button9_connect_us);
         CardView sol_materials = findViewById(R.id.button10_SOL_Study_Material);
         ImageButton askDoubt = findViewById(R.id.askHere);
 
@@ -118,6 +117,8 @@ public class LinkPage_MainActivity extends AppCompatActivity {
 
 
         //Upcoming Exams
+        CardView UpComingExamsMainCard=findViewById(R.id.UpcomingExamsNotesMainCard);
+
         CardView semester12=findViewById(R.id.semester12);
         CardView semester34=findViewById(R.id.semester34);
         CardView semester56=findViewById(R.id.semester56);
@@ -129,24 +130,47 @@ public class LinkPage_MainActivity extends AppCompatActivity {
         TextView semester78TV=findViewById(R.id.semester78TV);
 
         ImageView notificationIcon= findViewById(R.id.updateIcon);
+        ImageButton reviewAnimationButton= findViewById(R.id.reviewUSAnimation);
+        ImageView saleAnimation = findViewById(R.id.saleanimation);
 
+        //Notes Images
+        ImageView HomeNotesIV1=findViewById(R.id.HomeNotes1);
+        ImageView HomeNotesIV2=findViewById(R.id.HomeNotes2);
+        ImageView HomeNotesIV3=findViewById(R.id.HomeNotes3);
+        ImageView HomeNotesIV4=findViewById(R.id.HomeNotes4);
+        ImageView HomeNotesIV5=findViewById(R.id.HomeNotes5);
+        ImageView HomeNotesIV6=findViewById(R.id.HomeNotes6);
+        ImageView HomeNotesIV7=findViewById(R.id.HomeNotes7);
+        ImageView HomeNotesIV8=findViewById(R.id.HomeNotes8);
+        ImageView HomeNotesIV9=findViewById(R.id.HomeNotes9);
+        ImageView HomeNotesIV10=findViewById(R.id.HomeNotes10);
 
 
 //        set Video Icon as GIf
-        Glide.with(this)
-                .asGif()
-                .load(R.drawable.video)
-                .error(R.drawable.video)
-                .placeholder(R.drawable.video)
-                .into(videoIcon);
+        setGif(videoIcon, R.drawable.video);
+        setGif(notificationIcon, R.drawable.anounc);
+        setGif(reviewAnimationButton, R.drawable.reviewani);
+        setGif(findViewById(R.id.InstaImageView),R.drawable.instaanimate);
+        setGif(findViewById(R.id.TelegramImageView),R.drawable.animatetelegram);
+        setGif(findViewById(R.id.YTImageView),R.drawable.animateyt);
+        setGif(findViewById(R.id.ShareNow),R.drawable.animateshare);
+        setGif(findViewById(R.id.saleanimation),R.drawable.sale);
+        setGif(findViewById(R.id.button9_connect_us),R.drawable.connect);
 
-        //Set Notification Icon
-        Glide.with(this)
-                .asGif()
-                .load(R.drawable.anounc)
-                .error(R.drawable.anounc)
-                .placeholder(R.drawable.anounc)
-                .into(notificationIcon);
+        setGif(findViewById(R.id.HomeNotes1),R.drawable.loading);
+        setGif(findViewById(R.id.HomeNotes2),R.drawable.loading);
+        setGif(findViewById(R.id.HomeNotes3),R.drawable.loading);
+        setGif(findViewById(R.id.HomeNotes4),R.drawable.loading);
+        setGif(findViewById(R.id.HomeNotes5),R.drawable.loading);
+        setGif(findViewById(R.id.HomeNotes6),R.drawable.loading);
+        setGif(findViewById(R.id.HomeNotes7),R.drawable.loading);
+        setGif(findViewById(R.id.HomeNotes8),R.drawable.loading);
+        setGif(findViewById(R.id.HomeNotes9),R.drawable.loading);
+        setGif(findViewById(R.id.HomeNotes10),R.drawable.loading);
+
+
+//        show sale is on or Not
+        functionManager.isSaleOn(saleAnimation);
 
         functionManager.managerNewSignLogo(this, this);
 
@@ -182,11 +206,17 @@ public class LinkPage_MainActivity extends AppCompatActivity {
         });
 
         //upcoming exams
-        functionManager.upComingExams(this,semester12,semester34,semester56,semester78,semester12TV,semester34TV,semester56TV,semester78TV);
+        functionManager.upComingExams(this, UpComingExamsMainCard,semester12,semester34,semester56,semester78,semester12TV,semester34TV,semester56TV,semester78TV);
 
         //Feature Videos Function Call
 
         new Thread(() -> fetchFeatureVideosData(YTVideo1CV,YTVideo2CV,YTVideo3CV,YTVideo4CV,YTVideo5CV,YTVideo6CV,YTVideo7CV,YTVideo8CV,YTVideo9CV,YTVideo10CV,YTVideo1IV,YTVideo2IV,YTVideo3IV,YTVideo4IV,YTVideo5IV,YTVideo6IV,YTVideo7IV,YTVideo8IV,YTVideo9IV,YTVideo10IV)).start();
+
+
+        //feature Notes Call
+
+        new Thread(()-> FeaturedNotes(HomeNotesIV1,HomeNotesIV2,HomeNotesIV3,HomeNotesIV4,HomeNotesIV5,HomeNotesIV6,HomeNotesIV7,HomeNotesIV8,HomeNotesIV9,HomeNotesIV10)).start();
+
 
         // Text Marquee (unchanged)
         TextView textView = findViewById(R.id.linkPageMarquee);
@@ -237,17 +267,17 @@ public class LinkPage_MainActivity extends AppCompatActivity {
         });
 
         Connect_with_us.setOnClickListener(view -> {
-            if ("N/A".equals(buttonName[0])) {
                 // buttonName[0] is "N/A" or null-safe
                 Bundle bundle = new Bundle();
                 bundle.putString("Join_US", "JoinUS_Opens");
                 FirebaseAnalytics.getInstance(this).logEvent("Join_US", bundle);
                 startActivity(new Intent(getApplicationContext(), connect_with_us_MainActivity.class));
-            } else {
-                // buttonName[0] is not "N/A"
-                reviewUsPageOpen();
-            }
         });
+
+        reviewAnimationButton.setOnClickListener(view -> {
+            reviewUsPageOpen();
+        });
+
 
 
         askDoubt.setOnClickListener(view -> functionManager.askDoubtHere(LinkPage_MainActivity.this));
@@ -283,7 +313,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
 //                    Log.d("FirebaseRegToken", token);
                 });
 
-        new Thread(() -> fetchConnectUsButtonData(buttonName, Connect_with_us)).start(); //New Thread for better performance
+        new Thread(() -> fetchConnectUsButtonData(buttonName, Connect_with_us,reviewAnimationButton)).start(); //New Thread for better performance
 
         findViewById(R.id.YTImageView).setOnClickListener(v ->
                 openExternalApp("https://www.youtube.com/@TheLearnersCommunityDUSOL/", "com.google.android.youtube"));
@@ -418,8 +448,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
         }, 500);
     }
 
-
-    private void fetchConnectUsButtonData(String[] buttonName, Button Connect_with_us) {
+    private void fetchConnectUsButtonData(String[] buttonName, ImageButton Connect_with_us, ImageButton reviewAnimationButton) {
 
         DatabaseReference reviewData = FirebaseDatabase.getInstance().getReference("ReviewUSNow");
         reviewData.addValueEventListener(new ValueEventListener() {
@@ -429,9 +458,12 @@ public class LinkPage_MainActivity extends AppCompatActivity {
                 assert buttonName[0] != null;
                 runOnUiThread(() -> {
                     if (!buttonName[0].equals("N/A")) {
-                        Connect_with_us.setText(buttonName[0]);
+                        Connect_with_us.setVisibility(View.GONE);
+                        reviewAnimationButton.setVisibility(View.VISIBLE);
+
                     } else {
-                        Connect_with_us.setText(R.string.connect);
+                        Connect_with_us.setVisibility(View.VISIBLE);
+                        reviewAnimationButton.setVisibility(View.GONE);
                     }
                 });
             }
@@ -464,7 +496,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
                         String imageUrl = value.get(0);  // Thumbnail URL
                         String videoUrl = value.get(1);  // YouTube video link
 
-                        Log.d("YTVideo", imageUrl + " : " + videoUrl);
+//                        Log.d("YTVideo", imageUrl + " : " + videoUrl);
 
                         switch (index) {
                             case 0:
@@ -515,6 +547,84 @@ public class LinkPage_MainActivity extends AppCompatActivity {
         Glide.with(imageView.getContext()).load(imageUrl).into(imageView);
         cardView.setOnClickListener(v -> {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(videoUrl));
+            imageView.getContext().startActivity(intent);
+        });
+    }
+
+
+    //Show Notes on Home Page
+
+    public static void FeaturedNotes(ImageView NotesImage1, ImageView NotesImage2, ImageView NotesImage3, ImageView NotesImage4, ImageView NotesImage5, ImageView NotesImage6,ImageView NotesImage7,ImageView NotesImage8,ImageView NotesImage9,ImageView NotesImage10) {
+
+        DatabaseReference FeatureNotesData = FirebaseDatabase.getInstance().getReference("PaidNewAndMostSellNotes");
+
+        FeatureNotesData.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                int index = 0;
+
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    List<String> value = new ArrayList<>();
+                    for (DataSnapshot child : dataSnapshot.getChildren()) {
+                        value.add(String.valueOf(child.getValue()));
+                    }
+
+                    if (value.size() >= 2) {
+                        String NotesImageUrl = value.get(0);  // Notes Image Link
+                        String NotesBuyLink = value.get(1);  // Notes link
+
+//                        Log.d("NotesProductLink", NotesImageUrl + " : " + NotesBuyLink);
+
+                        switch (index) {
+                            case 0:
+                                loadFeatureNotes(NotesImage1, NotesImageUrl, NotesBuyLink);
+                                break;
+                            case 1:
+                                loadFeatureNotes(NotesImage2,  NotesImageUrl, NotesBuyLink);
+                                break;
+                            case 2:
+                                loadFeatureNotes(NotesImage3,  NotesImageUrl, NotesBuyLink);
+                                break;
+                            case 3:
+                                loadFeatureNotes(NotesImage4,  NotesImageUrl, NotesBuyLink);
+                                break;
+                            case 4:
+                                loadFeatureNotes(NotesImage5,  NotesImageUrl, NotesBuyLink);
+                                break;
+                            case 5:
+                                loadFeatureNotes(NotesImage6,  NotesImageUrl, NotesBuyLink);
+                                break;
+                            case 6:
+                                loadFeatureNotes(NotesImage7,  NotesImageUrl, NotesBuyLink);
+                                break;
+                            case 7:
+                                loadFeatureNotes(NotesImage8,  NotesImageUrl, NotesBuyLink);
+                                break;
+                            case 8:
+                                loadFeatureNotes(NotesImage9,  NotesImageUrl, NotesBuyLink);
+                                break;
+                            case 9:
+                                loadFeatureNotes(NotesImage10, NotesImageUrl, NotesBuyLink);
+                                break;
+                        }
+
+                        index++;
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    private static void loadFeatureNotes(ImageView imageView, String imageUrl, String buyUrl) {
+        Glide.with(imageView.getContext()).load(imageUrl).error(R.drawable.loading).into(imageView);
+        imageView.setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(buyUrl));
             imageView.getContext().startActivity(intent);
         });
     }
@@ -648,5 +758,14 @@ public class LinkPage_MainActivity extends AppCompatActivity {
         startActivity(Intent.createChooser(intent, "Share via"));
     }
 
+    //Animate Buttons
+    private void setGif(ImageView imageView, int gifResId) {
+        Glide.with(this)
+                .asGif()
+                .load(gifResId)
+                .error(gifResId)
+                .placeholder(gifResId)
+                .into(imageView);
+    }
 
 }

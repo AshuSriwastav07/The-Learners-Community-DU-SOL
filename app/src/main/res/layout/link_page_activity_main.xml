@@ -25,6 +25,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:background="@android:color/transparent"
+        android:contentDescription="ImageButton"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -192,9 +193,11 @@
 
                             <ImageView
                                 android:id="@+id/newNotesUpload"
-                                android:layout_width="@dimen/dp_10"
-                                android:layout_height="@dimen/dp_10"
+                                android:layout_width="@dimen/dp_14"
+                                android:layout_height="@dimen/dp_14"
                                 android:layout_gravity="end|top"
+                                android:background="@android:color/transparent"
+                                android:contentDescription="@string/gificon"
                                 android:visibility="gone"
                                 tools:srcCompat="@drawable/inew" />
 
@@ -212,10 +215,11 @@
 
                             <ImageView
                                 android:id="@+id/newStudyMaterialUpload"
-                                android:layout_width="@dimen/dp_10"
-                                android:layout_height="@dimen/dp_10"
+                                android:layout_width="@dimen/dp_14"
+                                android:layout_height="@dimen/dp_14"
                                 android:layout_gravity="end|top"
                                 android:visibility="gone"
+                                android:contentDescription="@string/gificon"
                                 tools:srcCompat="@drawable/inew" />
 
 
@@ -245,9 +249,10 @@
 
                             <ImageView
                                 android:id="@+id/newCollageUpdate"
-                                android:layout_width="@dimen/dp_10"
-                                android:layout_height="@dimen/dp_10"
+                                android:layout_width="@dimen/dp_14"
+                                android:layout_height="@dimen/dp_14"
                                 android:layout_gravity="end|top"
+                                android:contentDescription="@string/gificon"
                                 android:visibility="gone"
                                 tools:srcCompat="@drawable/inew" />
 
@@ -322,10 +327,11 @@
 
                                 <ImageView
                                     android:id="@+id/newQPUpload"
-                                    android:layout_width="@dimen/dp_10"
-                                    android:layout_height="@dimen/dp_10"
+                                    android:layout_width="@dimen/dp_14"
+                                    android:layout_height="@dimen/dp_14"
                                     android:layout_gravity="end|top"
                                     android:visibility="gone"
+                                    android:contentDescription="@string/gificon"
                                     tools:srcCompat="@drawable/inew" />
 
                                 <LinearLayout
@@ -338,6 +344,7 @@
                                         android:id="@+id/QPimageView"
                                         android:layout_width="@dimen/dp_12"
                                         android:layout_height="@dimen/dp_12"
+                                        android:contentDescription="@string/imageview"
                                         app:srcCompat="@mipmap/qa" />
 
                                     <TextView
@@ -365,10 +372,11 @@
 
                                 <ImageView
                                     android:id="@+id/newSyllabusUpload"
-                                    android:layout_width="@dimen/dp_10"
-                                    android:layout_height="@dimen/dp_10"
+                                    android:layout_width="@dimen/dp_14"
+                                    android:layout_height="@dimen/dp_14"
                                     android:layout_gravity="end|top"
                                     android:visibility="gone"
+                                    android:contentDescription="@string/gificon"
                                     tools:srcCompat="@drawable/inew" />
 
                                 <LinearLayout
@@ -381,7 +389,9 @@
                                         android:id="@+id/SyllabusImageView"
                                         android:layout_width="@dimen/dp_12"
                                         android:layout_height="@dimen/dp_12"
-                                        app:srcCompat="@mipmap/sy" />
+                                        android:contentDescription="ImageView"
+                                        app:srcCompat="@mipmap/sy"
+                                        />
 
                                     <TextView
                                         android:id="@+id/SyllabustextView"
@@ -420,9 +430,10 @@
 
                                 <ImageView
                                     android:id="@+id/newInfoUpload"
-                                    android:layout_width="@dimen/dp_10"
-                                    android:layout_height="@dimen/dp_10"
+                                    android:layout_width="@dimen/dp_14"
+                                    android:layout_height="@dimen/dp_14"
                                     android:layout_gravity="end|top"
+                                    android:contentDescription="@string/gificon"
                                     android:visibility="gone"
                                     tools:srcCompat="@drawable/inew" />
 
@@ -436,7 +447,9 @@
                                         android:id="@+id/PortalImageView"
                                         android:layout_width="@dimen/dp_12"
                                         android:layout_height="@dimen/dp_12"
-                                        app:srcCompat="@mipmap/sp" />
+                                        android:contentDescription="ImageView"
+                                        app:srcCompat="@mipmap/sp"
+                                        />
 
                                     <TextView
                                         android:id="@+id/PortalTextView"
@@ -462,10 +475,18 @@
                                 app:cardCornerRadius="@dimen/dp_4">
 
                                 <ImageView
+                                    android:id="@+id/saleanimation"
+                                    android:layout_width="@dimen/dp_25"
+                                    android:contentDescription="@string/gificon"
+                                    android:layout_height="@dimen/dp_25"
+                                    app:srcCompat="@drawable/sale" />
+
+                                <ImageView
                                     android:id="@+id/newPaidNotesUpload"
-                                    android:layout_width="@dimen/dp_10"
-                                    android:layout_height="@dimen/dp_10"
+                                    android:layout_width="@dimen/dp_14"
+                                    android:layout_height="@dimen/dp_14"
                                     android:layout_gravity="end|top"
+                                    android:contentDescription="@string/gificon"
                                     android:visibility="gone"
                                     tools:srcCompat="@drawable/inew" />
 
@@ -502,6 +523,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/UpcomingExamsNotesMainCard"
                 style="@style/nightHomePageButtons"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -528,8 +550,8 @@
                         android:textStyle="bold" />
 
                     <androidx.cardview.widget.CardView
-                        style="@style/nightHomePageButtons"
                         android:id="@+id/semester12"
+                        style="@style/nightHomePageButtons"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dp_15"
                         android:layout_margin="@dimen/dp_3"
@@ -630,6 +652,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/dp_3"
                     android:orientation="vertical">
 
                     <TextView
@@ -667,56 +690,227 @@
 
                         <ImageButton
                             android:id="@+id/InstaImageView"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="@dimen/dp_20"
                             android:layout_weight="1"
                             android:background="@android:color/transparent"
                             android:contentDescription="@string/insta"
-                            app:srcCompat="@mipmap/insta" />
+                            app:srcCompat="@drawable/instaanimate" />
 
                         <ImageButton
                             android:id="@+id/TelegramImageView"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="@dimen/dp_20"
                             android:layout_weight="1"
                             android:background="@android:color/transparent"
                             android:contentDescription="@string/telegramText"
-                            app:srcCompat="@mipmap/telegram" />
+                            app:srcCompat="@drawable/animatetelegram" />
 
                         <ImageButton
                             android:id="@+id/YTImageView"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="@dimen/dp_20"
                             android:layout_weight="1"
                             android:background="@android:color/transparent"
                             android:contentDescription="@string/youtube"
-                            app:srcCompat="@mipmap/yt" />
+                            app:srcCompat="@drawable/animateyt" />
 
                         <ImageButton
                             android:id="@+id/ShareNow"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="@dimen/dp_20"
                             android:layout_weight="1"
                             android:background="@android:color/transparent"
                             android:contentDescription="@string/sharenow"
-                            app:srcCompat="@mipmap/sharenew" />
+                            app:srcCompat="@drawable/animateshare" />
 
 
                     </LinearLayout>
 
-                    <Button
+                    <ImageButton
                         android:id="@+id/button9_connect_us"
-                        android:layout_width="@dimen/dp_90"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/dp_70"
+                        android:layout_height="@dimen/dp_25"
                         android:layout_gravity="center"
                         android:layout_marginTop="@dimen/dp_2"
                         android:layout_marginBottom="0dp"
-                        android:backgroundTint="#DB89BD"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/connect"
                         android:text="@string/connect"
-                        android:visibility="visible"
+                        android:visibility="gone"
+                        app:rippleColor="#E9B3B3" />
+
+                    <ImageButton
+                        android:id="@+id/reviewUSAnimation"
+                        android:layout_width="@dimen/dp_70"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dp_2"
+                        android:layout_marginBottom="@dimen/dp_2"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/reviewani"
+                        android:visibility="gone"
                         app:rippleColor="#E9B3B3" />
 
                 </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_90"
+                android:layout_margin="@dimen/dp_2"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="@dimen/dp_6"
+                app:cardElevation="5dp">
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="none"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:scrollbars="none">
+
+
+                        <ImageView
+                            android:id="@+id/HomeNotes1"
+                            android:layout_width="@dimen/dp_90"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/dp_2"
+                            android:layout_weight="1"
+                            android:contentDescription="@string/homepagenotesimages"
+                            android:cropToPadding="true"
+                            android:elevation="10dp"
+                            android:scaleType="fitCenter"
+                            android:visibility="visible"
+                            app:srcCompat="@drawable/loading" />
+
+                        <ImageView
+                            android:id="@+id/HomeNotes2"
+                            android:layout_width="@dimen/dp_90"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/dp_2"
+                            android:layout_weight="1"
+                            android:contentDescription="@string/homepagenotesimages"
+                            android:cropToPadding="true"
+                            android:elevation="10dp"
+                            android:scaleType="fitCenter"
+                            android:visibility="visible"
+                            app:srcCompat="@drawable/loading" />
+
+
+                        <ImageView
+                            android:id="@+id/HomeNotes3"
+                            android:layout_width="@dimen/dp_90"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/dp_2"
+                            android:layout_weight="1"
+                            android:contentDescription="@string/homepagenotesimages"
+                            android:cropToPadding="true"
+                            android:elevation="10dp"
+                            android:scaleType="fitCenter"
+                            android:visibility="visible"
+                            app:srcCompat="@drawable/loading" />
+
+
+                        <ImageView
+                            android:id="@+id/HomeNotes4"
+                            android:layout_width="@dimen/dp_90"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/dp_2"
+                            android:layout_weight="1"
+                            android:contentDescription="@string/homepagenotesimages"
+                            android:cropToPadding="true"
+                            android:elevation="10dp"
+                            android:scaleType="fitCenter"
+                            android:visibility="visible"
+                            app:srcCompat="@drawable/loading" />
+
+
+                        <ImageView
+                            android:id="@+id/HomeNotes5"
+                            android:layout_width="@dimen/dp_90"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/dp_2"
+                            android:layout_weight="1"
+                            android:contentDescription="@string/homepagenotesimages"
+                            android:cropToPadding="true"
+                            android:elevation="10dp"
+                            android:scaleType="fitCenter"
+                            android:visibility="visible"
+                            app:srcCompat="@drawable/loading" />
+
+                        <ImageView
+                            android:id="@+id/HomeNotes6"
+                            android:layout_width="@dimen/dp_90"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/dp_2"
+                            android:layout_weight="1"
+                            android:contentDescription="@string/homepagenotesimages"
+                            android:cropToPadding="true"
+                            android:elevation="10dp"
+                            android:scaleType="fitCenter"
+                            android:visibility="visible"
+                            app:srcCompat="@drawable/loading" />
+
+                        <ImageView
+                            android:id="@+id/HomeNotes7"
+                            android:layout_width="@dimen/dp_90"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/dp_2"
+                            android:layout_weight="1"
+                            android:contentDescription="@string/homepagenotesimages"
+                            android:cropToPadding="true"
+                            android:elevation="10dp"
+                            android:scaleType="fitCenter"
+                            android:visibility="visible"
+                            app:srcCompat="@drawable/loading" />
+
+                        <ImageView
+                            android:id="@+id/HomeNotes8"
+                            android:layout_width="@dimen/dp_90"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/dp_2"
+                            android:layout_weight="1"
+                            android:contentDescription="@string/homepagenotesimages"
+                            android:cropToPadding="true"
+                            android:elevation="10dp"
+                            android:scaleType="fitCenter"
+                            android:visibility="visible"
+                            app:srcCompat="@drawable/loading" />
+
+                        <ImageView
+                            android:id="@+id/HomeNotes9"
+                            android:layout_width="@dimen/dp_90"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/dp_2"
+                            android:layout_weight="1"
+                            android:contentDescription="@string/homepagenotesimages"
+                            android:cropToPadding="true"
+                            android:elevation="10dp"
+                            android:scaleType="fitCenter"
+                            android:visibility="visible"
+                            app:srcCompat="@drawable/loading" />
+
+                        <ImageView
+                            android:id="@+id/HomeNotes10"
+                            android:layout_width="@dimen/dp_90"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/dp_2"
+                            android:layout_weight="1"
+                            android:contentDescription="@string/homepagenotesimages"
+                            android:cropToPadding="true"
+                            android:elevation="10dp"
+                            android:scaleType="fitCenter"
+                            android:visibility="visible"
+                            app:srcCompat="@drawable/loading" />
+                    </LinearLayout>
+
+                </HorizontalScrollView>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -756,7 +950,7 @@
                             android:layout_marginStart="@dimen/dp_2"
                             android:layout_marginEnd="0dp"
                             android:layout_weight="1"
-                            android:contentDescription="TODO"
+                            android:contentDescription="@string/gificon"
                             tools:srcCompat="@drawable/video" />
 
                         <LinearLayout
