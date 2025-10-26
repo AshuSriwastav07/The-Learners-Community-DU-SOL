@@ -244,5 +244,8 @@
     <string name="homePageText">Welcome to College Resources\nYour One-Stop Platform for All DU SOL Materials.\nGet Notes, Study Materials, Exam Updates,\nDate Sheets, Admissions Info, and More — All in One Place.\nStudy Smart. Stay Updated. Grow with Us.</string>
     <string name="notification_show_123">Notification Show 123</string>
     <string name="updateicon">UpdateIcon</string>
+    <string name="homepagenotesimages">HomePageNotesImages</string>
+    <string name="gificon">GifIcon</string>
+    <string name="imageview">ImageView</string>
 
 </resources>

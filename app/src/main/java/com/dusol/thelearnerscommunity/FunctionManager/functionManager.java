@@ -195,8 +195,8 @@ public class functionManager {
         }
     }
 
-
-    public static void upComingExams(Context context,
+    //Get data show if there is any exam or not
+    public static void upComingExams(Context context,CardView MainCard,
                                      CardView semester12, CardView semester34,
                                      CardView semester56, CardView semester78,
                                      TextView semester12TV, TextView semester34TV,
@@ -204,6 +204,26 @@ public class functionManager {
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("UpcomingExams");
+        DatabaseReference isThereAnyExam=database.getReference("IsThereAnyExam");
+
+        isThereAnyExam.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String value= Objects.requireNonNull(snapshot.getValue()).toString();
+
+                if(value.equals("YES") || value.equals("Yes") || value.equals("yes")){
+                    MainCard.setVisibility(View.VISIBLE);
+                }else{
+                    MainCard.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
 
         // Firebase real-time listener
         myRef.addValueEventListener(new ValueEventListener() {
@@ -306,6 +326,30 @@ public class functionManager {
             }
         });
     }
+
+    public static void isSaleOn(ImageView imageView){
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference isThereAnyExam=database.getReference("isSaleOn");
+
+        isThereAnyExam.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String value= Objects.requireNonNull(snapshot.getValue()).toString();
+
+                if(value.equals("YES") || value.equals("Yes") || value.equals("yes")){
+                    imageView.setVisibility(View.VISIBLE);
+                }else{
+                    imageView.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
 
 
 }
