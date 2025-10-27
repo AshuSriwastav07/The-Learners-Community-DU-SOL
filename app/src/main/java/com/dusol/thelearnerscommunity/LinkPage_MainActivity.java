@@ -205,6 +205,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(), studentsBoard.class));
         });
 
+
         //upcoming exams
         functionManager.upComingExams(this, UpComingExamsMainCard,semester12,semester34,semester56,semester78,semester12TV,semester34TV,semester56TV,semester78TV);
 

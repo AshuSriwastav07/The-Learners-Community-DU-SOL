@@ -101,7 +101,7 @@
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/nunito"
                 android:gravity="center_horizontal"
-                android:text="@string/cbcs_bcom"
+                android:text="@string/nep_bcom"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />

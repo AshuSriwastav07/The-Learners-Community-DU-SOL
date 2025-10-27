@@ -247,5 +247,6 @@
     <string name="homepagenotesimages">HomePageNotesImages</string>
     <string name="gificon">GifIcon</string>
     <string name="imageview">ImageView</string>
+    <string name="check_all_notes">Check All Notes</string>
 
 </resources>
