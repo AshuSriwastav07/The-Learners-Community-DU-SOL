@@ -772,6 +772,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
+                        android:gravity="center"
                         android:orientation="horizontal"
                         android:scrollbars="none">
 
@@ -779,7 +780,7 @@
                         <ImageView
                             android:id="@+id/HomeNotes1"
                             android:layout_width="@dimen/dp_90"
-                            android:layout_height="match_parent"
+                            android:layout_height="@dimen/dp_80"
                             android:layout_margin="@dimen/dp_2"
                             android:layout_weight="1"
                             android:contentDescription="@string/homepagenotesimages"
@@ -792,7 +793,7 @@
                         <ImageView
                             android:id="@+id/HomeNotes2"
                             android:layout_width="@dimen/dp_90"
-                            android:layout_height="match_parent"
+                            android:layout_height="@dimen/dp_80"
                             android:layout_margin="@dimen/dp_2"
                             android:layout_weight="1"
                             android:contentDescription="@string/homepagenotesimages"
@@ -806,7 +807,7 @@
                         <ImageView
                             android:id="@+id/HomeNotes3"
                             android:layout_width="@dimen/dp_90"
-                            android:layout_height="match_parent"
+                            android:layout_height="@dimen/dp_80"
                             android:layout_margin="@dimen/dp_2"
                             android:layout_weight="1"
                             android:contentDescription="@string/homepagenotesimages"
@@ -820,7 +821,7 @@
                         <ImageView
                             android:id="@+id/HomeNotes4"
                             android:layout_width="@dimen/dp_90"
-                            android:layout_height="match_parent"
+                            android:layout_height="@dimen/dp_80"
                             android:layout_margin="@dimen/dp_2"
                             android:layout_weight="1"
                             android:contentDescription="@string/homepagenotesimages"
@@ -834,7 +835,7 @@
                         <ImageView
                             android:id="@+id/HomeNotes5"
                             android:layout_width="@dimen/dp_90"
-                            android:layout_height="match_parent"
+                            android:layout_height="@dimen/dp_80"
                             android:layout_margin="@dimen/dp_2"
                             android:layout_weight="1"
                             android:contentDescription="@string/homepagenotesimages"
@@ -847,7 +848,7 @@
                         <ImageView
                             android:id="@+id/HomeNotes6"
                             android:layout_width="@dimen/dp_90"
-                            android:layout_height="match_parent"
+                            android:layout_height="@dimen/dp_80"
                             android:layout_margin="@dimen/dp_2"
                             android:layout_weight="1"
                             android:contentDescription="@string/homepagenotesimages"
@@ -860,7 +861,7 @@
                         <ImageView
                             android:id="@+id/HomeNotes7"
                             android:layout_width="@dimen/dp_90"
-                            android:layout_height="match_parent"
+                            android:layout_height="@dimen/dp_80"
                             android:layout_margin="@dimen/dp_2"
                             android:layout_weight="1"
                             android:contentDescription="@string/homepagenotesimages"
@@ -873,7 +874,7 @@
                         <ImageView
                             android:id="@+id/HomeNotes8"
                             android:layout_width="@dimen/dp_90"
-                            android:layout_height="match_parent"
+                            android:layout_height="@dimen/dp_80"
                             android:layout_margin="@dimen/dp_2"
                             android:layout_weight="1"
                             android:contentDescription="@string/homepagenotesimages"
@@ -886,7 +887,7 @@
                         <ImageView
                             android:id="@+id/HomeNotes9"
                             android:layout_width="@dimen/dp_90"
-                            android:layout_height="match_parent"
+                            android:layout_height="@dimen/dp_80"
                             android:layout_margin="@dimen/dp_2"
                             android:layout_weight="1"
                             android:contentDescription="@string/homepagenotesimages"
@@ -899,7 +900,7 @@
                         <ImageView
                             android:id="@+id/HomeNotes10"
                             android:layout_width="@dimen/dp_90"
-                            android:layout_height="match_parent"
+                            android:layout_height="@dimen/dp_80"
                             android:layout_margin="@dimen/dp_2"
                             android:layout_weight="1"
                             android:contentDescription="@string/homepagenotesimages"
@@ -908,6 +909,7 @@
                             android:scaleType="fitCenter"
                             android:visibility="visible"
                             app:srcCompat="@drawable/loading" />
+
                     </LinearLayout>
 
                 </HorizontalScrollView>
@@ -916,21 +918,22 @@
             <androidx.cardview.widget.CardView
                 style="@style/nightHomePageButtons"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_150"
+                android:layout_height="@dimen/dp_165"
                 android:layout_margin="@dimen/dp_2"
+                android:layout_marginBottom="@dimen/dp_4"
                 app:cardCornerRadius="@dimen/dp_6"
                 app:cardElevation="5dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="@dimen/dp_160"
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/Media"
                         style="@style/nightHomePageButtons"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/dp_10"
                         android:layout_marginStart="@dimen/dp_4"
                         android:layout_marginTop="@dimen/dp_3"
                         android:text="@string/media"
@@ -938,23 +941,24 @@
                         android:textStyle="bold" />
 
                     <LinearLayout
-
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:layout_height="@dimen/dp_20"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/dp_4"
+                        android:paddingTop="@dimen/dp_2"
+                        android:paddingEnd="@dimen/dp_4">
 
                         <ImageView
                             android:id="@+id/VideoGifIconImageView"
-                            android:layout_width="@dimen/dp_15"
-                            android:layout_height="match_parent"
-                            android:layout_marginStart="@dimen/dp_2"
-                            android:layout_marginEnd="0dp"
-                            android:layout_weight="1"
+                            android:layout_width="@dimen/dp_20"
+                            android:layout_height="@dimen/dp_20"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="@dimen/dp_3"
                             android:contentDescription="@string/gificon"
                             tools:srcCompat="@drawable/video" />
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:orientation="vertical">
@@ -980,19 +984,19 @@
 
                         <ImageButton
                             android:id="@+id/button7_Videos"
-                            android:layout_width="@dimen/dp_8"
-                            android:layout_height="@dimen/dp_15"
-                            android:layout_weight="1"
-                            android:background="@android:color/transparent"
+                            android:layout_width="@dimen/dp_20"
+                            android:layout_height="@dimen/dp_20"
+                            android:layout_gravity="center_vertical"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:padding="@dimen/dp_2"
                             app:srcCompat="@mipmap/rightarrow" />
 
                     </LinearLayout>
 
                     <HorizontalScrollView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/dp_65"
                         android:layout_gravity="center"
-                        android:layout_weight="1"
                         android:scrollbars="none">
 
                         <LinearLayout
@@ -1005,78 +1009,173 @@
                             <androidx.cardview.widget.CardView
                                 android:id="@+id/YTVideosCV1"
                                 style="@style/nightHomePageButtons"
-                                android:layout_width="@dimen/dp_60"
-                                android:layout_height="match_parent"
+                                android:layout_width="@dimen/dp_90"
+                                android:layout_height="@dimen/dp_60"
                                 android:layout_margin="@dimen/dp_4"
-                                android:layout_weight="1"
-                                app:cardCornerRadius="@dimen/dp_6">
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackground"
+                                app:cardCornerRadius="@dimen/dp_6"
+                                app:cardPreventCornerOverlap="true"
+                                app:cardUseCompatPadding="true">
 
-                                <ImageView
-                                    android:id="@+id/YTVideo1ImageView"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <ImageView
+                                        android:id="@+id/YTVideo1ImageView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop" />
+
+                                    <ImageView
+                                        android:layout_width="@dimen/dp_12"
+                                        android:layout_height="@dimen/dp_12"
+                                        android:layout_gravity="center"
+                                        android:alpha="0.9"
+                                        android:contentDescription="@string/video_lectures"
+                                        android:src="@android:drawable/ic_media_play"
+                                        app:tint="#FFFFFF" />
+                                </FrameLayout>
                             </androidx.cardview.widget.CardView>
 
                             <androidx.cardview.widget.CardView
                                 android:id="@+id/YTVideosCV2"
                                 style="@style/nightHomePageButtons"
-                                android:layout_width="@dimen/dp_60"
-                                android:layout_height="match_parent"
+                                android:layout_width="@dimen/dp_90"
+                                android:layout_height="@dimen/dp_60"
                                 android:layout_margin="@dimen/dp_4"
-                                android:layout_weight="1"
-                                app:cardCornerRadius="@dimen/dp_6">
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackground"
+                                app:cardCornerRadius="@dimen/dp_6"
+                                app:cardPreventCornerOverlap="true"
+                                app:cardUseCompatPadding="true">
 
-                                <ImageView
-                                    android:id="@+id/YTVideo2ImageView"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <ImageView
+                                        android:id="@+id/YTVideo2ImageView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop" />
+
+                                    <ImageView
+                                        android:layout_width="@dimen/dp_12"
+                                        android:layout_height="@dimen/dp_12"
+                                        android:layout_gravity="center"
+                                        android:alpha="0.9"
+                                        android:contentDescription="@string/video_lectures"
+                                        android:src="@android:drawable/ic_media_play"
+                                        app:tint="#FFFFFF" />
+                                </FrameLayout>
                             </androidx.cardview.widget.CardView>
 
                             <androidx.cardview.widget.CardView
                                 android:id="@+id/YTVideosCV3"
                                 style="@style/nightHomePageButtons"
-                                android:layout_width="@dimen/dp_60"
-                                android:layout_height="match_parent"
+                                android:layout_width="@dimen/dp_90"
+                                android:layout_height="@dimen/dp_60"
                                 android:layout_margin="@dimen/dp_4"
-                                android:layout_weight="1"
-                                app:cardCornerRadius="@dimen/dp_6">
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackground"
+                                app:cardCornerRadius="@dimen/dp_6"
+                                app:cardPreventCornerOverlap="true"
+                                app:cardUseCompatPadding="true">
 
-                                <ImageView
-                                    android:id="@+id/YTVideo3ImageView"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <ImageView
+                                        android:id="@+id/YTVideo3ImageView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop" />
+
+                                    <ImageView
+                                        android:layout_width="@dimen/dp_12"
+                                        android:layout_height="@dimen/dp_12"
+                                        android:layout_gravity="center"
+                                        android:alpha="0.9"
+                                        android:contentDescription="@string/video_lectures"
+                                        android:src="@android:drawable/ic_media_play"
+                                        app:tint="#FFFFFF" />
+                                </FrameLayout>
                             </androidx.cardview.widget.CardView>
 
 
                             <androidx.cardview.widget.CardView
                                 android:id="@+id/YTVideosCV4"
                                 style="@style/nightHomePageButtons"
-                                android:layout_width="@dimen/dp_60"
-                                android:layout_height="match_parent"
+                                android:layout_width="@dimen/dp_90"
+                                android:layout_height="@dimen/dp_60"
                                 android:layout_margin="@dimen/dp_4"
-                                android:layout_weight="1"
-                                app:cardCornerRadius="@dimen/dp_6">
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackground"
+                                app:cardCornerRadius="@dimen/dp_6"
+                                app:cardPreventCornerOverlap="true"
+                                app:cardUseCompatPadding="true">
 
-                                <ImageView
-                                    android:id="@+id/YTVideo4ImageView"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <ImageView
+                                        android:id="@+id/YTVideo4ImageView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop" />
+
+                                    <ImageView
+                                        android:layout_width="@dimen/dp_12"
+                                        android:layout_height="@dimen/dp_12"
+                                        android:layout_gravity="center"
+                                        android:alpha="0.9"
+                                        android:contentDescription="@string/video_lectures"
+                                        android:src="@android:drawable/ic_media_play"
+                                        app:tint="#FFFFFF" />
+                                </FrameLayout>
                             </androidx.cardview.widget.CardView>
 
 
                             <androidx.cardview.widget.CardView
                                 android:id="@+id/YTVideosCV5"
                                 style="@style/nightHomePageButtons"
-                                android:layout_width="@dimen/dp_60"
-                                android:layout_height="match_parent"
+                                android:layout_width="@dimen/dp_90"
+                                android:layout_height="@dimen/dp_60"
                                 android:layout_margin="@dimen/dp_4"
-                                android:layout_weight="1"
-                                app:cardCornerRadius="@dimen/dp_6">
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackground"
+                                app:cardCornerRadius="@dimen/dp_6"
+                                app:cardPreventCornerOverlap="true"
+                                app:cardUseCompatPadding="true">
 
-                                <ImageView
-                                    android:id="@+id/YTVideo5ImageView"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <ImageView
+                                        android:id="@+id/YTVideo5ImageView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop" />
+
+                                    <ImageView
+                                        android:layout_width="@dimen/dp_12"
+                                        android:layout_height="@dimen/dp_12"
+                                        android:layout_gravity="center"
+                                        android:alpha="0.9"
+                                        android:contentDescription="@string/video_lectures"
+                                        android:src="@android:drawable/ic_media_play"
+                                        app:tint="#FFFFFF" />
+                                </FrameLayout>
                             </androidx.cardview.widget.CardView>
 
                         </LinearLayout>
@@ -1084,9 +1183,8 @@
 
                     <HorizontalScrollView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/dp_65"
                         android:layout_gravity="center"
-                        android:layout_weight="1"
                         android:scrollbars="none">
 
                         <LinearLayout
@@ -1099,78 +1197,173 @@
                             <androidx.cardview.widget.CardView
                                 android:id="@+id/YTVideosCV6"
                                 style="@style/nightHomePageButtons"
-                                android:layout_width="@dimen/dp_60"
-                                android:layout_height="match_parent"
+                                android:layout_width="@dimen/dp_90"
+                                android:layout_height="@dimen/dp_60"
                                 android:layout_margin="@dimen/dp_4"
-                                android:layout_weight="1"
-                                app:cardCornerRadius="@dimen/dp_6">
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackground"
+                                app:cardCornerRadius="@dimen/dp_6"
+                                app:cardPreventCornerOverlap="true"
+                                app:cardUseCompatPadding="true">
 
-                                <ImageView
-                                    android:id="@+id/YTVideo6ImageView"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <ImageView
+                                        android:id="@+id/YTVideo6ImageView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop" />
+
+                                    <ImageView
+                                        android:layout_width="@dimen/dp_12"
+                                        android:layout_height="@dimen/dp_12"
+                                        android:layout_gravity="center"
+                                        android:alpha="0.9"
+                                        android:contentDescription="@string/video_lectures"
+                                        android:src="@android:drawable/ic_media_play"
+                                        app:tint="#FFFFFF" />
+                                </FrameLayout>
                             </androidx.cardview.widget.CardView>
 
                             <androidx.cardview.widget.CardView
                                 android:id="@+id/YTVideosCV7"
                                 style="@style/nightHomePageButtons"
-                                android:layout_width="@dimen/dp_60"
-                                android:layout_height="match_parent"
+                                android:layout_width="@dimen/dp_90"
+                                android:layout_height="@dimen/dp_60"
                                 android:layout_margin="@dimen/dp_4"
-                                android:layout_weight="1"
-                                app:cardCornerRadius="@dimen/dp_6">
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackground"
+                                app:cardCornerRadius="@dimen/dp_6"
+                                app:cardPreventCornerOverlap="true"
+                                app:cardUseCompatPadding="true">
 
-                                <ImageView
-                                    android:id="@+id/YTVideo7ImageView"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <ImageView
+                                        android:id="@+id/YTVideo7ImageView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop" />
+
+                                    <ImageView
+                                        android:layout_width="@dimen/dp_12"
+                                        android:layout_height="@dimen/dp_12"
+                                        android:layout_gravity="center"
+                                        android:alpha="0.9"
+                                        android:contentDescription="@string/video_lectures"
+                                        android:src="@android:drawable/ic_media_play"
+                                        app:tint="#FFFFFF" />
+                                </FrameLayout>
                             </androidx.cardview.widget.CardView>
 
                             <androidx.cardview.widget.CardView
                                 android:id="@+id/YTVideosCV8"
                                 style="@style/nightHomePageButtons"
-                                android:layout_width="@dimen/dp_60"
-                                android:layout_height="match_parent"
+                                android:layout_width="@dimen/dp_90"
+                                android:layout_height="@dimen/dp_60"
                                 android:layout_margin="@dimen/dp_4"
-                                android:layout_weight="1"
-                                app:cardCornerRadius="@dimen/dp_6">
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackground"
+                                app:cardCornerRadius="@dimen/dp_6"
+                                app:cardPreventCornerOverlap="true"
+                                app:cardUseCompatPadding="true">
 
-                                <ImageView
-                                    android:id="@+id/YTVideo8ImageView"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <ImageView
+                                        android:id="@+id/YTVideo8ImageView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop" />
+
+                                    <ImageView
+                                        android:layout_width="@dimen/dp_12"
+                                        android:layout_height="@dimen/dp_12"
+                                        android:layout_gravity="center"
+                                        android:alpha="0.9"
+                                        android:contentDescription="@string/video_lectures"
+                                        android:src="@android:drawable/ic_media_play"
+                                        app:tint="#FFFFFF" />
+                                </FrameLayout>
                             </androidx.cardview.widget.CardView>
 
 
                             <androidx.cardview.widget.CardView
                                 android:id="@+id/YTVideosCV9"
                                 style="@style/nightHomePageButtons"
-                                android:layout_width="@dimen/dp_60"
-                                android:layout_height="match_parent"
+                                android:layout_width="@dimen/dp_90"
+                                android:layout_height="@dimen/dp_60"
                                 android:layout_margin="@dimen/dp_4"
-                                android:layout_weight="1"
-                                app:cardCornerRadius="@dimen/dp_6">
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackground"
+                                app:cardCornerRadius="@dimen/dp_6"
+                                app:cardPreventCornerOverlap="true"
+                                app:cardUseCompatPadding="true">
 
-                                <ImageView
-                                    android:id="@+id/YTVideo9ImageView"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <ImageView
+                                        android:id="@+id/YTVideo9ImageView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop" />
+
+                                    <ImageView
+                                        android:layout_width="@dimen/dp_12"
+                                        android:layout_height="@dimen/dp_12"
+                                        android:layout_gravity="center"
+                                        android:alpha="0.9"
+                                        android:contentDescription="@string/video_lectures"
+                                        android:src="@android:drawable/ic_media_play"
+                                        app:tint="#FFFFFF" />
+                                </FrameLayout>
                             </androidx.cardview.widget.CardView>
 
 
                             <androidx.cardview.widget.CardView
                                 android:id="@+id/YTVideosCV10"
                                 style="@style/nightHomePageButtons"
-                                android:layout_width="@dimen/dp_60"
-                                android:layout_height="match_parent"
+                                android:layout_width="@dimen/dp_90"
+                                android:layout_height="@dimen/dp_60"
                                 android:layout_margin="@dimen/dp_4"
-                                android:layout_weight="1"
-                                app:cardCornerRadius="@dimen/dp_6">
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackground"
+                                app:cardCornerRadius="@dimen/dp_6"
+                                app:cardPreventCornerOverlap="true"
+                                app:cardUseCompatPadding="true">
 
-                                <ImageView
-                                    android:id="@+id/YTVideo10ImageView"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <ImageView
+                                        android:id="@+id/YTVideo10ImageView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop" />
+
+                                    <ImageView
+                                        android:layout_width="@dimen/dp_12"
+                                        android:layout_height="@dimen/dp_12"
+                                        android:layout_gravity="center"
+                                        android:alpha="0.9"
+                                        android:contentDescription="@string/video_lectures"
+                                        android:src="@android:drawable/ic_media_play"
+                                        app:tint="#FFFFFF" />
+                                </FrameLayout>
                             </androidx.cardview.widget.CardView>
 
                         </LinearLayout>
@@ -1205,6 +1398,7 @@
         android:background="#FFFFFF"
         android:backgroundTint="#FFFFFF"
         android:orientation="horizontal"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -1212,40 +1406,38 @@
         <ImageButton
             android:id="@+id/navbarHome"
             android:layout_width="match_parent"
-            android:layout_height="60sp"
-            android:layout_marginStart="15sp"
+            android:layout_height="@dimen/dp_20"
             android:layout_weight="1"
             android:backgroundTint="@color/background_color_night"
             android:contentDescription="@string/NavBTN"
-            app:srcCompat="@mipmap/navhome" />
+            app:srcCompat="@mipmap/navhomenew" />
 
         <ImageButton
             android:id="@+id/navbarVideos"
             android:layout_width="match_parent"
-            android:layout_height="60sp"
+            android:layout_height="@dimen/dp_20"
             android:layout_weight="1"
             android:backgroundTint="@color/background_color_night"
             android:contentDescription="@string/NavBTN"
-            app:srcCompat="@mipmap/navvideo" />
+            app:srcCompat="@mipmap/navvideonew" />
 
         <ImageButton
             android:id="@+id/navbarBooks"
             android:layout_width="match_parent"
-            android:layout_height="60sp"
+            android:layout_height="@dimen/dp_20"
             android:layout_weight="1"
             android:backgroundTint="@color/background_color_night"
             android:contentDescription="@string/NavBTN"
-            app:srcCompat="@mipmap/navnotes" />
+            app:srcCompat="@mipmap/navnotesnew" />
 
         <ImageButton
             android:id="@+id/navbarStudent"
             android:layout_width="match_parent"
-            android:layout_height="60sp"
-            android:layout_marginEnd="15sp"
+            android:layout_height="@dimen/dp_20"
             android:layout_weight="1"
             android:backgroundTint="@color/background_color_night"
             android:contentDescription="@string/NavBTN"
-            app:srcCompat="@mipmap/navstudent" />
+            app:srcCompat="@mipmap/navstudentnew" />
 
 
     </LinearLayout>

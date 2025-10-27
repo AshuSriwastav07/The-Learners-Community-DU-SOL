@@ -23,6 +23,7 @@
         android:background="#FFFFFF"
         android:backgroundTint="#FFFFFF"
         android:orientation="horizontal"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@id/videosectionRecycleView"
         app:layout_constraintEnd_toEndOf="@id/videosectionRecycleView"
         app:layout_constraintStart_toStartOf="@id/videosectionRecycleView">

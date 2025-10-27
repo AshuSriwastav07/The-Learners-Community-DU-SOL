@@ -25,7 +25,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout9"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,40 +35,39 @@
             android:id="@+id/cbcs_sem5_notes_TabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabMode="scrollable"
             android:background="@color/white"
+            app:tabMode="scrollable"
             app:tabTextColor="@color/black">
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/tabItem1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
+
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/tabItem2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
+
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/tabItem3"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
+
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/tabItem4"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
+
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/tabItem5"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
+
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/tabItem6"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
         </com.google.android.material.tabs.TabLayout>
 
         <androidx.viewpager.widget.ViewPager
@@ -80,12 +79,13 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout9"
+        android:id="@+id/bottomNavBar"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="#FFFFFF"
         android:backgroundTint="#FFFFFF"
         android:orientation="horizontal"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -93,40 +93,38 @@
         <ImageButton
             android:id="@+id/navbarHome"
             android:layout_width="match_parent"
-            android:layout_height="60sp"
-            android:layout_marginStart="15sp"
+            android:layout_height="@dimen/dp_20"
             android:layout_weight="1"
             android:backgroundTint="@color/background_color_night"
             android:contentDescription="@string/NavBTN"
-            app:srcCompat="@mipmap/navhome" />
+            app:srcCompat="@mipmap/navhomenew" />
 
         <ImageButton
             android:id="@+id/navbarVideos"
             android:layout_width="match_parent"
-            android:layout_height="60sp"
+            android:layout_height="@dimen/dp_20"
             android:layout_weight="1"
             android:backgroundTint="@color/background_color_night"
             android:contentDescription="@string/NavBTN"
-            app:srcCompat="@mipmap/navvideo" />
+            app:srcCompat="@mipmap/navvideonew" />
 
         <ImageButton
             android:id="@+id/navbarBooks"
             android:layout_width="match_parent"
-            android:layout_height="60sp"
+            android:layout_height="@dimen/dp_20"
             android:layout_weight="1"
             android:backgroundTint="@color/background_color_night"
             android:contentDescription="@string/NavBTN"
-            app:srcCompat="@mipmap/navnotes" />
+            app:srcCompat="@mipmap/navnotesnew" />
 
         <ImageButton
             android:id="@+id/navbarStudent"
             android:layout_width="match_parent"
-            android:layout_height="60sp"
-            android:layout_marginEnd="15sp"
+            android:layout_height="@dimen/dp_20"
             android:layout_weight="1"
             android:backgroundTint="@color/background_color_night"
             android:contentDescription="@string/NavBTN"
-            app:srcCompat="@mipmap/navstudent" />
+            app:srcCompat="@mipmap/navstudentnew" />
 
 
     </LinearLayout>
