@@ -17,18 +17,47 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/syllabusTitle"
+        <androidx.cardview.widget.CardView
+            style="@style/night_CardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/noto_sans_adlam_unjoined_bold"
-            android:paddingStart="@dimen/dp_8"
-            android:paddingEnd="0dp"
-            android:text="@string/Syllabus"
-            android:textAlignment="viewStart"
-            android:textColor="@color/black"
-            android:textSize="@dimen/dp_10"
-            android:textStyle="bold" />
+            android:layout_margin="@dimen/dp_3"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_2">
+
+                <TextView
+                    android:id="@+id/syllabusTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:paddingStart="@dimen/dp_4"
+                    android:paddingEnd="0dp"
+                    android:text="@string/syllabusPageTitle"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dp_7"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/syllabusText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ar_one_sans_medium"
+                    android:paddingStart="@dimen/dp_4"
+                    android:paddingEnd="0dp"
+                    android:text="@string/syllabusPageText"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dp_5" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/Syllabus_TabLayout"

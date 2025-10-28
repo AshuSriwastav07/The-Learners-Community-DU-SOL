@@ -25,35 +25,38 @@
             style="@style/night_list_item"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:gravity="center|left"
             android:orientation="horizontal"
             android:padding="16dp">
 
             <ImageView
                 android:id="@+id/pdfThumbnail"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="@dimen/dp_18"
+                android:layout_height="@dimen/dp_18"
                 android:scaleType="centerCrop"
                 android:src="@mipmap/bookicon" />
 
-            <LinearLayout
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/pdfTitle"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginLeft="@dimen/dp_2"
+                android:layout_marginRight="@dimen/dp_2"
+                android:layout_weight="4"
+                android:fontFamily="@font/lato_bold"
+                android:text="@string/pdf_title"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dp_5"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="@dimen/dp_12"
+                android:layout_height="@dimen/dp_12"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:scaleType="centerCrop"
+                android:src="@mipmap/right"
+                app:srcCompat="@mipmap/right" />
 
-                <TextView
-                    android:id="@+id/pdfTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/lato_bold"
-                    android:text="@string/pdf_title"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/dp_5"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
