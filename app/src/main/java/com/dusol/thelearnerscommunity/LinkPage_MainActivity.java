@@ -209,6 +209,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
         //upcoming exams
         functionManager.upComingExams(this, UpComingExamsMainCard,semester12,semester34,semester56,semester78,semester12TV,semester34TV,semester56TV,semester78TV);
 
+
         //Feature Videos Function Call
 
         new Thread(() -> fetchFeatureVideosData(YTVideo1CV,YTVideo2CV,YTVideo3CV,YTVideo4CV,YTVideo5CV,YTVideo6CV,YTVideo7CV,YTVideo8CV,YTVideo9CV,YTVideo10CV,YTVideo1IV,YTVideo2IV,YTVideo3IV,YTVideo4IV,YTVideo5IV,YTVideo6IV,YTVideo7IV,YTVideo8IV,YTVideo9IV,YTVideo10IV)).start();

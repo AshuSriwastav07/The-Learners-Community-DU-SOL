@@ -1,6 +1,5 @@
 package com.dusol.thelearnerscommunity.FunctionManager;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -15,13 +14,14 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 
 import com.bumptech.glide.Glide;
-import com.dusol.thelearnerscommunity.DU_SOL_NOTES__MainActivity;
 import com.dusol.thelearnerscommunity.NEP_Files.NEP_Sem1_MainActivity;
 import com.dusol.thelearnerscommunity.NEP_Files.NEP_Sem2_MainActivity;
 import com.dusol.thelearnerscommunity.NEP_Files.NEP_Sem3_MainActivity;
 import com.dusol.thelearnerscommunity.NEP_Files.NEP_Sem4_MainActivity;
 import com.dusol.thelearnerscommunity.NEP_Files.NEP_Sem5_MainActivity;
 import com.dusol.thelearnerscommunity.NEP_Files.NEP_Sem6_MainActivity;
+import com.dusol.thelearnerscommunity.NEP_Files.NEP_Sem7_MainActivity;
+import com.dusol.thelearnerscommunity.NEP_Files.NEP_Sem8_MainActivity;
 import com.dusol.thelearnerscommunity.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,6 +30,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -195,137 +196,107 @@ public class functionManager {
         }
     }
 
-    //Get data show if there is any exam or not
-    public static void upComingExams(Context context,CardView MainCard,
+    public static void upComingExams(Context context,
+                                     CardView MainCard,
                                      CardView semester12, CardView semester34,
                                      CardView semester56, CardView semester78,
                                      TextView semester12TV, TextView semester34TV,
                                      TextView semester56TV, TextView semester78TV) {
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("UpcomingExams");
-        DatabaseReference isThereAnyExam=database.getReference("IsThereAnyExam");
+        FirebaseDatabase db = FirebaseDatabase.getInstance();
+        DatabaseReference examsRef = db.getReference("UpcomingExams");
+        DatabaseReference notesRef = db.getReference("NEP_Notes/NotesAvailable");
+        DatabaseReference examFlagRef = db.getReference("IsThereAnyExam");
 
-        isThereAnyExam.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String value= Objects.requireNonNull(snapshot.getValue()).toString();
+        // Hide all by default
+        semester12.setVisibility(View.GONE);
+        semester34.setVisibility(View.GONE);
+        semester56.setVisibility(View.GONE);
+        semester78.setVisibility(View.GONE);
 
-                if(value.equals("YES") || value.equals("Yes") || value.equals("yes")){
-                    MainCard.setVisibility(View.VISIBLE);
-                }else{
-                    MainCard.setVisibility(View.GONE);
+        final String[] notesData = new String[8];
+
+        // Step 1: Get Notes Availability
+        notesRef.get().addOnSuccessListener(notesSnap -> {
+            if (notesSnap.exists()) {
+                for (int i = 1; i <= 8; i++) {
+                    notesData[i - 1] = notesSnap.child("sem" + i).getValue(String.class);
                 }
-            }
+                Log.d("NotesData", Arrays.toString(notesData));
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+                // Step 2: Check if any exam is going on
+                examFlagRef.get().addOnSuccessListener(flagSnap -> {
+                    String flag = String.valueOf(flagSnap.getValue());
+                    if (flag.equalsIgnoreCase("yes")) {
+                        MainCard.setVisibility(View.VISIBLE);
 
-            }
-        });
+                        // Step 3: Get Upcoming Exams
+                        examsRef.get().addOnSuccessListener(examSnap -> {
+                            if (!examSnap.exists()) return;
 
+                            for (DataSnapshot semSnap : examSnap.getChildren()) {
+                                String sem = semSnap.getValue(String.class);
+                                if (sem == null) continue;
 
-        // Firebase real-time listener
-        myRef.addValueEventListener(new ValueEventListener() {
-            @SuppressLint("SetTextI18n")
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                // Clear previous text
-                semester12TV.setText("");
-                semester34TV.setText("");
-                semester56TV.setText("");
-                semester78TV.setText("");
+                                int semNum = Integer.parseInt(sem);
+                                String noteStatus = notesData[semNum - 1];
 
-                // Loop through each child node
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    String value = snapshot.getValue(String.class);
+                                // Only show if notes are available
+                                if (!"N/A".equalsIgnoreCase(noteStatus)) {
+                                    switch (semNum) {
+                                        case 1: case 2:
+                                            semester12.setVisibility(View.VISIBLE);
+                                            semester12TV.setText("Semester " + semNum);
+                                            semester12.setOnClickListener(v -> {
+                                                Intent i = new Intent(context, semNum == 1 ? NEP_Sem1_MainActivity.class : NEP_Sem2_MainActivity.class);
+                                                i.putExtra("semester", String.valueOf(semNum));
+                                                context.startActivity(i);
+                                            });
+                                            break;
 
-                    if (value == null) continue;
+                                        case 3: case 4:
+                                            semester34.setVisibility(View.VISIBLE);
+                                            semester34TV.setText("Semester " + semNum);
+                                            semester34.setOnClickListener(v -> {
+                                                Intent i = new Intent(context, semNum == 3 ? NEP_Sem3_MainActivity.class : NEP_Sem4_MainActivity.class);
+                                                i.putExtra("semester", String.valueOf(semNum));
+                                                context.startActivity(i);
+                                            });
+                                            break;
 
-                    switch (value) {
-                        case "1":
-                            semester12TV.setText("Semester 1");
-                            semester12.setOnClickListener(view -> {
-                                Intent intent = new Intent(context, NEP_Sem1_MainActivity.class);
-                                intent.putExtra("semester", "1");
-                                context.startActivity(intent);
-                            });
-                            break;
-                        case "2":
-                            semester12TV.setText("Semester 2");
-                            semester12.setOnClickListener(view -> {
-                                Intent intent = new Intent(context, NEP_Sem2_MainActivity.class);
-                                intent.putExtra("semester", "2");
-                                context.startActivity(intent);
-                            });
-                            break;
+                                        case 5: case 6:
+                                            semester56.setVisibility(View.VISIBLE);
+                                            semester56TV.setText("Semester " + semNum);
+                                            semester56.setOnClickListener(v -> {
+                                                Intent i = new Intent(context, semNum == 5 ? NEP_Sem5_MainActivity.class : NEP_Sem6_MainActivity.class);
+                                                i.putExtra("semester", String.valueOf(semNum));
+                                                context.startActivity(i);
+                                            });
+                                            break;
 
+                                        case 7: case 8:
+                                            semester78.setVisibility(View.VISIBLE);
+                                            semester78TV.setText("Semester " + semNum);
+                                            semester78.setOnClickListener(v -> {
+                                                Intent i = new Intent(context, semNum == 7 ? NEP_Sem7_MainActivity.class : NEP_Sem8_MainActivity.class);
+                                                i.putExtra("semester", String.valueOf(semNum));
+                                                context.startActivity(i);
+                                            });
+                                            break;
+                                    }
+                                }
+                            }
+                        });
 
-                        case "3":
-                            semester34TV.setText("Semester 3");
-                            semester34.setOnClickListener(view -> {
-                                Intent intent = new Intent(context, NEP_Sem3_MainActivity.class);
-                                intent.putExtra("semester", "3");
-                                context.startActivity(intent);
-                            });
-                            break;
-
-                        case "4":
-                            semester34TV.setText("Semester 4");
-                            semester34.setOnClickListener(view -> {
-                                Intent intent = new Intent(context, NEP_Sem4_MainActivity.class);
-                                intent.putExtra("semester", "4");
-                                context.startActivity(intent);
-                            });
-                            break;
-
-                        case "5":
-                            semester56TV.setText("Semester 5");
-                            semester56.setOnClickListener(view -> {
-                                Intent intent = new Intent(context, NEP_Sem5_MainActivity.class);
-                                intent.putExtra("semester", "5");
-                                context.startActivity(intent);
-                            });
-                            break;
-
-                        case "6":
-                            semester56TV.setText("Semester 6");
-                            semester56.setOnClickListener(view -> {
-                                Intent intent = new Intent(context, NEP_Sem6_MainActivity.class);
-                                intent.putExtra("semester", "6");
-                                context.startActivity(intent);
-                            });
-                            break;
-
-
-                        case "7":
-                            semester78TV.setText("Semester 7");
-                            semester78.setOnClickListener(view -> {
-                                Intent intent = new Intent(context, DU_SOL_NOTES__MainActivity.class);
-                                intent.putExtra("semester", "7");
-                                context.startActivity(intent);
-                            });
-                            break;
-
-                        case "8":
-                            semester78TV.setText("Semester 8");
-                            semester78.setOnClickListener(view -> {
-                                Intent intent = new Intent(context, DU_SOL_NOTES__MainActivity.class);
-                                intent.putExtra("semester", "8");
-                                context.startActivity(intent);
-                            });
-                            break;
-
+                    } else {
+                        MainCard.setVisibility(View.GONE);
                     }
-                }
+                });
             }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(context, "Failed to load exams: " + error.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
+        }).addOnFailureListener(e ->
+                Toast.makeText(context, "Error loading notes: " + e.getMessage(), Toast.LENGTH_SHORT).show());
     }
+
 
     public static void isSaleOn(ImageView imageView){
         FirebaseDatabase database = FirebaseDatabase.getInstance();
