@@ -250,5 +250,6 @@
     <string name="gificon">GifIcon</string>
     <string name="imageview">ImageView</string>
     <string name="check_all_notes">Check All Notes</string>
+    <string name="all_new_published_notes">All New Published Notes</string>
 
 </resources>

@@ -13,9 +13,9 @@ android {
         applicationId = "com.dusol.thelearnerscommunity"
         minSdk = 23
         targetSdk = 35
-        versionCode = 21
+        versionCode = 23
         multiDexEnabled= true
-        versionName = "2025.07.2.4.10" //Explain Year.month.versionName
+        versionName = "2025.10.2.5.1" //Explain Year.month.versionName
         //This is Version Name 2.4 and we cant use same version code again
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -29,7 +29,7 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
 
             ndk {
-                debugSymbolLevel = "SYMBOL_TABLE"
+                debugSymbolLevel = "FULL"
             }
 
         }
