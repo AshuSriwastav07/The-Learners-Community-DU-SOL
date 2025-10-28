@@ -27,6 +27,8 @@ public class NEP_HomePage extends AppCompatActivity {
         CardView sem4NotesOpen=findViewById(R.id.NEP_Sem4);
         CardView sem5NotesOpen=findViewById(R.id.NEP_Sem5);
         CardView sem6NotesOpen =findViewById(R.id.NEP_Sem6);
+        CardView sem7NotesOpen =findViewById(R.id.NEP_Sem7);
+        CardView sem8NotesOpen =findViewById(R.id.NEP_Sem8);
         Button buyNotes=findViewById(R.id.Buy_Notes_PDF);
 
         List<String> Values= PDFDataManage.CheckNotesAvailable();
@@ -83,6 +85,26 @@ public class NEP_HomePage extends AppCompatActivity {
         sem6NotesOpen.setOnClickListener(view->{
             if(!Values.isEmpty() && Values.get(5).equals("ok")){
                 Intent intent=new Intent(this, NEP_Sem6_MainActivity.class);
+                startActivity(intent);
+            }else {
+                Toast.makeText(this, "Notes Will Be Available Soon!", Toast.LENGTH_SHORT).show();
+            }
+
+        });
+
+        sem7NotesOpen.setOnClickListener(view->{
+            if(!Values.isEmpty() && Values.get(6).equals("ok")){
+                Intent intent=new Intent(this, NEP_Sem7_MainActivity.class);
+                startActivity(intent);
+            }else {
+                Toast.makeText(this, "Notes Will Be Available Soon!", Toast.LENGTH_SHORT).show();
+            }
+
+        });
+
+        sem8NotesOpen.setOnClickListener(view->{
+            if(!Values.isEmpty() && Values.get(7).equals("ok")){
+                Intent intent=new Intent(this, NEP_Sem8_MainActivity.class);
                 startActivity(intent);
             }else {
                 Toast.makeText(this, "Notes Will Be Available Soon!", Toast.LENGTH_SHORT).show();

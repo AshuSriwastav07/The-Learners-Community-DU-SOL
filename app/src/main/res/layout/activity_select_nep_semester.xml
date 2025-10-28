@@ -223,6 +223,76 @@
 
                 </androidx.cardview.widget.CardView>
 
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:layout_margin="@dimen/dp_3"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="@dimen/dp_8"
+            app:cardElevation="@dimen/dp_3" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/NEP_Sem7"
+                    style="@style/nightHomePageButtons"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/dp_5"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="@dimen/dp_4"
+                    app:cardElevation="@dimen/dp_6">
+
+
+                    <TextView
+                        style="@style/nightHomePageButtons"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/dp_4"
+                        android:fontFamily="@font/lato_bold"
+                        android:gravity="center"
+                        android:text="@string/semester_7"
+                        android:textSize="@dimen/dp_5"
+                        app:drawableTopCompat="@mipmap/mynotes" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/NEP_Sem8"
+                    style="@style/nightHomePageButtons"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/dp_5"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="@dimen/dp_4"
+                    app:cardElevation="@dimen/dp_6">
+
+
+                    <TextView
+                        style="@style/nightHomePageButtons"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/dp_4"
+                        android:fontFamily="@font/lato_bold"
+                        android:gravity="center"
+                        android:text="@string/semester_8"
+                        android:textSize="@dimen/dp_5"
+                        app:drawableTopCompat="@mipmap/mynotes" />
+
+                </androidx.cardview.widget.CardView>
+
+
             </LinearLayout>
 
 
