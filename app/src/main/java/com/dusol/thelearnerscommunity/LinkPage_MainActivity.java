@@ -33,6 +33,8 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.dusol.thelearnerscommunity.FunctionManager.functionManager;
@@ -52,9 +54,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class LinkPage_MainActivity extends AppCompatActivity {
     private long Timeback;
@@ -86,32 +85,6 @@ public class LinkPage_MainActivity extends AppCompatActivity {
         ImageButton Connect_with_us = findViewById(R.id.button9_connect_us);
         CardView sol_materials = findViewById(R.id.button10_SOL_Study_Material);
         ImageButton askDoubt = findViewById(R.id.askHere);
-
-        ImageButton NavBooks = findViewById(R.id.navbarBooks);
-        ImageButton NavStudents = findViewById(R.id.navbarStudent);
-        ImageButton NavVideos = findViewById(R.id.navbarVideos);
-
-        CardView YTVideo1CV=findViewById(R.id.YTVideosCV1);
-        CardView YTVideo2CV=findViewById(R.id.YTVideosCV2);
-        CardView YTVideo3CV=findViewById(R.id.YTVideosCV3);
-        CardView YTVideo4CV=findViewById(R.id.YTVideosCV4);
-        CardView YTVideo5CV=findViewById(R.id.YTVideosCV5);
-        CardView YTVideo6CV=findViewById(R.id.YTVideosCV6);
-        CardView YTVideo7CV=findViewById(R.id.YTVideosCV7);
-        CardView YTVideo8CV=findViewById(R.id.YTVideosCV8);
-        CardView YTVideo9CV=findViewById(R.id.YTVideosCV9);
-        CardView YTVideo10CV=findViewById(R.id.YTVideosCV10);
-
-        ImageView YTVideo1IV=findViewById(R.id.YTVideo1ImageView);
-        ImageView YTVideo2IV=findViewById(R.id.YTVideo2ImageView);
-        ImageView YTVideo3IV=findViewById(R.id.YTVideo3ImageView);
-        ImageView YTVideo4IV=findViewById(R.id.YTVideo4ImageView);
-        ImageView YTVideo5IV=findViewById(R.id.YTVideo5ImageView);
-        ImageView YTVideo6IV=findViewById(R.id.YTVideo6ImageView);
-        ImageView YTVideo7IV=findViewById(R.id.YTVideo7ImageView);
-        ImageView YTVideo8IV=findViewById(R.id.YTVideo8ImageView);
-        ImageView YTVideo9IV=findViewById(R.id.YTVideo9ImageView);
-        ImageView YTVideo10IV=findViewById(R.id.YTVideo10ImageView);
 
         ImageView videoIcon=findViewById(R.id.VideoGifIconImageView);
 
@@ -184,46 +157,27 @@ public class LinkPage_MainActivity extends AppCompatActivity {
         final String[] buttonName = new String[1];
         checkInAppUpdate();
 
-        // Navigation Bar Button Listeners (unchanged)
-        new Thread(()-> NavVideos.setOnClickListener(view -> openYouTubeChannel())).start();
-
-        NavBooks.setOnClickListener(view -> {
-            new Handler().postDelayed(() -> {
-                Bundle bundle = new Bundle();
-                bundle.putString("SOL_Notes_Open", "button_clicked");
-                FirebaseAnalytics.getInstance(this).logEvent("SOL_Notes_Open", bundle);
-            }, 500);
-            startActivity(new Intent(getApplicationContext(), DU_SOL_NOTES__MainActivity.class));
-        });
-        NavStudents.setOnClickListener(view -> {
-            new Handler().postDelayed(() -> {
-                Bundle bundle = new Bundle();
-                bundle.putString("SOL_Portal", "button_clicked");
-                FirebaseAnalytics.getInstance(this).logEvent("SOL_Portal", bundle);
-            }, 500);
-
-            startActivity(new Intent(getApplicationContext(), studentsBoard.class));
-        });
+        // Setup bottom navigation bar
+        com.google.android.material.bottomnavigation.BottomNavigationView bottomNav = findViewById(R.id.bottomNavBar);
+        BottomNavHelper.setup(this, bottomNav, R.id.nav_home);
 
 
         //upcoming exams
         functionManager.upComingExams(this, UpComingExamsMainCard,semester12,semester34,semester56,semester78,semester12TV,semester34TV,semester56TV,semester78TV);
 
-
-        //Feature Videos Function Call
-
-        new Thread(() -> fetchFeatureVideosData(YTVideo1CV,YTVideo2CV,YTVideo3CV,YTVideo4CV,YTVideo5CV,YTVideo6CV,YTVideo7CV,YTVideo8CV,YTVideo9CV,YTVideo10CV,YTVideo1IV,YTVideo2IV,YTVideo3IV,YTVideo4IV,YTVideo5IV,YTVideo6IV,YTVideo7IV,YTVideo8IV,YTVideo9IV,YTVideo10IV)).start();
-
+        // Fetch Latest 10 YouTube Videos Dynamically
+        setupHomeYouTubeVideos();
 
         //feature Notes Call
 
-        new Thread(()-> FeaturedNotes(HomeNotesIV1,HomeNotesIV2,HomeNotesIV3,HomeNotesIV4,HomeNotesIV5,HomeNotesIV6,HomeNotesIV7,HomeNotesIV8,HomeNotesIV9,HomeNotesIV10)).start();
+        FeaturedNotes(
+                HomeNotesIV1,HomeNotesIV2,HomeNotesIV3,HomeNotesIV4,HomeNotesIV5,
+                HomeNotesIV6,HomeNotesIV7,HomeNotesIV8,HomeNotesIV9,HomeNotesIV10
+        );
 
 
-        // Text Marquee (unchanged)
-        TextView textView = findViewById(R.id.linkPageMarquee);
-        new Thread(()-> marqueeTextViewBanner(textView)).start();
-
+        TextView bannerTextView = findViewById(R.id.linkPageMarquee);
+        marqueeTextViewBanner(bannerTextView);
 
         // Main Buttons Listeners (unchanged)
         shop.setOnClickListener(view -> {
@@ -253,8 +207,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
 
         });
 
-        new Thread(()-> watch_videos.setOnClickListener(view -> openYouTubeChannel())).start();
-
+        watch_videos.setOnClickListener(view -> openYouTubeChannel());
 
         sol_portal.setOnClickListener(v -> {
 
@@ -315,7 +268,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
 //                    Log.d("FirebaseRegToken", token);
                 });
 
-        new Thread(() -> fetchConnectUsButtonData(buttonName, Connect_with_us,reviewAnimationButton)).start(); //New Thread for better performance
+        fetchConnectUsButtonData(buttonName, Connect_with_us,reviewAnimationButton);
 
         findViewById(R.id.YTImageView).setOnClickListener(v ->
                 openExternalApp("https://www.youtube.com/@TheLearnersCommunityDUSOL/", "com.google.android.youtube"));
@@ -406,13 +359,8 @@ public class LinkPage_MainActivity extends AppCompatActivity {
         }
     }
 
-    // Helper method to open YouTube channel (to avoid code repetition)
+    // Helper method to open YouTube videos page (to avoid code repetition)
     private void openYouTubeChannel() {
-
-        String youtubeChannelUrl = "https://www.youtube.com/@TheLearnersCommunityDUSOL";
-        Uri youtubeUri = Uri.parse(youtubeChannelUrl);
-        Intent intent = new Intent(Intent.ACTION_VIEW, youtubeUri);
-        intent.setPackage("com.google.android.youtube");
 
         new android.os.Handler().postDelayed(() -> {
             Bundle bundle = new Bundle();
@@ -420,11 +368,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
             FirebaseAnalytics.getInstance(this).logEvent("YoutubeOpen", bundle);
             }, 500);
 
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-        } else {
-            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(youtubeChannelUrl)));
-        }
+        startActivity(new Intent(getApplicationContext(), YouTubeVideosActivity.class));
     }
 
     private void reviewUsPageOpen() {
@@ -479,156 +423,114 @@ public class LinkPage_MainActivity extends AppCompatActivity {
         });
     }
 
-    private void fetchFeatureVideosData(CardView cardView1, CardView cardView2, CardView cardView3, CardView cardView4, CardView cardView5,CardView cardView6, CardView cardView7, CardView cardView8, CardView cardView9, CardView cardView10,ImageView imageView1, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5,ImageView imageView6, ImageView imageView7, ImageView imageView8, ImageView imageView9, ImageView imageView10) {
+    private void setupHomeYouTubeVideos() {
+        RecyclerView homeYouTubeRecyclerView = findViewById(R.id.homeYouTubeRecyclerView);
+        android.widget.ProgressBar homeYouTubeProgressBar = findViewById(R.id.homeYouTubeProgressBar);
 
-        DatabaseReference YTFeatureVideosData = FirebaseDatabase.getInstance().getReference("YTFeature");
+        homeYouTubeRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
-        YTFeatureVideosData.addValueEventListener(new ValueEventListener() {
+        YouTubeApiHelper.fetchVideos(LinkPage_MainActivity.this, 30, new YouTubeApiHelper.YouTubeVideoCallback() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                int index = 0;
-
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    List<String> value = new ArrayList<>();
-                    for (DataSnapshot child : dataSnapshot.getChildren()) {
-                        value.add(String.valueOf(child.getValue()));
-                    }
-
-                    if (value.size() >= 2) {
-                        String imageUrl = value.get(0);  // Thumbnail URL
-                        String videoUrl = value.get(1);  // YouTube video link
-
-//                        Log.d("YTVideo", imageUrl + " : " + videoUrl);
-
-                        switch (index) {
-                            case 0:
-                                loadFeature(imageView1, cardView1, imageUrl, videoUrl);
-                                break;
-                            case 1:
-                                loadFeature(imageView2, cardView2, imageUrl, videoUrl);
-                                break;
-                            case 2:
-                                loadFeature(imageView3, cardView3, imageUrl, videoUrl);
-                                break;
-                            case 3:
-                                loadFeature(imageView4, cardView4, imageUrl, videoUrl);
-                                break;
-                            case 4:
-                                loadFeature(imageView5, cardView5, imageUrl, videoUrl);
-                                break;
-                            case 5:
-                                loadFeature(imageView6, cardView6, imageUrl, videoUrl);
-                                break;
-                            case 6:
-                                loadFeature(imageView7, cardView7, imageUrl, videoUrl);
-                                break;
-                            case 7:
-                                loadFeature(imageView8, cardView8, imageUrl, videoUrl);
-                                break;
-                            case 8:
-                                loadFeature(imageView9, cardView9, imageUrl, videoUrl);
-                                break;
-                            case 9:
-                                loadFeature(imageView10, cardView10, imageUrl, videoUrl);
-                                break;
-                        }
-
-                        index++;
-                    }
-                }
+            public void onSuccess(java.util.List<YouTubeVideoItem> videos) {
+                if (isFinishing() || isDestroyed()) return;
+                homeYouTubeProgressBar.setVisibility(android.view.View.GONE);
+                
+                YouTubeVideoAdapter adapter = new YouTubeVideoAdapter(LinkPage_MainActivity.this, videos, R.layout.item_youtube_video_horizontal);
+                homeYouTubeRecyclerView.setAdapter(adapter);
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.e("YTFeature", "Database error: " + error.getMessage());
+            public void onError(String error) {
+                if (isFinishing() || isDestroyed()) return;
+                homeYouTubeProgressBar.setVisibility(android.view.View.GONE);
+                Toast.makeText(LinkPage_MainActivity.this, "Failed to load latest videos.", Toast.LENGTH_SHORT).show();
             }
         });
     }
-
-    private void loadFeature(ImageView imageView, CardView cardView, String imageUrl, String videoUrl) {
-        Glide.with(imageView.getContext()).load(imageUrl).into(imageView);
-        cardView.setOnClickListener(v -> {
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(videoUrl));
-            imageView.getContext().startActivity(intent);
-        });
-    }
-
 
     //Show Notes on Home Page
+    public static void FeaturedNotes(
+            ImageView NotesImage1, ImageView NotesImage2, ImageView NotesImage3, ImageView NotesImage4, ImageView NotesImage5,
+            ImageView NotesImage6, ImageView NotesImage7, ImageView NotesImage8, ImageView NotesImage9, ImageView NotesImage10) {
 
-    public static void FeaturedNotes(ImageView NotesImage1, ImageView NotesImage2, ImageView NotesImage3, ImageView NotesImage4, ImageView NotesImage5, ImageView NotesImage6,ImageView NotesImage7,ImageView NotesImage8,ImageView NotesImage9,ImageView NotesImage10) {
+        // Put all ImageViews into an array for easy indexing
+        ImageView[] noteImages = new ImageView[]{
+                NotesImage1, NotesImage2, NotesImage3, NotesImage4, NotesImage5,
+                NotesImage6, NotesImage7, NotesImage8, NotesImage9, NotesImage10
+        };
 
-        DatabaseReference FeatureNotesData = FirebaseDatabase.getInstance().getReference("PaidNewAndMostSellNotes");
+        DatabaseReference featureNotesData =
+                FirebaseDatabase.getInstance().getReference("PaidNewAndMostSellNotes");
 
-        FeatureNotesData.addValueEventListener(new ValueEventListener() {
+        featureNotesData.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 int index = 0;
 
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    List<String> value = new ArrayList<>();
-                    for (DataSnapshot child : dataSnapshot.getChildren()) {
-                        value.add(String.valueOf(child.getValue()));
-                    }
+                // Each child here is 0,1,2,...,10 with:
+                // 0: imageUrl
+                // 1: buyUrl
+                for (DataSnapshot noteSnapshot : snapshot.getChildren()) {
+                    if (index >= noteImages.length) break; // safety
 
-                    if (value.size() >= 2) {
-                        String NotesImageUrl = value.get(0);  // Notes Image Link
-                        String NotesBuyLink = value.get(1);  // Notes link
+                    String notesImageUrl = noteSnapshot.child("0").getValue(String.class);
+                    String notesBuyLink  = noteSnapshot.child("1").getValue(String.class);
 
-//                        Log.d("NotesProductLink", NotesImageUrl + " : " + NotesBuyLink);
+                    loadFeatureNotes(noteImages[index], notesImageUrl, notesBuyLink);
+                    index++;
+                }
 
-                        switch (index) {
-                            case 0:
-                                loadFeatureNotes(NotesImage1, NotesImageUrl, NotesBuyLink);
-                                break;
-                            case 1:
-                                loadFeatureNotes(NotesImage2,  NotesImageUrl, NotesBuyLink);
-                                break;
-                            case 2:
-                                loadFeatureNotes(NotesImage3,  NotesImageUrl, NotesBuyLink);
-                                break;
-                            case 3:
-                                loadFeatureNotes(NotesImage4,  NotesImageUrl, NotesBuyLink);
-                                break;
-                            case 4:
-                                loadFeatureNotes(NotesImage5,  NotesImageUrl, NotesBuyLink);
-                                break;
-                            case 5:
-                                loadFeatureNotes(NotesImage6,  NotesImageUrl, NotesBuyLink);
-                                break;
-                            case 6:
-                                loadFeatureNotes(NotesImage7,  NotesImageUrl, NotesBuyLink);
-                                break;
-                            case 7:
-                                loadFeatureNotes(NotesImage8,  NotesImageUrl, NotesBuyLink);
-                                break;
-                            case 8:
-                                loadFeatureNotes(NotesImage9,  NotesImageUrl, NotesBuyLink);
-                                break;
-                            case 9:
-                                loadFeatureNotes(NotesImage10, NotesImageUrl, NotesBuyLink);
-                                break;
-                        }
-
-                        index++;
-                    }
+                // Clear remaining ImageViews if fewer notes than 10
+                for (int i = index; i < noteImages.length; i++) {
+                    loadFeatureNotes(noteImages[i], null, null);
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                Log.e("FeaturedNotes", "Database error: " + error.getMessage());
             }
         });
-
     }
 
     private static void loadFeatureNotes(ImageView imageView, String imageUrl, String buyUrl) {
-        Glide.with(imageView.getContext()).load(imageUrl).error(R.drawable.loading).into(imageView);
-        imageView.setOnClickListener(v -> {
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(buyUrl));
-            imageView.getContext().startActivity(intent);
-        });
+        if (imageView == null) return;
+
+        // No data for this slot → clear image & disable click
+        if (imageUrl == null || imageUrl.trim().isEmpty()) {
+            imageView.setImageDrawable(null);
+            imageView.setOnClickListener(null);
+            imageView.setClickable(false);
+            // Optional if you want to hide empty slots completely:
+            // imageView.setVisibility(View.GONE);
+            return;
+        }
+
+        imageUrl = imageUrl.trim();
+
+        // Load image safely, tied to the ImageView lifecycle
+        Glide.with(imageView)
+                .load(imageUrl)
+                .placeholder(R.drawable.loading) // your existing placeholder
+                .error(R.drawable.loading)
+                .into(imageView);
+
+        // Handle click only if buyUrl is valid
+        if (buyUrl == null || buyUrl.trim().isEmpty()) {
+            imageView.setOnClickListener(null);
+            imageView.setClickable(false);
+        } else {
+            final String safeBuyUrl = buyUrl.trim();
+            imageView.setClickable(true);
+            imageView.setOnClickListener(v -> {
+                try {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(safeBuyUrl));
+                    v.getContext().startActivity(intent);
+                } catch (Exception e) {
+                    Toast.makeText(v.getContext(), "Unable to open link", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
     }
 
 
@@ -671,28 +573,44 @@ public class LinkPage_MainActivity extends AppCompatActivity {
 
     }
 
-    //Marquee TextView CallFunction
+    // Marquee TextView CallFunction (SAFE VERSION)
     private void marqueeTextViewBanner(TextView textView) {
-        textView.setEllipsize(TextUtils.TruncateAt.MARQUEE);
-        DatabaseReference MarqueeText = FirebaseDatabase.getInstance().getReference("MainPageBanner");
-        MarqueeText.addValueEventListener(new ValueEventListener() {
+        DatabaseReference marqueeTextRef =
+                FirebaseDatabase.getInstance().getReference("MainPageBanner");
+
+        // All initial UI setup MUST be on the main thread
+        runOnUiThread(() -> {
+            textView.setSingleLine(true);
+            textView.setEllipsize(TextUtils.TruncateAt.MARQUEE);
+            textView.setMarqueeRepeatLimit(-1);
+        });
+
+        marqueeTextRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String TextToShow = snapshot.getValue(String.class);
-                assert TextToShow != null;
-                if (TextToShow.equals("N/A")) {
-                    textView.setVisibility(View.GONE);
-                } else {
-                    textView.setText(TextToShow);
-                    textView.setSelected(true);
-                }
+                String textToShow = snapshot.getValue(String.class);
+
+                runOnUiThread(() -> {
+                    if (textToShow == null || textToShow.trim().equalsIgnoreCase("N/A")) {
+                        textView.setVisibility(View.GONE);
+                    } else {
+                        String cleaned = textToShow.trim();
+                        textView.setVisibility(View.VISIBLE);
+                        textView.setText(cleaned);
+                        textView.setSelected(true); // needed for marquee
+                    }
+                });
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
+                // Optional: log error
+                // Log.e("Marquee", "Failed to load banner: " + error.getMessage());
             }
         });
     }
+
+
 
 
     private void AnalyticsDataPushWithActivity(String key, String value, String name, Class<? extends AppCompatActivity> activityClass, AppCompatActivity activity) {

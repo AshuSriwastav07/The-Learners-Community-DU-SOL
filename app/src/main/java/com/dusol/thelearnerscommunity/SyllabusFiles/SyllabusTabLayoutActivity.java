@@ -30,6 +30,8 @@ public class SyllabusTabLayoutActivity extends AppCompatActivity {
         vpAdapter.addFragment(new Sem4SyllabusFragment(), "4th");
         vpAdapter.addFragment(new Sem5SyllabusFragment(), "5th");
         vpAdapter.addFragment(new Sem6SyllabusFragment(), "6th");
+        vpAdapter.addFragment(new Sem7SyllabusFragment(), "7th");
+        vpAdapter.addFragment(new Sem8SyllabusFragment(), "8th");
 
         // Set up the ViewPager with the sections adapter.
         viewPager.setAdapter(vpAdapter);

@@ -13,9 +13,9 @@ android {
         applicationId = "com.dusol.thelearnerscommunity"
         minSdk = 23
         targetSdk = 35
-        versionCode = 23
+        versionCode = 24
         multiDexEnabled= true
-        versionName = "2025.10.2.5.1" //Explain Year.month.versionName
+        versionName = "2025.11.2.5.2" //Explain Year.month.versionName
         //This is Version Name 2.4 and we cant use same version code again
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -69,6 +69,7 @@ android {
 
 dependencies {
 
+    implementation("com.github.mhiew:android-pdf-viewer:3.2.0-beta.3")
     implementation("androidx.appcompat:appcompat:1.7.1")
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.2.1")

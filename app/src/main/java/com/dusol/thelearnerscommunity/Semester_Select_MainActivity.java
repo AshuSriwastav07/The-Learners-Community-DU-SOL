@@ -48,10 +48,6 @@ public class Semester_Select_MainActivity extends AppCompatActivity {
 
 
         Button buyNotes=findViewById(R.id.Buy_Notes_PDF);
-        ImageButton NavHome = findViewById(R.id.navbarHome);
-        ImageButton NavBooks = findViewById(R.id.navbarBooks);
-        ImageButton NavStudents = findViewById(R.id.navbarStudent);
-        ImageButton NavVideos = findViewById(R.id.navbarVideos);
 
         CardView sem1 = findViewById(R.id.CBCS_sem1_notes);
         CardView sem2 = findViewById(R.id.CBCS_sem2_notes);
@@ -60,41 +56,7 @@ public class Semester_Select_MainActivity extends AppCompatActivity {
         CardView sem5 = findViewById(R.id.CBCS_sem5_notes);
         CardView sem6 = findViewById(R.id.CBCS_sem6_notes);
 
-        //Videos // Left to make
-        NavVideos.setOnClickListener(view -> {
-            // Define the YouTube channel URL
-            String youtubeChannelUrl = "https://www.youtube.com/@TheLearnersCommunityDUSOL/videos";
-
-            // Create an Intent with the ACTION_VIEW action and the YouTube channel URL
-            Uri youtubeUri = Uri.parse(youtubeChannelUrl);
-            Intent intent = new Intent(Intent.ACTION_VIEW, youtubeUri);
-
-            // Set the package name of the YouTube app
-            intent.setPackage("com.google.android.youtube");
-
-            // Check if the YouTube app is installed
-            if (intent.resolveActivity(getPackageManager()) != null) {
-                // The YouTube app is installed, so open it
-                startActivity(intent);
-            } else {
-                // The YouTube app is not installed, you can handle this case as needed
-                // For example, you can open the YouTube website in a web browser
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(youtubeChannelUrl)));
-            }
-        });
-
-        NavHome.setOnClickListener(view -> {
-            Intent intent=new Intent(getApplicationContext(),LinkPage_MainActivity.class);
-            startActivity(intent);
-
-        });
-
-        //Students Portal
-        NavStudents.setOnClickListener(view -> {
-            Intent intent=new Intent(getApplicationContext(),studentsBoard.class);
-            startActivity(intent);
-
-        });
+        // Setup bottom navigation bar
 
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.INTERNET)
@@ -127,23 +89,7 @@ public class Semester_Select_MainActivity extends AppCompatActivity {
 
 
 
-//Navigation Bar Button
 
-        //Home
-        NavHome.setOnClickListener(view -> {
-            Intent intent=new Intent(getApplicationContext(),LinkPage_MainActivity.class);
-            startActivity(intent);
-
-        });
-
-        //Videos // Left to make
-
-        //Students Portal
-        NavStudents.setOnClickListener(view -> {
-            Intent intent=new Intent(getApplicationContext(),studentsBoard.class);
-            startActivity(intent);
-
-        });
 
 
 /*

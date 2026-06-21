@@ -67,6 +67,10 @@ public class studentsBoard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_students_board);
 
+        // Setup bottom navigation bar
+        com.google.android.material.bottomnavigation.BottomNavigationView bottomNav = findViewById(R.id.bottomNavBar);
+        BottomNavHelper.setup(this, bottomNav, R.id.nav_student);
+
         // Initialize UI elements
         CardView StudentLogin = findViewById(R.id.cv1_Student_Login);
         CardView GetStudyMaterial = findViewById(R.id.GetStudyMaterial);

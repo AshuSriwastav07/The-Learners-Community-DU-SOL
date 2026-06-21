@@ -9,9 +9,9 @@
 package com.dusol.thelearnerscommunity;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.widget.ImageButton;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -32,12 +32,6 @@ public class DU_SOL_NOTES__MainActivity extends AppCompatActivity {
         CardView StudyMaterial = findViewById(R.id.button3_SOL_Material); //Button 3
         CardView Syllabus = findViewById(R.id.button4_SOL_Syllabus); //Button 3
 
-        ImageButton NavHome = findViewById(R.id.navbarHome);
-        ImageButton NavBooks = findViewById(R.id.navbarBooks);
-        ImageButton NavStudents = findViewById(R.id.navbarStudent);
-        ImageButton NavVideos = findViewById(R.id.navbarVideos);
-
-
         //Button 1
         sol_notes.setOnClickListener(view -> startActivity(new Intent(DU_SOL_NOTES__MainActivity.this,Semester_Select_MainActivity.class)));
 
@@ -50,52 +44,9 @@ public class DU_SOL_NOTES__MainActivity extends AppCompatActivity {
 //        button4
         Syllabus.setOnClickListener(v -> startActivity(new Intent(DU_SOL_NOTES__MainActivity.this, SyllabusTabLayoutActivity.class)));
 
-
-
-
-//Navigation Bar Button
-
-        //Home
-        NavHome.setOnClickListener(view -> {
-            Intent intent=new Intent(getApplicationContext(),LinkPage_MainActivity.class);
-            startActivity(intent);
-
-        });
-
-        NavVideos.setOnClickListener(view -> {
-            // Define the YouTube channel URL
-            String youtubeChannelUrl = "https://www.youtube.com/@TheLearnersCommunityDUSOL/videos";
-
-            // Create an Intent with the ACTION_VIEW action and the YouTube channel URL
-            Uri youtubeUri = Uri.parse(youtubeChannelUrl);
-            Intent intent = new Intent(Intent.ACTION_VIEW, youtubeUri);
-
-            // Set the package name of the YouTube app
-            intent.setPackage("com.google.android.youtube");
-
-            // Check if the YouTube app is installed
-            if (intent.resolveActivity(getPackageManager()) != null) {
-                // The YouTube app is installed, so open it
-                startActivity(intent);
-            } else {
-                // The YouTube app is not installed, you can handle this case as needed
-                // For example, you can open the YouTube website in a web browser
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(youtubeChannelUrl)));
-            }
-        });
-        //Notes Books
-        NavBooks.setOnClickListener(view -> {
-            Intent intent=new Intent(getApplicationContext(),DU_SOL_NOTES__MainActivity.class);
-            startActivity(intent);
-
-        });
-
-        //Students Portal
-        NavStudents.setOnClickListener(view -> {
-            Intent intent=new Intent(getApplicationContext(),studentsBoard.class);
-            startActivity(intent);
-
-        });
+        // Setup bottom navigation bar
+        BottomNavigationView bottomNav = findViewById(R.id.bottomNavBar);
+        BottomNavHelper.setup(this, bottomNav, R.id.nav_notes);
 
 
 

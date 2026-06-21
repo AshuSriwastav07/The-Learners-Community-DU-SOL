@@ -34,6 +34,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="33">
         <activity
+            android:name=".YouTubeVideosActivity"
+            android:exported="false" />
+        <activity
             android:name=".NEP_Files.NEP_Sem8_MainActivity"
             android:exported="false" />
         <activity
@@ -70,6 +73,10 @@
             android:name=".NEP_Files.NEP_Sem3_MainActivity"
             android:exported="false"
             android:theme="@style/Theme.TheLearnersCommunity" />
+        <activity
+            android:name=".SyllabusFiles.PdfViewerActivity"
+            android:theme="@style/Theme.TheLearnersCommunity"
+            android:exported="false" />
         <activity
             android:name=".SyllabusFiles.SyllabusTabLayoutActivity"
             android:exported="false" />

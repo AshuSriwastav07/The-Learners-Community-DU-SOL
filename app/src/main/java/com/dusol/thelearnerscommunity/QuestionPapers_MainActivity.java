@@ -53,51 +53,7 @@ public class QuestionPapers_MainActivity extends AppCompatActivity {
         Button sem5 = findViewById(R.id.sem5QP);
         Button sem6 = findViewById(R.id.sem6QP);
 
-        // Navigation buttons
-        ImageButton NavHome = findViewById(R.id.navbarHome);
-        ImageButton NavBooks = findViewById(R.id.navbarBooks);
-        ImageButton NavStudents = findViewById(R.id.navbarStudent);
-        ImageButton NavVideos = findViewById(R.id.navbarVideos);
-
-        // Videos - Left to make
-        NavVideos.setOnClickListener(view -> {
-            // Define the YouTube channel URL
-            String youtubeChannelUrl = "https://www.youtube.com/@TheLearnersCommunityDUSOL/videos";
-
-            // Create an Intent with the ACTION_VIEW action and the YouTube channel URL
-            Uri youtubeUri = Uri.parse(youtubeChannelUrl);
-            Intent intent = new Intent(Intent.ACTION_VIEW, youtubeUri);
-
-            // Set the package name of the YouTube app
-            intent.setPackage("com.google.android.youtube");
-
-            // Check if the YouTube app is installed
-            if (intent.resolveActivity(getPackageManager()) != null) {
-                // The YouTube app is installed, so open it
-                startActivity(intent);
-            } else {
-                // The YouTube app is not installed, you can handle this case as needed
-                // For example, you can open the YouTube website in a web browser
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(youtubeChannelUrl)));
-            }
-        });
-
-        NavHome.setOnClickListener(view -> {
-            Intent intent = new Intent(getApplicationContext(), LinkPage_MainActivity.class);
-            startActivity(intent);
-        });
-
-        // Notes Books
-        NavBooks.setOnClickListener(view -> {
-            Intent intent = new Intent(getApplicationContext(), DU_SOL_NOTES__MainActivity.class);
-            startActivity(intent);
-        });
-
-        // Students Portal
-        NavStudents.setOnClickListener(view -> {
-            Intent intent = new Intent(getApplicationContext(), studentsBoard.class);
-            startActivity(intent);
-        });
+        // Setup bottom navigation bar
 
         // Marquee text setup
         TextView textView = findViewById(R.id.textBannerMarquee);

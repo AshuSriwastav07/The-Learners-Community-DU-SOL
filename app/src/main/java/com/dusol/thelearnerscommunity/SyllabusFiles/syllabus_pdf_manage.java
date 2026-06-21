@@ -100,10 +100,14 @@ public class syllabus_pdf_manage {
 
                 context.startActivity(intent);
             }
-            else if(link.contains("pdfhost")){
-                Intent intent = new Intent(context, Syllabus_Web_MainActivity.class);
-                intent.putExtra("link", link);
-                context.startActivity(intent);}
+            else {
+                // Open PDF natively (Cloudinary, pdfhost, or any direct PDF link)
+                Intent intent = new Intent(context, PdfViewerActivity.class);
+                intent.putExtra(PdfViewerActivity.EXTRA_PDF_URL, link);
+                intent.putExtra(PdfViewerActivity.EXTRA_PDF_TITLE, Name);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            }
 
         } else if (link.contains("youtube")) {
             Uri youtubeUri = Uri.parse(link);

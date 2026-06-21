@@ -251,5 +251,10 @@
     <string name="imageview">ImageView</string>
     <string name="check_all_notes">Check All Notes</string>
     <string name="all_new_published_notes">All New Published Notes</string>
+    <string name="our_youtube_videos">Our YouTube Videos</string>
+    <string name="home">Home</string>
+    <string name="videos">Videos</string>
+    <string name="notes">Notes</string>
+    <string name="dashboard">Dashboard</string>
 
 </resources>

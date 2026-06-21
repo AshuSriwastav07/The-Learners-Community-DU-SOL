@@ -10,6 +10,7 @@
  */
 -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fitsSystemWindows="true"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -942,7 +943,7 @@
             <androidx.cardview.widget.CardView
                 style="@style/night_CardView"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_165"
+                android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dp_2"
                 android:layout_marginBottom="@dimen/dp_4"
                 app:cardCornerRadius="@dimen/dp_6"
@@ -950,7 +951,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/dp_160"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical">
 
                     <TextView
@@ -1015,381 +1016,29 @@
 
                     </LinearLayout>
 
-                    <HorizontalScrollView
+                    <!-- Dynamic YouTube Videos Section -->
+                    <FrameLayout
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/dp_65"
-                        android:layout_gravity="center"
-                        android:scrollbars="none">
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp">
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_margin="@dimen/dp_2"
-                            android:gravity="center"
-                            android:orientation="horizontal">
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/homeYouTubeRecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clipToPadding="false"
+                            android:paddingStart="4dp"
+                            android:paddingEnd="4dp" />
 
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/YTVideosCV1"
-                                style="@style/nightHomePageButtons"
-                                android:layout_width="@dimen/dp_90"
-                                android:layout_height="@dimen/dp_60"
-                                android:layout_margin="@dimen/dp_4"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:foreground="?attr/selectableItemBackground"
-                                app:cardCornerRadius="@dimen/dp_6"
-                                app:cardPreventCornerOverlap="true"
-                                app:cardUseCompatPadding="true">
-
-                                <FrameLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <ImageView
-                                        android:id="@+id/YTVideo1ImageView"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:scaleType="centerCrop" />
-
-                                    <ImageView
-                                        android:layout_width="@dimen/dp_12"
-                                        android:layout_height="@dimen/dp_12"
-                                        android:layout_gravity="center"
-                                        android:alpha="0.9"
-                                        android:contentDescription="@string/video_lectures"
-                                        android:src="@android:drawable/ic_media_play"
-                                        app:tint="#FFFFFF" />
-                                </FrameLayout>
-                            </androidx.cardview.widget.CardView>
-
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/YTVideosCV2"
-                                style="@style/nightHomePageButtons"
-                                android:layout_width="@dimen/dp_90"
-                                android:layout_height="@dimen/dp_60"
-                                android:layout_margin="@dimen/dp_4"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:foreground="?attr/selectableItemBackground"
-                                app:cardCornerRadius="@dimen/dp_6"
-                                app:cardPreventCornerOverlap="true"
-                                app:cardUseCompatPadding="true">
-
-                                <FrameLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <ImageView
-                                        android:id="@+id/YTVideo2ImageView"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:scaleType="centerCrop" />
-
-                                    <ImageView
-                                        android:layout_width="@dimen/dp_12"
-                                        android:layout_height="@dimen/dp_12"
-                                        android:layout_gravity="center"
-                                        android:alpha="0.9"
-                                        android:contentDescription="@string/video_lectures"
-                                        android:src="@android:drawable/ic_media_play"
-                                        app:tint="#FFFFFF" />
-                                </FrameLayout>
-                            </androidx.cardview.widget.CardView>
-
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/YTVideosCV3"
-                                style="@style/nightHomePageButtons"
-                                android:layout_width="@dimen/dp_90"
-                                android:layout_height="@dimen/dp_60"
-                                android:layout_margin="@dimen/dp_4"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:foreground="?attr/selectableItemBackground"
-                                app:cardCornerRadius="@dimen/dp_6"
-                                app:cardPreventCornerOverlap="true"
-                                app:cardUseCompatPadding="true">
-
-                                <FrameLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <ImageView
-                                        android:id="@+id/YTVideo3ImageView"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:scaleType="centerCrop" />
-
-                                    <ImageView
-                                        android:layout_width="@dimen/dp_12"
-                                        android:layout_height="@dimen/dp_12"
-                                        android:layout_gravity="center"
-                                        android:alpha="0.9"
-                                        android:contentDescription="@string/video_lectures"
-                                        android:src="@android:drawable/ic_media_play"
-                                        app:tint="#FFFFFF" />
-                                </FrameLayout>
-                            </androidx.cardview.widget.CardView>
-
-
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/YTVideosCV4"
-                                style="@style/nightHomePageButtons"
-                                android:layout_width="@dimen/dp_90"
-                                android:layout_height="@dimen/dp_60"
-                                android:layout_margin="@dimen/dp_4"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:foreground="?attr/selectableItemBackground"
-                                app:cardCornerRadius="@dimen/dp_6"
-                                app:cardPreventCornerOverlap="true"
-                                app:cardUseCompatPadding="true">
-
-                                <FrameLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <ImageView
-                                        android:id="@+id/YTVideo4ImageView"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:scaleType="centerCrop" />
-
-                                    <ImageView
-                                        android:layout_width="@dimen/dp_12"
-                                        android:layout_height="@dimen/dp_12"
-                                        android:layout_gravity="center"
-                                        android:alpha="0.9"
-                                        android:contentDescription="@string/video_lectures"
-                                        android:src="@android:drawable/ic_media_play"
-                                        app:tint="#FFFFFF" />
-                                </FrameLayout>
-                            </androidx.cardview.widget.CardView>
-
-
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/YTVideosCV5"
-                                style="@style/nightHomePageButtons"
-                                android:layout_width="@dimen/dp_90"
-                                android:layout_height="@dimen/dp_60"
-                                android:layout_margin="@dimen/dp_4"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:foreground="?attr/selectableItemBackground"
-                                app:cardCornerRadius="@dimen/dp_6"
-                                app:cardPreventCornerOverlap="true"
-                                app:cardUseCompatPadding="true">
-
-                                <FrameLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <ImageView
-                                        android:id="@+id/YTVideo5ImageView"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:scaleType="centerCrop" />
-
-                                    <ImageView
-                                        android:layout_width="@dimen/dp_12"
-                                        android:layout_height="@dimen/dp_12"
-                                        android:layout_gravity="center"
-                                        android:alpha="0.9"
-                                        android:contentDescription="@string/video_lectures"
-                                        android:src="@android:drawable/ic_media_play"
-                                        app:tint="#FFFFFF" />
-                                </FrameLayout>
-                            </androidx.cardview.widget.CardView>
-
-                        </LinearLayout>
-                    </HorizontalScrollView>
-
-                    <HorizontalScrollView
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/dp_65"
-                        android:layout_gravity="center"
-                        android:scrollbars="none">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_margin="@dimen/dp_2"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/YTVideosCV6"
-                                style="@style/nightHomePageButtons"
-                                android:layout_width="@dimen/dp_90"
-                                android:layout_height="@dimen/dp_60"
-                                android:layout_margin="@dimen/dp_4"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:foreground="?attr/selectableItemBackground"
-                                app:cardCornerRadius="@dimen/dp_6"
-                                app:cardPreventCornerOverlap="true"
-                                app:cardUseCompatPadding="true">
-
-                                <FrameLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <ImageView
-                                        android:id="@+id/YTVideo6ImageView"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:scaleType="centerCrop" />
-
-                                    <ImageView
-                                        android:layout_width="@dimen/dp_12"
-                                        android:layout_height="@dimen/dp_12"
-                                        android:layout_gravity="center"
-                                        android:alpha="0.9"
-                                        android:contentDescription="@string/video_lectures"
-                                        android:src="@android:drawable/ic_media_play"
-                                        app:tint="#FFFFFF" />
-                                </FrameLayout>
-                            </androidx.cardview.widget.CardView>
-
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/YTVideosCV7"
-                                style="@style/nightHomePageButtons"
-                                android:layout_width="@dimen/dp_90"
-                                android:layout_height="@dimen/dp_60"
-                                android:layout_margin="@dimen/dp_4"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:foreground="?attr/selectableItemBackground"
-                                app:cardCornerRadius="@dimen/dp_6"
-                                app:cardPreventCornerOverlap="true"
-                                app:cardUseCompatPadding="true">
-
-                                <FrameLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <ImageView
-                                        android:id="@+id/YTVideo7ImageView"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:scaleType="centerCrop" />
-
-                                    <ImageView
-                                        android:layout_width="@dimen/dp_12"
-                                        android:layout_height="@dimen/dp_12"
-                                        android:layout_gravity="center"
-                                        android:alpha="0.9"
-                                        android:contentDescription="@string/video_lectures"
-                                        android:src="@android:drawable/ic_media_play"
-                                        app:tint="#FFFFFF" />
-                                </FrameLayout>
-                            </androidx.cardview.widget.CardView>
-
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/YTVideosCV8"
-                                style="@style/nightHomePageButtons"
-                                android:layout_width="@dimen/dp_90"
-                                android:layout_height="@dimen/dp_60"
-                                android:layout_margin="@dimen/dp_4"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:foreground="?attr/selectableItemBackground"
-                                app:cardCornerRadius="@dimen/dp_6"
-                                app:cardPreventCornerOverlap="true"
-                                app:cardUseCompatPadding="true">
-
-                                <FrameLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <ImageView
-                                        android:id="@+id/YTVideo8ImageView"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:scaleType="centerCrop" />
-
-                                    <ImageView
-                                        android:layout_width="@dimen/dp_12"
-                                        android:layout_height="@dimen/dp_12"
-                                        android:layout_gravity="center"
-                                        android:alpha="0.9"
-                                        android:contentDescription="@string/video_lectures"
-                                        android:src="@android:drawable/ic_media_play"
-                                        app:tint="#FFFFFF" />
-                                </FrameLayout>
-                            </androidx.cardview.widget.CardView>
-
-
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/YTVideosCV9"
-                                style="@style/nightHomePageButtons"
-                                android:layout_width="@dimen/dp_90"
-                                android:layout_height="@dimen/dp_60"
-                                android:layout_margin="@dimen/dp_4"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:foreground="?attr/selectableItemBackground"
-                                app:cardCornerRadius="@dimen/dp_6"
-                                app:cardPreventCornerOverlap="true"
-                                app:cardUseCompatPadding="true">
-
-                                <FrameLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <ImageView
-                                        android:id="@+id/YTVideo9ImageView"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:scaleType="centerCrop" />
-
-                                    <ImageView
-                                        android:layout_width="@dimen/dp_12"
-                                        android:layout_height="@dimen/dp_12"
-                                        android:layout_gravity="center"
-                                        android:alpha="0.9"
-                                        android:contentDescription="@string/video_lectures"
-                                        android:src="@android:drawable/ic_media_play"
-                                        app:tint="#FFFFFF" />
-                                </FrameLayout>
-                            </androidx.cardview.widget.CardView>
-
-
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/YTVideosCV10"
-                                style="@style/nightHomePageButtons"
-                                android:layout_width="@dimen/dp_90"
-                                android:layout_height="@dimen/dp_60"
-                                android:layout_margin="@dimen/dp_4"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:foreground="?attr/selectableItemBackground"
-                                app:cardCornerRadius="@dimen/dp_6"
-                                app:cardPreventCornerOverlap="true"
-                                app:cardUseCompatPadding="true">
-
-                                <FrameLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <ImageView
-                                        android:id="@+id/YTVideo10ImageView"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:scaleType="centerCrop" />
-
-                                    <ImageView
-                                        android:layout_width="@dimen/dp_12"
-                                        android:layout_height="@dimen/dp_12"
-                                        android:layout_gravity="center"
-                                        android:alpha="0.9"
-                                        android:contentDescription="@string/video_lectures"
-                                        android:src="@android:drawable/ic_media_play"
-                                        app:tint="#FFFFFF" />
-                                </FrameLayout>
-                            </androidx.cardview.widget.CardView>
-
-                        </LinearLayout>
-                    </HorizontalScrollView>
+                        <ProgressBar
+                            android:id="@+id/homeYouTubeProgressBar"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_gravity="center"
+                            android:indeterminateTint="#FF3D00"
+                            android:visibility="visible" />
+                    </FrameLayout>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -1412,56 +1061,16 @@
         app:layout_constraintHorizontal_bias="0.981"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@mipmap/ask" />
-
-    <LinearLayout
+    <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavBar"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="#FFFFFF"
-        android:backgroundTint="#FFFFFF"
-        android:orientation="horizontal"
-        android:visibility="visible"
+        android:layout_height="wrap_content"
+        android:background="@color/background_color_night"
+        app:itemIconTint="@null"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageButton
-            android:id="@+id/navbarHome"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_20"
-            android:layout_weight="1"
-            android:backgroundTint="@color/background_color_night"
-            android:contentDescription="@string/NavBTN"
-            app:srcCompat="@mipmap/navhomenew" />
-
-        <ImageButton
-            android:id="@+id/navbarVideos"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_20"
-            android:layout_weight="1"
-            android:backgroundTint="@color/background_color_night"
-            android:contentDescription="@string/NavBTN"
-            app:srcCompat="@mipmap/navvideonew" />
-
-        <ImageButton
-            android:id="@+id/navbarBooks"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_20"
-            android:layout_weight="1"
-            android:backgroundTint="@color/background_color_night"
-            android:contentDescription="@string/NavBTN"
-            app:srcCompat="@mipmap/navnotesnew" />
-
-        <ImageButton
-            android:id="@+id/navbarStudent"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_20"
-            android:layout_weight="1"
-            android:backgroundTint="@color/background_color_night"
-            android:contentDescription="@string/NavBTN"
-            app:srcCompat="@mipmap/navstudentnew" />
-
-
-    </LinearLayout>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

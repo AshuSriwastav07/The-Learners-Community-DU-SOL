@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@mipmap/navhomenew"
+        android:title="@string/home" />
+
+    <item
+        android:id="@+id/nav_videos"
+        android:icon="@mipmap/navvideonew"
+        android:title="@string/videos" />
+
+    <item
+        android:id="@+id/nav_notes"
+        android:icon="@mipmap/navnotesnew"
+        android:title="@string/notes" />
+
+    <item
+        android:id="@+id/nav_student"
+        android:icon="@mipmap/navstudentnew"
+        android:title="@string/dashboard" />
+
+</menu>

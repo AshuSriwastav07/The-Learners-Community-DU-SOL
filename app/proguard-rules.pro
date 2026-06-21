@@ -94,7 +94,7 @@
 -keep class androidx.viewpager2.widget.ViewPager2 { *; }
 -keep class androidx.viewpager2.adapter.FragmentStateAdapter { *; }
 
-# PDF viewer libraries
+# PDF viewer libraries (covers mhiew fork of AndroidPdfViewer which uses same package)
 -keep class com.github.barteksc.pdfviewer.** { *; }
 -keep class com.shockwave.pdfium.** { *; }
 

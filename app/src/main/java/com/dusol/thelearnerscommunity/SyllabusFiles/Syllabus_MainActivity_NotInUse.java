@@ -12,6 +12,7 @@ import static android.content.ContentValues.TAG;
 
 import android.content.Intent;
 import android.net.Uri;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -22,6 +23,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.dusol.thelearnerscommunity.DU_SOL_NOTES__MainActivity;
 import com.dusol.thelearnerscommunity.LinkPage_MainActivity;
+import com.dusol.thelearnerscommunity.BottomNavHelper;
 import com.dusol.thelearnerscommunity.R;
 import com.dusol.thelearnerscommunity.studentsBoard;
 import com.google.android.gms.ads.AdError;
@@ -133,58 +135,9 @@ public class Syllabus_MainActivity_NotInUse extends AppCompatActivity {
         Button sem6_BCOM_H = findViewById(R.id.sem6_bcom_hons);
 
 
-        ImageButton NavHome = findViewById(R.id.navbarHome);
-        ImageButton NavBooks = findViewById(R.id.navbarBooks);
-        ImageButton NavStudents = findViewById(R.id.navbarStudent);
-        ImageButton NavVideos = findViewById(R.id.navbarVideos);
-
-
-
-//Navigation Bar Button
-
-        //Home
-        NavHome.setOnClickListener(view -> {
-            Intent intent=new Intent(getApplicationContext(), LinkPage_MainActivity.class);
-            startActivity(intent);
-
-        });
-
-        //Videos // Left to make
-
-        //Notes Books
-        NavBooks.setOnClickListener(view -> {
-            Intent intent=new Intent(getApplicationContext(), DU_SOL_NOTES__MainActivity.class);
-            startActivity(intent);
-
-        });
-
-        //Students Portal
-        NavStudents.setOnClickListener(view -> {
-            Intent intent=new Intent(getApplicationContext(), studentsBoard.class);
-            startActivity(intent);
-
-        });
-        NavVideos.setOnClickListener(view -> {
-            // Define the YouTube channel URL
-            String youtubeChannelUrl = "https://www.youtube.com/@TheLearnersCommunityDUSOL/videos";
-
-            // Create an Intent with the ACTION_VIEW action and the YouTube channel URL
-            Uri youtubeUri = Uri.parse(youtubeChannelUrl);
-            Intent intent = new Intent(Intent.ACTION_VIEW, youtubeUri);
-
-            // Set the package name of the YouTube app
-            intent.setPackage("com.google.android.youtube");
-
-            // Check if the YouTube app is installed
-            if (intent.resolveActivity(getPackageManager()) != null) {
-                // The YouTube app is installed, so open it
-                startActivity(intent);
-            } else {
-                // The YouTube app is not installed, you can handle this case as needed
-                // For example, you can open the YouTube website in a web browser
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(youtubeChannelUrl)));
-            }
-        });
+        // Setup bottom navigation bar
+        BottomNavigationView bottomNav = findViewById(R.id.bottomNavBar);
+        BottomNavHelper.setup(this, bottomNav, R.id.nav_notes);
 
         sem1_BA.setOnClickListener(v -> startads(links,0));
 
