@@ -136,8 +136,7 @@ public class Syllabus_MainActivity_NotInUse extends AppCompatActivity {
 
 
         // Setup bottom navigation bar
-        BottomNavigationView bottomNav = findViewById(R.id.bottomNavBar);
-        BottomNavHelper.setup(this, bottomNav, R.id.nav_notes);
+        // (Removed: no bottomNavBar in this layout)
 
         sem1_BA.setOnClickListener(v -> startads(links,0));
 

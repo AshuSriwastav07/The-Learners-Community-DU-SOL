@@ -40,9 +40,6 @@
 -keep class com.google.firebase.messaging.** { *; }
 -keep class com.google.firebase.database.** { *; }
 -keep class com.google.firebase.database.GenericTypeIndicator { *; }
--keepclassmembers class com.google.firebase.database.GenericTypeIndicator {
-    T getValue(com.google.firebase.database.GenericTypeIndicator);
-}
 
 # Google Play Services rules
 -keep class com.google.android.gms.** { *; }
