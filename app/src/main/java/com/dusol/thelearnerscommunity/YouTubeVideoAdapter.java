@@ -56,13 +56,8 @@ public class YouTubeVideoAdapter extends RecyclerView.Adapter<YouTubeVideoAdapte
         holder.titleTextView.setText(video.getTitle());
         holder.dateTextView.setText(formatDate(video.getPublishedAt()));
 
-        // Load thumbnail using Glide
-        Glide.with(holder.thumbnailImageView)
-                .load(video.getThumbnailUrl())
-                .placeholder(R.drawable.loading)
-                .error(R.drawable.loading)
-                .centerCrop()
-                .into(holder.thumbnailImageView);
+        // Load thumbnail using CloudinaryImageLoader (non-Cloudinary URLs like YouTube pass through automatically)
+        CloudinaryImageLoader.loadThumbnail(context, video.getThumbnailUrl(), holder.thumbnailImageView);
 
         // Open video in YouTube app or browser on click
         holder.itemView.setOnClickListener(v -> {

@@ -91,12 +91,19 @@ public class PDFDataManage {
 
 
     public static void openIntend(Context context,String link,String Name, String PDFType){
-        Intent intent = new Intent(context, Notes_HomeWeb_MainActivity.class);
-        intent.putExtra("link", link);
-        intent.putExtra("PdfName", Name);
-        intent.putExtra("Path", PDFType);
-
-        context.startActivity(intent);
+        if (link != null && link.contains("drive")) {
+            Intent intent = new Intent(context, Notes_HomeWeb_MainActivity.class);
+            intent.putExtra("link", link);
+            intent.putExtra("PdfName", Name);
+            intent.putExtra("Path", PDFType);
+            context.startActivity(intent);
+        } else {
+            Intent intent = new Intent(context, com.dusol.thelearnerscommunity.SyllabusFiles.PdfViewerActivity.class);
+            intent.putExtra(com.dusol.thelearnerscommunity.SyllabusFiles.PdfViewerActivity.EXTRA_PDF_URL, link);
+            intent.putExtra(com.dusol.thelearnerscommunity.SyllabusFiles.PdfViewerActivity.EXTRA_PDF_TITLE, Name);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(intent);
+        }
     }
 
     public static void PaidNotesLinkOpen(Context context,String url){

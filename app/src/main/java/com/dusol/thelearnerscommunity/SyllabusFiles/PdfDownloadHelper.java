@@ -31,7 +31,7 @@ public class PdfDownloadHelper {
     private static final String CACHE_DIR_NAME = "pdf_cache";
     private static final int CONNECT_TIMEOUT_MS = 15_000;
     private static final int READ_TIMEOUT_MS = 20_000;
-    private static final long MAX_CACHE_SIZE_BYTES = 150L * 1024 * 1024; // 150 MB
+    private static final long MAX_CACHE_SIZE_BYTES = 100L * 1024 * 1024; // 100 MB
     private static final int BUFFER_SIZE = 8192;
 
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
@@ -71,7 +71,8 @@ public class PdfDownloadHelper {
                 }
 
                 // Download from network
-                Log.d(TAG, "Downloading: " + pdfUrl);
+                // Masked log to prevent URL leakage in logcat
+                Log.d(TAG, "Downloading PDF: [URL HIDDEN FOR SECURITY]");
                 downloadToFile(pdfUrl, cachedFile, callback);
 
                 if (cancelled.get()) {

@@ -506,14 +506,9 @@ public class LinkPage_MainActivity extends AppCompatActivity {
             return;
         }
 
-        imageUrl = imageUrl.trim();
-
-        // Load image safely, tied to the ImageView lifecycle
-        Glide.with(imageView)
-                .load(imageUrl)
-                .placeholder(R.drawable.loading) // your existing placeholder
-                .error(R.drawable.loading)
-                .into(imageView);
+        // Load image safely using the new CloudinaryImageLoader (optimized sizing and caching)
+        CloudinaryImageLoader.load(imageView.getContext(), imageUrl, imageView,
+                CloudinaryImageLoader.SIZE_MEDIUM, R.drawable.loading);
 
         // Handle click only if buyUrl is valid
         if (buyUrl == null || buyUrl.trim().isEmpty()) {

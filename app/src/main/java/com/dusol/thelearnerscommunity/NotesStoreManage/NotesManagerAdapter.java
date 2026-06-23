@@ -113,6 +113,17 @@ public class NotesManagerAdapter extends RecyclerView.Adapter<NotesManagerAdapte
             // Set click listener with comprehensive error handling
             holder.openNotesLink.setOnClickListener(v -> handleButtonClick(position));
 
+            // Prefetch next 2 items
+            for (int i = 1; i <= 2; i++) {
+                if (position + i < getItemCount()) {
+                    String nextUrl = getSafeString(notesImageView, position + i, "");
+                    if (!nextUrl.isEmpty()) {
+                        com.dusol.thelearnerscommunity.CloudinaryImageLoader.prefetch(context, nextUrl, 
+                                com.dusol.thelearnerscommunity.CloudinaryImageLoader.SIZE_THUMBNAIL);
+                    }
+                }
+            }
+
         } catch (Exception e) {
             Log.e(TAG, "Error binding view holder at position " + position + ": " + e.getMessage(), e);
             showErrorToUser("Error displaying item");
@@ -143,22 +154,7 @@ public class NotesManagerAdapter extends RecyclerView.Adapter<NotesManagerAdapte
                 return;
             }
 
-            Picasso.get()
-                    .load(imageUrl)
-                    .error(R.drawable.nopictures)
-                    .placeholder(R.drawable.loading)
-                    .into(imageView, new Callback() {
-                        @Override
-                        public void onSuccess() {
-                            Log.d(TAG, "Image loaded successfully for position " + position);
-                        }
-
-                        @Override
-                        public void onError(Exception e) {
-                            Log.w(TAG, "Failed to load image for position " + position + ": " + e.getMessage());
-                            imageView.setImageResource(R.drawable.nopictures);
-                        }
-                    });
+            com.dusol.thelearnerscommunity.CloudinaryImageLoader.loadThumbnail(context, imageUrl, imageView);
 
         } catch (Exception e) {
             Log.e(TAG, "Error loading image for position " + position + ": " + e.getMessage(), e);
@@ -242,13 +238,13 @@ public class NotesManagerAdapter extends RecyclerView.Adapter<NotesManagerAdapte
     @Override
     public void onViewRecycled(@NonNull MyViewHolder holder) {
         super.onViewRecycled(holder);
-        // Cancel any pending image loads for this view holder
+        // CloudinaryImageLoader handles Glide request cancellation automatically on view recycle.
         try {
             if (holder.notesImage != null) {
-                Picasso.get().cancelRequest(holder.notesImage);
+                com.bumptech.glide.Glide.with(context).clear(holder.notesImage);
             }
         } catch (Exception e) {
-            Log.w(TAG, "Error canceling image request: " + e.getMessage());
+            Log.w(TAG, "Error clearing image request: " + e.getMessage());
         }
     }
 }

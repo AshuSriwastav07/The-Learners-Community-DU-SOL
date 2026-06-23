@@ -47,11 +47,8 @@ public class Academic_Calendar_MainActivity extends AppCompatActivity {
                 // Load image using Picasso library
                 // Show loading image while it's loading
                 // Show error image if loading fails
-                Picasso.get()
-                        .load(Link)
-                        .error(R.drawable.nopictures)
-                        .placeholder(R.drawable.loading)
-                        .into(imageView); // Put image into imageView
+                CloudinaryImageLoader.load(Academic_Calendar_MainActivity.this, Link, imageView, 
+                        CloudinaryImageLoader.SIZE_FULL, R.drawable.loading);
             }
 
             @Override

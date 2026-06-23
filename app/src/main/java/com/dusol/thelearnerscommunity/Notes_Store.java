@@ -84,7 +84,7 @@ public class Notes_Store extends AppCompatActivity {
         };
 
         for (int i = 0; i < imgLinks.length && i < imageViews.length; i++) {
-            Picasso.get().load(imgLinks[i]).into(imageViews[i]);
+            CloudinaryImageLoader.loadThumbnail(this, imgLinks[i], imageViews[i]);
         }
 
 

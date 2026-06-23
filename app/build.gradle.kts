@@ -89,6 +89,7 @@ dependencies {
     implementation("androidx.gridlayout:gridlayout:1.1.0")
     implementation("com.google.android.play:app-update:2.1.0")
     implementation("com.github.bumptech.glide:glide:4.16.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
     implementation(platform("com.google.firebase:firebase-bom:34.1.0"))
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.3.0")
