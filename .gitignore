@@ -40,4 +40,5 @@ gradle.properties
 /captures
 .externalNativeBuild
 .cxx
-.abb
+*.aab
+/app/release/
