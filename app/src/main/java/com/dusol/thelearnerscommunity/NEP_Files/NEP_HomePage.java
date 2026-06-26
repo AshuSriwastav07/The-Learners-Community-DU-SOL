@@ -85,8 +85,8 @@ public class NEP_HomePage extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference("NEP_Notes/NotesAvailable");
 
-        // Read once (no need for realtime listener here)
-        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+        // Use addValueEventListener so offline cache triggers instantly
+        ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 values.clear();

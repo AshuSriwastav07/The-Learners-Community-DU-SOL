@@ -175,6 +175,8 @@ public class studentsBoard extends AppCompatActivity {
         NewResultLinks.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                newResultName.clear();
+                newResultLink.clear();
                 for (DataSnapshot data : snapshot.getChildren()) {
                     newResultName.add(data.getKey());
                     newResultLink.add(data.getValue(String.class));
@@ -236,6 +238,8 @@ public class studentsBoard extends AppCompatActivity {
         Extra1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                newInfoName.clear();
+                newInfoLink.clear();
                 for (DataSnapshot data : snapshot.getChildren()) {
                     newInfoName.add(data.getKey());
                     newInfoLink.add(data.getValue(String.class));

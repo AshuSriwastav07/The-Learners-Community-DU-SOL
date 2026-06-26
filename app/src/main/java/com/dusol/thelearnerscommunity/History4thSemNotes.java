@@ -449,56 +449,9 @@ public class History4thSemNotes extends Fragment {
         });
 
         listView.setOnItemClickListener((parent, view1, position, id) -> {
-
-            if (sem4NotesHistoryLinks.get(position).contains("youtube")) {
-
-                Uri youtubeUri = Uri.parse(sem4NotesHistoryLinks.get(position));
-                Intent intent = new Intent(Intent.ACTION_VIEW, youtubeUri);
-
-                // Set the package name of the YouTube app
-                intent.setPackage("com.google.android.youtube");
-                startActivity(intent);
-
-            } else if (sem4NotesHistoryLinks.get(position).contains("myinstamojo")) {
-
-                PaidNotesLinkOpen(sem4NotesHistoryLinks.get(position));
-            } else {
-
-                click++;
-                Log.d("AdsLoad", String.valueOf(click % NumberOfClickToShowAsd == 0));
-                Log.d("AdsLoad", String.valueOf(mInterstitialAd != null));
-
-
-                if (mInterstitialAd != null && click % NumberOfClickToShowAsd == 0) {
-                    mInterstitialAd.show(requireActivity());
-
-                    mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
-                        @Override
-                        public void onAdShowedFullScreenContent() {
-                            // Called when ad is shown.
-                            Log.d("AdsLoad3", "Ad showed fullscreen content.");
-                        }
-
-                        @Override
-                        public void onAdDismissedFullScreenContent() {
-                            Log.e("AdsLoad1", "Ad failed to show fullscreen content.");
-                            openIntend(sem4NotesHistoryLinks.get(position));
-                        }
-                        @Override
-                        public void onAdFailedToShowFullScreenContent(AdError adError) {
-                            // Called when ad fails to show.
-                            Log.e("AdsLoad2", "Ad failed to show fullscreen content.");
-                            openIntend(sem4NotesHistoryLinks.get(position));
-                        }
-
-
-                    });
-
-                }else{
-                    Log.e("AdsLoad4", "Last Else.");
-                    openIntend(sem4NotesHistoryLinks.get(position));
-                }
-            }
+            String url = sem4NotesHistoryLinks.get(position);
+            String title = sem4NotesHistoryName.get(position);
+            com.dusol.thelearnerscommunity.SyllabusFiles.NoteLinkRouter.route(view1.getContext(), url, title);
         });
 
 

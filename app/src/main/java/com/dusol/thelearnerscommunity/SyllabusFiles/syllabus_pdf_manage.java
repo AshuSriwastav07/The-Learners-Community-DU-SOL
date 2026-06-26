@@ -35,6 +35,8 @@ public class syllabus_pdf_manage {
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                NotesNameArray.clear();
+                NotesLinksArray.clear();
                 for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
                     String key = childSnapshot.getKey();  //notes name
                     String value = childSnapshot.getValue(String.class); //notes link
@@ -67,26 +69,9 @@ public class syllabus_pdf_manage {
 
 
         listView.setOnItemClickListener((parent, view1, position, id) -> {
-
-            if (NotesLinksArray.get(position).contains("youtube")) {
-
-                Uri youtubeUri = Uri.parse(NotesLinksArray.get(position));
-                Intent intent = new Intent(Intent.ACTION_VIEW, youtubeUri);
-
-                // Set the package name of the YouTube app
-                intent.setPackage("com.google.android.youtube");
-                context.startActivity(intent);
-
-            } else if (NotesLinksArray.get(position).contains("myinstamojo")) {
-
-                PaidNotesLinkOpen(context, NotesLinksArray.get(position));
-            } else if (NotesLinksArray.get(position).contains("N/A")) {
-                Toast.makeText(activity, "Notes Will Available Soon!", Toast.LENGTH_SHORT).show();
-            } else {
-                openIntend(context, NotesLinksArray.get(position),NotesNameArray.get(position));
-            }
-
-
+            String link = NotesLinksArray.get(position);
+            String title = NotesNameArray.get(position);
+            com.dusol.thelearnerscommunity.SyllabusFiles.NoteLinkRouter.route(context, link, title);
         });
     }
 

@@ -216,32 +216,15 @@ public class Edu4thSemNotes extends Fragment {
         });
 
         listView.setOnItemClickListener((parent, view1, position, id) -> {
-
-            if (sem4NotesEducationLinks.get(position).contains("youtube")) {
-
-                Uri youtubeUri = Uri.parse(sem4NotesEducationLinks.get(position));
-                Intent intent = new Intent(Intent.ACTION_VIEW, youtubeUri);
-
-                // Set the package name of the YouTube app
-                intent.setPackage("com.google.android.youtube");
-                startActivity(intent);
-
-            } else if (sem4NotesEducationLinks.get(position).contains("myinstamojo")) {
-
-                PaidNotesLinkOpen(sem4NotesEducationLinks.get(position));
-            } else {
-                openIntend(sem4NotesEducationLinks.get(position));
-            }
+            String url = sem4NotesEducationLinks.get(position);
+            String title = sem4NotesEducationName.get(position);
+            com.dusol.thelearnerscommunity.SyllabusFiles.NoteLinkRouter.route(view1.getContext(), url, title);
         });
 
 
     }
 
-    public void openIntend(String link){
-        Intent intent = new Intent(getActivity(), Notes_HomeWeb_MainActivity.class);
-        intent.putExtra("link", link);
-        startActivity(intent);
-    }
+    
 
     public void PaidNotesLinkOpen(String url){
         // Create an intent with ACTION_VIEW and the URL as the data

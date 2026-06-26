@@ -51,8 +51,11 @@ public class Sem2SyllabusFragment extends Fragment {
                 ArrayAdapter adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, sem2CourseName);
                 listView.setAdapter(adapter);
 
-                listView.setOnItemClickListener((parent, view1, position, id) ->
-                        openIntend(sem2CourseLinks.get(position)));
+                listView.setOnItemClickListener((parent, view1, position, id) -> {
+            String url = sem2CourseLinks.get(position);
+            String title = sem2CourseName.get(position);
+            com.dusol.thelearnerscommunity.SyllabusFiles.NoteLinkRouter.route(view1.getContext(), url, title);
+        });
             }
 
             @Override

@@ -256,5 +256,6 @@
     <string name="videos">Videos</string>
     <string name="notes">Notes</string>
     <string name="dashboard">Dashboard</string>
+    <string name="back">Back</string>
 
 </resources>

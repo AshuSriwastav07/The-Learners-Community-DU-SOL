@@ -1,121 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context="com.dusol.thelearnerscommunity.SyllabusFiles.PdfViewerActivity">
+    android:orientation="vertical"
+    android:background="@color/pdf_bg"
+    android:animateLayoutChanges="true">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/pdfAppBarLayout"
+    <!-- TOP BAR -->
+    <LinearLayout
+        android:id="@+id/topBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fitsSystemWindows="true">
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="4dp"
+        android:paddingEnd="8dp"
+        android:background="@color/toolbar_bg"
+        android:elevation="4dp">
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/pdfToolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:navigationIcon="?attr/homeAsUpIndicator"
-            app:titleTextAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/back"
+            android:src="@drawable/ic_arrow_back"/>
 
-    </com.google.android.material.appbar.AppBarLayout>
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/toolbar_text"
+            android:paddingStart="4dp"/>
 
+        <ImageButton
+            android:id="@+id/btnNightMode"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Night mode"
+            android:src="@drawable/ic_night_mode"/>
+
+        <ImageButton
+            android:id="@+id/btnMenu"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="More options"
+            android:src="@drawable/ic_more_vert"/>
+    </LinearLayout>
+
+    <!-- PDF AREA -->
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-        <!-- Native PDF renderer -->
         <com.github.barteksc.pdfviewer.PDFView
             android:id="@+id/pdfView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone" />
+            android:layout_height="match_parent"/>
 
-        <!-- Loading state -->
+        <!-- READING PROGRESS BAR -->
+        <View
+            android:id="@+id/progressTrack"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_gravity="top"
+            android:background="@color/progress_track"/>
+
+        <View
+            android:id="@+id/progressFill"
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            android:layout_gravity="top"
+            android:background="@color/colorPrimary"/>
+
+        <!-- FLOATING PAGE INDICATOR PILL -->
+        <TextView
+            android:id="@+id/tvPageIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="24dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:gravity="center"
+            android:background="@drawable/bg_page_pill"
+            android:textSize="13sp"
+            android:textColor="@color/pill_text"
+            android:visibility="invisible"
+            android:elevation="6dp"/>
+
+        <!-- LOADING STATE -->
         <LinearLayout
-            android:id="@+id/loadingContainer"
+            android:id="@+id/loadingLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:gravity="center"
             android:orientation="vertical"
-            android:visibility="visible">
+            android:gravity="center"
+            android:padding="24dp">
 
             <ProgressBar
-                android:id="@+id/pdfProgressBar"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:max="100"
-                android:progress="0" />
+                android:id="@+id/progressSpinner"
+                android:layout_width="48dp"
+                android:layout_height="48dp"/>
 
             <TextView
-                android:id="@+id/progressText"
+                android:id="@+id/tvLoadingText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Downloading…"
-                android:textSize="14sp" />
-
+                android:layout_marginTop="12dp"
+                android:text="Opening PDF…"
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary"/>
         </LinearLayout>
 
-        <!-- Error state -->
+        <!-- ERROR STATE -->
         <LinearLayout
-            android:id="@+id/errorContainer"
+            android:id="@+id/errorLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:gravity="center"
             android:orientation="vertical"
+            android:gravity="center"
             android:padding="32dp"
             android:visibility="gone">
 
             <ImageView
-                android:id="@+id/errorIcon"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:contentDescription="Error"
-                android:src="@android:drawable/ic_dialog_alert"
-                app:tint="?attr/colorError" />
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:src="@drawable/ic_error_outline"
+                android:contentDescription="Error"/>
 
             <TextView
-                android:id="@+id/errorMessage"
+                android:id="@+id/tvErrorMessage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="12dp"
+                android:textSize="14sp"
                 android:gravity="center"
-                android:text="Couldn't load this PDF.\nCheck your internet connection."
-                android:textSize="16sp" />
+                android:textColor="@color/text_secondary"/>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/retryButton"
+            <Button
+                android:id="@+id/btnRetry"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Retry" />
-
+                android:text="Try Again"/>
         </LinearLayout>
-
-        <!-- Page indicator overlay (bottom-center) -->
-        <TextView
-            android:id="@+id/pageIndicator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center_horizontal"
-            android:layout_marginBottom="24dp"
-            android:background="@android:drawable/dialog_holo_dark_frame"
-            android:paddingStart="16dp"
-            android:paddingTop="6dp"
-            android:paddingEnd="16dp"
-            android:paddingBottom="6dp"
-            android:textColor="@android:color/white"
-            android:textSize="14sp"
-            android:visibility="gone"
-            tools:text="1 / 24" />
-
     </FrameLayout>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <!-- BOTTOM CONTROLS BAR -->
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:background="@color/toolbar_bg"
+        android:elevation="4dp">
+
+        <ImageButton
+            android:id="@+id/btnPrevPage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Previous page"
+            android:src="@drawable/ic_chevron_left"/>
+
+        <SeekBar
+            android:id="@+id/pageSeekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"/>
+
+        <ImageButton
+            android:id="@+id/btnNextPage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Next page"
+            android:src="@drawable/ic_chevron_right"/>
+    </LinearLayout>
+
+</LinearLayout>

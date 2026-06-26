@@ -162,17 +162,20 @@ public class LinkPage_MainActivity extends AppCompatActivity {
         BottomNavHelper.setup(this, bottomNav, R.id.nav_home);
 
 
-        //upcoming exams
-        functionManager.upComingExams(this, UpComingExamsMainCard,semester12,semester34,semester56,semester78,semester12TV,semester34TV,semester56TV,semester78TV);
+        // 1. First: update local semester buttons — instant, no network needed
+        updateUpcomingExamsSection(
+                UpComingExamsMainCard,
+                semester12, semester34, semester56, semester78,
+                semester12TV, semester34TV, semester56TV, semester78TV
+        );
 
         // Fetch Latest 10 YouTube Videos Dynamically
         setupHomeYouTubeVideos();
 
-        //feature Notes Call
-
-        FeaturedNotes(
-                HomeNotesIV1,HomeNotesIV2,HomeNotesIV3,HomeNotesIV4,HomeNotesIV5,
-                HomeNotesIV6,HomeNotesIV7,HomeNotesIV8,HomeNotesIV9,HomeNotesIV10
+        // 2. Second: start Firebase fetch for images — async, won't block UI
+        loadExamNotesImages(
+                HomeNotesIV1, HomeNotesIV2, HomeNotesIV3, HomeNotesIV4, HomeNotesIV5,
+                HomeNotesIV6, HomeNotesIV7, HomeNotesIV8, HomeNotesIV9, HomeNotesIV10
         );
 
 
@@ -443,52 +446,97 @@ public class LinkPage_MainActivity extends AppCompatActivity {
             public void onError(String error) {
                 if (isFinishing() || isDestroyed()) return;
                 homeYouTubeProgressBar.setVisibility(android.view.View.GONE);
-                Toast.makeText(LinkPage_MainActivity.this, "Failed to load latest videos.", Toast.LENGTH_SHORT).show();
+                // Silently fail if videos cannot load (e.g. API quota exceeded), 
+                // avoiding annoying toasts since cached videos might already be showing.
             }
         });
     }
 
-    //Show Notes on Home Page
-    public static void FeaturedNotes(
-            ImageView NotesImage1, ImageView NotesImage2, ImageView NotesImage3, ImageView NotesImage4, ImageView NotesImage5,
-            ImageView NotesImage6, ImageView NotesImage7, ImageView NotesImage8, ImageView NotesImage9, ImageView NotesImage10) {
+    private void updateUpcomingExamsSection(
+            CardView MainCard,
+            CardView semester12, CardView semester34,
+            CardView semester56, CardView semester78,
+            TextView semester12TV, TextView semester34TV,
+            TextView semester56TV, TextView semester78TV) {
 
-        // Put all ImageViews into an array for easy indexing
-        ImageView[] noteImages = new ImageView[]{
-                NotesImage1, NotesImage2, NotesImage3, NotesImage4, NotesImage5,
-                NotesImage6, NotesImage7, NotesImage8, NotesImage9, NotesImage10
-        };
+        MainCard.setVisibility(View.VISIBLE);
 
-        DatabaseReference featureNotesData =
-                FirebaseDatabase.getInstance().getReference("PaidNewAndMostSellNotes");
+        String activeSemKey = com.dusol.thelearnerscommunity.utils.ExamSeasonManager.getActiveSemesterKey();
+        boolean isSem2468Active = activeSemKey.equals(com.dusol.thelearnerscommunity.utils.ExamSeasonManager.KEY_SEM_2468);
 
-        featureNotesData.addValueEventListener(new ValueEventListener() {
+        TextView tvUpcomingExamsTitle = findViewById(R.id.textView18); // ID for "Upcoming Exams Notes" text based on values
+        if (tvUpcomingExamsTitle != null) {
+            tvUpcomingExamsTitle.setText("Semester " + com.dusol.thelearnerscommunity.utils.ExamSeasonManager.getActiveSemesterLabel() + " Notes");
+        }
+
+        semester12.setVisibility(View.VISIBLE);
+        semester34.setVisibility(View.VISIBLE);
+        semester56.setVisibility(View.VISIBLE);
+        semester78.setVisibility(View.VISIBLE);
+
+        if (isSem2468Active) {
+            setupSemesterButton(semester12, semester12TV, 2, com.dusol.thelearnerscommunity.NEP_Files.NEP_Sem2_MainActivity.class);
+            setupSemesterButton(semester34, semester34TV, 4, com.dusol.thelearnerscommunity.NEP_Files.NEP_Sem4_MainActivity.class);
+            setupSemesterButton(semester56, semester56TV, 6, com.dusol.thelearnerscommunity.NEP_Files.NEP_Sem6_MainActivity.class);
+            setupSemesterButton(semester78, semester78TV, 8, com.dusol.thelearnerscommunity.NEP_Files.NEP_Sem8_MainActivity.class);
+        } else {
+            setupSemesterButton(semester12, semester12TV, 1, com.dusol.thelearnerscommunity.NEP_Files.NEP_Sem1_MainActivity.class);
+            setupSemesterButton(semester34, semester34TV, 3, com.dusol.thelearnerscommunity.NEP_Files.NEP_Sem3_MainActivity.class);
+            setupSemesterButton(semester56, semester56TV, 5, com.dusol.thelearnerscommunity.NEP_Files.NEP_Sem5_MainActivity.class);
+            setupSemesterButton(semester78, semester78TV, 7, com.dusol.thelearnerscommunity.NEP_Files.NEP_Sem7_MainActivity.class);
+        }
+    }
+
+    private void setupSemesterButton(CardView cardView, TextView textView, int semNum, Class<?> activityClass) {
+        textView.setText("Semester " + semNum);
+        cardView.setOnClickListener(v -> {
+            Intent i = new Intent(this, activityClass);
+            i.putExtra("semester", String.valueOf(semNum));
+            startActivity(i);
+        });
+    }
+
+    private void loadExamNotesImages(ImageView... noteImages) {
+        String semKey = com.dusol.thelearnerscommunity.utils.ExamSeasonManager.getActiveSemesterKey();
+        DatabaseReference ref = FirebaseDatabase.getInstance()
+                .getReference("ExamsImages")
+                .child(semKey);
+
+        ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 int index = 0;
+                for (DataSnapshot itemSnap : snapshot.getChildren()) {
+                    if (index >= noteImages.length) break;
 
-                // Each child here is 0,1,2,...,10 with:
-                // 0: imageUrl
-                // 1: buyUrl
-                for (DataSnapshot noteSnapshot : snapshot.getChildren()) {
-                    if (index >= noteImages.length) break; // safety
+                    String imageUrl = itemSnap.child("0").getValue(String.class);
+                    if (imageUrl == null) imageUrl = itemSnap.child("imageUrl").getValue(String.class);
 
-                    String notesImageUrl = noteSnapshot.child("0").getValue(String.class);
-                    String notesBuyLink  = noteSnapshot.child("1").getValue(String.class);
+                    String pageLink = itemSnap.child("1").getValue(String.class);
+                    if (pageLink == null) pageLink = itemSnap.child("pageLink").getValue(String.class);
 
-                    loadFeatureNotes(noteImages[index], notesImageUrl, notesBuyLink);
+                    // Skip empty or invalid entries (like a null '0' index in a Firebase array)
+                    if (imageUrl == null || imageUrl.trim().isEmpty()) {
+                        continue;
+                    }
+
+                    noteImages[index].setVisibility(android.view.View.VISIBLE);
+                    loadFeatureNotes(noteImages[index], imageUrl, pageLink == null ? "" : pageLink);
                     index++;
                 }
 
-                // Clear remaining ImageViews if fewer notes than 10
+                // Hide any remaining ImageViews
                 for (int i = index; i < noteImages.length; i++) {
-                    loadFeatureNotes(noteImages[i], null, null);
+                    noteImages[i].setVisibility(android.view.View.GONE);
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Log.e("FeaturedNotes", "Database error: " + error.getMessage());
+                Log.e("ExamNotes", "Failed to load exam notes: " + error.getMessage());
+                for (ImageView img : noteImages) {
+                    img.setVisibility(View.GONE);
+                }
             }
         });
     }

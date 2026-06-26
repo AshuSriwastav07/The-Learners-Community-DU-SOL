@@ -64,33 +64,10 @@ public class Sem1_Paper_1_DSC extends Fragment {
             }
         });
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                if(sem1NotesAncientHisLinks.get(position).contains("youtube")){
-
-                Uri youtubeUri = Uri.parse(sem1NotesAncientHisLinks.get(position));
-                Intent intent = new Intent(Intent.ACTION_VIEW, youtubeUri);
-
-                // Set the package name of the YouTube app
-                intent.setPackage("com.google.android.youtube");
-
-                startActivity(intent);
-
-                } else if (sem1NotesAncientHisLinks.get(position).contains("myinstamojo")) {
-                    Uri paidNotesLink = Uri.parse(sem1NotesAncientHisLinks.get(position));
-                    Intent intent = new Intent(Intent.ACTION_VIEW, paidNotesLink);
-                    startActivity(intent);
-
-                }else if(sem1NotesAncientHisLinks.get(position).contains("N/A")){
-                    Toast.makeText(requireContext(), "Notes Will Available Soon!", Toast.LENGTH_SHORT).show();
-
-                }
-                else {
-                    openIntend(sem1NotesAncientHisLinks.get(position));
-                }
-            }
+        listView.setOnItemClickListener((parent, view1, position, id) -> {
+            String url = sem1NotesAncientHisLinks.get(position);
+            String title = sem1NotesAncientHisName.get(position);
+            com.dusol.thelearnerscommunity.SyllabusFiles.NoteLinkRouter.route(view1.getContext(), url, title);
         });*/
 
 
@@ -245,12 +222,7 @@ public class Sem1_Paper_1_DSC extends Fragment {
                 });
     }
 
-    public void openIntend(String link){
-        loadads();
-        Intent intent = new Intent(getActivity(), Notes_HomeWeb_MainActivity.class);
-        intent.putExtra("link", link);
-        startActivity(intent);
-    }
+    
 
     public void PaidNotesLinkOpen(String url){
         // Create an intent with ACTION_VIEW and the URL as the data

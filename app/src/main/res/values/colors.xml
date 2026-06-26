@@ -13,7 +13,12 @@
     <color name="yellow">#FFFF00</color>
     <color name="banners">#212121</color>
 
-
-
+    <color name="pdf_bg">#F5F5F5</color>
+    <color name="toolbar_bg">#FFFFFF</color>
+    <color name="toolbar_text">#1A1A1A</color>
+    <color name="progress_track">#E0E0E0</color>
+    <color name="pill_text">#FFFFFF</color>
+    <color name="text_secondary">#757575</color>
+    <color name="colorPrimary">#212121</color>
 
 </resources>

@@ -29,8 +29,8 @@ public class PdfDownloadHelper {
 
     private static final String TAG = "PdfDownloadHelper";
     private static final String CACHE_DIR_NAME = "pdf_cache";
-    private static final int CONNECT_TIMEOUT_MS = 15_000;
-    private static final int READ_TIMEOUT_MS = 20_000;
+    private static final int CONNECT_TIMEOUT_MS = 30_000;
+    private static final int READ_TIMEOUT_MS = 60_000;
     private static final long MAX_CACHE_SIZE_BYTES = 100L * 1024 * 1024; // 100 MB
     private static final int BUFFER_SIZE = 8192;
 
@@ -84,6 +84,14 @@ public class PdfDownloadHelper {
                 // Enforce cache size limit
                 enforceCacheSizeLimit(cacheDir, cachedFile);
 
+                if (!isValidPdf(cachedFile)) {
+                    cachedFile.delete(); // Remove the corrupted/HTML file from cache
+                    if (!cancelled.get()) {
+                        postFailure(callback, "This note is not available. The file may be restricted or removed.");
+                    }
+                    return;
+                }
+
                 postSuccess(callback, cachedFile);
 
             } catch (IOException e) {
@@ -98,6 +106,18 @@ public class PdfDownloadHelper {
                 }
             }
         });
+    }
+
+    private boolean isValidPdf(File file) {
+        try (java.io.FileInputStream fis = new java.io.FileInputStream(file)) {
+            byte[] header = new byte[4];
+            if (fis.read(header) < 4) return false;
+            // PDF files start with: 25 50 44 46 (%PDF)
+            return header[0] == 0x25 && header[1] == 0x50
+                && header[2] == 0x44 && header[3] == 0x46;
+        } catch (IOException e) {
+            return false;
+        }
     }
 
     /**
@@ -128,6 +148,8 @@ public class PdfDownloadHelper {
             connection.setConnectTimeout(CONNECT_TIMEOUT_MS);
             connection.setReadTimeout(READ_TIMEOUT_MS);
             connection.setRequestMethod("GET");
+            connection.setInstanceFollowRedirects(true);
+            HttpURLConnection.setFollowRedirects(true);
             connection.connect();
 
             int responseCode = connection.getResponseCode();
@@ -229,14 +251,14 @@ public class PdfDownloadHelper {
     }
 
     private void postProgress(DownloadCallback callback, int percent) {
-        mainHandler.post(() -> callback.onProgress(percent));
+        if (!cancelled.get()) mainHandler.post(() -> callback.onProgress(percent));
     }
 
     private void postSuccess(DownloadCallback callback, File file) {
-        mainHandler.post(() -> callback.onSuccess(file));
+        if (!cancelled.get()) mainHandler.post(() -> callback.onSuccess(file));
     }
 
     private void postFailure(DownloadCallback callback, String message) {
-        mainHandler.post(() -> callback.onFailure(message));
+        if (!cancelled.get()) mainHandler.post(() -> callback.onFailure(message));
     }
 }
