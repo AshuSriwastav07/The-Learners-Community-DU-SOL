@@ -3,7 +3,7 @@
     android:fitsSystemWindows="true"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    style="@style/night_page"
+    
     android:layout_height="match_parent"
     tools:context=".NEP_Files.NEP_Fragments.Sem7.Sem7_GENERIC_ELECTIVE">
 

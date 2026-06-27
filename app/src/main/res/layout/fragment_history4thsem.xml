@@ -48,7 +48,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="5sp"
                 android:text="@string/unit_1_notes"
-                android:textSize="@dimen/dp_8" />
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
 
             <Button
                 style="@style/basic_button"
@@ -61,7 +61,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="5sp"
                 android:text="@string/unit_2_notes"
-                android:textSize="@dimen/dp_8" />
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
 
             <Button
                 style="@style/basic_button"
@@ -74,7 +74,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="5sp"
                 android:text="@string/unit_3_notes"
-                android:textSize="@dimen/dp_8" />
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
 
             <Button
                 style="@style/basic_button"
@@ -87,7 +87,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="5sp"
                 android:text="@string/unit_4_notes"
-                android:textSize="@dimen/dp_8" />
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
 
             <Button
                 style="@style/basic_button"
@@ -100,7 +100,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="5sp"
                 android:text="@string/unit_5_notes"
-                android:textSize="@dimen/dp_8" />
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
 
             <TextView
                 android:id="@+id/textView6"
@@ -126,7 +126,7 @@
                 android:layout_marginTop="15sp"
                 android:layout_marginBottom="15sp"
                 android:text="@string/complete_book_explain"
-                android:textSize="@dimen/dp_8" />
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/Sem4His_PaidNotes"
@@ -140,7 +140,7 @@
                 android:layout_marginBottom="10dp"
                 android:fontFamily="serif"
                 android:text="Download PDF Notes"
-                android:textSize="@dimen/dp_9" />-->
+                android:textSize="@dimen/dp_9"  android:textColor="@color/text_primary"/>-->
 
 
             <ListView
@@ -169,7 +169,7 @@
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="5sp"
                     android:text="@string/unit_6_notes"
-                    android:textSize="25sp" />
+                    android:textSize="25sp"  android:textColor="@color/text_primary"/>
 
                 <Button
                     android:id="@+id/Sem4_History_Unit7"
@@ -181,7 +181,7 @@
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="5sp"
                     android:text="@string/unit_7_notes"
-                    android:textSize="25sp" />
+                    android:textSize="25sp"  android:textColor="@color/text_primary"/>
 
                 <Button
                     android:id="@+id/Sem4_History_Unit8"
@@ -193,5 +193,5 @@
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="5sp"
                     android:text="@string/unit_8_notes"
-                    android:textSize="25sp" />
+                    android:textSize="25sp"  android:textColor="@color/text_primary"/>
     -->

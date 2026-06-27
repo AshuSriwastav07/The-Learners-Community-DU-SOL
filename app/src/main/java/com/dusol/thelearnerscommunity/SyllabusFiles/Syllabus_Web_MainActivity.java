@@ -9,6 +9,7 @@
 package com.dusol.thelearnerscommunity.SyllabusFiles;
 
 import android.content.Context;
+import com.dusol.thelearnerscommunity.BaseActivity;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
@@ -26,7 +27,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.dusol.thelearnerscommunity.Network.GetNetworkDetails;
 import com.dusol.thelearnerscommunity.R;
 
-public class Syllabus_Web_MainActivity extends AppCompatActivity {
+public class Syllabus_Web_MainActivity extends BaseActivity {
     WebView webView;
     ProgressBar progressBar;
 

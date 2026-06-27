@@ -5,7 +5,7 @@
             <!-- background -->
             <solid android:color="@color/yt_red" />
             <!-- border -->
-            <stroke android:width="8dp" android:color="@color/black" />
+            <stroke android:width="8dp" android:color="@color/border" />
 
             <!-- corner roundness -->
             <corners android:radius="8dp" />

@@ -19,7 +19,7 @@ import androidx.cardview.widget.CardView;
 import com.dusol.thelearnerscommunity.NEP_Files.NEP_HomePage;
 import com.dusol.thelearnerscommunity.SyllabusFiles.SyllabusTabLayoutActivity;
 
-public class DU_SOL_NOTES__MainActivity extends AppCompatActivity {
+public class DU_SOL_NOTES__MainActivity extends BaseActivity {
 
     @Override
 

@@ -10,7 +10,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 
-public class study_materials extends AppCompatActivity {
+public class study_materials extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

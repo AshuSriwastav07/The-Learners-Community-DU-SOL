@@ -32,8 +32,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabMode="scrollable"
-            android:background="@color/white"
-            app:tabTextColor="@color/black">
+            android:background="@color/bg_surface"
+            
+        app:tabBackground="@color/toolbar_bg"
+        app:tabTextColor="@color/text_secondary"
+        app:tabSelectedTextColor="@color/brand_primary"
+        app:tabIndicatorColor="@color/tab_indicator">
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/tabItem1"

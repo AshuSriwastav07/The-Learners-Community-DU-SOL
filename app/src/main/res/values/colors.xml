@@ -1,5 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- ═══════════════════════════════════════════
+         BRAND COLORS (same in both modes)
+    ═══════════════════════════════════════════ -->
+    <color name="brand_primary">#1B4FD8</color>
+    <color name="brand_primary_dark">#1440B5</color>
+    <color name="brand_primary_tint">#E8EFFE</color>
+    <color name="brand_red">#E74C3C</color>
+    <color name="brand_green">#2ECC71</color>
+    <color name="brand_orange">#E67E22</color>
+
+    <!-- ═══════════════════════════════════════════
+         LIGHT MODE — Backgrounds
+    ═══════════════════════════════════════════ -->
+    <color name="bg_page">#FFFFFF</color>
+    <color name="bg_surface">#F5F7FA</color>
+    <color name="bg_surface_elevated">#EEF1F6</color>
+    <color name="bg_card">#FFFFFF</color>
+
+    <!-- ═══════════════════════════════════════════
+         LIGHT MODE — Text
+    ═══════════════════════════════════════════ -->
+    <color name="text_primary">#000000</color>
+    <color name="text_secondary">#000000</color>
+    <color name="text_hint">#000000</color>
+    <color name="text_on_primary">#FFFFFF</color>
+
+    <!-- ═══════════════════════════════════════════
+         LIGHT MODE — UI Elements
+    ═══════════════════════════════════════════ -->
+    <color name="divider">#E2E8F0</color>
+    <color name="border">#C8D3E6</color>
+    <color name="icon_tint">#000000</color>
+    <color name="icon_active">#1B4FD8</color>
+    <color name="tab_indicator">#1B4FD8</color>
+    <color name="ripple">#1A1B4FD8</color>
+    <color name="skeleton">#E8ECF0</color>
+
+    <!-- ═══════════════════════════════════════════
+         LIGHT MODE — Navigation & Toolbar
+    ═══════════════════════════════════════════ -->
+    <color name="toolbar_bg">#FFFFFF</color>
+    <color name="toolbar_text">#0D1117</color>
+    <color name="nav_bg">#FFFFFF</color>
+    <color name="nav_icon_active">#1B4FD8</color>
+    <color name="nav_icon_inactive">#9AA5B8</color>
+    <color name="status_bar">#1440B5</color>
+
+    <!-- ═══════════════════════════════════════════
+         LEGACY / EXPLICIT BRAND COLORS
+    ═══════════════════════════════════════════ -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="button_background_color">#FF4081</color>
@@ -12,13 +62,8 @@
     <color name="night_textColor">#FFFFFF</color>
     <color name="yellow">#FFFF00</color>
     <color name="banners">#212121</color>
-
     <color name="pdf_bg">#F5F5F5</color>
-    <color name="toolbar_bg">#FFFFFF</color>
-    <color name="toolbar_text">#1A1A1A</color>
     <color name="progress_track">#E0E0E0</color>
     <color name="pill_text">#FFFFFF</color>
-    <color name="text_secondary">#757575</color>
-    <color name="colorPrimary">#212121</color>
-
+    <color name="colorPrimary">@color/brand_primary</color>
 </resources>

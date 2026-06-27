@@ -33,7 +33,7 @@ import java.util.concurrent.Executors;
  * Activity that fetches and displays all YouTube videos from
  * The Learners Community DU SOL channel using YouTube Data API v3.
  */
-public class YouTubeVideosActivity extends AppCompatActivity {
+public class YouTubeVideosActivity extends BaseActivity {
 
     private static final String TAG = "YouTubeVideosActivity";
     public static final String API_KEY = "YOUTUBE_API_KEY_REMOVED_FROM_HISTORY";

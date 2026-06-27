@@ -48,7 +48,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10sp"
                 android:text="@string/unit_1_notes"
-                android:textSize="@dimen/dp_8" />
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
 
 
             <Button
@@ -59,7 +59,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10sp"
                 android:text="@string/unit_2_notes"
-                android:textSize="@dimen/dp_8" />
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/impNotes"
@@ -69,7 +69,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10sp"
                 android:text="Exam Question Answers 2023"
-                android:textSize="@dimen/dp_7" />
+                android:textSize="@dimen/dp_7"  android:textColor="@color/text_primary"/>
 
 
             <TextView
@@ -102,7 +102,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10sp"
                 android:text="Download Notes PDF"
-                android:textSize="@dimen/dp_8" />-->
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>-->
 
             <ListView
                 android:id="@+id/sem6EnglishGENotesList"

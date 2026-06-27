@@ -34,21 +34,49 @@ public class BottomNavHelper {
             // Don't re-open the current page
             if (id == selectedItemId) return true;
 
+            int oldIndex = getNavIndex(selectedItemId);
+            int newIndex = getNavIndex(id);
+
             Context context = activity.getApplicationContext();
 
+            Intent intent = null;
             if (id == R.id.nav_home) {
-                activity.startActivity(new Intent(context, LinkPage_MainActivity.class));
+                intent = new Intent(context, LinkPage_MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             } else if (id == R.id.nav_videos) {
-                activity.startActivity(new Intent(context, YouTubeVideosActivity.class));
+                intent = new Intent(context, YouTubeVideosActivity.class);
             } else if (id == R.id.nav_notes) {
-                activity.startActivity(new Intent(context, DU_SOL_NOTES__MainActivity.class));
+                intent = new Intent(context, DU_SOL_NOTES__MainActivity.class);
             } else if (id == R.id.nav_student) {
-                activity.startActivity(new Intent(context, studentsBoard.class));
+                intent = new Intent(context, studentsBoard.class);
             } else {
                 return false;
             }
 
+            activity.startActivity(intent);
+
+            if (newIndex > oldIndex) {
+                // Moving right: new screen comes from right, old screen goes to left
+                activity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            } else {
+                // Moving left: new screen comes from left, old screen goes to right
+                activity.overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+            }
+
+            // Finish current activity so backstack doesn't get messed up if we're just switching tabs
+            if (!(activity instanceof LinkPage_MainActivity)) {
+                activity.finish();
+            }
+
             return true;
         });
+    }
+
+    private static int getNavIndex(int id) {
+        if (id == R.id.nav_home) return 0;
+        if (id == R.id.nav_videos) return 1;
+        if (id == R.id.nav_notes) return 2;
+        if (id == R.id.nav_student) return 3;
+        return -1;
     }
 }

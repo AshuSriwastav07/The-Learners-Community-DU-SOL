@@ -15,7 +15,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_color_night"
+    
     tools:context="com.dusol.thelearnerscommunity.studentsBoard">
 
     <ScrollView
@@ -34,7 +34,7 @@
             <!-- Header Card -->
 
             <androidx.cardview.widget.CardView
-                style="@style/studentPortalNight"
+                
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:cardElevation="5dp">
@@ -46,31 +46,31 @@
 
                     <ImageView
                         android:id="@+id/img_student_portal_icon"
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_15"
                         android:layout_height="@dimen/dp_15"
                         android:layout_margin="@dimen/dp_3"
                         android:layout_weight="0"
                         android:contentDescription="@string/todo"
-                        app:srcCompat="@mipmap/bagra" />
+                        app:srcCompat="@mipmap/bagra"  android:background="@android:color/transparent"/>
 
                     <TextView
                         android:id="@+id/txt_student_portal"
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:fontFamily="@font/nunito_extrabold"
                         android:gravity="center_vertical"
                         android:text="@string/studentPortal"
-                        android:textSize="@dimen/dp_10" />
+                        android:textSize="@dimen/dp_10"  android:textColor="@color/text_primary"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <!-- Section Title -->
             <TextView
                 android:id="@+id/txt_quick_access"
-                style="@style/studentPortalNight"
+                
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-light"
@@ -78,11 +78,11 @@
                 android:paddingEnd="0dp"
                 android:text="@string/quick_access"
                 android:textSize="@dimen/dp_8"
-                android:textStyle="bold" />
+                android:textStyle="bold"  android:textColor="@color/text_primary"/>
 
             <!-- Grid Section -->
             <androidx.gridlayout.widget.GridLayout
-                style="@style/studentPortalNight"
+                
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/dp_3"
@@ -92,7 +92,7 @@
                 <!-- Student Login -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv1_Student_Login"
-                    style="@style/studentPortalNight"
+                    
                     android:layout_margin="@dimen/dp_3"
                     app:cardCornerRadius="@dimen/dp_8"
                     app:layout_columnWeight="1"
@@ -100,7 +100,7 @@
 
                     <TextView
                         android:id="@+id/txt_student_login"
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
@@ -113,13 +113,13 @@
                         app:autoSizeMaxTextSize="@dimen/dp_7"
                         app:autoSizeMinTextSize="@dimen/dp_4"
                         app:autoSizeTextType="uniform"
-                        app:drawableTopCompat="@mipmap/profile" />
+                        app:drawableTopCompat="@mipmap/profile"  android:textColor="@color/text_primary"/>
 
                 </androidx.cardview.widget.CardView>
 
                 <!-- Study Material -->
                 <androidx.cardview.widget.CardView
-                    style="@style/studentPortalNight"
+                    
                     android:id="@+id/GetStudyMaterial"
                     android:layout_margin="@dimen/dp_3"
                     app:cardCornerRadius="@dimen/dp_8"
@@ -127,7 +127,7 @@
                     app:layout_rowWeight="1">
 
                     <TextView
-                        style="@style/studentPortalNight"
+                        
                         android:id="@+id/txt_study_material"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
@@ -140,13 +140,13 @@
                         app:autoSizeMaxTextSize="@dimen/dp_7"
                         app:autoSizeMinTextSize="@dimen/dp_4"
                         app:autoSizeTextType="uniform"
-                        app:drawableTopCompat="@mipmap/materials" />
+                        app:drawableTopCompat="@mipmap/materials"  android:textColor="@color/text_primary"/>
 
                 </androidx.cardview.widget.CardView>
 
                 <!-- Know Your Barcode -->
                 <androidx.cardview.widget.CardView
-                    style="@style/studentPortalNight"
+                    
                     android:id="@+id/cv3_knowYourBC"
                     android:layout_margin="@dimen/dp_3"
                     app:cardCornerRadius="@dimen/dp_8"
@@ -155,7 +155,7 @@
 
                     <TextView
                         android:id="@+id/txt_barcode"
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
@@ -168,14 +168,14 @@
                         app:autoSizeMaxTextSize="@dimen/dp_7"
                         app:autoSizeMinTextSize="@dimen/dp_4"
                         app:autoSizeTextType="uniform"
-                        app:drawableTopCompat="@mipmap/barcodenew" />
+                        app:drawableTopCompat="@mipmap/barcodenew"  android:textColor="@color/text_primary"/>
 
                 </androidx.cardview.widget.CardView>
 
                 <!-- Results -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv4_Student_Result"
-                    style="@style/studentPortalNight"
+                    
                     android:layout_margin="@dimen/dp_3"
                     app:cardCornerRadius="@dimen/dp_8"
                     app:layout_columnWeight="1"
@@ -183,7 +183,7 @@
 
                     <TextView
                         android:id="@+id/txt_results"
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
@@ -196,14 +196,14 @@
                         app:autoSizeMaxTextSize="@dimen/dp_7"
                         app:autoSizeMinTextSize="@dimen/dp_4"
                         app:autoSizeTextType="uniform"
-                        app:drawableTopCompat="@mipmap/resultgrow" />
+                        app:drawableTopCompat="@mipmap/resultgrow"  android:textColor="@color/text_primary"/>
 
                 </androidx.cardview.widget.CardView>
 
                 <!-- Provisional Certificate -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv5_ProvisionalCertificate"
-                    style="@style/studentPortalNight"
+                    
                     android:layout_margin="@dimen/dp_3"
                     app:cardCornerRadius="@dimen/dp_8"
                     app:layout_columnWeight="1"
@@ -211,7 +211,7 @@
 
                     <TextView
                         android:id="@+id/txt_provisional"
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
@@ -224,13 +224,13 @@
                         app:autoSizeMaxTextSize="@dimen/dp_7"
                         app:autoSizeMinTextSize="@dimen/dp_4"
                         app:autoSizeTextType="uniform"
-                        app:drawableTopCompat="@mipmap/certificate" />
+                        app:drawableTopCompat="@mipmap/certificate"  android:textColor="@color/text_primary"/>
 
                 </androidx.cardview.widget.CardView>
 
                 <!-- College Marksheet -->
                 <androidx.cardview.widget.CardView
-                    style="@style/studentPortalNight"
+                    
                     android:id="@+id/cv6_Sol_Marksheet"
                     android:layout_margin="@dimen/dp_3"
                     app:cardCornerRadius="@dimen/dp_8"
@@ -238,7 +238,7 @@
                     app:layout_rowWeight="1">
 
                     <TextView
-                        style="@style/studentPortalNight"
+                        
                         android:id="@+id/txt_marksheet"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -252,13 +252,13 @@
                         app:autoSizeMaxTextSize="@dimen/dp_7"
                         app:autoSizeMinTextSize="@dimen/dp_4"
                         app:autoSizeTextType="uniform"
-                        app:drawableTopCompat="@mipmap/spc" />
+                        app:drawableTopCompat="@mipmap/spc"  android:textColor="@color/text_primary"/>
 
                 </androidx.cardview.widget.CardView>
             </androidx.gridlayout.widget.GridLayout>
 
             <TextView
-                style="@style/studentPortalNight"
+                
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-light"
@@ -266,10 +266,10 @@
                 android:paddingEnd="0dp"
                 android:text="@string/academic_services"
                 android:textSize="@dimen/dp_8"
-                android:textStyle="bold" />
+                android:textStyle="bold"  android:textColor="@color/text_primary"/>
 
             <androidx.cardview.widget.CardView
-                style="@style/studentPortalNight"
+                
                 android:id="@+id/cv7_Admit_Card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -277,26 +277,26 @@
                 android:layout_marginTop="@dimen/dp_3"
                 android:layout_marginEnd="@dimen/dp_7"
                 android:layout_marginBottom="@dimen/dp_3"
-                app:cardBackgroundColor="#F2F1F1"
+                app:cardBackgroundColor="@color/bg_card"
                 app:cardCornerRadius="8dp">
 
                 <LinearLayout
-                    style="@style/studentPortalNight"
+                    
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_15"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/admitcard" />
+                        app:srcCompat="@mipmap/admitcard"  android:background="@android:color/transparent"/>
 
                     <TextView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="3dp"
@@ -307,19 +307,19 @@
                         android:textSize="@dimen/dp_8"
                         app:autoSizeMaxTextSize="@dimen/dp_7"
                         app:autoSizeMinTextSize="@dimen/dp_4"
-                        app:autoSizeTextType="uniform" />
+                        app:autoSizeTextType="uniform"  android:textColor="@color/text_primary"/>
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_20"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/rarrow" />
+                        app:srcCompat="@mipmap/rarrow"  android:background="@android:color/transparent"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                style="@style/studentPortalNight"
+                
                 android:id="@+id/cv8_Date_sheet"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -327,26 +327,26 @@
                 android:layout_marginTop="@dimen/dp_3"
                 android:layout_marginEnd="@dimen/dp_7"
                 android:layout_marginBottom="@dimen/dp_3"
-                app:cardBackgroundColor="#F2F1F1"
+                app:cardBackgroundColor="@color/bg_card"
                 app:cardCornerRadius="8dp">
 
                 <LinearLayout
-                    style="@style/studentPortalNight"
+                    
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_15"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/datesheet" />
+                        app:srcCompat="@mipmap/datesheet"  android:background="@android:color/transparent"/>
 
                     <TextView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="3dp"
@@ -357,19 +357,19 @@
                         android:textSize="@dimen/dp_8"
                         app:autoSizeMaxTextSize="@dimen/dp_7"
                         app:autoSizeMinTextSize="@dimen/dp_4"
-                        app:autoSizeTextType="uniform" />
+                        app:autoSizeTextType="uniform"  android:textColor="@color/text_primary"/>
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_20"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/rarrow" />
+                        app:srcCompat="@mipmap/rarrow"  android:background="@android:color/transparent"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                style="@style/studentPortalNight"
+                
                 android:id="@+id/cv9_Academic_Calendar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -377,26 +377,26 @@
                 android:layout_marginTop="@dimen/dp_3"
                 android:layout_marginEnd="@dimen/dp_7"
                 android:layout_marginBottom="@dimen/dp_3"
-                app:cardBackgroundColor="#F2F1F1"
+                app:cardBackgroundColor="@color/bg_card"
                 app:cardCornerRadius="8dp">
 
                 <LinearLayout
-                    style="@style/studentPortalNight"
+                    
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_15"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/img_2" />
+                        app:srcCompat="@mipmap/img_2"  android:background="@android:color/transparent"/>
 
                     <TextView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="3dp"
@@ -407,19 +407,19 @@
                         android:textSize="@dimen/dp_8"
                         app:autoSizeMaxTextSize="@dimen/dp_7"
                         app:autoSizeMinTextSize="@dimen/dp_4"
-                        app:autoSizeTextType="uniform" />
+                        app:autoSizeTextType="uniform"  android:textColor="@color/text_primary"/>
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_20"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/rarrow" />
+                        app:srcCompat="@mipmap/rarrow"  android:background="@android:color/transparent"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                style="@style/studentPortalNight"
+                
                 android:id="@+id/cv10_All_semester_subject"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -427,26 +427,26 @@
                 android:layout_marginTop="@dimen/dp_3"
                 android:layout_marginEnd="@dimen/dp_7"
                 android:layout_marginBottom="@dimen/dp_3"
-                app:cardBackgroundColor="#F2F1F1"
+                app:cardBackgroundColor="@color/bg_card"
                 app:cardCornerRadius="8dp">
 
                 <LinearLayout
-                    style="@style/studentPortalNight"
+                    
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_15"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/nsem" />
+                        app:srcCompat="@mipmap/nsem"  android:background="@android:color/transparent"/>
 
                     <TextView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="3dp"
@@ -457,19 +457,19 @@
                         android:textSize="@dimen/dp_8"
                         app:autoSizeMaxTextSize="@dimen/dp_7"
                         app:autoSizeMinTextSize="@dimen/dp_4"
-                        app:autoSizeTextType="uniform" />
+                        app:autoSizeTextType="uniform"  android:textColor="@color/text_primary"/>
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_20"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/rarrow" />
+                        app:srcCompat="@mipmap/rarrow"  android:background="@android:color/transparent"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                style="@style/studentPortalNight"
+                
                 android:id="@+id/cv11_Admission_Link"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -477,26 +477,26 @@
                 android:layout_marginTop="@dimen/dp_3"
                 android:layout_marginEnd="@dimen/dp_7"
                 android:layout_marginBottom="@dimen/dp_3"
-                app:cardBackgroundColor="#F2F1F1"
+                app:cardBackgroundColor="@color/bg_card"
                 app:cardCornerRadius="8dp">
 
                 <LinearLayout
-                    style="@style/studentPortalNight"
+                    
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_15"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/admission" />
+                        app:srcCompat="@mipmap/admission"  android:background="@android:color/transparent"/>
 
                     <TextView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="3dp"
@@ -507,19 +507,19 @@
                         android:textSize="@dimen/dp_8"
                         app:autoSizeMaxTextSize="@dimen/dp_7"
                         app:autoSizeMinTextSize="@dimen/dp_4"
-                        app:autoSizeTextType="uniform" />
+                        app:autoSizeTextType="uniform"  android:textColor="@color/text_primary"/>
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_20"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/rarrow" />
+                        app:srcCompat="@mipmap/rarrow"  android:background="@android:color/transparent"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                style="@style/studentPortalNight"
+                
                 android:id="@+id/cv12_feeStructure"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -527,26 +527,26 @@
                 android:layout_marginTop="@dimen/dp_3"
                 android:layout_marginEnd="@dimen/dp_7"
                 android:layout_marginBottom="@dimen/dp_3"
-                app:cardBackgroundColor="#F2F1F1"
+                app:cardBackgroundColor="@color/bg_card"
                 app:cardCornerRadius="8dp">
 
                 <LinearLayout
-                    style="@style/studentPortalNight"
+                    
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_15"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/fee" />
+                        app:srcCompat="@mipmap/fee"  android:background="@android:color/transparent"/>
 
                     <TextView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="3dp"
@@ -557,21 +557,21 @@
                         android:textSize="@dimen/dp_8"
                         app:autoSizeMaxTextSize="@dimen/dp_7"
                         app:autoSizeMinTextSize="@dimen/dp_4"
-                        app:autoSizeTextType="uniform" />
+                        app:autoSizeTextType="uniform"  android:textColor="@color/text_primary"/>
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_20"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/rarrow" />
+                        app:srcCompat="@mipmap/rarrow"  android:background="@android:color/transparent"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/Student_new_Result1"
-                style="@style/studentPortalNight"
+                
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dp_7"
@@ -579,27 +579,27 @@
                 android:layout_marginEnd="@dimen/dp_7"
                 android:layout_marginBottom="@dimen/dp_3"
                 android:visibility="gone"
-                app:cardBackgroundColor="#F2F1F1"
+                app:cardBackgroundColor="@color/bg_card"
                 app:cardCornerRadius="8dp">
 
                 <LinearLayout
-                    style="@style/studentPortalNight"
+                    
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_15"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/newinfo" />
+                        app:srcCompat="@mipmap/newinfo"  android:background="@android:color/transparent"/>
 
                     <TextView
                         android:id="@+id/SOL_New_result1TV"
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="3dp"
@@ -607,20 +607,20 @@
                         android:fontFamily="sans-serif-black"
                         android:gravity="center_vertical"
                         android:text="@string/next_semester_details"
-                        android:textSize="@dimen/dp_8" />
+                        android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_20"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/rarrow" />
+                        app:srcCompat="@mipmap/rarrow"  android:background="@android:color/transparent"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/Student_new_Result2"
-                style="@style/studentPortalNight"
+                
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dp_7"
@@ -628,27 +628,27 @@
                 android:layout_marginEnd="@dimen/dp_7"
                 android:layout_marginBottom="@dimen/dp_3"
                 android:visibility="gone"
-                app:cardBackgroundColor="#F2F1F1"
+                app:cardBackgroundColor="@color/bg_card"
                 app:cardCornerRadius="8dp">
 
                 <LinearLayout
-                    style="@style/studentPortalNight"
+                    
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_15"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/newinfo" />
+                        app:srcCompat="@mipmap/newinfo"  android:background="@android:color/transparent"/>
 
                     <TextView
                         android:id="@+id/SOL_New_result2TV"
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="3dp"
@@ -656,20 +656,20 @@
                         android:fontFamily="sans-serif-black"
                         android:gravity="center_vertical"
                         android:text="@string/next_semester_details"
-                        android:textSize="@dimen/dp_8" />
+                        android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_20"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/rarrow" />
+                        app:srcCompat="@mipmap/rarrow"  android:background="@android:color/transparent"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/Student_new_Result3"
-                style="@style/studentPortalNight"
+                
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dp_7"
@@ -677,27 +677,27 @@
                 android:layout_marginEnd="@dimen/dp_7"
                 android:layout_marginBottom="@dimen/dp_3"
                 android:visibility="gone"
-                app:cardBackgroundColor="#F2F1F1"
+                app:cardBackgroundColor="@color/bg_card"
                 app:cardCornerRadius="8dp">
 
                 <LinearLayout
-                    style="@style/studentPortalNight"
+                    
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_15"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/newinfo" />
+                        app:srcCompat="@mipmap/newinfo"  android:background="@android:color/transparent"/>
 
                     <TextView
                         android:id="@+id/SOL_New_result3TV"
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="3dp"
@@ -705,20 +705,20 @@
                         android:fontFamily="sans-serif-black"
                         android:gravity="center_vertical"
                         android:text="@string/next_semester_details"
-                        android:textSize="@dimen/dp_8" />
+                        android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_20"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/rarrow" />
+                        app:srcCompat="@mipmap/rarrow"  android:background="@android:color/transparent"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
 
             <TextView
-                style="@style/studentPortalNight"
+                
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-light"
@@ -726,11 +726,11 @@
                 android:paddingEnd="0dp"
                 android:text="@string/recent_updates"
                 android:textSize="@dimen/dp_8"
-                android:textStyle="bold" />
+                android:textStyle="bold"  android:textColor="@color/text_primary"/>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/ExtraInfoBtn1"
-                style="@style/studentPortalNight"
+                
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/dp_7"
@@ -738,27 +738,27 @@
                 android:layout_marginEnd="@dimen/dp_7"
                 android:layout_marginBottom="@dimen/dp_3"
                 android:visibility="gone"
-                app:cardBackgroundColor="#FFFFFF"
+                app:cardBackgroundColor="@color/bg_card"
                 app:cardCornerRadius="8dp">
 
                 <LinearLayout
-                    style="@style/studentPortalNight"
+                    
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_15"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/information" />
+                        app:srcCompat="@mipmap/information"  android:background="@android:color/transparent"/>
 
                     <TextView
                         android:id="@+id/ExtraInfoBtn1TV"
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="3dp"
@@ -768,20 +768,20 @@
                         android:textSize="@dimen/dp_7"
                         app:autoSizeMaxTextSize="@dimen/dp_7"
                         app:autoSizeMinTextSize="@dimen/dp_4"
-                        app:autoSizeTextType="uniform" />
+                        app:autoSizeTextType="uniform"  android:textColor="@color/text_primary"/>
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_20"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/rarrow" />
+                        app:srcCompat="@mipmap/rarrow"  android:background="@android:color/transparent"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/ExtraInfoBtn2"
-                style="@style/studentPortalNight"
+                
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/dp_7"
@@ -789,27 +789,27 @@
                 android:layout_marginEnd="@dimen/dp_7"
                 android:layout_marginBottom="@dimen/dp_3"
                 android:visibility="gone"
-                app:cardBackgroundColor="#FFFFFF"
+                app:cardBackgroundColor="@color/bg_card"
                 app:cardCornerRadius="8dp">
 
                 <LinearLayout
-                    style="@style/studentPortalNight"
+                    
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_15"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/information" />
+                        app:srcCompat="@mipmap/information"  android:background="@android:color/transparent"/>
 
                     <TextView
                         android:id="@+id/ExtraInfoBtn2TV"
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="3dp"
@@ -819,20 +819,20 @@
                         android:textSize="@dimen/dp_7"
                         app:autoSizeMaxTextSize="@dimen/dp_7"
                         app:autoSizeMinTextSize="@dimen/dp_4"
-                        app:autoSizeTextType="uniform" />
+                        app:autoSizeTextType="uniform"  android:textColor="@color/text_primary"/>
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_20"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/rarrow" />
+                        app:srcCompat="@mipmap/rarrow"  android:background="@android:color/transparent"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/ExtraInfoBtn3"
-                style="@style/studentPortalNight"
+                
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/dp_7"
@@ -840,27 +840,27 @@
                 android:layout_marginEnd="@dimen/dp_7"
                 android:layout_marginBottom="@dimen/dp_3"
                 android:visibility="gone"
-                app:cardBackgroundColor="#FFFFFF"
+                app:cardBackgroundColor="@color/bg_card"
                 app:cardCornerRadius="8dp">
 
                 <LinearLayout
-                    style="@style/studentPortalNight"
+                    
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_15"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/information" />
+                        app:srcCompat="@mipmap/information"  android:background="@android:color/transparent"/>
 
                     <TextView
                         android:id="@+id/ExtraInfoBtn3TV"
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="3dp"
@@ -870,20 +870,20 @@
                         android:textSize="@dimen/dp_7"
                         app:autoSizeMaxTextSize="@dimen/dp_7"
                         app:autoSizeMinTextSize="@dimen/dp_4"
-                        app:autoSizeTextType="uniform" />
+                        app:autoSizeTextType="uniform"  android:textColor="@color/text_primary"/>
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_20"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/rarrow" />
+                        app:srcCompat="@mipmap/rarrow"  android:background="@android:color/transparent"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/ExtraInfoBtn4"
-                style="@style/studentPortalNight"
+                
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/dp_7"
@@ -891,27 +891,27 @@
                 android:layout_marginEnd="@dimen/dp_7"
                 android:layout_marginBottom="@dimen/dp_3"
                 android:visibility="gone"
-                app:cardBackgroundColor="#FFFFFF"
+                app:cardBackgroundColor="@color/bg_card"
                 app:cardCornerRadius="8dp">
 
                 <LinearLayout
-                    style="@style/studentPortalNight"
+                    
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_15"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/information" />
+                        app:srcCompat="@mipmap/information"  android:background="@android:color/transparent"/>
 
                     <TextView
                         android:id="@+id/ExtraInfoBtn4TV"
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="3dp"
@@ -921,20 +921,20 @@
                         android:textSize="@dimen/dp_7"
                         app:autoSizeMaxTextSize="@dimen/dp_7"
                         app:autoSizeMinTextSize="@dimen/dp_4"
-                        app:autoSizeTextType="uniform" />
+                        app:autoSizeTextType="uniform"  android:textColor="@color/text_primary"/>
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_20"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/rarrow" />
+                        app:srcCompat="@mipmap/rarrow"  android:background="@android:color/transparent"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/ExtraInfoBtn5"
-                style="@style/studentPortalNight"
+                
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/dp_7"
@@ -942,27 +942,27 @@
                 android:layout_marginEnd="@dimen/dp_7"
                 android:layout_marginBottom="@dimen/dp_3"
                 android:visibility="gone"
-                app:cardBackgroundColor="#FFFFFF"
+                app:cardBackgroundColor="@color/bg_card"
                 app:cardCornerRadius="8dp">
 
                 <LinearLayout
-                    style="@style/studentPortalNight"
+                    
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_15"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/information" />
+                        app:srcCompat="@mipmap/information"  android:background="@android:color/transparent"/>
 
                     <TextView
                         android:id="@+id/ExtraInfoBtn5TV"
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="3dp"
@@ -972,20 +972,20 @@
                         android:textSize="@dimen/dp_7"
                         app:autoSizeMaxTextSize="@dimen/dp_7"
                         app:autoSizeMinTextSize="@dimen/dp_4"
-                        app:autoSizeTextType="uniform" />
+                        app:autoSizeTextType="uniform"  android:textColor="@color/text_primary"/>
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_20"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/rarrow" />
+                        app:srcCompat="@mipmap/rarrow"  android:background="@android:color/transparent"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/ExtraInfoBtn6"
-                style="@style/studentPortalNight"
+                
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/dp_7"
@@ -993,27 +993,27 @@
                 android:layout_marginEnd="@dimen/dp_7"
                 android:layout_marginBottom="@dimen/dp_3"
                 android:visibility="gone"
-                app:cardBackgroundColor="#FFFFFF"
+                app:cardBackgroundColor="@color/bg_card"
                 app:cardCornerRadius="8dp">
 
                 <LinearLayout
-                    style="@style/studentPortalNight"
+                    
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_15"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/information" />
+                        app:srcCompat="@mipmap/information"  android:background="@android:color/transparent"/>
 
                     <TextView
                         android:id="@+id/ExtraInfoBtn6TV"
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="3dp"
@@ -1023,20 +1023,20 @@
                         android:textSize="@dimen/dp_7"
                         app:autoSizeMaxTextSize="@dimen/dp_7"
                         app:autoSizeMinTextSize="@dimen/dp_4"
-                        app:autoSizeTextType="uniform" />
+                        app:autoSizeTextType="uniform"  android:textColor="@color/text_primary"/>
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_20"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/rarrow" />
+                        app:srcCompat="@mipmap/rarrow"  android:background="@android:color/transparent"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/ExtraInfoBtn7"
-                style="@style/studentPortalNight"
+                
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/dp_7"
@@ -1044,27 +1044,27 @@
                 android:layout_marginEnd="@dimen/dp_7"
                 android:layout_marginBottom="@dimen/dp_3"
                 android:visibility="gone"
-                app:cardBackgroundColor="#FFFFFF"
+                app:cardBackgroundColor="@color/bg_card"
                 app:cardCornerRadius="8dp">
 
                 <LinearLayout
-                    style="@style/studentPortalNight"
+                    
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_15"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/information" />
+                        app:srcCompat="@mipmap/information"  android:background="@android:color/transparent"/>
 
                     <TextView
                         android:id="@+id/ExtraInfoBtn7TV"
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="3dp"
@@ -1074,20 +1074,20 @@
                         android:textSize="@dimen/dp_7"
                         app:autoSizeMaxTextSize="@dimen/dp_7"
                         app:autoSizeMinTextSize="@dimen/dp_4"
-                        app:autoSizeTextType="uniform" />
+                        app:autoSizeTextType="uniform"  android:textColor="@color/text_primary"/>
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_20"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/rarrow" />
+                        app:srcCompat="@mipmap/rarrow"  android:background="@android:color/transparent"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/ExtraInfoBtn8"
-                style="@style/studentPortalNight"
+                
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/dp_7"
@@ -1095,27 +1095,27 @@
                 android:layout_marginEnd="@dimen/dp_7"
                 android:layout_marginBottom="@dimen/dp_3"
                 android:visibility="gone"
-                app:cardBackgroundColor="#FFFFFF"
+                app:cardBackgroundColor="@color/bg_card"
                 app:cardCornerRadius="8dp">
 
                 <LinearLayout
-                    style="@style/studentPortalNight"
+                    
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_15"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/information" />
+                        app:srcCompat="@mipmap/information"  android:background="@android:color/transparent"/>
 
                     <TextView
                         android:id="@+id/ExtraInfoBtn8TV"
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="3dp"
@@ -1125,20 +1125,20 @@
                         android:textSize="@dimen/dp_7"
                         app:autoSizeMaxTextSize="@dimen/dp_7"
                         app:autoSizeMinTextSize="@dimen/dp_4"
-                        app:autoSizeTextType="uniform" />
+                        app:autoSizeTextType="uniform"  android:textColor="@color/text_primary"/>
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_20"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/rarrow" />
+                        app:srcCompat="@mipmap/rarrow"  android:background="@android:color/transparent"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/ExtraInfoBtn9"
-                style="@style/studentPortalNight"
+                
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/dp_7"
@@ -1146,27 +1146,27 @@
                 android:layout_marginEnd="@dimen/dp_7"
                 android:layout_marginBottom="@dimen/dp_3"
                 android:visibility="gone"
-                app:cardBackgroundColor="#FFFFFF"
+                app:cardBackgroundColor="@color/bg_card"
                 app:cardCornerRadius="8dp">
 
                 <LinearLayout
-                    style="@style/studentPortalNight"
+                    
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_15"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/information" />
+                        app:srcCompat="@mipmap/information"  android:background="@android:color/transparent"/>
 
                     <TextView
                         android:id="@+id/ExtraInfoBtn9TV"
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="3dp"
@@ -1176,14 +1176,14 @@
                         android:textSize="@dimen/dp_7"
                         app:autoSizeMaxTextSize="@dimen/dp_7"
                         app:autoSizeMinTextSize="@dimen/dp_4"
-                        app:autoSizeTextType="uniform" />
+                        app:autoSizeTextType="uniform"  android:textColor="@color/text_primary"/>
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_20"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/rarrow" />
+                        app:srcCompat="@mipmap/rarrow"  android:background="@android:color/transparent"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -1196,41 +1196,41 @@
                 android:layout_marginEnd="@dimen/dp_7"
                 android:layout_marginBottom="@dimen/dp_3"
                 android:visibility="gone"
-                app:cardBackgroundColor="#FFFFFF"
+                app:cardBackgroundColor="@color/bg_card"
                 app:cardCornerRadius="8dp">
 
                 <LinearLayout
-                    style="@style/studentPortalNight"
+                    
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_15"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/information" />
+                        app:srcCompat="@mipmap/information"  android:background="@android:color/transparent"/>
 
                     <TextView
                         android:id="@+id/ExtraInfoBtn10TV"
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="3dp"
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-black"
                         android:gravity="center_vertical"
-                        android:textSize="@dimen/dp_7" />
+                        android:textSize="@dimen/dp_7"  android:textColor="@color/text_primary"/>
 
                     <ImageView
-                        style="@style/studentPortalNight"
+                        
                         android:layout_width="@dimen/dp_35"
                         android:layout_height="@dimen/dp_20"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/rarrow" />
+                        app:srcCompat="@mipmap/rarrow"  android:background="@android:color/transparent"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -1268,7 +1268,7 @@
                 android:text="@string/student_login"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textSize="@dimen/dp_7" />
+                android:textSize="@dimen/dp_7"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/GetStudyMaterial"
@@ -1283,7 +1283,7 @@
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="@dimen/dp_7"
-                tools:ignore="SpeakableTextPresentCheck" />
+                tools:ignore="SpeakableTextPresentCheck"  android:textColor="@color/text_primary"/>
 
             <Button
                 style="@style/basic_button"
@@ -1297,7 +1297,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="@dimen/dp_7"
                 android:visibility="gone"
-                tools:ignore="SpeakableTextPresentCheck" />
+                tools:ignore="SpeakableTextPresentCheck"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/Student_new_Result2"
@@ -1312,7 +1312,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="@dimen/dp_7"
                 android:visibility="gone"
-                tools:ignore="SpeakableTextPresentCheck" />
+                tools:ignore="SpeakableTextPresentCheck"  android:textColor="@color/text_primary"/>
 
 
             <Button
@@ -1328,7 +1328,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="@dimen/dp_7"
                 android:visibility="gone"
-                tools:ignore="SpeakableTextPresentCheck" />
+                tools:ignore="SpeakableTextPresentCheck"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/button9_knowYourBC"
@@ -1342,7 +1342,7 @@
                 android:text="@string/know_your_barcode"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textSize="@dimen/dp_7" />
+                android:textSize="@dimen/dp_7"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/button10_ProvisionalCertificate"
@@ -1356,7 +1356,7 @@
                 android:text="@string/student_provisional_certificate"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textSize="@dimen/dp_7" />
+                android:textSize="@dimen/dp_7"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/button2_Student_Result"
@@ -1370,7 +1370,7 @@
                 android:text="@string/published_results"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textSize="@dimen/dp_7" />
+                android:textSize="@dimen/dp_7"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/button8_Sol_Degree"
@@ -1384,7 +1384,7 @@
                 android:text="@string/collage_marksheet"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textSize="@dimen/dp_7" />
+                android:textSize="@dimen/dp_7"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/ExtraInfoBtn1"
@@ -1399,7 +1399,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="@dimen/dp_7"
                 android:visibility="gone"
-                tools:ignore="SpeakableTextPresentCheck" />
+                tools:ignore="SpeakableTextPresentCheck"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/ExtraInfoBtn2"
@@ -1414,7 +1414,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="@dimen/dp_7"
                 android:visibility="gone"
-                tools:ignore="SpeakableTextPresentCheck" />
+                tools:ignore="SpeakableTextPresentCheck"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/ExtraInfoBtn3"
@@ -1429,7 +1429,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="@dimen/dp_7"
                 android:visibility="gone"
-                tools:ignore="SpeakableTextPresentCheck" />
+                tools:ignore="SpeakableTextPresentCheck"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/ExtraInfoBtn4"
@@ -1444,7 +1444,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="@dimen/dp_7"
                 android:visibility="gone"
-                tools:ignore="SpeakableTextPresentCheck" />
+                tools:ignore="SpeakableTextPresentCheck"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/ExtraInfoBtn5"
@@ -1459,7 +1459,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="@dimen/dp_7"
                 android:visibility="gone"
-                tools:ignore="SpeakableTextPresentCheck" />
+                tools:ignore="SpeakableTextPresentCheck"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/ExtraInfoBtn6"
@@ -1474,7 +1474,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="@dimen/dp_7"
                 android:visibility="gone"
-                tools:ignore="SpeakableTextPresentCheck" />
+                tools:ignore="SpeakableTextPresentCheck"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/ExtraInfoBtn7"
@@ -1489,7 +1489,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="@dimen/dp_7"
                 android:visibility="gone"
-                tools:ignore="SpeakableTextPresentCheck" />
+                tools:ignore="SpeakableTextPresentCheck"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/ExtraInfoBtn8"
@@ -1504,7 +1504,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="@dimen/dp_7"
                 android:visibility="gone"
-                tools:ignore="SpeakableTextPresentCheck" />
+                tools:ignore="SpeakableTextPresentCheck"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/ExtraInfoBtn9"
@@ -1519,7 +1519,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="@dimen/dp_7"
                 android:visibility="gone"
-                tools:ignore="SpeakableTextPresentCheck" />
+                tools:ignore="SpeakableTextPresentCheck"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/ExtraInfoBtn10"
@@ -1534,7 +1534,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="@dimen/dp_7"
                 android:visibility="gone"
-                tools:ignore="SpeakableTextPresentCheck" />
+                tools:ignore="SpeakableTextPresentCheck"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/button7_Admit_Card"
@@ -1548,7 +1548,7 @@
                 android:text="@string/check_admit_card"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textSize="@dimen/dp_7" />
+                android:textSize="@dimen/dp_7"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/button6_Date_sheet"
@@ -1562,7 +1562,7 @@
                 android:text="@string/exam_date_sheet"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textSize="@dimen/dp_7" />
+                android:textSize="@dimen/dp_7"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/button3_Academic_Calendar"
@@ -1576,7 +1576,7 @@
                 android:text="@string/academic_calendar"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textSize="@dimen/dp_7" />
+                android:textSize="@dimen/dp_7"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/feeStructure"
@@ -1590,7 +1590,7 @@
                 android:text="@string/ug_fee_structure"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textSize="@dimen/dp_7" />
+                android:textSize="@dimen/dp_7"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/button5_All_semester_subject"
@@ -1604,7 +1604,7 @@
                 android:text="@string/next_semester_details"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textSize="@dimen/dp_7" />
+                android:textSize="@dimen/dp_7"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/button4_Admission_Link"
@@ -1619,7 +1619,7 @@
                 android:text="@string/new_admission"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textSize="@dimen/dp_7" />
+                android:textSize="@dimen/dp_7"  android:textColor="@color/text_primary"/>
 
         </LinearLayout>
     </ScrollView>
@@ -1633,8 +1633,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:menu="@menu/bottom_nav_menu"
-        app:labelVisibilityMode="unlabeled"
-        android:background="@android:color/transparent"
-        app:itemIconTint="@null" />
+        
+        
+         
+        android:background="@color/nav_bg"
+        app:itemIconTint="@color/nav_icon_selector"
+        app:itemTextColor="@color/nav_icon_selector"
+        app:labelVisibilityMode="labeled"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

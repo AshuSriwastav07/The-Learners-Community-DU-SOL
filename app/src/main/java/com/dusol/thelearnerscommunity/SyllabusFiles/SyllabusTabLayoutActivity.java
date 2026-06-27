@@ -1,6 +1,7 @@
 package com.dusol.thelearnerscommunity.SyllabusFiles;
 
 import android.os.Bundle;
+import com.dusol.thelearnerscommunity.BaseActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -10,7 +11,7 @@ import com.dusol.thelearnerscommunity.R;
 import com.dusol.thelearnerscommunity.VP_Adapter;
 import com.google.android.material.tabs.TabLayout;
 
-public class SyllabusTabLayoutActivity extends AppCompatActivity {
+public class SyllabusTabLayoutActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

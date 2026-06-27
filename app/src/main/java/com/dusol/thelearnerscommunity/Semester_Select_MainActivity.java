@@ -27,7 +27,7 @@ import androidx.core.content.ContextCompat;
 import com.dusol.thelearnerscommunity.NotesStoreManage.NotesStoreTabActivity;
 import com.google.firebase.messaging.FirebaseMessaging;
 
-public class Semester_Select_MainActivity extends AppCompatActivity {
+public class Semester_Select_MainActivity extends BaseActivity {
     private static final int MY_PERMISSIONS_REQUEST_INTERNET = 123; // Replace with your desired request code
 
     /*@Override

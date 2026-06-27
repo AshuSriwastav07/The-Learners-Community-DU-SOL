@@ -9,6 +9,7 @@
 package com.dusol.thelearnerscommunity.SyllabusFiles;
 
 import static android.content.ContentValues.TAG;
+import com.dusol.thelearnerscommunity.BaseActivity;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -34,7 +35,7 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
-public class Syllabus_MainActivity_NotInUse extends AppCompatActivity {
+public class Syllabus_MainActivity_NotInUse extends BaseActivity {
 
     private  InterstitialAd mInterstitialAd;
     int click1=0;

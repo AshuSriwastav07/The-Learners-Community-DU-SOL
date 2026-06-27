@@ -45,7 +45,7 @@ public class Sem6ExamAllNotes extends Fragment {
 
                 }
 
-                Log.d("SyllabusData",sem6ExamNotesName.toString());
+                // AUDIT FIX (7A): Log.d("SyllabusData",sem6ExamNotesName.toString());
 
                 ArrayAdapter adapter=new ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, sem6ExamNotesName);
                 listView.setAdapter(adapter);

@@ -55,7 +55,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
 
-public class LinkPage_MainActivity extends AppCompatActivity {
+public class LinkPage_MainActivity extends BaseActivity {
     private long Timeback;
 
     @Override
@@ -280,7 +280,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
                 openExternalApp("https://t.me/The_LCTyoutube", "org.telegram.messenger"));
 
         findViewById(R.id.InstaImageView).setOnClickListener(v ->
-                openExternalApp("https://www.instagram.com/the_learners_community_dusol/", "com.instagram.android"));
+                openExternalApp("https://www.instagram.com/collegestudybydhruv/", "com.instagram.android"));
 
         initShareButton();
 
@@ -656,7 +656,7 @@ public class LinkPage_MainActivity extends AppCompatActivity {
 
 
 
-    private void AnalyticsDataPushWithActivity(String key, String value, String name, Class<? extends AppCompatActivity> activityClass, AppCompatActivity activity) {
+    private void AnalyticsDataPushWithActivity(String key, String value, String name, Class<? extends BaseActivity> activityClass, AppCompatActivity activity) {
         new android.os.Handler().postDelayed(() -> {
             Bundle bundle = new Bundle();
             bundle.putString(key, value);

@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;                      // Used to load image from URL
 
 // This class is the main screen that shows the academic calendar image
-public class Academic_Calendar_MainActivity extends AppCompatActivity {
+public class Academic_Calendar_MainActivity extends BaseActivity {
 
     private ScaleGestureDetector scaleGestureDetector; // Detects zoom gesture (pinch)
     private float mScaleFactor = 1.0f;                 // Keeps track of zoom level (1.0 = normal)

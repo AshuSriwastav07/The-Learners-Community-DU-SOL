@@ -46,7 +46,7 @@ public class Sem1SyllabusFragment extends Fragment {
                     sem1CourseLinks.add(value);
                 }
 
-                Log.d("SyllabusData", sem1CourseLinks.toString());
+                // AUDIT FIX (7A): Log.d("SyllabusData", sem1CourseLinks.toString());
 
                 // Use getActivity() to avoid requireContext()
                 ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),

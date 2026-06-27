@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    style="@style/night_page"
+    
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".BA_PolHons_SM">
@@ -26,7 +26,7 @@
                 android:fontFamily="@font/nunito"
                 android:gravity="center_horizontal"
                 android:text="@string/cbcs_ba_polHons"
-                android:textColor="@color/black"
+                android:textColor="@color/text_primary"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -40,14 +40,14 @@
                     style="@style/syllabusButtonNew"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/semester_1_syllabus" />
+                    android:text="@string/semester_1_syllabus"  android:textColor="@color/text_primary"/>
 
                 <Button
                     android:id="@+id/btn2"
                     style="@style/syllabusButtonNew"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/semester_2_syllabus" />
+                    android:text="@string/semester_2_syllabus"  android:textColor="@color/text_primary"/>
 
             </LinearLayout>
 
@@ -61,14 +61,14 @@
                     style="@style/syllabusButtonNew"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/semester_3_syllabus" />
+                    android:text="@string/semester_3_syllabus"  android:textColor="@color/text_primary"/>
 
                 <Button
                     android:id="@+id/btn4"
                     style="@style/syllabusButtonNew"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/semester_4_syllabus" />
+                    android:text="@string/semester_4_syllabus"  android:textColor="@color/text_primary"/>
             </LinearLayout>
 
             <LinearLayout
@@ -81,14 +81,14 @@
                     style="@style/syllabusButtonNew"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/semester_5_syllabus" />
+                    android:text="@string/semester_5_syllabus"  android:textColor="@color/text_primary"/>
 
                 <Button
                     android:id="@+id/btn6"
                     style="@style/syllabusButtonNew"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/semester_6_syllabus" />
+                    android:text="@string/semester_6_syllabus"  android:textColor="@color/text_primary"/>
             </LinearLayout>
 
             <TextView
@@ -100,7 +100,7 @@
                 android:fontFamily="@font/nunito"
                 android:gravity="center"
                 android:text="@string/nep_ba_polHons"
-                android:textColor="@color/black"
+                android:textColor="@color/text_primary"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_gravity="center" />
@@ -115,14 +115,14 @@
                     style="@style/syllabusButtonNew"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/semester_1_syllabus" />
+                    android:text="@string/semester_1_syllabus"  android:textColor="@color/text_primary"/>
 
                 <Button
                     android:id="@+id/btn8"
                     style="@style/syllabusButtonNew"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/semester_2_syllabus" />
+                    android:text="@string/semester_2_syllabus"  android:textColor="@color/text_primary"/>
             </LinearLayout>
 
             <LinearLayout
@@ -135,14 +135,14 @@
                     style="@style/syllabusButtonNew"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/semester_3_syllabus" />
+                    android:text="@string/semester_3_syllabus"  android:textColor="@color/text_primary"/>
 
                 <Button
                     android:id="@+id/btn10"
                     style="@style/syllabusButtonNew"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/semester_4_syllabus" />
+                    android:text="@string/semester_4_syllabus"  android:textColor="@color/text_primary"/>
             </LinearLayout>
 
             <LinearLayout
@@ -155,14 +155,14 @@
                     style="@style/syllabusButtonNew"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/semester_5_syllabus" />
+                    android:text="@string/semester_5_syllabus"  android:textColor="@color/text_primary"/>
 
                 <Button
                     android:id="@+id/btn12"
                     style="@style/syllabusButtonNew"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/semester_6_syllabus" />
+                    android:text="@string/semester_6_syllabus"  android:textColor="@color/text_primary"/>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

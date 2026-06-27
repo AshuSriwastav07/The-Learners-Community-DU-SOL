@@ -46,7 +46,7 @@ public class Sem5SyllabusFragment extends Fragment {
                     sem5CourseLinks.add(value);
                 }
 
-                Log.d("SyllabusData", sem5CourseLinks.toString());
+                // AUDIT FIX (7A): Log.d("SyllabusData", sem5CourseLinks.toString());
 
                 ArrayAdapter adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, sem5CourseName);
                 listView.setAdapter(adapter);

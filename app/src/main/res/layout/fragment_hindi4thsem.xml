@@ -52,7 +52,7 @@
                 android:layout_marginTop="15sp"
                 android:layout_marginBottom="15sp"
                 android:text="@string/complete_book_explain"
-                android:textSize="@dimen/dp_8" />-->
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>-->
 
 
             <ListView
@@ -70,7 +70,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="20sp"
                 android:text="@string/unit_1_notes"
-                android:textSize="25sp" />
+                android:textSize="25sp"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/button3_SOL_Updates"
@@ -81,7 +81,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="20sp"
                 android:text="@string/unit_2_notes"
-                android:textSize="25sp" />
+                android:textSize="25sp"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/du_and_sol_notes_page"
@@ -92,7 +92,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="20sp"
                 android:text="@string/unit_3_notes"
-                android:textSize="25sp" />
+                android:textSize="25sp"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/button4_QP"
@@ -103,7 +103,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="20sp"
                 android:text="@string/unit_4_notes"
-                android:textSize="25sp" />
+                android:textSize="25sp"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/buttonImp"
@@ -114,7 +114,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="20sp"
                 android:text="@string/important_notes_and_questions"
-                android:textSize="25sp" />-->
+                android:textSize="25sp"  android:textColor="@color/text_primary"/>-->
         </LinearLayout>
     <!--</ScrollView>-->
 

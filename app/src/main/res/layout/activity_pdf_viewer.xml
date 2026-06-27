@@ -41,14 +41,6 @@
             android:paddingStart="4dp"/>
 
         <ImageButton
-            android:id="@+id/btnNightMode"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Night mode"
-            android:src="@drawable/ic_night_mode"/>
-
-        <ImageButton
             android:id="@+id/btnMenu"
             android:layout_width="44dp"
             android:layout_height="44dp"
@@ -139,7 +131,7 @@
                 android:layout_width="56dp"
                 android:layout_height="56dp"
                 android:src="@drawable/ic_error_outline"
-                android:contentDescription="Error"/>
+                android:contentDescription="Error" android:background="@android:color/transparent"/>
 
             <TextView
                 android:id="@+id/tvErrorMessage"
@@ -155,7 +147,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Try Again"/>
+                android:text="Try Again" android:textColor="@color/text_primary"/>
         </LinearLayout>
     </FrameLayout>
 

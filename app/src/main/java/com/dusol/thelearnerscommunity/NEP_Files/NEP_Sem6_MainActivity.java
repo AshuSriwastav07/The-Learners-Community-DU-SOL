@@ -1,6 +1,7 @@
 package com.dusol.thelearnerscommunity.NEP_Files;
 
 import android.os.Bundle;
+import com.dusol.thelearnerscommunity.BaseActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -16,7 +17,7 @@ import com.dusol.thelearnerscommunity.R;
 import com.dusol.thelearnerscommunity.VP_Adapter;
 import com.google.android.material.tabs.TabLayout;
 
-public class NEP_Sem6_MainActivity extends AppCompatActivity {
+public class NEP_Sem6_MainActivity extends BaseActivity {
 
 
     @Override

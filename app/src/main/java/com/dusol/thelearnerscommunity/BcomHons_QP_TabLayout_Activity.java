@@ -19,7 +19,7 @@ import com.dusol.thelearnerscommunity.QuestionPapers.BcomHons.sem5QuestionPaperB
 import com.dusol.thelearnerscommunity.QuestionPapers.BcomHons.sem6QuestionPaperBcomHons;
 import com.google.android.material.tabs.TabLayout;
 
-public class BcomHons_QP_TabLayout_Activity extends AppCompatActivity {
+public class BcomHons_QP_TabLayout_Activity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

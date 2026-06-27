@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Delhi University BA Course Notes"
-                android:textColor="#FF0000"
+                android:textColor="@color/brand_red"
                 android:textSize="@dimen/dp_12"
                 android:textStyle="bold" />
 
@@ -47,7 +47,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/notes_coming_soon"
-                app:srcCompat="@mipmap/soon" />
+                app:srcCompat="@mipmap/soon"  android:background="@android:color/transparent"/>
 
         </LinearLayout>
     </ScrollView>

@@ -58,10 +58,11 @@ public class PdfDownloadHelper {
         cancelled.set(false);
 
         executor.execute(() -> {
+            File cachedFile = null;
             try {
                 File cacheDir = getCacheDirectory(context);
                 String fileName = md5(pdfUrl) + ".pdf";
-                File cachedFile = new File(cacheDir, fileName);
+                cachedFile = new File(cacheDir, fileName);
 
                 // Return cached copy if it exists and is non-empty
                 if (cachedFile.exists() && cachedFile.length() > 0) {
@@ -96,11 +97,19 @@ public class PdfDownloadHelper {
 
             } catch (IOException e) {
                 Log.e(TAG, "Download failed", e);
+                // AUDIT FIX: Clean up partial file on failure to prevent serving corrupted cache (3A)
+                if (cachedFile != null && cachedFile.exists()) {
+                    cachedFile.delete();
+                }
                 if (!cancelled.get()) {
                     postFailure(callback, "Download failed: " + e.getMessage());
                 }
             } catch (Exception e) {
                 Log.e(TAG, "Unexpected error", e);
+                // AUDIT FIX: Clean up partial file on unexpected failure
+                if (cachedFile != null && cachedFile.exists()) {
+                    cachedFile.delete();
+                }
                 if (!cancelled.get()) {
                     postFailure(callback, "An unexpected error occurred.");
                 }
@@ -183,6 +192,11 @@ public class PdfDownloadHelper {
             }
 
             outputStream.flush();
+            
+            // AUDIT FIX: Detect partial download if connection drops mid-way (3A)
+            if (contentLength > 0 && totalBytesRead < contentLength) {
+                throw new IOException("Download incomplete. Expected " + contentLength + " bytes but got " + totalBytesRead);
+            }
 
         } finally {
             if (outputStream != null) {
