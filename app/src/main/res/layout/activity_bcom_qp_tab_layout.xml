@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    style="@style/night_page"
+    
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/exambg"
@@ -22,7 +22,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:background="@color/bg_surface"
             android:orientation="vertical"
             android:paddingBottom="10dp">
 
@@ -69,8 +69,12 @@
                 android:id="@+id/Bcom_QP_TabLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/white"
-                app:tabTextColor="@color/black">
+                android:background="@color/bg_surface"
+                
+        app:tabBackground="@color/toolbar_bg"
+        app:tabTextColor="@color/text_secondary"
+        app:tabSelectedTextColor="@color/brand_primary"
+        app:tabIndicatorColor="@color/tab_indicator">
 
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"

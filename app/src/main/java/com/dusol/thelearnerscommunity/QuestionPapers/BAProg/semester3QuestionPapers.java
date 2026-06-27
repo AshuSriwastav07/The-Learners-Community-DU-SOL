@@ -230,8 +230,8 @@ public class semester3QuestionPapers extends Fragment {
                 for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
                     String key = childSnapshot.getKey();
                     String value = childSnapshot.getValue(String.class);
-                    Log.d("DataBaseLinks", value);
-                    Log.d("DataBaseLinks", key);
+                    // AUDIT FIX (7A): Log.d("DataBaseLinks", value);
+                    // AUDIT FIX (7A): Log.d("DataBaseLinks", key);
 
                     sem3QpName.add(key);
                     sem3QpLinks.add(value);

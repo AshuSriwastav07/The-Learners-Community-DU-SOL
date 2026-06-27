@@ -46,7 +46,7 @@ public class Sem4SyllabusFragment extends Fragment {
                     sem4CourseLinks.add(value);
                 }
 
-                Log.d("SyllabusData", sem4CourseLinks.toString());
+                // AUDIT FIX (7A): Log.d("SyllabusData", sem4CourseLinks.toString());
 
                 ArrayAdapter adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, sem4CourseName);
                 listView.setAdapter(adapter);

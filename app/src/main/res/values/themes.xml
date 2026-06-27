@@ -1,8 +1,41 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.TheLearnersCommunity" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Base.Theme.TheLearnersCommunity" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Brand colors -->
+        <item name="colorPrimary">@color/brand_primary</item>
+        <item name="colorPrimaryDark">@color/brand_primary_dark</item>
+        <item name="colorAccent">@color/brand_primary</item>
+        <item name="colorPrimaryVariant">@color/brand_primary_dark</item>
+        <item name="colorSecondary">@color/brand_primary</item>
+
+        <!-- Backgrounds — these are what Android uses automatically for all windows -->
+        <item name="android:windowBackground">@color/bg_page</item>
+        <item name="android:colorBackground">@color/bg_page</item>
+        <item name="colorSurface">@color/bg_card</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+
+        <!-- Text -->
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+
+        <!-- Status bar -->
+        <item name="android:statusBarColor">#1440B5</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:forceDarkAllowed">false</item>
+
+        <!-- Navigation bar (system bottom bar) -->
+        <item name="android:navigationBarColor">#FFFFFF</item>
+
+        <!-- Ripple -->
+        <item name="android:colorControlHighlight">@color/ripple</item>
+
+        <!-- CardView default background -->
+        <item name="cardBackgroundColor">@color/bg_card</item>
+        <item name="cardCornerRadius">12dp</item>
+
+        <!-- Divider color -->
+        <item name="android:listDivider">@color/divider</item>
     </style>
 
     <style name="Theme.TheLearnersCommunity" parent="Base.Theme.TheLearnersCommunity" />
@@ -30,7 +63,20 @@
     </style>
 
     <style name="sell_button">
-        <item name="android:backgroundTint">#FF0000</item>
+        <item name="android:backgroundTint">@color/brand_red</item>
         <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- Toolbar theme — used by all toolbars -->
+    <style name="AppTheme.Toolbar" parent="ThemeOverlay.MaterialComponents.ActionBar">
+        <item name="android:background">@color/toolbar_bg</item>
+        <item name="android:textColorPrimary">@color/toolbar_text</item>
+        <item name="colorControlNormal">@color/toolbar_text</item>
+    </style>
+
+    <style name="TabTextStyle" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="textAllCaps">false</item>
     </style>
 </resources>

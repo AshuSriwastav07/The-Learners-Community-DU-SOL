@@ -1,6 +1,7 @@
 package com.dusol.thelearnerscommunity.NotesStoreManage;
 
 import android.os.Bundle;
+import com.dusol.thelearnerscommunity.BaseActivity;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -19,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NotesStore_HomePage extends AppCompatActivity {
+public class NotesStore_HomePage extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

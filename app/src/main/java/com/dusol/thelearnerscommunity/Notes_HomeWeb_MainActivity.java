@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
  * All incoming intents are routed through NoteLinkRouter, ensuring Drive PDFs 
  * open in the native PDF viewer instead of the broken WebView.
  */
-public class Notes_HomeWeb_MainActivity extends AppCompatActivity {
+public class Notes_HomeWeb_MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

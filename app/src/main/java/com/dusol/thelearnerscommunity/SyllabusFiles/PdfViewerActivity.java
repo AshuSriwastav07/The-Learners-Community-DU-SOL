@@ -1,6 +1,7 @@
 package com.dusol.thelearnerscommunity.SyllabusFiles;
 
 import android.os.Bundle;
+import com.dusol.thelearnerscommunity.BaseActivity;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.InputType;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.dusol.thelearnerscommunity.R;
 import com.github.barteksc.pdfviewer.PDFView;
@@ -29,7 +31,7 @@ import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 
-public class PdfViewerActivity extends AppCompatActivity {
+public class PdfViewerActivity extends BaseActivity {
 
     public static final String EXTRA_PDF_URL = "extra_pdf_url";
     public static final String EXTRA_PDF_TITLE = "extra_pdf_title";
@@ -44,11 +46,10 @@ public class PdfViewerActivity extends AppCompatActivity {
     private View progressFill, progressTrack;
     private TextView tvPageIndicator, tvLoadingText, tvErrorMessage, tvTitle;
     private SeekBar pageSeekBar;
-    private ImageButton btnNightMode, btnBack, btnMenu, btnPrevPage, btnNextPage;
+    private ImageButton btnBack, btnMenu, btnPrevPage, btnNextPage;
     private Button btnRetry;
 
     private boolean barsVisible = true;
-    private boolean nightModeOn = false;
     private int currentPage = 0;
     private int totalPages = 0;
 
@@ -96,9 +97,6 @@ public class PdfViewerActivity extends AppCompatActivity {
         // 5. Back button
         btnBack.setOnClickListener(v -> onBackPressed());
 
-        // 6. Night mode toggle
-        btnNightMode.setOnClickListener(v -> toggleNightMode());
-
         // 7. Overflow menu
         btnMenu.setOnClickListener(v -> showOverflowMenu(v));
 
@@ -144,7 +142,6 @@ public class PdfViewerActivity extends AppCompatActivity {
         
         pageSeekBar = findViewById(R.id.pageSeekBar);
         
-        btnNightMode = findViewById(R.id.btnNightMode);
         btnBack = findViewById(R.id.btnBack);
         btnMenu = findViewById(R.id.btnMenu);
         btnPrevPage = findViewById(R.id.btnPrevPage);
@@ -169,19 +166,24 @@ public class PdfViewerActivity extends AppCompatActivity {
         downloadHelper.download(this, pdfUrl, new PdfDownloadHelper.DownloadCallback() {
             @Override
             public void onProgress(int percent) {
-                runOnUiThread(() ->
-                        tvLoadingText.setText(percent < 100
-                                ? "Downloading… " + percent + "%"
-                                : "Rendering PDF…")
-                );
+                runOnUiThread(() -> {
+                    if (isFinishing() || isDestroyed()) return; // AUDIT FIX: Guard UI updates (1E)
+                    tvLoadingText.setText(percent < 100
+                            ? "Downloading… " + percent + "%"
+                            : "Rendering PDF…");
+                });
             }
             @Override
             public void onSuccess(File file) {
-                runOnUiThread(() -> loadPdfFromFile(file));
+                runOnUiThread(() -> {
+                    if (isFinishing() || isDestroyed()) return; // AUDIT FIX: Guard UI updates (1E)
+                    loadPdfFromFile(file);
+                });
             }
             @Override
             public void onFailure(String message) {
                 runOnUiThread(() -> {
+                    if (isFinishing() || isDestroyed()) return; // AUDIT FIX: Guard UI updates (1E)
                     tvErrorMessage.setText(message);
                     showState(STATE_ERROR);
                 });
@@ -196,42 +198,47 @@ public class PdfViewerActivity extends AppCompatActivity {
 
         pdfView.setTag(file);
 
-        pdfView.fromFile(file)
-                .defaultPage(savedPage)
-                .enableSwipe(true)
-                .swipeHorizontal(false)
-                .enableDoubletap(true)
-                .enableAnnotationRendering(false)
-                .spacing(8)                          // 8dp gap between pages
-                .pageSnap(false)                     // free scroll, not per-page snap
-                .autoSpacing(false)
-                .nightMode(false) // Never invert PDF colors, just change UI
-                .onLoad(nbPages -> {
-                    totalPages = nbPages;
-                    pageSeekBar.setMax(Math.max(0, nbPages - 1));
-                    pageSeekBar.setProgress(savedPage);
-                    showState(STATE_PDF);
-                    updatePageIndicator(savedPage, nbPages);
-                    updateProgressBar(savedPage, nbPages);
-                })
-                .onPageChange((page, pageCount) -> {
-                    currentPage = page;
-                    pageSeekBar.setProgress(page);
-                    updatePageIndicator(page, pageCount);
-                    updateProgressBar(page, pageCount);
-                })
-                .onPageScroll((page, positionOffset) -> {
-                    // positionOffset is not scroll direction — use onTouchListener for that (see below)
-                })
-                .onError(t -> {
-                    tvErrorMessage.setText("Could not render this PDF. Please try again.");
-                    showState(STATE_ERROR);
-                })
-                .onTap(e -> {
-                    toggleBars();
-                    return true;
-                })
-                .load();
+        try { // AUDIT FIX: Catch OutOfMemoryError for large PDFs (8C)
+            pdfView.fromFile(file)
+                    .defaultPage(savedPage)
+                    .enableSwipe(true)
+                    .swipeHorizontal(false)
+                    .enableDoubletap(true)
+                    .enableAnnotationRendering(false)
+                    .spacing(8)                          // 8dp gap between pages
+                    .pageSnap(false)                     // free scroll, not per-page snap
+                    .autoSpacing(false)
+                    .nightMode(false) // Never invert PDF colors, just change UI
+                    .onLoad(nbPages -> {
+                        totalPages = nbPages;
+                        pageSeekBar.setMax(Math.max(0, nbPages - 1));
+                        pageSeekBar.setProgress(savedPage);
+                        showState(STATE_PDF);
+                        updatePageIndicator(savedPage, nbPages);
+                        updateProgressBar(savedPage, nbPages);
+                    })
+                    .onPageChange((page, pageCount) -> {
+                        currentPage = page;
+                        pageSeekBar.setProgress(page);
+                        updatePageIndicator(page, pageCount);
+                        updateProgressBar(page, pageCount);
+                    })
+                    .onPageScroll((page, positionOffset) -> {
+                        // positionOffset is not scroll direction — use onTouchListener for that (see below)
+                    })
+                    .onError(t -> {
+                        tvErrorMessage.setText("Could not render this PDF. Please try again.");
+                        showState(STATE_ERROR);
+                    })
+                    .onTap(e -> {
+                        toggleBars();
+                        return true;
+                    })
+                    .load();
+        } catch (OutOfMemoryError e) {
+            tvErrorMessage.setText("PDF is too large to display on this device.");
+            showState(STATE_ERROR);
+        }
     }
 
     private void setBarsVisible(boolean visible) {
@@ -276,37 +283,13 @@ public class PdfViewerActivity extends AppCompatActivity {
         });
     }
 
-    private void toggleNightMode() {
-        nightModeOn = !nightModeOn;
-        btnNightMode.setImageResource(nightModeOn
-                ? R.drawable.ic_day_mode
-                : R.drawable.ic_night_mode);
 
-        // Change UI colors without reloading PDF
-        int bgColor = android.graphics.Color.parseColor(nightModeOn ? "#121212" : "#F5F5F5");
-        int toolbarColor = android.graphics.Color.parseColor(nightModeOn ? "#1E1E1E" : "#FFFFFF");
-        int textColor = android.graphics.Color.parseColor(nightModeOn ? "#FFFFFF" : "#1A1A1A");
-        
-        findViewById(R.id.mainContainer).setBackgroundColor(bgColor);
-        topBar.setBackgroundColor(toolbarColor);
-        bottomBar.setBackgroundColor(toolbarColor);
-        tvTitle.setTextColor(textColor);
-        
-        // Update icon tints
-        btnBack.setColorFilter(textColor);
-        btnNightMode.setColorFilter(textColor);
-        btnMenu.setColorFilter(textColor);
-        btnPrevPage.setColorFilter(textColor);
-        btnNextPage.setColorFilter(textColor);
-    }
 
     private void showOverflowMenu(View anchor) {
         PopupMenu popup = new PopupMenu(this, anchor);
-        popup.getMenu().add(0, 1, 0, nightModeOn ? "Day mode" : "Night mode");
         popup.getMenu().add(0, 2, 0, "Go to page…");
 
         popup.setOnMenuItemClickListener(item -> {
-            if (item.getItemId() == 1) { toggleNightMode(); return true; }
             if (item.getItemId() == 2) { showGoToPageDialog(); return true; }
             return false;
         });

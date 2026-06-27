@@ -27,7 +27,7 @@ import com.google.firebase.messaging.FirebaseMessaging;
 import com.squareup.picasso.Picasso;
 
 
-public class Notes_Store extends AppCompatActivity {
+public class Notes_Store extends BaseActivity {
 
     private final Handler handler = new Handler();
 

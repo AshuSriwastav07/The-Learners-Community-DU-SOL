@@ -26,7 +26,7 @@ import com.dusol.thelearnerscommunity.QuestionPapers.BAProg.semester4QuestionPap
 import com.dusol.thelearnerscommunity.QuestionPapers.BAProg.semester5QuestionPapers;
 import com.dusol.thelearnerscommunity.QuestionPapers.BAProg.semester6QuestionPapers;
 
-public class QuestionPapers_MainActivity extends AppCompatActivity {
+public class QuestionPapers_MainActivity extends BaseActivity {
 
     @Override
     public void onBackPressed() {

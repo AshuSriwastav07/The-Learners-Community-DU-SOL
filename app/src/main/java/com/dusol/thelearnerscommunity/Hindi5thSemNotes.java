@@ -322,8 +322,8 @@ public class Hindi5thSemNotes extends Fragment {
                 for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
                     String key = childSnapshot.getKey();
                     String value = childSnapshot.getValue(String.class);
-                    Log.d("DataBaseLinks", value);
-                    Log.d("DataBaseLinks", key);
+                    // AUDIT FIX (7A): Log.d("DataBaseLinks", value);
+                    // AUDIT FIX (7A): Log.d("DataBaseLinks", key);
 
                     sem5NotesHindiGEName.add(key);
                     sem5NotesHindiGELinks.add(value);

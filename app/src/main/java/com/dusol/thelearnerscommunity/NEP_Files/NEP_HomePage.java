@@ -1,6 +1,7 @@
 package com.dusol.thelearnerscommunity.NEP_Files;
 
 import android.content.Intent;
+import com.dusol.thelearnerscommunity.BaseActivity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
@@ -20,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NEP_HomePage extends AppCompatActivity {
+public class NEP_HomePage extends BaseActivity {
 
     // This will store the values from Firebase in order
     private final List<String> values = new ArrayList<>();

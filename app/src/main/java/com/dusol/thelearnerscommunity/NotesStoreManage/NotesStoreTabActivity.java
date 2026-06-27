@@ -1,6 +1,7 @@
 package com.dusol.thelearnerscommunity.NotesStoreManage;
 
 import android.os.Bundle;
+import com.dusol.thelearnerscommunity.BaseActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
@@ -16,7 +17,7 @@ import com.dusol.thelearnerscommunity.R;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
-public class NotesStoreTabActivity extends AppCompatActivity {
+public class NotesStoreTabActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

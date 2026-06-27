@@ -52,7 +52,7 @@
                 android:layout_marginBottom="20sp"
                 android:gravity="center"
                 android:text="@string/unit_1_notes"
-                android:textSize="@dimen/dp_8" />
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/unit2"
@@ -66,7 +66,7 @@
                 android:layout_marginBottom="20sp"
                 android:gravity="center"
                 android:text="@string/unit_2_notes"
-                android:textSize="@dimen/dp_8" />
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
 
 
             <TextView
@@ -91,7 +91,7 @@
                 android:layout_marginTop="15sp"
                 android:layout_marginBottom="15sp"
                 android:text="@string/complete_book_explain"
-                android:textSize="@dimen/dp_8" />
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/Sem4Political_PaidNotes"
@@ -105,7 +105,7 @@
                 android:layout_marginBottom="20sp"
                 android:text="Download Notes PDF Here"
                 android:textColorHint="#FF0000"
-                android:textSize="@dimen/dp_8" />-->
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>-->
 
 
             <ListView
@@ -130,7 +130,7 @@
                    android:layout_marginEnd="20dp"
                    android:layout_marginBottom="20sp"
                    android:text="@string/unit_3_notes"
-                   android:textSize="25sp" />
+                   android:textSize="25sp"  android:textColor="@color/text_primary"/>
 
                <Button
                    android:id="@+id/buttonImp"
@@ -141,6 +141,6 @@
                    android:layout_marginEnd="20dp"
                    android:layout_marginBottom="20sp"
                    android:text="@string/important_notes_and_questions"
-                   android:textSize="25sp" />
+                   android:textSize="25sp"  android:textColor="@color/text_primary"/>
 
    -->

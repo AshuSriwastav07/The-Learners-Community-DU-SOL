@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.dusol.thelearnerscommunity.Network.GetNetworkDetails;
 
-public class open_site_webpage extends AppCompatActivity {
+public class open_site_webpage extends BaseActivity {
 
     WebView webView;
     ProgressBar progressBar;

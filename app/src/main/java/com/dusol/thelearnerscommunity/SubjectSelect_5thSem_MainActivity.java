@@ -18,7 +18,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 
 
-public class SubjectSelect_5thSem_MainActivity extends AppCompatActivity {
+public class SubjectSelect_5thSem_MainActivity extends BaseActivity {
 
     @Override
     public void onBackPressed() {

@@ -4,16 +4,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    style="@style/night_page"
+    
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F9FAFB"
+    android:background="@color/bg_page"
     tools:context=".selectCourseForQP">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#f9fafb"
+        android:background="@color/bg_page"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +24,7 @@
             android:id="@+id/imageView19"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FFFFFF"
+            android:background="@android:color/transparent"
             android:contentDescription="@string/qplogo"
             app:srcCompat="@mipmap/qphead" />
 
@@ -32,11 +32,11 @@
             android:id="@+id/QPheading1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FFFFFF"
+            android:background="@color/bg_surface"
             android:fontFamily="@font/nunito_extrabold"
             android:text="@string/du_sol_ncweb_nquestion_paper_hub"
             android:textAlignment="center"
-            android:textColor="#000000"
+            android:textColor="@color/text_primary"
             android:textSize="@dimen/dp_12"
             android:textStyle="bold" />
 
@@ -45,15 +45,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/dp_4"
-            android:background="#FFFFFF"
+            android:background="@color/bg_surface"
             android:fontFamily="@font/nunito_extrabold"
             android:text="@string/QPHeading2"
             android:textAlignment="center"
-            android:textColor="#000000"
+            android:textColor="@color/text_primary"
             android:textSize="@dimen/dp_8" />
 
         <androidx.cardview.widget.CardView
-            style="@style/night_CardView"
+            
             android:id="@+id/baQuestionPaperCourse"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_30"
@@ -76,7 +76,7 @@
                     android:layout_gravity="center"
                     android:layout_margin="@dimen/dp_2"
                     android:layout_weight="1"
-                    android:background="#00EFEBEB"
+                    android:background="@android:color/transparent"
                     android:contentDescription="@string/qpimage"
                     app:srcCompat="@mipmap/bapq" />
 
@@ -94,7 +94,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/ba_prog"
-                        android:textColor="@color/black"
+                        android:textColor="@color/text_primary"
                         android:textStyle="bold" />
 
                     <TextView
@@ -102,7 +102,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/bachelor_of_arts_program"
-                        android:textColor="@color/black"
+                        android:textColor="@color/text_primary"
                         android:textStyle="italic" />
                 </LinearLayout>
 
@@ -115,7 +115,7 @@
                     android:layout_weight="0"
                     android:gravity="center"
                     android:text="@string/_15_papers"
-                    android:textColor="@color/black"
+                    android:textColor="@color/text_primary"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -123,7 +123,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            style="@style/night_CardView"
+            
             android:id="@+id/baHonsQuestionPaperCourse"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_30"
@@ -145,7 +145,7 @@
                     android:layout_gravity="center"
                     android:layout_margin="@dimen/dp_2"
                     android:layout_weight="1"
-                    android:background="#00EFEBEB"
+                    android:background="@android:color/transparent"
                     android:contentDescription="@string/qpimage"
                     app:srcCompat="@mipmap/bahqp" />
 
@@ -163,7 +163,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/ba_hons"
-                        android:textColor="@color/black"
+                        android:textColor="@color/text_primary"
                         android:textStyle="bold" />
 
                     <TextView
@@ -171,7 +171,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/bachelor_of_arts_honours"
-                        android:textColor="@color/black"
+                        android:textColor="@color/text_primary"
                         android:textStyle="italic" />
                 </LinearLayout>
 
@@ -184,7 +184,7 @@
                     android:layout_weight="0"
                     android:gravity="center"
                     android:text="@string/_15_papers"
-                    android:textColor="@color/black"
+                    android:textColor="@color/text_primary"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -192,7 +192,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            style="@style/night_CardView"
+            
             android:id="@+id/bcomQuestionPaperCourse"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_30"
@@ -214,7 +214,7 @@
                     android:layout_gravity="center"
                     android:layout_margin="@dimen/dp_2"
                     android:layout_weight="1"
-                    android:background="#00EFEBEB"
+                    android:background="@android:color/transparent"
                     android:contentDescription="@string/qpimage"
                     app:srcCompat="@mipmap/bcomqp" />
 
@@ -232,7 +232,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/bcom"
-                        android:textColor="@color/black"
+                        android:textColor="@color/text_primary"
                         android:textStyle="bold" />
 
                     <TextView
@@ -240,7 +240,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/bachelor_of_commerce"
-                        android:textColor="@color/black"
+                        android:textColor="@color/text_primary"
                         android:textStyle="italic" />
                 </LinearLayout>
 
@@ -253,7 +253,7 @@
                     android:layout_weight="0"
                     android:gravity="center"
                     android:text="@string/_15_papers"
-                    android:textColor="@color/black"
+                    android:textColor="@color/text_primary"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -261,7 +261,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            style="@style/night_CardView"
+            
             android:id="@+id/bcomHonsQuestionPaperCourse"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_30"
@@ -283,7 +283,7 @@
                     android:layout_gravity="center"
                     android:layout_margin="@dimen/dp_2"
                     android:layout_weight="1"
-                    android:background="#00EFEBEB"
+                    android:background="@android:color/transparent"
                     android:contentDescription="@string/qpimage"
                     app:srcCompat="@mipmap/bcomhqp" />
 
@@ -301,7 +301,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/b.com_hons"
-                        android:textColor="@color/black"
+                        android:textColor="@color/text_primary"
                         android:textStyle="bold" />
 
                     <TextView
@@ -309,7 +309,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/bachelor_of_commerce_honours"
-                        android:textColor="@color/black"
+                        android:textColor="@color/text_primary"
                         android:textStyle="italic" />
                 </LinearLayout>
 
@@ -322,7 +322,7 @@
                     android:layout_weight="0"
                     android:gravity="center"
                     android:text="@string/_15_papers"
-                    android:textColor="@color/black"
+                    android:textColor="@color/text_primary"
                     android:textStyle="bold" />
 
             </LinearLayout>

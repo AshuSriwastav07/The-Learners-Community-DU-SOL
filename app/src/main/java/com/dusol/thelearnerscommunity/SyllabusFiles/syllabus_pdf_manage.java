@@ -32,9 +32,12 @@ public class syllabus_pdf_manage {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference(path);
 
-        ref.addValueEventListener(new ValueEventListener() {
+        ValueEventListener listener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                // AUDIT FIX: Guard UI updates to prevent getActivity() crashes (1A)
+                if (activity != null && (activity.isDestroyed() || activity.isFinishing())) return;
+
                 NotesNameArray.clear();
                 NotesLinksArray.clear();
                 for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
@@ -65,7 +68,22 @@ public class syllabus_pdf_manage {
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 System.out.println("The read failed: " + databaseError.getCode());
             }
-        });
+        };
+
+        ref.addValueEventListener(listener);
+
+        // AUDIT FIX: Auto-remove Firebase listener when Fragment/Activity is destroyed to prevent memory leaks (2A)
+        if (context instanceof androidx.lifecycle.LifecycleOwner) {
+            ((androidx.lifecycle.LifecycleOwner) context).getLifecycle().addObserver(
+                new androidx.lifecycle.LifecycleEventObserver() {
+                    @Override
+                    public void onStateChanged(@NonNull androidx.lifecycle.LifecycleOwner source, @NonNull androidx.lifecycle.Lifecycle.Event event) {
+                        if (event == androidx.lifecycle.Lifecycle.Event.ON_DESTROY) {
+                            ref.removeEventListener(listener);
+                        }
+                    }
+                });
+        }
 
 
         listView.setOnItemClickListener((parent, view1, position, id) -> {

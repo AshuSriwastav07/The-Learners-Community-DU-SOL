@@ -13,7 +13,7 @@ import android.os.Bundle;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
-public class connect_with_us_MainActivity extends AppCompatActivity {
+public class connect_with_us_MainActivity extends BaseActivity {
 
 
     @Override

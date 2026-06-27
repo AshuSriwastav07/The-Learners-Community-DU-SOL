@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    style="@style/night_page"
+    
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SyllabusFiles.SyllabusTabLayoutActivity">
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.cardview.widget.CardView
-            style="@style/night_CardView"
+            
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dp_3"
@@ -41,7 +41,7 @@
                     android:paddingEnd="0dp"
                     android:text="@string/syllabusPageTitle"
                     android:textAlignment="viewStart"
-                    android:textColor="@color/black"
+                    android:textColor="@color/text_primary"
                     android:textSize="@dimen/dp_7"
                     android:textStyle="bold" />
 
@@ -54,7 +54,7 @@
                     android:paddingEnd="0dp"
                     android:text="@string/syllabusPageText"
                     android:textAlignment="viewStart"
-                    android:textColor="@color/black"
+                    android:textColor="@color/text_primary"
                     android:textSize="@dimen/dp_5" />
             </LinearLayout>
 
@@ -66,7 +66,11 @@
             android:layout_height="wrap_content"
             android:background="#5EFFFFFF"
             app:tabRippleColor="#6200EA"
-            app:tabTextColor="@color/black">
+            
+        app:tabBackground="@color/toolbar_bg"
+        app:tabTextColor="@color/text_secondary"
+        app:tabSelectedTextColor="@color/brand_primary"
+        app:tabIndicatorColor="@color/tab_indicator">
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"

@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"
                 android:gravity="center"
-                android:textColor="#FF0000"
+                android:textColor="@color/brand_red"
                 android:textSize="@dimen/dp_12"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +41,7 @@
                 android:fontFamily="@font/nunito_black"
                 android:gravity="center"
                 android:text="NEP Date Sheet"
-                android:textColor="#FF0000"
+                android:textColor="@color/brand_red"
                 android:textSize="@dimen/dp_10"
                 android:textStyle="bold" />
 
@@ -58,7 +58,7 @@
                     android:fontFamily="@font/nunito_black"
                     android:text="@string/ba_prog"
                     android:textSize="@dimen/dp_8"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"  android:textColor="@color/text_primary"/>
 
                 <Button
                     android:id="@+id/NEPbutton1"
@@ -67,7 +67,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:text="@string/check" />
+                    android:text="@string/check"  android:textColor="@color/text_primary"/>
             </LinearLayout>
 
             <LinearLayout
@@ -83,7 +83,7 @@
                     android:fontFamily="@font/nunito_black"
                     android:text="@string/ba_hons"
                     android:textSize="@dimen/dp_8"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"  android:textColor="@color/text_primary"/>
 
                 <Button
                     android:id="@+id/NEPbutton2"
@@ -92,7 +92,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:text="@string/check" />
+                    android:text="@string/check"  android:textColor="@color/text_primary"/>
             </LinearLayout>
 
             <LinearLayout
@@ -108,7 +108,7 @@
                     android:fontFamily="@font/nunito_black"
                     android:text="@string/bcom"
                     android:textSize="@dimen/dp_8"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"  android:textColor="@color/text_primary"/>
 
                 <Button
                     android:id="@+id/NEPbutton3"
@@ -117,7 +117,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:text="@string/check" />
+                    android:text="@string/check"  android:textColor="@color/text_primary"/>
             </LinearLayout>
 
             <LinearLayout
@@ -133,7 +133,7 @@
                     android:fontFamily="@font/nunito_black"
                     android:text="@string/b.com_hons"
                     android:textSize="@dimen/dp_8"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"  android:textColor="@color/text_primary"/>
 
                 <Button
                     android:id="@+id/NEPbutton4"
@@ -142,7 +142,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:text="@string/check" />
+                    android:text="@string/check"  android:textColor="@color/text_primary"/>
             </LinearLayout>
 
             <TextView
@@ -150,7 +150,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/cbcs_datesheet"
-                android:textColor="#FF0000"
+                android:textColor="@color/brand_red"
                 android:textSize="@dimen/dp_10"
                 android:textStyle="bold" />
 
@@ -168,7 +168,7 @@
                     android:fontFamily="@font/nunito_black"
                     android:text="BA Prog"
                     android:textSize="@dimen/dp_8"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"  android:textColor="@color/text_primary"/>
 
                 <Button
                     android:id="@+id/CBCS_button1"
@@ -177,7 +177,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:text="@string/check" />
+                    android:text="@string/check"  android:textColor="@color/text_primary"/>
             </LinearLayout>
 
             <LinearLayout
@@ -193,7 +193,7 @@
                     android:fontFamily="@font/nunito_black"
                     android:text="@string/ba_hons"
                     android:textSize="@dimen/dp_8"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"  android:textColor="@color/text_primary"/>
 
                 <Button
                     android:id="@+id/CBCS_button2"
@@ -202,7 +202,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:text="@string/check" />
+                    android:text="@string/check"  android:textColor="@color/text_primary"/>
             </LinearLayout>
 
             <LinearLayout
@@ -218,7 +218,7 @@
                     android:fontFamily="@font/nunito_black"
                     android:text="@string/bcom"
                     android:textSize="@dimen/dp_8"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"  android:textColor="@color/text_primary"/>
 
                 <Button
                     android:id="@+id/CBCS_button3"
@@ -227,7 +227,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:text="@string/check" />
+                    android:text="@string/check"  android:textColor="@color/text_primary"/>
             </LinearLayout>
 
             <LinearLayout
@@ -243,7 +243,7 @@
                     android:fontFamily="@font/nunito_black"
                     android:text="@string/b.com_hons"
                     android:textSize="@dimen/dp_8"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"  android:textColor="@color/text_primary"/>
 
                 <Button
                     android:id="@+id/CBCS_button4"
@@ -252,7 +252,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:text="@string/check" />
+                    android:text="@string/check"  android:textColor="@color/text_primary"/>
             </LinearLayout>
 
         </LinearLayout>

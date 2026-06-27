@@ -23,7 +23,7 @@ import com.bumptech.glide.Glide;
 import com.google.firebase.FirebaseApp;
 
 
-public class HomePage_MainActivity extends AppCompatActivity {
+public class HomePage_MainActivity extends BaseActivity {
     private static final int MY_PERMISSIONS_REQUEST_INTERNET = 123; // Replace with your desired request code
     private ProgressBar progressBar;
 

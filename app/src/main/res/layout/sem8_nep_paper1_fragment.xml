@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    style="@style/night_page"
+    
     tools:context=".NEP_Files.NEP_Fragments.Sem8.Sem8_Paper1_DSC">
 
     <LinearLayout

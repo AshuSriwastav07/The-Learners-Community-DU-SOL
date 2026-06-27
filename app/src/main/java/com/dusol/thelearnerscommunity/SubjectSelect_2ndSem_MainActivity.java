@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SubjectSelect_2ndSem_MainActivity extends AppCompatActivity {
+public class SubjectSelect_2ndSem_MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

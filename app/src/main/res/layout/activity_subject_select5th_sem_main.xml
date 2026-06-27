@@ -36,9 +36,13 @@
             android:id="@+id/cbcs_sem5_notes_TabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:background="@color/bg_surface"
             app:tabMode="scrollable"
-            app:tabTextColor="@color/black">
+            
+        app:tabBackground="@color/toolbar_bg"
+        app:tabTextColor="@color/text_secondary"
+        app:tabSelectedTextColor="@color/brand_primary"
+        app:tabIndicatorColor="@color/tab_indicator">
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/tabItem1"

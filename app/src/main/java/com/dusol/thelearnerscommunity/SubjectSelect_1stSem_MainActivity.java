@@ -6,7 +6,7 @@ import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
-public class SubjectSelect_1stSem_MainActivity extends AppCompatActivity {
+public class SubjectSelect_1stSem_MainActivity extends BaseActivity {
 
 
     @Override

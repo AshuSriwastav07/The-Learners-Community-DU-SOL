@@ -28,7 +28,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.dusol.thelearnerscommunity.Network.GetNetworkDetails;
 
 
-public class QP_Web_Page_MainActivity extends AppCompatActivity {
+public class QP_Web_Page_MainActivity extends BaseActivity {
 
     // Declare WebView and ProgressBar variables
     WebView webView;

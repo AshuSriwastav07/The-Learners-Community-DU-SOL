@@ -47,7 +47,7 @@
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:text="@string/_1st_semester" />
+                    android:text="@string/_1st_semester"  android:textColor="@color/text_primary"/>
 
                 <Button
                     android:id="@+id/sem2Syllabus"
@@ -57,7 +57,7 @@
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:text="@string/_2nd_semester" />
+                    android:text="@string/_2nd_semester"  android:textColor="@color/text_primary"/>
 
                 <Button
                     android:id="@+id/sem3Syllabus"
@@ -67,7 +67,7 @@
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:text="@string/_3rd_semester" />
+                    android:text="@string/_3rd_semester"  android:textColor="@color/text_primary"/>
 
                 <Button
                     android:id="@+id/sem4Syllabus"
@@ -77,7 +77,7 @@
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:text="@string/_4th_semester" />
+                    android:text="@string/_4th_semester"  android:textColor="@color/text_primary"/>
 
                 <Button
                     android:id="@+id/sem5Syllabus"
@@ -87,7 +87,7 @@
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:text="@string/_5th_semester" />
+                    android:text="@string/_5th_semester"  android:textColor="@color/text_primary"/>
 
                 <Button
                     android:id="@+id/sem6Syllabus"
@@ -97,7 +97,7 @@
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:text="@string/_6th_semester" />
+                    android:text="@string/_6th_semester"  android:textColor="@color/text_primary"/>
             </LinearLayout>
         </HorizontalScrollView>
 

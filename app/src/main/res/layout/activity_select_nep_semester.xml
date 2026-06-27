@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".NEP_Files.NEP_HomePage"
-    style="@style/night_page">
+    >
 
     <ScrollView
         android:layout_width="match_parent"
@@ -34,7 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_50"
                 android:layout_margin="@dimen/dp_3"
-                app:cardBackgroundColor="#FFFFFF"
+                app:cardBackgroundColor="@color/bg_card"
                 app:cardCornerRadius="@dimen/dp_8"
                 app:cardElevation="@dimen/dp_3">
 
@@ -45,7 +45,7 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/NEP_Sem1"
-                        style="@style/nightHomePageButtons"
+                        
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="@dimen/dp_5"
@@ -55,7 +55,7 @@
 
 
                         <TextView
-                            style="@style/nightHomePageButtons"
+                            
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
@@ -64,13 +64,13 @@
                             android:gravity="center"
                             android:text="@string/semester_1"
                             android:textSize="@dimen/dp_5"
-                            app:drawableTopCompat="@mipmap/mynotes" />
+                            app:drawableTopCompat="@mipmap/mynotes"  android:textColor="@color/text_primary"/>
 
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/NEP_Sem2"
-                        style="@style/nightHomePageButtons"
+                        
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="@dimen/dp_5"
@@ -80,7 +80,7 @@
 
 
                         <TextView
-                            style="@style/nightHomePageButtons"
+                            
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
@@ -89,7 +89,7 @@
                             android:gravity="center"
                             android:text="@string/semester_2"
                             android:textSize="@dimen/dp_5"
-                            app:drawableTopCompat="@mipmap/mynotes" />
+                            app:drawableTopCompat="@mipmap/mynotes"  android:textColor="@color/text_primary"/>
 
                     </androidx.cardview.widget.CardView>
 
@@ -101,7 +101,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_50"
                 android:layout_margin="@dimen/dp_3"
-                app:cardBackgroundColor="#FFFFFF"
+                app:cardBackgroundColor="@color/bg_card"
                 app:cardCornerRadius="@dimen/dp_8"
                 app:cardElevation="@dimen/dp_3">
 
@@ -112,7 +112,7 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/NEP_Sem3"
-                        style="@style/nightHomePageButtons"
+                        
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="@dimen/dp_5"
@@ -122,7 +122,7 @@
 
 
                         <TextView
-                            style="@style/nightHomePageButtons"
+                            
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
@@ -131,13 +131,13 @@
                             android:gravity="center"
                             android:text="@string/semester_3"
                             android:textSize="@dimen/dp_5"
-                            app:drawableTopCompat="@mipmap/mynotes" />
+                            app:drawableTopCompat="@mipmap/mynotes"  android:textColor="@color/text_primary"/>
 
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/NEP_Sem4"
-                        style="@style/nightHomePageButtons"
+                        
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="@dimen/dp_5"
@@ -147,7 +147,7 @@
 
 
                         <TextView
-                            style="@style/nightHomePageButtons"
+                            
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
@@ -156,7 +156,7 @@
                             android:gravity="center"
                             android:text="@string/semester_4"
                             android:textSize="@dimen/dp_5"
-                            app:drawableTopCompat="@mipmap/mynotes" />
+                            app:drawableTopCompat="@mipmap/mynotes"  android:textColor="@color/text_primary"/>
 
                     </androidx.cardview.widget.CardView>
 
@@ -169,7 +169,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_50"
                 android:layout_margin="@dimen/dp_3"
-                app:cardBackgroundColor="#FFFFFF"
+                app:cardBackgroundColor="@color/bg_card"
                 app:cardCornerRadius="@dimen/dp_8"
                 app:cardElevation="@dimen/dp_3">
 
@@ -180,7 +180,7 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/NEP_Sem5"
-                        style="@style/nightHomePageButtons"
+                        
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="@dimen/dp_5"
@@ -190,7 +190,7 @@
 
 
                         <TextView
-                            style="@style/nightHomePageButtons"
+                            
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
@@ -199,13 +199,13 @@
                             android:gravity="center"
                             android:text="@string/semester_5"
                             android:textSize="@dimen/dp_5"
-                            app:drawableTopCompat="@mipmap/mynotes" />
+                            app:drawableTopCompat="@mipmap/mynotes"  android:textColor="@color/text_primary"/>
 
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/NEP_Sem6"
-                        style="@style/nightHomePageButtons"
+                        
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="@dimen/dp_5"
@@ -215,7 +215,7 @@
 
 
                         <TextView
-                            style="@style/nightHomePageButtons"
+                            
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
@@ -224,7 +224,7 @@
                             android:gravity="center"
                             android:text="@string/semester_6"
                             android:textSize="@dimen/dp_5"
-                            app:drawableTopCompat="@mipmap/mynotes" />
+                            app:drawableTopCompat="@mipmap/mynotes"  android:textColor="@color/text_primary"/>
 
                     </androidx.cardview.widget.CardView>
 
@@ -238,7 +238,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_50"
                 android:layout_margin="@dimen/dp_3"
-                app:cardBackgroundColor="#FFFFFF"
+                app:cardBackgroundColor="@color/bg_card"
                 app:cardCornerRadius="@dimen/dp_8"
                 app:cardElevation="@dimen/dp_3">
 
@@ -249,7 +249,7 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/NEP_Sem7"
-                        style="@style/nightHomePageButtons"
+                        
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="@dimen/dp_5"
@@ -259,7 +259,7 @@
 
 
                         <TextView
-                            style="@style/nightHomePageButtons"
+                            
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
@@ -268,13 +268,13 @@
                             android:gravity="center"
                             android:text="@string/semester_7"
                             android:textSize="@dimen/dp_5"
-                            app:drawableTopCompat="@mipmap/mynotes" />
+                            app:drawableTopCompat="@mipmap/mynotes"  android:textColor="@color/text_primary"/>
 
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/NEP_Sem8"
-                        style="@style/nightHomePageButtons"
+                        
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="@dimen/dp_5"
@@ -284,7 +284,7 @@
 
 
                         <TextView
-                            style="@style/nightHomePageButtons"
+                            
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
@@ -293,7 +293,7 @@
                             android:gravity="center"
                             android:text="@string/semester_8"
                             android:textSize="@dimen/dp_5"
-                            app:drawableTopCompat="@mipmap/mynotes" />
+                            app:drawableTopCompat="@mipmap/mynotes"  android:textColor="@color/text_primary"/>
 
                     </androidx.cardview.widget.CardView>
 
@@ -315,7 +315,7 @@
                 android:drawableLeft="@mipmap/buy"
                 android:padding="12dp"
                 android:text="@string/get_premium_notes"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/text_on_primary"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 

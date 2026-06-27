@@ -27,7 +27,7 @@
             android:fontFamily="serif"
             android:gravity="center"
             android:text="@string/your_subject"
-            android:textColor="#FF0000"
+            android:textColor="@color/brand_red"
             android:textSize="@dimen/dp_12"
             android:textStyle="bold"
             tools:ignore="MissingConstraints" />
@@ -56,7 +56,7 @@
                     android:text="@string/_2nd_sem_exam_notes"
                     android:textAlignment="textStart"
                     android:textSize="@dimen/dp_8"
-                    app:backgroundTint="#49BC9B" />
+                    app:backgroundTint="#49BC9B"  android:textColor="@color/text_primary"/>
 
                 <!--<Button
                     android:id="@+id/His4thSem"
@@ -68,7 +68,7 @@
                     android:text="History"
                     android:textAlignment="textStart"
                     android:textSize="@dimen/dp_8"
-                    app:backgroundTint="#49BC9B" />
+                    app:backgroundTint="#49BC9B"  android:textColor="@color/text_primary"/>
 
                 <Button
                     android:id="@+id/Pol4thSem"
@@ -80,7 +80,7 @@
                     android:text="Political"
                     android:textAlignment="textStart"
                     android:textSize="@dimen/dp_8"
-                    app:backgroundTint="#49BC9B" />
+                    app:backgroundTint="#49BC9B"  android:textColor="@color/text_primary"/>
 
                 <Button
                     android:id="@+id/Edu4thSem"
@@ -92,7 +92,7 @@
                     android:text="Education"
                     android:textAlignment="textStart"
                     android:textSize="@dimen/dp_8"
-                    app:backgroundTint="#49BC9B" />
+                    app:backgroundTint="#49BC9B"  android:textColor="@color/text_primary"/>
 
                 <Button
                     android:id="@+id/Hindi4thSem"
@@ -104,7 +104,7 @@
                     android:text="Hindi"
                     android:textAlignment="textStart"
                     android:textSize="@dimen/dp_8"
-                    app:backgroundTint="#49BC9B" />
+                    app:backgroundTint="#49BC9B"  android:textColor="@color/text_primary"/>
 
                 <Button
                     android:id="@+id/Eng4thSem"
@@ -116,7 +116,7 @@
                     android:text="English"
                     android:textAlignment="textStart"
                     android:textSize="@dimen/dp_8"
-                    app:backgroundTint="#49BC9B" />-->
+                    app:backgroundTint="#49BC9B"  android:textColor="@color/text_primary"/>-->
 
             </LinearLayout>
         </HorizontalScrollView>

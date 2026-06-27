@@ -12,7 +12,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class DU_NOTES_Semester_Select extends AppCompatActivity {
+public class DU_NOTES_Semester_Select extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

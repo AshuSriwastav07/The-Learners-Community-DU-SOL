@@ -70,7 +70,7 @@
                 android:text="@string/nep_pdf"
                 android:textSize="@dimen/dp_8"
                 android:textStyle="bold|italic"
-                tools:ignore="DuplicateSpeakableTextCheck" />
+                tools:ignore="DuplicateSpeakableTextCheck"  android:textColor="@color/text_primary"/>
 
             <TextView
                 android:id="@+id/textView1"
@@ -100,7 +100,7 @@
                 android:text="@string/ba_prog_nep"
                 android:textSize="@dimen/dp_8"
                 android:textStyle="bold|italic"
-                tools:ignore="DuplicateSpeakableTextCheck" />
+                tools:ignore="DuplicateSpeakableTextCheck"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/nepsem1_Bcom"
@@ -115,7 +115,7 @@
                 android:text="@string/b_com_nep"
                 android:textSize="@dimen/dp_8"
                 android:textStyle="bold|italic"
-                tools:ignore="DuplicateSpeakableTextCheck" />
+                tools:ignore="DuplicateSpeakableTextCheck"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/nepsem1_BcomH"
@@ -130,7 +130,7 @@
                 android:text="@string/b_com_hons_nep"
                 android:textSize="@dimen/dp_8"
                 android:textStyle="bold|italic"
-                tools:ignore="DuplicateSpeakableTextCheck" />
+                tools:ignore="DuplicateSpeakableTextCheck"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/sem1_BA"
@@ -145,7 +145,7 @@
                 android:text="@string/ba_prog"
                 android:textSize="@dimen/dp_8"
                 android:textStyle="bold|italic"
-                tools:ignore="DuplicateSpeakableTextCheck" />
+                tools:ignore="DuplicateSpeakableTextCheck"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/sem1_bcom"
@@ -160,7 +160,7 @@
                 android:text="@string/bcom"
                 android:textSize="@dimen/dp_8"
                 android:textStyle="bold|italic"
-                tools:ignore="DuplicateSpeakableTextCheck" />
+                tools:ignore="DuplicateSpeakableTextCheck"  android:textColor="@color/text_primary"/>
 
             <Button
 
@@ -176,7 +176,7 @@
                 android:text="@string/b.com_hons"
                 android:textSize="@dimen/dp_8"
                 android:textStyle="bold|italic"
-                tools:ignore="DuplicateSpeakableTextCheck" />
+                tools:ignore="DuplicateSpeakableTextCheck"  android:textColor="@color/text_primary"/>
 
             <!--            2nd Sem Syllabus -->
 
@@ -207,7 +207,7 @@
                 android:gravity="center"
                 android:text="@string/ba_prog_nep_sem2"
                 android:textSize="@dimen/dp_8"
-                android:textStyle="bold|italic" />
+                android:textStyle="bold|italic"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/nepsem2_bcom"
@@ -221,7 +221,7 @@
                 android:gravity="center"
                 android:text="@string/b_com_nep_sem2"
                 android:textSize="@dimen/dp_8"
-                android:textStyle="bold|italic" />
+                android:textStyle="bold|italic"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/nepsem2_bcom_hons"
@@ -235,7 +235,7 @@
                 android:gravity="center"
                 android:text="@string/b_com_hons_nep_Sem2"
                 android:textSize="@dimen/dp_8"
-                android:textStyle="bold|italic" />
+                android:textStyle="bold|italic"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/sem2_BA"
@@ -249,7 +249,7 @@
                 android:gravity="center"
                 android:text="@string/ba_prog"
                 android:textSize="@dimen/dp_8"
-                android:textStyle="bold|italic" />
+                android:textStyle="bold|italic"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/sem2_bcom"
@@ -263,7 +263,7 @@
                 android:gravity="center"
                 android:text="@string/bcom"
                 android:textSize="@dimen/dp_8"
-                android:textStyle="bold|italic" />
+                android:textStyle="bold|italic"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/sem2_bcom_hons"
@@ -277,7 +277,7 @@
                 android:gravity="center"
                 android:text="@string/b.com_hons"
                 android:textSize="@dimen/dp_8"
-                android:textStyle="bold|italic" />
+                android:textStyle="bold|italic"  android:textColor="@color/text_primary"/>
 
             <!--            3rd Sem Syllabus-->
 
@@ -309,7 +309,7 @@
                 android:text="@string/ba_prog_nep"
                 android:textSize="@dimen/dp_8"
                 android:textStyle="bold|italic"
-                tools:ignore="DuplicateSpeakableTextCheck" />
+                tools:ignore="DuplicateSpeakableTextCheck"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/nepsem3_Bcom"
@@ -324,7 +324,7 @@
                 android:text="@string/b_com_nep"
                 android:textSize="@dimen/dp_8"
                 android:textStyle="bold|italic"
-                tools:ignore="DuplicateSpeakableTextCheck" />
+                tools:ignore="DuplicateSpeakableTextCheck"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/nepsem3_BcomH"
@@ -339,7 +339,7 @@
                 android:text="@string/b_com_hons_nep"
                 android:textSize="@dimen/dp_8"
                 android:textStyle="bold|italic"
-                tools:ignore="DuplicateSpeakableTextCheck" />
+                tools:ignore="DuplicateSpeakableTextCheck"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/sem3_BA"
@@ -353,7 +353,7 @@
                 android:gravity="center"
                 android:text="@string/ba_prog"
                 android:textSize="@dimen/dp_8"
-                android:textStyle="bold|italic" />
+                android:textStyle="bold|italic"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/sem3_bcom"
@@ -368,7 +368,7 @@
                 android:text="@string/bcom"
                 android:textSize="@dimen/dp_8"
                 android:textStyle="bold|italic"
-                tools:ignore="DuplicateSpeakableTextCheck" />
+                tools:ignore="DuplicateSpeakableTextCheck"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/sem3_bcom_hons"
@@ -383,7 +383,7 @@
                 android:text="@string/b.com_hons"
                 android:textSize="@dimen/dp_8"
                 android:textStyle="bold|italic"
-                tools:ignore="DuplicateSpeakableTextCheck" />
+                tools:ignore="DuplicateSpeakableTextCheck"  android:textColor="@color/text_primary"/>
 
             <!--            4th Sem Syllabus-->
             <TextView
@@ -414,7 +414,7 @@
                 android:text="@string/ba_prog"
                 android:textSize="@dimen/dp_8"
                 android:textStyle="bold|italic"
-                tools:ignore="DuplicateSpeakableTextCheck" />
+                tools:ignore="DuplicateSpeakableTextCheck"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/sem4_bcom"
@@ -428,7 +428,7 @@
                 android:gravity="center"
                 android:text="@string/bcom"
                 android:textSize="@dimen/dp_8"
-                android:textStyle="bold|italic" />
+                android:textStyle="bold|italic"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/sem4_bcom_hons"
@@ -443,7 +443,7 @@
                 android:text="@string/b.com_hons"
                 android:textSize="@dimen/dp_8"
                 android:textStyle="bold|italic"
-                tools:ignore="VisualLintButtonSize" />
+                tools:ignore="VisualLintButtonSize"  android:textColor="@color/text_primary"/>
 
             <!--            5th Sem Syllabus-->
 
@@ -474,7 +474,7 @@
                 android:gravity="center"
                 android:text="@string/ba_prog"
                 android:textSize="@dimen/dp_8"
-                android:textStyle="bold|italic" />
+                android:textStyle="bold|italic"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/sem5_bcom"
@@ -488,7 +488,7 @@
                 android:gravity="center"
                 android:text="@string/bcom"
                 android:textSize="@dimen/dp_8"
-                android:textStyle="bold|italic" />
+                android:textStyle="bold|italic"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/sem5_bcom_hons"
@@ -502,7 +502,7 @@
                 android:gravity="center"
                 android:text="@string/b.com_hons"
                 android:textSize="@dimen/dp_8"
-                android:textStyle="bold|italic" />
+                android:textStyle="bold|italic"  android:textColor="@color/text_primary"/>
 
             <!--            6th Sem Syllabus-->
 
@@ -533,7 +533,7 @@
                 android:gravity="center"
                 android:text="@string/ba_prog"
                 android:textSize="@dimen/dp_8"
-                android:textStyle="bold|italic" />
+                android:textStyle="bold|italic"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/sem6_bcom"
@@ -547,7 +547,7 @@
                 android:gravity="center"
                 android:text="@string/bcom"
                 android:textSize="@dimen/dp_8"
-                android:textStyle="bold|italic" />
+                android:textStyle="bold|italic"  android:textColor="@color/text_primary"/>
 
             <Button
                 android:id="@+id/sem6_bcom_hons"
@@ -561,7 +561,7 @@
                 android:gravity="center"
                 android:text="@string/b.com_hons"
                 android:textSize="@dimen/dp_8"
-                android:textStyle="bold|italic" />
+                android:textStyle="bold|italic"  android:textColor="@color/text_primary"/>
 
         </LinearLayout>
     </ScrollView>

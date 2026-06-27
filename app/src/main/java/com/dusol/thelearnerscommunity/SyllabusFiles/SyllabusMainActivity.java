@@ -1,13 +1,14 @@
 package com.dusol.thelearnerscommunity.SyllabusFiles;
 
 import android.os.Bundle;
+import com.dusol.thelearnerscommunity.BaseActivity;
 import android.widget.Button;
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import com.dusol.thelearnerscommunity.R;
 
-public class SyllabusMainActivity extends AppCompatActivity {
+public class SyllabusMainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

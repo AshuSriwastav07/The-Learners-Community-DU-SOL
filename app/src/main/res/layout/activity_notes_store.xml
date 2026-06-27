@@ -20,7 +20,7 @@
 
     <TextView
         android:id="@+id/StoreTitle"
-        style="@style/banner_text"
+        
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_mono_bold"
@@ -54,7 +54,7 @@
 
             <!--Start Here-->
             <androidx.cardview.widget.CardView
-                style="@style/night_CardView"
+                
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="15sp"
@@ -67,7 +67,7 @@
                     android:id="@+id/imageView15"
                     android:layout_width="match_parent"
                     android:layout_height="240dp"
-                    android:padding="8dp" />
+                    android:padding="8dp"  android:background="@android:color/transparent"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -80,12 +80,12 @@
                 android:layout_marginBottom="15sp"
                 android:gravity="center"
                 android:text="@string/check_details"
-                android:textSize="@dimen/dp_8" />
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
 
 
             <!--Start Here-->
             <androidx.cardview.widget.CardView
-                style="@style/night_CardView"
+                
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="15sp"
@@ -98,7 +98,7 @@
                     android:id="@+id/imageView16"
                     android:layout_width="match_parent"
                     android:layout_height="240dp"
-                    android:padding="8dp" />
+                    android:padding="8dp"  android:background="@android:color/transparent"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -111,12 +111,12 @@
                 android:layout_marginBottom="15sp"
                 android:gravity="center"
                 android:text="@string/check_details"
-                android:textSize="@dimen/dp_8" />
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
 
 
             <!--Start Here-->
             <androidx.cardview.widget.CardView
-                style="@style/night_CardView"
+                
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="15sp"
@@ -129,7 +129,7 @@
                     android:id="@+id/imageView13"
                     android:layout_width="match_parent"
                     android:layout_height="240dp"
-                    android:padding="8dp" />
+                    android:padding="8dp"  android:background="@android:color/transparent"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -142,11 +142,11 @@
                 android:layout_marginBottom="15sp"
                 android:gravity="center"
                 android:text="@string/check_details"
-                android:textSize="@dimen/dp_8" />
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
 
 <!--            Start Here-->
             <androidx.cardview.widget.CardView
-                style="@style/night_CardView"
+                
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="15sp"
@@ -160,7 +160,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="240dp"
                     android:padding="8dp"
-                    android:contentDescription="Notes 14"/>
+                    android:contentDescription="Notes 14" android:background="@android:color/transparent"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -173,12 +173,12 @@
                 style="@style/sell_button"
                 android:gravity="center"
                 android:text="@string/check_details"
-                android:textSize="@dimen/dp_8" />
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
 
             <!--Ends Here-->
 <!--            Edns Here-->
             <androidx.cardview.widget.CardView
-                style="@style/night_CardView"
+                
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="15sp"
@@ -191,7 +191,7 @@
                     android:id="@+id/imageView1"
                     android:layout_width="match_parent"
                     android:layout_height="240dp"
-                    android:padding="8dp" />
+                    android:padding="8dp"  android:background="@android:color/transparent"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -204,13 +204,13 @@
                 style="@style/sell_button"
                 android:gravity="center"
                 android:text="@string/check_details"
-                android:textSize="@dimen/dp_8" />
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
 
             <!--Ends Here-->
 
             <!--Start Here-->
             <androidx.cardview.widget.CardView
-                style="@style/night_CardView"
+                
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="15sp"
@@ -222,7 +222,7 @@
                 <ImageView
                     android:id="@+id/imageView2"
                     android:layout_width="match_parent"
-                    android:layout_height="240dp" />
+                    android:layout_height="240dp"  android:background="@android:color/transparent"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -235,12 +235,12 @@
                 style="@style/sell_button"
                 android:gravity="center"
                 android:text="@string/check_details"
-                android:textSize="@dimen/dp_8" />
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
             <!--Ends Here-->
 
             <!--Start Here-->
             <androidx.cardview.widget.CardView
-                style="@style/night_CardView"
+                
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="15sp"
@@ -252,7 +252,7 @@
                 <ImageView
                     android:id="@+id/imageView3"
                     android:layout_width="match_parent"
-                    android:layout_height="240dp" />
+                    android:layout_height="240dp"  android:background="@android:color/transparent"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -265,12 +265,12 @@
                 style="@style/sell_button"
                 android:gravity="center"
                 android:text="@string/check_details"
-                android:textSize="@dimen/dp_8" />
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
             <!--Ends Here-->
 
             <!--Start Here-->
             <androidx.cardview.widget.CardView
-                style="@style/night_CardView"
+                
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="15sp"
@@ -282,7 +282,7 @@
                 <ImageView
                     android:id="@+id/imageView4"
                     android:layout_width="match_parent"
-                    android:layout_height="240dp" />
+                    android:layout_height="240dp"  android:background="@android:color/transparent"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -295,13 +295,13 @@
                 style="@style/sell_button"
                 android:gravity="center"
                 android:text="@string/check_details"
-                android:textSize="@dimen/dp_8" />
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
             <!--Ends Here-->
 
 
             <!--Start Here-->
             <androidx.cardview.widget.CardView
-                style="@style/night_CardView"
+                
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="15sp"
@@ -313,7 +313,7 @@
                 <ImageView
                     android:id="@+id/imageView5"
                     android:layout_width="match_parent"
-                    android:layout_height="240dp" />
+                    android:layout_height="240dp"  android:background="@android:color/transparent"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -326,13 +326,13 @@
                 style="@style/sell_button"
                 android:gravity="center"
                 android:text="@string/check_details"
-                android:textSize="@dimen/dp_8" />
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
             <!--Ends Here-->
 
 
             <!--Start Here-->
             <androidx.cardview.widget.CardView
-                style="@style/night_CardView"
+                
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="15sp"
@@ -344,7 +344,7 @@
                 <ImageView
                     android:id="@+id/imageView6"
                     android:layout_width="match_parent"
-                    android:layout_height="240dp" />
+                    android:layout_height="240dp"  android:background="@android:color/transparent"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -357,13 +357,13 @@
                 style="@style/sell_button"
                 android:gravity="center"
                 android:text="@string/check_details"
-                android:textSize="@dimen/dp_8" />
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
             <!--Ends Here-->
 
 
             <!--Start Here-->
             <androidx.cardview.widget.CardView
-                style="@style/night_CardView"
+                
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="15sp"
@@ -375,7 +375,7 @@
                 <ImageView
                     android:id="@+id/imageView7"
                     android:layout_width="match_parent"
-                    android:layout_height="240dp" />
+                    android:layout_height="240dp"  android:background="@android:color/transparent"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -388,13 +388,13 @@
                 style="@style/sell_button"
                 android:gravity="center"
                 android:text="@string/check_details"
-                android:textSize="@dimen/dp_8" />
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
             <!--Ends Here-->
 
 
             <!--Start Here-->
             <androidx.cardview.widget.CardView
-                style="@style/night_CardView"
+                
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="15sp"
@@ -406,7 +406,7 @@
                 <ImageView
                     android:id="@+id/imageView8"
                     android:layout_width="match_parent"
-                    android:layout_height="240dp" />
+                    android:layout_height="240dp"  android:background="@android:color/transparent"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -419,12 +419,12 @@
                 style="@style/sell_button"
                 android:gravity="center"
                 android:text="@string/check_details"
-                android:textSize="@dimen/dp_8" />
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
 
             <!--Ends Here-->
             <!--Start Here-->
             <androidx.cardview.widget.CardView
-                style="@style/night_CardView"
+                
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="15sp"
@@ -436,7 +436,7 @@
                 <ImageView
                     android:id="@+id/imageView9"
                     android:layout_width="match_parent"
-                    android:layout_height="240dp" />
+                    android:layout_height="240dp"  android:background="@android:color/transparent"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -449,12 +449,12 @@
                 style="@style/sell_button"
                 android:gravity="center"
                 android:text="@string/check_details"
-                android:textSize="@dimen/dp_8" />
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
 
             <!--Ends Here-->
             <!--Start Here-->
             <androidx.cardview.widget.CardView
-                style="@style/night_CardView"
+                
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="15sp"
@@ -466,7 +466,7 @@
                 <ImageView
                     android:id="@+id/imageView10"
                     android:layout_width="match_parent"
-                    android:layout_height="240dp" />
+                    android:layout_height="240dp"  android:background="@android:color/transparent"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -479,13 +479,13 @@
                 style="@style/sell_button"
                 android:gravity="center"
                 android:text="@string/check_details"
-                android:textSize="@dimen/dp_8" />
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
 
             <!--Ends Here-->
 
             <!--Start Here-->
             <androidx.cardview.widget.CardView
-                style="@style/night_CardView"
+                
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="15sp"
@@ -497,7 +497,7 @@
                 <ImageView
                     android:id="@+id/imageView11"
                     android:layout_width="match_parent"
-                    android:layout_height="240dp" />
+                    android:layout_height="240dp"  android:background="@android:color/transparent"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -510,12 +510,12 @@
                 style="@style/sell_button"
                 android:gravity="center"
                 android:text="@string/check_details"
-                android:textSize="@dimen/dp_8" />
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
 
             <!--Ends Here-->
             <!--Start Here-->
             <androidx.cardview.widget.CardView
-                style="@style/night_CardView"
+                
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="15sp"
@@ -527,7 +527,7 @@
                 <ImageView
                     android:id="@+id/imageView12"
                     android:layout_width="match_parent"
-                    android:layout_height="240dp" />
+                    android:layout_height="240dp"  android:background="@android:color/transparent"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -540,13 +540,13 @@
                 android:layout_marginBottom="15sp"
                 android:gravity="center"
                 android:text="@string/check_details"
-                android:textSize="@dimen/dp_8" />
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
 
             <!--Ends Here-->
 
        <!--Start Here-->
             <androidx.cardview.widget.CardView
-                style="@style/night_CardView"
+                
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="15sp"
@@ -558,7 +558,7 @@
                 <ImageView
                     android:id="@+id/imageView17"
                     android:layout_width="match_parent"
-                    android:layout_height="240dp" />
+                    android:layout_height="240dp"  android:background="@android:color/transparent"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -571,13 +571,13 @@
                 android:layout_marginBottom="15sp"
                 android:gravity="center"
                 android:text="@string/check_details"
-                android:textSize="@dimen/dp_8" />
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
 
             <!--Ends Here-->
 
 <!--Start Here-->
             <androidx.cardview.widget.CardView
-                style="@style/night_CardView"
+                
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="15sp"
@@ -589,7 +589,7 @@
                 <ImageView
                     android:id="@+id/imageView18"
                     android:layout_width="match_parent"
-                    android:layout_height="240dp" />
+                    android:layout_height="240dp"  android:background="@android:color/transparent"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -602,7 +602,7 @@
                 android:layout_marginBottom="80sp"
                 android:gravity="center"
                 android:text="@string/check_details"
-                android:textSize="@dimen/dp_8" />
+                android:textSize="@dimen/dp_8"  android:textColor="@color/text_primary"/>
 
             <!--Ends Here-->
 
