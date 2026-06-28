@@ -43,7 +43,7 @@ gradle.properties
 *.aab
 /app/release/
 
-# --- SECRET FILES — NEVER COMMIT -------------------------------
+# --- SECRET FILES - NEVER COMMIT -------------------------------
 *.keystore
 *.jks
 keystore.properties
@@ -53,4 +53,3 @@ config.properties
 .env.local
 .env.production
 google-services-staging.json
-
