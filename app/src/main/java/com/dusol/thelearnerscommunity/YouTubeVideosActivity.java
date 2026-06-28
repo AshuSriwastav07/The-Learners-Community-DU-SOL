@@ -36,7 +36,7 @@ import java.util.concurrent.Executors;
 public class YouTubeVideosActivity extends BaseActivity {
 
     private static final String TAG = "YouTubeVideosActivity";
-    public static final String API_KEY = "YOUTUBE_API_KEY_REMOVED_FROM_HISTORY";
+    public static final String API_KEY = BuildConfig.YOUTUBE_API_KEY;
     public static final String CHANNEL_HANDLE = "@TheLearnersCommunityDUSOL";
     private static final int MAX_RESULTS_PER_PAGE = 50;
 

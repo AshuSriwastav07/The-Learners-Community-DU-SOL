@@ -1,3 +1,6 @@
+import java.util.Properties
+import java.io.FileInputStream
+
 plugins {
     id("com.android.application")
     id("com.google.gms.google-services")
@@ -15,10 +18,20 @@ android {
         targetSdk = 35
         versionCode = 24
         multiDexEnabled= true
-        versionName = "2025.11.2.5.2" //Explain Year.month.versionName
+        versionName = "2026.06.2.6.2" //Explain Year.month.versionName
         //This is Version Name 2.4 and we cant use same version code again
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        // ── Securely inject API keys from local.properties into BuildConfig ──
+        val localProps = Properties()
+        val localPropsFile = rootProject.file("local.properties")
+        if (localPropsFile.exists()) {
+            localPropsFile.inputStream().use { localProps.load(it) }
+        } else {
+            localProps["YOUTUBE_API_KEY"] = System.getenv("YOUTUBE_API_KEY") ?: ""
+        }
+        buildConfigField("String", "YOUTUBE_API_KEY", "\"${localProps.getProperty("YOUTUBE_API_KEY") ?: ""}\"")
     }
 
 
@@ -63,6 +76,7 @@ android {
     
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 
 }

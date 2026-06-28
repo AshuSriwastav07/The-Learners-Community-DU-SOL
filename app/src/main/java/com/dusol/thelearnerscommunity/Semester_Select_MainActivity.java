@@ -83,7 +83,6 @@ public class Semester_Select_MainActivity extends BaseActivity {
                         // Toast.makeText(MainActivity3.this, "Done", Toast.LENGTH_SHORT).show();
 
                         // Log a message to check whether the user successfully subscribed to the topic
-                        Log.d("notes_topic", msg);
                     }
                 });
 

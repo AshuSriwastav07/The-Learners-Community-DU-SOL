@@ -75,7 +75,6 @@ public class BCom_SM extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String data= snapshot.getValue(String.class);
                 assert data != null;
-                Log.d("FirebaseLinks",data);
                 btn9.setOnClickListener(v -> {
                     sendStudyMaterialData("NEP_Semester 4");
                     openNextActivity(data);
@@ -95,7 +94,6 @@ public class BCom_SM extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String data= snapshot.getValue(String.class);
                 assert data != null;
-                Log.d("FirebaseLinks",data);
                 btn10.setOnClickListener(v -> {
                     sendStudyMaterialData("NEP_Semester 5");
                     openNextActivity(data);
@@ -115,7 +113,6 @@ public class BCom_SM extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String data= snapshot.getValue(String.class);
                 assert data != null;
-                Log.d("FirebaseLinks",data);
                 btn11.setOnClickListener(v -> {
                     sendStudyMaterialData("NEP_Semester 6");
                     openNextActivity(data);

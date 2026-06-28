@@ -75,7 +75,6 @@ public class BA_PolHons_SM extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String data= snapshot.getValue(String.class);
                 assert data != null;
-                Log.d("FirebaseLinks",data);
                 btn9.setOnClickListener(v -> {
                     sendStudyMaterialData("NEP_Semester4");
                     openNextActivity(data);
@@ -95,7 +94,6 @@ public class BA_PolHons_SM extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String data= snapshot.getValue(String.class);
                 assert data != null;
-                Log.d("FirebaseLinks",data);
                 btn10.setOnClickListener(v -> {
                     sendStudyMaterialData("NEP_Semester5");
                     openNextActivity(data);
@@ -115,7 +113,6 @@ public class BA_PolHons_SM extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String data= snapshot.getValue(String.class);
                 assert data != null;
-                Log.d("FirebaseLinks",data);
                 btn11.setOnClickListener(v -> {
                     sendStudyMaterialData("NEP_Semester6");
                     openNextActivity(data);

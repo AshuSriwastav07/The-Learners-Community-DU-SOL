@@ -42,3 +42,15 @@ gradle.properties
 .cxx
 *.aab
 /app/release/
+
+# --- SECRET FILES — NEVER COMMIT -------------------------------
+*.keystore
+*.jks
+keystore.properties
+secrets.properties
+api_keys.properties
+config.properties
+.env.local
+.env.production
+google-services-staging.json
+

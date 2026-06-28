@@ -82,7 +82,6 @@ public class QP_Web_Page_MainActivity extends BaseActivity {
         // Check if the device has an active network connection
         boolean networkStatus = GetNetworkDetails.isNetworkAvailable(this);
 
-        Log.d("NetworkData", String.valueOf(networkStatus));
 
         if (!networkStatus) {
             // Internet is not available, show a message

@@ -20,9 +20,14 @@ public class NoteLinkRouter {
         return url.contains("drive.google.com") || url.contains("docs.google.com");
     }
 
+    public static boolean isPdfLink(String url) {
+        if (url == null) return false;
+        return url.contains("cloudinary.com") || url.toLowerCase().endsWith(".pdf");
+    }
+
     // Anything else = browser/sell link
     public static boolean isBrowserLink(String url) {
-        return url != null && !isYouTubeLink(url) && !isDriveLink(url);
+        return url != null && !isYouTubeLink(url) && !isDriveLink(url) && !isPdfLink(url);
     }
 
     // ── Routing ────────────────────────────────────────────────────────────
@@ -42,7 +47,7 @@ public class NoteLinkRouter {
 
         if (isYouTubeLink(url)) {
             openYouTube(context, url);
-        } else if (isDriveLink(url)) {
+        } else if (isDriveLink(url) || isPdfLink(url)) {
             openInPdfViewer(context, url, title);
         } else {
             openInBrowser(context, url);
@@ -76,9 +81,12 @@ public class NoteLinkRouter {
 
     // ── PDF Viewer ─────────────────────────────────────────────────────────
 
-    private static void openInPdfViewer(Context context, String driveUrl, String title) {
+    private static void openInPdfViewer(Context context, String url, String title) {
+        String downloadUrl = url;
         // Convert Drive share URL → direct download URL before passing to viewer
-        String downloadUrl = DriveUrlConverter.toDirectDownloadUrl(driveUrl);
+        if (isDriveLink(url)) {
+            downloadUrl = DriveUrlConverter.toDirectDownloadUrl(url);
+        }
 
         // Launch the EXISTING PDF viewer activity (same one used for Syllabus)
         // Use the same Intent extra keys already defined in that activity

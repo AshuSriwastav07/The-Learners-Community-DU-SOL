@@ -76,7 +76,6 @@ public class AdmitCardDailogBox extends DialogFragment  {
             if("N/A".equals(link1)) {
                 Toast.makeText(getContext(), sem1+" Not Available Now", Toast.LENGTH_SHORT).show();
             } else{
-                Log.d("link",link1);
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(link1));
             startActivity(intent);}
         });

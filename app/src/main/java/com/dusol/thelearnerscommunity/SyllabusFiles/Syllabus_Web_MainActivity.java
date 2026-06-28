@@ -85,7 +85,6 @@ public class Syllabus_Web_MainActivity extends BaseActivity {
 
         boolean networkStatus = GetNetworkDetails.isNetworkAvailable(this);
 
-        Log.d("NetworkData", String.valueOf(networkStatus));
 
         if (!networkStatus) {
             // Internet is not available, show a message

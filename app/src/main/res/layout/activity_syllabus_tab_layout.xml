@@ -13,49 +13,47 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:background="@color/bg_surface"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.cardview.widget.CardView
-            
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dp_3"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="5dp">
+            android:layout_margin="12dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="@dimen/dp_2">
+                android:background="@drawable/bg_syllabus_header"
+                android:padding="20dp">
 
                 <TextView
                     android:id="@+id/syllabusTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-black"
-                    android:paddingStart="@dimen/dp_4"
-                    android:paddingEnd="0dp"
                     android:text="@string/syllabusPageTitle"
                     android:textAlignment="viewStart"
-                    android:textColor="@color/text_primary"
-                    android:textSize="@dimen/dp_7"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/dp_9"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/syllabusText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:fontFamily="@font/ar_one_sans_medium"
-                    android:paddingStart="@dimen/dp_4"
-                    android:paddingEnd="0dp"
                     android:text="@string/syllabusPageText"
                     android:textAlignment="viewStart"
-                    android:textColor="@color/text_primary"
-                    android:textSize="@dimen/dp_5" />
+                    android:textColor="#E8EFFE"
+                    android:textSize="@dimen/dp_7" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -64,47 +62,58 @@
             android:id="@+id/Syllabus_TabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#5EFFFFFF"
-            app:tabRippleColor="#6200EA"
-            
-        app:tabBackground="@color/toolbar_bg"
-        app:tabTextColor="@color/text_secondary"
-        app:tabSelectedTextColor="@color/brand_primary"
-        app:tabIndicatorColor="@color/tab_indicator">
+            android:layout_marginHorizontal="8dp"
+            android:background="@android:color/transparent"
+            app:tabRippleColor="@android:color/transparent"
+            app:tabMode="scrollable"
+            app:tabIndicatorHeight="@dimen/dp_15"
+            app:tabIndicator="@drawable/tab_indicator_pill"
+            app:tabIndicatorGravity="center"
+            app:tabIndicatorFullWidth="true"
+            app:tabTextColor="@color/text_secondary"
+            app:tabSelectedTextColor="#FFFFFF"
+            app:tabPaddingStart="24dp"
+            app:tabPaddingEnd="24dp">
 
             <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:shadowColor="#F0D987"
-                android:shadowDx="0.0"
-                android:shadowDy="0.0"
-                android:shadowRadius="5"
                 android:text="@string/_1st" />
 
             <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/_2nd" />
 
             <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/_3rd" />
 
             <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/_4th" />
 
             <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/_5th" />
 
             <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/_6th" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="7th" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="8th" />
 
         </com.google.android.material.tabs.TabLayout>
 

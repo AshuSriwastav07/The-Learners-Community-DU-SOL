@@ -43,7 +43,6 @@ public class BA_PsyHonsSM extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String data = snapshot.getValue(String.class);
                 assert data != null;
-                Log.d("FirebaseLinks", data);
                 btn1.setOnClickListener(v -> {
                     sendStudyMaterialData("Semester1");
                     openNextActivity(data);
@@ -61,7 +60,6 @@ public class BA_PsyHonsSM extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String data = snapshot.getValue(String.class);
                 assert data != null;
-                Log.d("FirebaseLinks", data);
                 btn2.setOnClickListener(v -> {
                     sendStudyMaterialData("Semester2");
                     openNextActivity(data);
@@ -81,7 +79,6 @@ public class BA_PsyHonsSM extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String data = snapshot.getValue(String.class);
                 assert data != null;
-                Log.d("FirebaseLinks", data);
                 btn3.setOnClickListener(v -> {
                     sendStudyMaterialData("Semester3");
                     openNextActivity(data);
@@ -99,7 +96,6 @@ public class BA_PsyHonsSM extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String data = snapshot.getValue(String.class);
                 assert data != null;
-                Log.d("FirebaseLinks", data);
                 btn4.setOnClickListener(v -> {
                     sendStudyMaterialData("Semester4");
                     openNextActivity(data);
@@ -117,7 +113,6 @@ public class BA_PsyHonsSM extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String data = snapshot.getValue(String.class);
                 assert data != null;
-                Log.d("FirebaseLinks", data);
                 btn5.setOnClickListener(v -> {
                     sendStudyMaterialData("Semester5");
                     openNextActivity(data);
@@ -135,7 +130,6 @@ public class BA_PsyHonsSM extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String data = snapshot.getValue(String.class);
                 assert data != null;
-                Log.d("FirebaseLinks", data);
                 btn6.setOnClickListener(v -> {
                     sendStudyMaterialData("Semester6");
                     openNextActivity(data);

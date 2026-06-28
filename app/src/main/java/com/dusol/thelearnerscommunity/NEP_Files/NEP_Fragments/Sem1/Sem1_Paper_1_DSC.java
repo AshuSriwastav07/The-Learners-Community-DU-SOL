@@ -43,7 +43,6 @@ public class Sem1_Paper_1_DSC extends Fragment {
                 for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
                     String key = childSnapshot.getKey();
                     String value = childSnapshot.getValue(String.class);
-                   *//* // AUDIT FIX (7A): Log.d("DataBaseLinks", value);
                     // AUDIT FIX (7A): Log.d("DataBaseLinks", key);*//*
 
                     sem1NotesAncientHisName.add(key);

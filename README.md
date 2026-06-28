@@ -1,11 +1,16 @@
-
 # The Learners Community DU SOL
 
+## ⚠️ Setup Required
+
+This project requires secret API keys that are NOT included in the repository.
+
+1. Copy `secrets_template.properties` → rename to `local.properties`
+2. Fill in all values in `local.properties`
+3. Never commit `local.properties` — it is in `.gitignore`
+
+See `secrets_template.properties` for the list of required keys and where to get them.
 Welcome to The Learners' Community, your comprehensive resource hub for Delhi University School of Open Learning (DU SOL) students! This application is designed to assist you in navigating your academic journey with ease, providing you access to a wealth of study materials, exam resources, and valuable information tailored to your DU SOL courses.
 * Java-based Android Study App helps Students in theri Study and Provide collage information.
-
-
-
 
 
 ## Features: Semester-wise Notes and Question Papers:

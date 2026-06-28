@@ -180,7 +180,6 @@ public class studentsBoard extends BaseActivity {
                 for (DataSnapshot data : snapshot.getChildren()) {
                     newResultName.add(data.getKey());
                     newResultLink.add(data.getValue(String.class));
-                    Log.d("ResultLinks", Objects.requireNonNull(data.getValue(String.class)));
                 }
 
                 if (!newResultLink.get(0).equals("N/A")) {
@@ -244,7 +243,6 @@ public class studentsBoard extends BaseActivity {
                     newInfoName.add(data.getKey());
                     newInfoLink.add(data.getValue(String.class));
 
-                    Log.d("CheckStatus", Objects.requireNonNull(data.getValue(String.class)));
                 }
 
                 // Create a list of CardView

@@ -151,7 +151,6 @@ public class syllabus_pdf_manage {
                     String value = childSnapshot.getValue(String.class); //notes link
 
                     assert value != null;
-                    Log.d("NotesNameArray",value);
 
                     NotesLinksArray.add(value);
                 }

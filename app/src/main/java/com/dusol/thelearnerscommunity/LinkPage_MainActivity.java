@@ -237,7 +237,6 @@ public class LinkPage_MainActivity extends BaseActivity {
         });
 
 
-
         askDoubt.setOnClickListener(view -> functionManager.askDoubtHere(LinkPage_MainActivity.this));
 
         // Firebase FCM (unchanged)
