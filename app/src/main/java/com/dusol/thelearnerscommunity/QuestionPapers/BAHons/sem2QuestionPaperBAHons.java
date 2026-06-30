@@ -14,6 +14,9 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
 public class sem2QuestionPaperBAHons extends Fragment {
+
+    private AdView mAdView;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -21,7 +24,7 @@ public class sem2QuestionPaperBAHons extends Fragment {
         ListView listView = view.findViewById(R.id.BAH_sem2QPListView);
 
         // Initialize Ads
-        AdView mAdView = view.findViewById(R.id.adView);
+        mAdView = view.findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
@@ -29,5 +32,23 @@ public class sem2QuestionPaperBAHons extends Fragment {
         PDFDataManage.NotesManage(getActivity(), getContext(), "QuestionPapers/Sem2/BAH", listView);
 
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (mAdView != null) mAdView.resume();
+    }
+
+    @Override
+    public void onPause() {
+        if (mAdView != null) mAdView.pause();
+        super.onPause();
+    }
+
+    @Override
+    public void onDestroyView() {
+        if (mAdView != null) mAdView.destroy();
+        super.onDestroyView();
     }
 }

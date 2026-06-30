@@ -16,9 +16,10 @@ android {
         applicationId = "com.dusol.thelearnerscommunity"
         minSdk = 23
         targetSdk = 35
-        versionCode = 24
+        versionCode = 25
         multiDexEnabled= true
         versionName = "2026.06.2.6.2" //Explain Year.month.versionName
+        //Last version was  24 (2025.11.2.5.2)
         //This is Version Name 2.4 and we cant use same version code again
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -55,8 +56,12 @@ android {
     }
     
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+    
+    kotlinOptions {
+        jvmTarget = "17"
     }
     
     packaging {
@@ -87,18 +92,14 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.7.1")
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.2.1")
-    implementation("com.google.firebase:firebase-messaging-ktx:24.1.2")
     implementation("com.google.firebase:firebase-messaging:25.0.0") // ⚠️ Choose only one
     implementation("com.google.android.gms:play-services-ads:24.5.0")
     implementation("com.android.support:multidex:1.0.3")
-    implementation("com.google.firebase:firebase-database-ktx:21.0.0")
     implementation("com.google.firebase:firebase-database:22.0.0") // ⚠️ Choose only one
     implementation("com.google.firebase:firebase-analytics:23.0.0")
-    implementation("com.google.firebase:firebase-analytics") // ⚠️ Choose only one
     implementation("com.squareup.picasso:picasso:2.71828")
     implementation("androidx.navigation:navigation-fragment-ktx:2.9.3")
     implementation("androidx.navigation:navigation-ui-ktx:2.9.3")
-    implementation("androidx.activity:activity-ktx:1.10.1")
     implementation("androidx.activity:activity:1.10.1") // ⚠️ Choose only one
     implementation("androidx.gridlayout:gridlayout:1.1.0")
     implementation("com.google.android.play:app-update:2.1.0")

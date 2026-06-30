@@ -44,6 +44,14 @@ public class CloudinaryImageLoader {
     public static void load(Context context, String rawUrl, ImageView imageView,
                             int sizePx, @DrawableRes int placeholder) {
 
+        if (context == null) return;
+        if (context instanceof android.app.Activity) {
+            android.app.Activity activity = (android.app.Activity) context;
+            if (activity.isDestroyed() || activity.isFinishing()) {
+                return; // Prevent "You cannot start a load for a destroyed activity" crash
+            }
+        }
+
         String optimizedUrl = buildOptimizedUrl(rawUrl, sizePx);
 
         RequestBuilder<Drawable> request = Glide.with(context)
